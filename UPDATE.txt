@@ -1,0 +1,6 @@
+----------
+04/11/2015
+MM/DD/YYYY
+EN-US -> Simple Script Database
+PT-BR -> Script Banco de Dados Simples
+----------
