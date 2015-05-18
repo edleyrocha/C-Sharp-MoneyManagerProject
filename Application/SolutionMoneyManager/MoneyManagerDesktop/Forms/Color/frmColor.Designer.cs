@@ -1,6 +1,6 @@
 ﻿namespace MoneyManagerDesktop
 {
-    partial class frmColors
+    partial class frmColor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.btnClose = new MetroFramework.Controls.MetroButton();
             this.metroPanelColor = new MetroFramework.Controls.MetroPanel();
+            this.btnSalvar = new MetroFramework.Controls.MetroButton();
             this.rbt14 = new MetroFramework.Controls.MetroRadioButton();
             this.rbt9 = new MetroFramework.Controls.MetroRadioButton();
             this.rbt13 = new MetroFramework.Controls.MetroRadioButton();
@@ -61,8 +62,7 @@
             this.metroTile7 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.mps0 = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroToggle_Fundo = new MetroFramework.Controls.MetroToggle();
-            this.btnSalvar = new MetroFramework.Controls.MetroButton();
+            this.mtl_Backgroud = new MetroFramework.Controls.MetroToggle();
             this.metroPanelColor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             this.btnClose.Location = new System.Drawing.Point(252, 264);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 0;
+            this.btnClose.TabIndex = 16;
             this.btnClose.Text = "%&Sair%";
             this.btnClose.UseSelectable = true;
             this.btnClose.Click += new System.EventHandler(this.metroButton_Close_Click);
@@ -123,17 +123,28 @@
             this.metroPanelColor.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelColor.VerticalScrollbarSize = 10;
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Location = new System.Drawing.Point(171, 264);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 15;
+            this.btnSalvar.Text = "%&Salvar%";
+            this.btnSalvar.UseSelectable = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // rbt14
             // 
             this.rbt14.AutoSize = true;
             this.rbt14.Location = new System.Drawing.Point(267, 243);
             this.rbt14.Name = "rbt14";
             this.rbt14.Size = new System.Drawing.Size(49, 15);
-            this.rbt14.TabIndex = 4;
+            this.rbt14.TabIndex = 14;
             this.rbt14.Text = "%0%";
             this.rbt14.UseSelectable = true;
             this.rbt14.UseStyleColors = true;
-            this.rbt14.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt14.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt9
             // 
@@ -141,11 +152,11 @@
             this.rbt9.Location = new System.Drawing.Point(267, 156);
             this.rbt9.Name = "rbt9";
             this.rbt9.Size = new System.Drawing.Size(49, 15);
-            this.rbt9.TabIndex = 4;
+            this.rbt9.TabIndex = 9;
             this.rbt9.Text = "%0%";
             this.rbt9.UseSelectable = true;
             this.rbt9.UseStyleColors = true;
-            this.rbt9.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt9.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt13
             // 
@@ -153,11 +164,11 @@
             this.rbt13.Location = new System.Drawing.Point(201, 243);
             this.rbt13.Name = "rbt13";
             this.rbt13.Size = new System.Drawing.Size(49, 15);
-            this.rbt13.TabIndex = 5;
+            this.rbt13.TabIndex = 13;
             this.rbt13.Text = "%0%";
             this.rbt13.UseSelectable = true;
             this.rbt13.UseStyleColors = true;
-            this.rbt13.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt13.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt8
             // 
@@ -165,11 +176,11 @@
             this.rbt8.Location = new System.Drawing.Point(201, 156);
             this.rbt8.Name = "rbt8";
             this.rbt8.Size = new System.Drawing.Size(49, 15);
-            this.rbt8.TabIndex = 5;
+            this.rbt8.TabIndex = 8;
             this.rbt8.Text = "%0%";
             this.rbt8.UseSelectable = true;
             this.rbt8.UseStyleColors = true;
-            this.rbt8.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt8.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt12
             // 
@@ -177,11 +188,11 @@
             this.rbt12.Location = new System.Drawing.Point(135, 243);
             this.rbt12.Name = "rbt12";
             this.rbt12.Size = new System.Drawing.Size(49, 15);
-            this.rbt12.TabIndex = 6;
+            this.rbt12.TabIndex = 12;
             this.rbt12.Text = "%0%";
             this.rbt12.UseSelectable = true;
             this.rbt12.UseStyleColors = true;
-            this.rbt12.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt12.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt7
             // 
@@ -189,11 +200,11 @@
             this.rbt7.Location = new System.Drawing.Point(135, 156);
             this.rbt7.Name = "rbt7";
             this.rbt7.Size = new System.Drawing.Size(49, 15);
-            this.rbt7.TabIndex = 6;
+            this.rbt7.TabIndex = 7;
             this.rbt7.Text = "%0%";
             this.rbt7.UseSelectable = true;
             this.rbt7.UseStyleColors = true;
-            this.rbt7.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt7.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt11
             // 
@@ -201,11 +212,11 @@
             this.rbt11.Location = new System.Drawing.Point(69, 243);
             this.rbt11.Name = "rbt11";
             this.rbt11.Size = new System.Drawing.Size(49, 15);
-            this.rbt11.TabIndex = 7;
+            this.rbt11.TabIndex = 11;
             this.rbt11.Text = "%0%";
             this.rbt11.UseSelectable = true;
             this.rbt11.UseStyleColors = true;
-            this.rbt11.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt11.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt10
             // 
@@ -213,11 +224,11 @@
             this.rbt10.Location = new System.Drawing.Point(3, 243);
             this.rbt10.Name = "rbt10";
             this.rbt10.Size = new System.Drawing.Size(49, 15);
-            this.rbt10.TabIndex = 8;
+            this.rbt10.TabIndex = 10;
             this.rbt10.Text = "%0%";
             this.rbt10.UseSelectable = true;
             this.rbt10.UseStyleColors = true;
-            this.rbt10.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt10.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt6
             // 
@@ -225,11 +236,11 @@
             this.rbt6.Location = new System.Drawing.Point(69, 156);
             this.rbt6.Name = "rbt6";
             this.rbt6.Size = new System.Drawing.Size(49, 15);
-            this.rbt6.TabIndex = 7;
+            this.rbt6.TabIndex = 6;
             this.rbt6.Text = "%0%";
             this.rbt6.UseSelectable = true;
             this.rbt6.UseStyleColors = true;
-            this.rbt6.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt6.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt5
             // 
@@ -237,23 +248,25 @@
             this.rbt5.Location = new System.Drawing.Point(3, 156);
             this.rbt5.Name = "rbt5";
             this.rbt5.Size = new System.Drawing.Size(49, 15);
-            this.rbt5.TabIndex = 8;
+            this.rbt5.TabIndex = 5;
             this.rbt5.Text = "%0%";
             this.rbt5.UseSelectable = true;
             this.rbt5.UseStyleColors = true;
-            this.rbt5.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt5.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt4
             // 
             this.rbt4.AutoSize = true;
+            this.rbt4.Checked = true;
             this.rbt4.Location = new System.Drawing.Point(267, 69);
             this.rbt4.Name = "rbt4";
             this.rbt4.Size = new System.Drawing.Size(49, 15);
-            this.rbt4.TabIndex = 3;
+            this.rbt4.TabIndex = 4;
+            this.rbt4.TabStop = true;
             this.rbt4.Text = "%0%";
             this.rbt4.UseSelectable = true;
             this.rbt4.UseStyleColors = true;
-            this.rbt4.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt4.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt3
             // 
@@ -265,7 +278,7 @@
             this.rbt3.Text = "%0%";
             this.rbt3.UseSelectable = true;
             this.rbt3.UseStyleColors = true;
-            this.rbt3.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt3.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt2
             // 
@@ -273,11 +286,11 @@
             this.rbt2.Location = new System.Drawing.Point(135, 69);
             this.rbt2.Name = "rbt2";
             this.rbt2.Size = new System.Drawing.Size(49, 15);
-            this.rbt2.TabIndex = 3;
+            this.rbt2.TabIndex = 2;
             this.rbt2.Text = "%0%";
             this.rbt2.UseSelectable = true;
             this.rbt2.UseStyleColors = true;
-            this.rbt2.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt2.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt1
             // 
@@ -285,25 +298,23 @@
             this.rbt1.Location = new System.Drawing.Point(69, 69);
             this.rbt1.Name = "rbt1";
             this.rbt1.Size = new System.Drawing.Size(49, 15);
-            this.rbt1.TabIndex = 3;
+            this.rbt1.TabIndex = 1;
             this.rbt1.Text = "%0%";
             this.rbt1.UseSelectable = true;
             this.rbt1.UseStyleColors = true;
-            this.rbt1.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt1.Click += new System.EventHandler(this.MudarCores);
             // 
             // rbt0
             // 
             this.rbt0.AutoSize = true;
-            this.rbt0.Checked = true;
             this.rbt0.Location = new System.Drawing.Point(3, 69);
             this.rbt0.Name = "rbt0";
             this.rbt0.Size = new System.Drawing.Size(49, 15);
             this.rbt0.TabIndex = 3;
-            this.rbt0.TabStop = true;
             this.rbt0.Text = "%0%";
             this.rbt0.UseSelectable = true;
             this.rbt0.UseStyleColors = true;
-            this.rbt0.Click += new System.EventHandler(this.MudarCorProgressBar);
+            this.rbt0.Click += new System.EventHandler(this.MudarCores);
             // 
             // metroTile14
             // 
@@ -355,7 +366,7 @@
             this.metroTile0.Location = new System.Drawing.Point(3, 3);
             this.metroTile0.Name = "metroTile0";
             this.metroTile0.Size = new System.Drawing.Size(60, 60);
-            this.metroTile0.TabIndex = 2;
+            this.metroTile0.TabIndex = 0;
             this.metroTile0.Text = "%0%";
             this.metroTile0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile0.UseSelectable = true;
@@ -477,49 +488,43 @@
             this.mps0.Name = "mps0";
             this.mps0.Size = new System.Drawing.Size(50, 50);
             this.mps0.TabIndex = 9;
+            this.mps0.TabStop = false;
+            this.mps0.Tag = "4";
             this.mps0.UseSelectable = true;
             this.mps0.Value = 25;
             // 
-            // metroToggle_Fundo
+            // mtl_Backgroud
             // 
-            this.metroToggle_Fundo.DisplayStatus = false;
-            this.metroToggle_Fundo.Location = new System.Drawing.Point(290, 41);
-            this.metroToggle_Fundo.Name = "metroToggle_Fundo";
-            this.metroToggle_Fundo.Size = new System.Drawing.Size(60, 16);
-            this.metroToggle_Fundo.TabIndex = 10;
-            this.metroToggle_Fundo.Text = "Off";
-            this.metroToggle_Fundo.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroToggle_Fundo.UseSelectable = true;
-            this.metroToggle_Fundo.CheckedChanged += new System.EventHandler(this.metroToggle_Fundo_CheckedChanged);
+            this.mtl_Backgroud.DisplayStatus = false;
+            this.mtl_Backgroud.Location = new System.Drawing.Point(290, 41);
+            this.mtl_Backgroud.Name = "mtl_Backgroud";
+            this.mtl_Backgroud.Size = new System.Drawing.Size(60, 16);
+            this.mtl_Backgroud.TabIndex = 0;
+            this.mtl_Backgroud.TabStop = false;
+            this.mtl_Backgroud.Tag = "1";
+            this.mtl_Backgroud.Text = "Off";
+            this.mtl_Backgroud.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.mtl_Backgroud.UseSelectable = true;
+            this.mtl_Backgroud.CheckedChanged += new System.EventHandler(this.metroToggle_Fundo_CheckedChanged);
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.Location = new System.Drawing.Point(171, 264);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 9;
-            this.btnSalvar.Text = "%&Salvar%";
-            this.btnSalvar.UseSelectable = true;
-            // 
-            // frmColors
+            // frmColor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 363);
-            this.ControlBox = false;
-            this.Controls.Add(this.metroToggle_Fundo);
+            this.Controls.Add(this.mtl_Backgroud);
             this.Controls.Add(this.mps0);
             this.Controls.Add(this.metroPanelColor);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
-            this.Name = "frmColors";
+            this.Name = "frmColor";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "%frmColors%";
+            this.Tag = "";
+            this.Text = "%frmColor%";
             this.metroPanelColor.ResumeLayout(false);
             this.metroPanelColor.PerformLayout();
             this.ResumeLayout(false);
@@ -561,7 +566,7 @@
         private MetroFramework.Controls.MetroRadioButton rbt6;
         private MetroFramework.Controls.MetroRadioButton rbt5;
         private MetroFramework.Controls.MetroProgressSpinner mps0;
-        private MetroFramework.Controls.MetroToggle metroToggle_Fundo;
+        private MetroFramework.Controls.MetroToggle mtl_Backgroud;
         private MetroFramework.Controls.MetroButton btnSalvar;
     }
 }

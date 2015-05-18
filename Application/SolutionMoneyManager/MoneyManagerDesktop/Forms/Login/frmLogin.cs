@@ -44,15 +44,13 @@ namespace MoneyManagerDesktop
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmColors f = new frmColors();
-            f.ShowDialog();
+            this.Close();
         }
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
         {
             MetroFramework.Components.MetroStyleManager metroStyleManager = new MetroFramework.Components.MetroStyleManager();
             metroStyleManager.Owner = (this);
             metroStyleManager.Theme = metroStyleManager.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-            
             this.Theme = this.Theme == MetroFramework.MetroThemeStyle.Light ? MetroFramework.MetroThemeStyle.Dark : MetroFramework.MetroThemeStyle.Light;
             metroProgressSpinner.Theme = this.Theme;
             metroTabControl.Theme = this.Theme;
@@ -60,7 +58,6 @@ namespace MoneyManagerDesktop
             txt_Login.Theme = this.Theme;
             txt_Password.Theme = this.Theme;
             btnLogin.Theme = this.Theme;
-
             this.Refresh();
         }
         private void metroButton1_Click(object sender, EventArgs e)

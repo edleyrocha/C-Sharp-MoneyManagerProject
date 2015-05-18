@@ -15,6 +15,7 @@ namespace MoneyManagerDesktop
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Globalization;
     using System.Data;
     using System.Drawing;
     using System.Linq;
@@ -23,9 +24,9 @@ namespace MoneyManagerDesktop
     using MetroFramework.Forms;
     using System.Windows.Forms;
     #endregion
-    public partial class frmColors : MetroForm
+    public partial class frmColor : MetroForm
     {
-        public frmColors()
+        public frmColor()
         {
             InitializeComponent();
             SetConfigStartColors();
@@ -52,6 +53,7 @@ namespace MoneyManagerDesktop
             NameColors.Add(Convert.ToString(MetroColorStyle.Purple));       //12
             NameColors.Add(Convert.ToString(MetroColorStyle.Red));          //13
             NameColors.Add(Convert.ToString(MetroColorStyle.Yellow));       //14
+
             for (int item = 0; item < NameColors.Count; item++)
             {
                 switch (item)
@@ -202,14 +204,11 @@ namespace MoneyManagerDesktop
             };
         }
 
-        private void metroButton_Close_Click(object sender, EventArgs e)
+        private void MudarCores(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void MudarCorProgressBar(object sender, EventArgs e)
-        {
+            // SEND BUTTON ID
             MetroFramework.Controls.MetroRadioButton rbt = sender as MetroFramework.Controls.MetroRadioButton;
+            // USE BUTTON TAG
             int rbtTag = (int.Parse(rbt.Tag.ToString()));
             switch (rbtTag)
             {
@@ -293,7 +292,8 @@ namespace MoneyManagerDesktop
                         break;
                     };
             };
-            mps0.Style = this.Style;
+            this.mps0.Tag = rbt.Tag;
+            this.mps0.Style = this.Style;
             this.Refresh();
         }
 
@@ -302,17 +302,19 @@ namespace MoneyManagerDesktop
             if (this.Theme == MetroThemeStyle.Dark)
             {
                 this.Theme = MetroThemeStyle.Light;
+                this.mtl_Backgroud.Tag = ("1");
             }
             else if (this.Theme == MetroThemeStyle.Light)
             {
                 this.Theme = MetroThemeStyle.Dark;
+                this.mtl_Backgroud.Tag = ("2");
             }
+            mps0.Theme = this.Theme;
+            metroPanelColor.Theme = this.Theme;
+
             //btn
             btnClose.Theme = this.Theme;
             btnSalvar.Theme = this.Theme;
-
-            mps0.Theme = this.Theme;
-            metroPanelColor.Theme = this.Theme;
             //rbt
             rbt0.Theme = this.Theme;
             rbt1.Theme = this.Theme;
@@ -330,6 +332,45 @@ namespace MoneyManagerDesktop
             rbt13.Theme = this.Theme;
             rbt14.Theme = this.Theme;
             this.Refresh();
+        }
+
+        private void metroButton_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            String themeID = ("");
+            themeID = ((String)this.mtl_Backgroud.Tag);
+            themeID = MetroThemeStyle.Light == ((MetroThemeStyle)int.Parse(themeID)) ? MetroThemeStyle.Light.ToString() : MetroThemeStyle.Dark.ToString();
+           
+            String colorID = ("");
+            colorID = ((String)this.mps0.Tag);
+            colorID = ((MetroColorStyle)int.Parse(colorID)).ToString();
+
+            String msg_Text = string.Format("\r\tFundo:\t{0}" +
+                                           "\r\tEstilo:\t{1}" +
+                                           "\r\r\t\tDeseja Salvar esta Cor Selecionada?", themeID, colorID);
+           
+            String msg_Title = (this.Text);
+        
+            MessageBoxButtons msg_Buttons = MessageBoxButtons.YesNo;
+            MessageBoxIcon msg_Icon = MessageBoxIcon.None;
+            MessageBoxDefaultButton msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
+            DialogResult msgResult = MetroMessageBox.Show(this, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
+            if (msgResult == DialogResult.Yes)
+            {
+                colorID = ("");
+                themeID = ("");
+                colorID = ((String)this.mps0.Tag);
+                themeID = ((String)this.mtl_Backgroud.Tag);
+                AppConfigXML appConfigXML = new AppConfigXML();
+                appConfigXML.SetAppConfigFileConnectionsString("ThemeColorID", themeID);
+                appConfigXML.SetAppConfigFileConnectionsString("StyleColorID", colorID);
+                this.Close();
+            };
+
         }
     }
 }

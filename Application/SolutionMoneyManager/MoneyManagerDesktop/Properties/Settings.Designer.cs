@@ -7,33 +7,55 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-//------------------------------------------------------------------------------
-//
-// <git hub="https://github.com/edleyrocha">
-//      GitHub Repositories
-// </git>
-//
-// <mail address ="edleyrocha@hotmail.com">
-//      Developer Email.
-// </mail>
-//
-//------------------------------------------------------------------------------
-namespace MoneyManagerDesktop.Properties
-{
 
-
+namespace MoneyManagerDesktop.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string StyleColorID {
+            get {
+                return ((string)(this["StyleColorID"]));
+            }
+            set {
+                this["StyleColorID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public string ThemeColorID {
+            get {
+                return ((string)(this["ThemeColorID"]));
+            }
+            set {
+                this["ThemeColorID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SQLStringConnection {
+            get {
+                return ((string)(this["SQLStringConnection"]));
+            }
+            set {
+                this["SQLStringConnection"] = value;
             }
         }
     }

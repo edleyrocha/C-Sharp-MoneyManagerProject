@@ -17,12 +17,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MoneyManagerDesktop")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Money Manager Desktop")]
+[assembly: AssemblyDescription("Sistema para Gestao de Pagamentos\n-Contas\n-Relatorios\n edleyrocha@hotmail.com")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MoneyManagerDesktop")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCompany("EAH Apps")]
+[assembly: AssemblyProduct("Money Manager Desktop.")]
+[assembly: AssemblyCopyright("Copyright ©  2015.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
