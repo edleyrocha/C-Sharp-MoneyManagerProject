@@ -56,12 +56,6 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>MetroFramework\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Data.ConnectionUI">
-      <HintPath>ConnectionDialog\Microsoft.Data.ConnectionUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.ConnectionUI.Dialog">
-      <HintPath>ConnectionDialog\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -236,6 +230,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\db_add72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectionUIDialog\Microsoft.Data.ConnectionUI.Dialog.csproj">
+      <Project>{05c97f8d-b7cf-4cab-b81c-0994a70d90ca}</Project>
+      <Name>Microsoft.Data.ConnectionUI.Dialog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
