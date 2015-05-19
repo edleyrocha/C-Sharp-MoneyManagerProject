@@ -34,26 +34,32 @@ namespace MoneyManagerDesktop
 
         public void SetConfigStartMainBase()
         {
+            //frm
             this.Text = ("Money Manager");
-
+            this.WindowState = FormWindowState.Maximized;
+            this.ptbMoney.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.coins48;
             //mnu
+            this.mnuEntries.Text = ("&Cadastros");
+            this.mnuClose.Text = ("&Sair");
+            this.mnuClose.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.exit16;
+            this.mnuUsers.Text = ("Usuario");
             this.mnuConfig.Text = ("&Configurações");
             this.mnuColors.Text = ("&Cores");
             this.mnuDataBase.Text = ("&Banco De Dados");
             this.btnHelp.Text = ("&Ajuda");
             this.mnuAbout.Text = ("&Sobre");
 
-            this.WindowState = FormWindowState.Maximized;
-
-            ptbMoney.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.coins48;
-            mnuSair.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.exit16;
-
             frmLogin f = new frmLogin();
             f.ShowDialog();
-
         }
 
-        private void mnuSair_Click(object sender, EventArgs e)
+        private void mnuUsers_Click(object sender, EventArgs e)
+        {
+            frmUsers fuser = new frmUsers();
+            fuser.ShowDialog();
+        }
+
+        private void mnuClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -66,8 +72,8 @@ namespace MoneyManagerDesktop
 
         private void mnuAbout_Click(object sender, EventArgs e)
         {
-            frmAbout f = new frmAbout();
-            f.ShowDialog();
+            frmAbout fabout = new frmAbout();
+            fabout.ShowDialog();
         }
 
         private void frmMainBase_FormClosing(object sender, FormClosingEventArgs e)
@@ -94,5 +100,7 @@ namespace MoneyManagerDesktop
             frmConnection f = new frmConnection();
             f.ShowDialog();
         }
+
+
     }
 }

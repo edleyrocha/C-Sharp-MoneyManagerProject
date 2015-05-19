@@ -1,6 +1,6 @@
 ﻿namespace MoneyManagerDesktop
 {
-    partial class frmUser
+    partial class frmUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,20 @@
         {
             this.SuspendLayout();
             // 
-            // frmUser
+            // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 367);
-            this.Name = "frmUser";
+            this.ClientSize = new System.Drawing.Size(536, 455);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Movable = false;
+            this.Name = "frmUsers";
+            this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "%frmUser%";
+            this.Text = "%frmUsers%";
             this.ResumeLayout(false);
 
         }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.btnClose = new MetroFramework.Controls.MetroButton();
-            this.textBoxSource = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxProvider = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxString = new MetroFramework.Controls.MetroTextBox();
+            this.txtBoxSource = new MetroFramework.Controls.MetroTextBox();
+            this.txtBoxProvider = new MetroFramework.Controls.MetroTextBox();
+            this.txtBoxString = new MetroFramework.Controls.MetroTextBox();
             this.btnNovo = new MetroFramework.Controls.MetroButton();
             this.btnLoad = new MetroFramework.Controls.MetroButton();
             this.pbxDataBaseLogo = new System.Windows.Forms.PictureBox();
@@ -49,50 +49,50 @@
             this.btnClose.UseSelectable = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // textBoxSource
+            // txtBoxSource
             // 
-            this.textBoxSource.Lines = new string[] {
-        "metroTextBox1"};
-            this.textBoxSource.Location = new System.Drawing.Point(23, 63);
-            this.textBoxSource.MaxLength = 32767;
-            this.textBoxSource.Name = "textBoxSource";
-            this.textBoxSource.PasswordChar = '\0';
-            this.textBoxSource.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxSource.SelectedText = "";
-            this.textBoxSource.Size = new System.Drawing.Size(307, 23);
-            this.textBoxSource.TabIndex = 0;
-            this.textBoxSource.Text = "metroTextBox1";
-            this.textBoxSource.UseSelectable = true;
+            this.txtBoxSource.Lines = new string[] {
+        "%txtBoxSource%"};
+            this.txtBoxSource.Location = new System.Drawing.Point(23, 63);
+            this.txtBoxSource.MaxLength = 32767;
+            this.txtBoxSource.Name = "txtBoxSource";
+            this.txtBoxSource.PasswordChar = '\0';
+            this.txtBoxSource.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBoxSource.SelectedText = "";
+            this.txtBoxSource.Size = new System.Drawing.Size(307, 23);
+            this.txtBoxSource.TabIndex = 0;
+            this.txtBoxSource.Text = "%txtBoxSource%";
+            this.txtBoxSource.UseSelectable = true;
             // 
-            // textBoxProvider
+            // txtBoxProvider
             // 
-            this.textBoxProvider.Lines = new string[] {
-        "metroTextBox1"};
-            this.textBoxProvider.Location = new System.Drawing.Point(23, 92);
-            this.textBoxProvider.MaxLength = 32767;
-            this.textBoxProvider.Name = "textBoxProvider";
-            this.textBoxProvider.PasswordChar = '\0';
-            this.textBoxProvider.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxProvider.SelectedText = "";
-            this.textBoxProvider.Size = new System.Drawing.Size(307, 23);
-            this.textBoxProvider.TabIndex = 1;
-            this.textBoxProvider.Text = "metroTextBox1";
-            this.textBoxProvider.UseSelectable = true;
+            this.txtBoxProvider.Lines = new string[] {
+        "%txtBoxProvider%"};
+            this.txtBoxProvider.Location = new System.Drawing.Point(23, 92);
+            this.txtBoxProvider.MaxLength = 32767;
+            this.txtBoxProvider.Name = "txtBoxProvider";
+            this.txtBoxProvider.PasswordChar = '\0';
+            this.txtBoxProvider.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBoxProvider.SelectedText = "";
+            this.txtBoxProvider.Size = new System.Drawing.Size(307, 23);
+            this.txtBoxProvider.TabIndex = 1;
+            this.txtBoxProvider.Text = "%txtBoxProvider%";
+            this.txtBoxProvider.UseSelectable = true;
             // 
-            // textBoxString
+            // txtBoxString
             // 
-            this.textBoxString.Lines = new string[] {
-        "metroTextBox1"};
-            this.textBoxString.Location = new System.Drawing.Point(23, 121);
-            this.textBoxString.MaxLength = 32767;
-            this.textBoxString.Name = "textBoxString";
-            this.textBoxString.PasswordChar = '\0';
-            this.textBoxString.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxString.SelectedText = "";
-            this.textBoxString.Size = new System.Drawing.Size(307, 50);
-            this.textBoxString.TabIndex = 2;
-            this.textBoxString.Text = "metroTextBox1";
-            this.textBoxString.UseSelectable = true;
+            this.txtBoxString.Lines = new string[] {
+        "%txtBoxString%"};
+            this.txtBoxString.Location = new System.Drawing.Point(23, 121);
+            this.txtBoxString.MaxLength = 32767;
+            this.txtBoxString.Name = "txtBoxString";
+            this.txtBoxString.PasswordChar = '\0';
+            this.txtBoxString.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBoxString.SelectedText = "";
+            this.txtBoxString.Size = new System.Drawing.Size(307, 50);
+            this.txtBoxString.TabIndex = 2;
+            this.txtBoxString.Text = "%txtBoxString%";
+            this.txtBoxString.UseSelectable = true;
             // 
             // btnNovo
             // 
@@ -141,9 +141,9 @@
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.textBoxString);
-            this.Controls.Add(this.textBoxProvider);
-            this.Controls.Add(this.textBoxSource);
+            this.Controls.Add(this.txtBoxString);
+            this.Controls.Add(this.txtBoxProvider);
+            this.Controls.Add(this.txtBoxSource);
             this.Controls.Add(this.btnClose);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -162,9 +162,9 @@
         #endregion
 
         private MetroFramework.Controls.MetroButton btnClose;
-        private MetroFramework.Controls.MetroTextBox textBoxSource;
-        private MetroFramework.Controls.MetroTextBox textBoxProvider;
-        private MetroFramework.Controls.MetroTextBox textBoxString;
+        private MetroFramework.Controls.MetroTextBox txtBoxSource;
+        private MetroFramework.Controls.MetroTextBox txtBoxProvider;
+        private MetroFramework.Controls.MetroTextBox txtBoxString;
         private MetroFramework.Controls.MetroButton btnNovo;
         private MetroFramework.Controls.MetroButton btnLoad;
         private System.Windows.Forms.PictureBox pbxDataBaseLogo;

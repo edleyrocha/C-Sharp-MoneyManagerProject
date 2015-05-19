@@ -22,16 +22,16 @@ namespace MoneyManagerDesktop
     using System.Windows.Forms;
     using MetroFramework.Forms;
     #endregion
-    public partial class frmUser : MetroForm
+    public partial class frmUsers : MetroForm
     {
-        public frmUser()
+        public frmUsers()
         {
             InitializeComponent();
             SetConfigStartUser();
         }
          public void SetConfigStartUser()
         {
-            this.Text = ("Usuario");
+            this.Text = ("Usuarios");
         }
     }
 }
