@@ -35,14 +35,14 @@ namespace MoneyManagerDesktop
          public void SetConfigStartConnections()
         {
             this.Text = ("Data Base");
-            txtBoxSource.Text = "";
-            txtBoxProvider.Text = "";
-            txtBoxString.Text = "";
+            this.txtBoxSource.Text = "";
+            this.txtBoxProvider.Text = "";
+            this.txtBoxString.Text = "";
             this.btnLoad.Text = ("Carregar");
             this.btnNovo.Text = ("Novo");
             this.btnTest.Text = ("Testar");
             this.btnClose.Text = ("Sair");
-            pbxDataBaseLogo.Image = MoneyManagerDesktop.Forms.Connection.resConnection.db_add72;
+            this.pbxDataBaseLogo.Image = MoneyManagerDesktop.Forms.Connection.resConnection.db_add72;
         }
          private void btnClose_Click(object sender, EventArgs e)
          {
@@ -64,10 +64,10 @@ namespace MoneyManagerDesktop
              txtBoxProvider.Text = c.GetSQLConnectionString((clsConnection.ChoiceGetSQLConnectionString)1);
              txtBoxString.Text = c.GetSQLConnectionString((clsConnection.ChoiceGetSQLConnectionString)2);
          }
-
-         private void btnTest_Click(object sender, EventArgs e)
+ 
+         private void txtBox_KeyDown(object sender, KeyEventArgs e)
          {
-
+             e.Handled = e.SuppressKeyPress = true; //No Send KeyPress
          }
     }
 }

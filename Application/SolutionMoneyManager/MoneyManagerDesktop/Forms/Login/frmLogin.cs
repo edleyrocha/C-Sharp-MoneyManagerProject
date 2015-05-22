@@ -22,11 +22,20 @@ namespace MoneyManagerDesktop
     using System.Windows.Forms;
     using MetroFramework.Forms;
     using MetroFramework;
-    using System.Resources;
-    using System.Reflection;
+    //using System.Resources;
+    //using System.Reflection;
     #endregion
     public partial class frmLogin : MetroForm
     {
+        public enum AcessLoginStatus
+        {
+            AllowedDenied = 1,
+            AllowedAccess = 2
+
+        }
+
+        public AcessLoginStatus myLoginStatus { get; set; }
+
         public frmLogin()
         {
             InitializeComponent();
@@ -35,16 +44,12 @@ namespace MoneyManagerDesktop
         public void SetConfigStartLogin()
         {
             this.Text = ("Money Manager");
-            mtpLogin.Text = ("Login");
-            txt_Login.Text = ("Usuario");
-            txt_Password.Text = ("Senha");
-            metroTile_Foto.Text = ("");
-            
+            this.mtpLogin.Text = String.Format("{0}{1}{1}{1}{1}", "Login", "                  ");
+            this.txt_Login.Text = ("Usuario");
+            this.txt_Password.Text = ("Senha");
+            this.metroTile_Foto.Text = ("");
+            this.btnLogin.Text = ("Login");
             this.Refresh();
-        }
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
         {
@@ -52,7 +57,6 @@ namespace MoneyManagerDesktop
             metroStyleManager.Owner = (this);
             metroStyleManager.Theme = metroStyleManager.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
             this.Theme = this.Theme == MetroFramework.MetroThemeStyle.Light ? MetroFramework.MetroThemeStyle.Dark : MetroFramework.MetroThemeStyle.Light;
-            metroProgressSpinner.Theme = this.Theme;
             metroTabControl.Theme = this.Theme;
             mtpLogin.Theme = this.Theme;
             txt_Login.Theme = this.Theme;
@@ -71,38 +75,70 @@ namespace MoneyManagerDesktop
             this.Refresh();
             txt_Login.Focus();
         }
-        private void metroTextBox_Clean(object sender, EventArgs e)
+        private void txt_Login_Click(object sender, EventArgs e)
         {
-            MetroFramework.Controls.MetroTextBox mtb = sender as MetroFramework.Controls.MetroTextBox;
-            switch (((string)mtb.Tag))
-            {
-                case "1": // txt_Login 1
-                    {
-                        txt_Login.Text = ("");
-                        break;
-                    };
-                case "2": // txt_Password 2
-                    {
-                        txt_Password.Text = ("");
-                        break;
-                    };
-            };
-
+            txt_Login.Text = ("");
         }
-        private void metroTextBox_EnterTab(object sender, KeyEventArgs e)
+
+        private void txt_Password_Click(object sender, EventArgs e)
+        {
+            txt_Password.Text = ("");
+        }
+        private void txt_Login_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 SendKeys.Send("{TAB}");
                 e.Handled = e.SuppressKeyPress = true;
-            }
+            };
         }
-        private void metroTextBox_Password_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_Password_KeyDown(object sender, KeyEventArgs e)
         {
-            if (txt_Password.UseSystemPasswordChar != (true))
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                SendKeys.Send("{TAB}");
+                btnLogin.PerformClick();
+                e.Handled = e.SuppressKeyPress = true;
+            };
+        }
+        private void txt_Login_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_Login.Text) || ((txt_Login.Text == ("Usuario"))))
+            {
+                txt_Login.Text = ("Usuario");
+                imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
+            }
+            else
+            {
+                imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
+            };
+        }
+        private void txt_Password_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_Password.Text) || ((txt_Password.Text == ("Senha"))))
+            {
+                txt_Password.Text = ("Senha");
+                imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
+            }
+            else
+            {
+                imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
+            };
+
+        }
+        private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txt_Password.UseSystemPasswordChar == (false))
             {
                 txt_Password.UseSystemPasswordChar = (true);
             }
+        }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            myLoginStatus = AcessLoginStatus.AllowedAccess;
+            this.Close();
+            
         }
     }
 }

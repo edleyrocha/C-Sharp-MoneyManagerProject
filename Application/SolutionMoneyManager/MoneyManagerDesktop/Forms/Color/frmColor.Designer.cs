@@ -10,7 +10,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param Name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -61,7 +61,6 @@
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile7 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
-            this.mps0 = new MetroFramework.Controls.MetroProgressSpinner();
             this.mtl_Backgroud = new MetroFramework.Controls.MetroToggle();
             this.metroPanelColor.SuspendLayout();
             this.SuspendLayout();
@@ -481,18 +480,6 @@
             this.metroTile4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile4.UseSelectable = true;
             // 
-            // mps0
-            // 
-            this.mps0.Location = new System.Drawing.Point(234, 7);
-            this.mps0.Maximum = 100;
-            this.mps0.Name = "mps0";
-            this.mps0.Size = new System.Drawing.Size(50, 50);
-            this.mps0.TabIndex = 9;
-            this.mps0.TabStop = false;
-            this.mps0.Tag = "4";
-            this.mps0.UseSelectable = true;
-            this.mps0.Value = 25;
-            // 
             // mtl_Backgroud
             // 
             this.mtl_Backgroud.DisplayStatus = false;
@@ -513,7 +500,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 363);
             this.Controls.Add(this.mtl_Backgroud);
-            this.Controls.Add(this.mps0);
             this.Controls.Add(this.metroPanelColor);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -565,7 +551,6 @@
         private MetroFramework.Controls.MetroRadioButton rbt10;
         private MetroFramework.Controls.MetroRadioButton rbt6;
         private MetroFramework.Controls.MetroRadioButton rbt5;
-        private MetroFramework.Controls.MetroProgressSpinner mps0;
         private MetroFramework.Controls.MetroToggle mtl_Backgroud;
         private MetroFramework.Controls.MetroButton btnSalvar;
     }

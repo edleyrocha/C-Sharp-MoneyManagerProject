@@ -11,7 +11,7 @@
 //------------------------------------------------------------------------------
 namespace MoneyManagerDesktop
 {
-    #region ---> ( Using )
+    #region ---> (Using)
     using MetroFramework;
     using Microsoft.Data.ConnectionUI;
     using System;
@@ -88,8 +88,7 @@ namespace MoneyManagerDesktop
                 DialogResult msgResult = MetroMessageBox.Show(Form.ActiveForm, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
                 if (msgResult == DialogResult.Yes)
                 {
-                    AppConfigXML appConfigXML = new AppConfigXML();
-                    appConfigXML.SetAppConfigFileConnectionsString("SQLStringConnection", dcd.ConnectionString);
+                   appConfigXML.SetAppConfigFileConnectionsString("SQLStringConnection", dcd.ConnectionString);
                    returnStrigOfBool = Boolean.TrueString;
                 };
             };

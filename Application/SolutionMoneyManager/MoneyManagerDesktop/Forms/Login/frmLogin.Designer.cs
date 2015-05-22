@@ -10,7 +10,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param Name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -29,41 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.btnLogin = new MetroFramework.Controls.MetroButton();
-            this.metroProgressSpinner = new MetroFramework.Controls.MetroProgressSpinner();
             this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
-            this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
+            this.metroButton_Collor = new MetroFramework.Controls.MetroButton();
             this.mtpLogin = new MetroFramework.Controls.MetroTabPage();
+            this.imgStatusPassword = new System.Windows.Forms.PictureBox();
+            this.imgStatusLogin = new System.Windows.Forms.PictureBox();
             this.metroTile_Foto = new MetroFramework.Controls.MetroTile();
             this.txt_Login = new MetroFramework.Controls.MetroTextBox();
             this.txt_Password = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton_Collor = new MetroFramework.Controls.MetroButton();
-            this.metroTabControl.SuspendLayout();
+            this.btnLogin = new MetroFramework.Controls.MetroButton();
+            this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.mtpLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusLogin)).BeginInit();
+            this.metroTabControl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Location = new System.Drawing.Point(230, 71);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogin.UseSelectable = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // metroProgressSpinner
-            // 
-            this.metroProgressSpinner.Location = new System.Drawing.Point(10, 29);
-            this.metroProgressSpinner.Maximum = 100;
-            this.metroProgressSpinner.Name = "metroProgressSpinner";
-            this.metroProgressSpinner.Size = new System.Drawing.Size(16, 16);
-            this.metroProgressSpinner.TabIndex = 1;
-            this.metroProgressSpinner.UseSelectable = true;
-            this.metroProgressSpinner.Value = 25;
             // 
             // metroToggle1
             // 
@@ -79,18 +59,22 @@
             this.metroToggle1.Visible = false;
             this.metroToggle1.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
             // 
-            // metroTabControl
+            // metroButton_Collor
             // 
-            this.metroTabControl.Controls.Add(this.mtpLogin);
-            this.metroTabControl.Location = new System.Drawing.Point(10, 63);
-            this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.SelectedIndex = 0;
-            this.metroTabControl.Size = new System.Drawing.Size(317, 141);
-            this.metroTabControl.TabIndex = 9;
-            this.metroTabControl.UseSelectable = true;
+            this.metroButton_Collor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButton_Collor.BackgroundImage")));
+            this.metroButton_Collor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButton_Collor.Location = new System.Drawing.Point(220, 7);
+            this.metroButton_Collor.Name = "metroButton_Collor";
+            this.metroButton_Collor.Size = new System.Drawing.Size(31, 17);
+            this.metroButton_Collor.TabIndex = 4;
+            this.metroButton_Collor.UseSelectable = true;
+            this.metroButton_Collor.Visible = false;
+            this.metroButton_Collor.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // mtpLogin
             // 
+            this.mtpLogin.Controls.Add(this.imgStatusPassword);
+            this.mtpLogin.Controls.Add(this.imgStatusLogin);
             this.mtpLogin.Controls.Add(this.metroTile_Foto);
             this.mtpLogin.Controls.Add(this.txt_Login);
             this.mtpLogin.Controls.Add(this.txt_Password);
@@ -100,12 +84,30 @@
             this.mtpLogin.HorizontalScrollbarSize = 10;
             this.mtpLogin.Location = new System.Drawing.Point(4, 38);
             this.mtpLogin.Name = "mtpLogin";
-            this.mtpLogin.Size = new System.Drawing.Size(309, 99);
+            this.mtpLogin.Size = new System.Drawing.Size(328, 99);
             this.mtpLogin.TabIndex = 0;
             this.mtpLogin.Text = "%Login%";
             this.mtpLogin.VerticalScrollbarBarColor = true;
             this.mtpLogin.VerticalScrollbarHighlightOnWheel = false;
             this.mtpLogin.VerticalScrollbarSize = 10;
+            // 
+            // imgStatusPassword
+            // 
+            this.imgStatusPassword.BackColor = System.Drawing.Color.Transparent;
+            this.imgStatusPassword.Location = new System.Drawing.Point(311, 42);
+            this.imgStatusPassword.Name = "imgStatusPassword";
+            this.imgStatusPassword.Size = new System.Drawing.Size(16, 16);
+            this.imgStatusPassword.TabIndex = 10;
+            this.imgStatusPassword.TabStop = false;
+            // 
+            // imgStatusLogin
+            // 
+            this.imgStatusLogin.BackColor = System.Drawing.Color.Transparent;
+            this.imgStatusLogin.Location = new System.Drawing.Point(311, 13);
+            this.imgStatusLogin.Name = "imgStatusLogin";
+            this.imgStatusLogin.Size = new System.Drawing.Size(16, 16);
+            this.imgStatusLogin.TabIndex = 10;
+            this.imgStatusLogin.TabStop = false;
             // 
             // metroTile_Foto
             // 
@@ -134,8 +136,9 @@
             this.txt_Login.Tag = "1";
             this.txt_Login.Text = "%txt_Login%";
             this.txt_Login.UseSelectable = true;
-            this.txt_Login.Click += new System.EventHandler(this.metroTextBox_Clean);
-            this.txt_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTextBox_EnterTab);
+            this.txt_Login.Click += new System.EventHandler(this.txt_Login_Click);
+            this.txt_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Login_KeyDown);
+            this.txt_Login.Leave += new System.EventHandler(this.txt_Login_Leave);
             // 
             // txt_Password
             // 
@@ -152,29 +155,40 @@
             this.txt_Password.Tag = "2";
             this.txt_Password.Text = "%txt_Password%";
             this.txt_Password.UseSelectable = true;
-            this.txt_Password.Click += new System.EventHandler(this.metroTextBox_Clean);
-            this.txt_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTextBox_EnterTab);
-            this.txt_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox_Password_KeyPress);
+            this.txt_Password.Click += new System.EventHandler(this.txt_Password_Click);
+            this.txt_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Password_KeyDown);
+            this.txt_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Password_KeyPress);
+            this.txt_Password.Leave += new System.EventHandler(this.txt_Password_Leave);
             // 
-            // metroButton_Collor
+            // btnLogin
             // 
-            this.metroButton_Collor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButton_Collor.BackgroundImage")));
-            this.metroButton_Collor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton_Collor.Location = new System.Drawing.Point(220, 7);
-            this.metroButton_Collor.Name = "metroButton_Collor";
-            this.metroButton_Collor.Size = new System.Drawing.Size(31, 17);
-            this.metroButton_Collor.TabIndex = 4;
-            this.metroButton_Collor.UseSelectable = true;
-            this.metroButton_Collor.Visible = false;
-            this.metroButton_Collor.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.Location = new System.Drawing.Point(234, 71);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "%btnLogin%";
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogin.UseSelectable = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // metroTabControl
+            // 
+            this.metroTabControl.Controls.Add(this.mtpLogin);
+            this.metroTabControl.Location = new System.Drawing.Point(10, 63);
+            this.metroTabControl.Name = "metroTabControl";
+            this.metroTabControl.SelectedIndex = 0;
+            this.metroTabControl.Size = new System.Drawing.Size(336, 141);
+            this.metroTabControl.TabIndex = 9;
+            this.metroTabControl.UseSelectable = true;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 214);
+            this.ClientSize = new System.Drawing.Size(361, 214);
             this.Controls.Add(this.metroTabControl);
-            this.Controls.Add(this.metroProgressSpinner);
             this.Controls.Add(this.metroButton_Collor);
             this.Controls.Add(this.metroToggle1);
             this.MaximizeBox = false;
@@ -184,8 +198,10 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Text = "%MoneyManager%";
-            this.metroTabControl.ResumeLayout(false);
             this.mtpLogin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusLogin)).EndInit();
+            this.metroTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,14 +209,15 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroButton btnLogin;
-        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner;
         private MetroFramework.Controls.MetroToggle metroToggle1;
-        private MetroFramework.Controls.MetroTabControl metroTabControl;
+        private MetroFramework.Controls.MetroButton metroButton_Collor;
         private MetroFramework.Controls.MetroTabPage mtpLogin;
+        private MetroFramework.Controls.MetroTile metroTile_Foto;
         private MetroFramework.Controls.MetroTextBox txt_Login;
         private MetroFramework.Controls.MetroTextBox txt_Password;
-        private MetroFramework.Controls.MetroButton metroButton_Collor;
-        private MetroFramework.Controls.MetroTile metroTile_Foto;
+        private MetroFramework.Controls.MetroButton btnLogin;
+        private MetroFramework.Controls.MetroTabControl metroTabControl;
+        private System.Windows.Forms.PictureBox imgStatusLogin;
+        private System.Windows.Forms.PictureBox imgStatusPassword;
     }
 }

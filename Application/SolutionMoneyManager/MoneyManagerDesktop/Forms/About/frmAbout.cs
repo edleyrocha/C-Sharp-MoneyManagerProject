@@ -12,16 +12,10 @@
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Windows.Forms;
     using MetroFramework.Forms;
+    using System;
     using System.Reflection;
+    using System.Windows.Forms;
     #endregion
     public partial class frmAbout : MetroForm
     {
@@ -120,21 +114,19 @@ namespace MoneyManagerDesktop
             this.lbl_Ringht.Text = AssemblyCopyright;
             this.lbl_Company.Text = AssemblyCompany;
             this.rtbDescription.Text = AssemblyDescription;
-            pictureBox1.Image = MoneyManagerDesktop.Forms.About.resAbout.line_chart64;
-            pictureBox2.Image = MoneyManagerDesktop.Forms.About.resAbout.pie_chart64;
-            pictureBox3.Image = MoneyManagerDesktop.Forms.About.resAbout.bar_chart64;
-        }
-
-
-
-        private void frmAbout_Load(object sender, EventArgs e)
-        {
-
+            this.pictureBox1.Image = MoneyManagerDesktop.Forms.About.resAbout.line_chart64;
+            this.pictureBox2.Image = MoneyManagerDesktop.Forms.About.resAbout.pie_chart64;
+            this.pictureBox3.Image = MoneyManagerDesktop.Forms.About.resAbout.bar_chart64;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rtbDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = (char)Keys.None; //ReadOnly ComboBox
         }
     }
 }

@@ -27,7 +27,18 @@ namespace MoneyManagerDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainBase());
+            
+            // my Login
+            frmLogin fLogin = new frmLogin();
+            fLogin.ShowDialog();
+
+            // MyForm
+            if( (fLogin.myLoginStatus) == (frmLogin.AcessLoginStatus.AllowedAccess))
+            {
+                Application.Run(new frmMainMaster());
+            }
+        
+           
         }
     }
 }

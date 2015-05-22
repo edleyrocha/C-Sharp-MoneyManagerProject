@@ -23,9 +23,9 @@ namespace MoneyManagerDesktop
     using MetroFramework.Forms;
     using MetroFramework;
     #endregion
-    public partial class frmMainBase : MetroForm
+    public partial class frmMainMaster : MetroForm
     {
-        public frmMainBase()
+        public frmMainMaster()
         {
             InitializeComponent();
             SetConfigStartMainBase();
@@ -40,67 +40,74 @@ namespace MoneyManagerDesktop
             this.ptbMoney.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.coins48;
             //mnu
             this.mnuEntries.Text = ("&Cadastros");
+
+            this.mnuUsers.Text = ("Usuario");
+            this.mnuUsersInsert.Text = ("Novo");
+            this.mnuUsersUpdate.Text = ("Atualizar");
+            this.mnuUsersDelete.Text = ("Deletar");
+
             this.mnuClose.Text = ("&Sair");
             this.mnuClose.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.exit16;
-            this.mnuUsers.Text = ("Usuario");
+
             this.mnuConfig.Text = ("&Configurações");
             this.mnuColors.Text = ("&Cores");
             this.mnuDataBase.Text = ("&Banco De Dados");
             this.btnHelp.Text = ("&Ajuda");
             this.mnuAbout.Text = ("&Sobre");
 
-            frmLogin f = new frmLogin();
-            f.ShowDialog();
         }
 
-        private void mnuUsers_Click(object sender, EventArgs e)
+        private void mnuUsersInsert_Click(object sender, EventArgs e)
         {
-            frmUsers fuser = new frmUsers();
-            fuser.ShowDialog();
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(0)); //InsertUsers
+            fUser.ShowDialog();
         }
-
+        private void mnuUsersUpdate_Click(object sender, EventArgs e)
+        {
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(1)); //UpdateUsers
+            fUser.ShowDialog();
+        }
+        private void mnuUsersDelete_Click(object sender, EventArgs e)
+        {
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(2)); //DeleteUsers
+            fUser.ShowDialog();
+        }
         private void mnuClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void mnuColors_Click(object sender, EventArgs e)
         {
             frmColor fcolor = new frmColor();
             fcolor.ShowDialog();
         }
-
-        private void mnuAbout_Click(object sender, EventArgs e)
-        {
-            frmAbout fabout = new frmAbout();
-            fabout.ShowDialog();
-        }
-
-        private void frmMainBase_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CancelClosing();
-            e.Cancel = CancelClose;
-        }
-        private void CancelClosing()
-        {
-            String msg_Title = (this.Text);
-            String msg_Text = ("\r\r\r\rDeseja Realmente Sair?");
-            MessageBoxButtons msg_Buttons = MessageBoxButtons.YesNo;
-            MessageBoxIcon msg_Icon = MessageBoxIcon.None;
-            MessageBoxDefaultButton msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
-            DialogResult msgResult = MetroMessageBox.Show(this, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
-            if (msgResult == DialogResult.Yes)
-            {
-                CancelClose = (false);
-            };
-        }
-
         private void mnuDataBase_Click(object sender, EventArgs e)
         {
             frmConnection f = new frmConnection();
             f.ShowDialog();
         }
-
-
+        private void mnuAbout_Click(object sender, EventArgs e)
+        {
+            frmAbout fabout = new frmAbout();
+            fabout.ShowDialog();
+        }
+        private void CancelClosing()
+        {
+            String msg_Title = (this.Text + "   :)");
+            String msg_Text = ("\r\rDeseja Realmente (Sair)?");
+            MessageBoxButtons msg_Buttons = MessageBoxButtons.YesNo;
+            MessageBoxIcon msg_Icon = MessageBoxIcon.None;
+            MessageBoxDefaultButton msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
+            DialogResult diagResult = MetroMessageBox.Show(this, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
+            if (diagResult == DialogResult.Yes)
+            {
+                CancelClose = (false);
+            };
+        }
+        private void frmMainBase_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CancelClosing();
+            e.Cancel = CancelClose;
+        }
     }
 }

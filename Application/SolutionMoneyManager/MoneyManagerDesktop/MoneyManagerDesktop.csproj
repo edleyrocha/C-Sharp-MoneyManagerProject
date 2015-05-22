@@ -102,17 +102,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>resMainBase.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\frmUser.cs">
+    <Compile Include="Forms\Users\clsUser.cs" />
+    <Compile Include="Forms\Users\frmUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\frmUser.Designer.cs">
+    <Compile Include="Forms\Users\frmUser.Designer.cs">
       <DependentUpon>frmUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainBase\frmMainBase.cs">
+    <Compile Include="Forms\MainBase\frmMainMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainBase\frmMainBase.Designer.cs">
-      <DependentUpon>frmMainBase.cs</DependentUpon>
+    <Compile Include="Forms\MainBase\frmMainMaster.Designer.cs">
+      <DependentUpon>frmMainMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\About\frmAbout.cs">
       <SubType>Form</SubType>
@@ -125,6 +126,11 @@
     </Compile>
     <Compile Include="Forms\Connection\frmConnection.Designer.cs">
       <DependentUpon>frmConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\resUsers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resUsers.resx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,18 +155,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>resLogin.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainBase\frmMainBase.resx">
-      <DependentUpon>frmMainBase.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainBase\frmMainMaster.resx">
+      <DependentUpon>frmMainMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainBase\resMainBase.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>resMainBase.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\frmUser.resx">
+    <EmbeddedResource Include="Forms\Users\frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\About\frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\resUsers.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>resUsers.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -236,6 +246,12 @@
       <Project>{05c97f8d-b7cf-4cab-b81c-0994a70d90ca}</Project>
       <Name>Microsoft.Data.ConnectionUI.Dialog</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_accept16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_exclamation16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

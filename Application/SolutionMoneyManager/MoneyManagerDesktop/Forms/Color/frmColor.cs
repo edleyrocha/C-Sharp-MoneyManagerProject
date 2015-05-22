@@ -36,6 +36,7 @@ namespace MoneyManagerDesktop
             this.Text = ("Temas do Aplicativo");
             this.btnClose.Text = ("&Sair");
             this.btnSalvar.Text = ("&Salvar");
+            this.Tag = (Convert.ToString(4));
 
             List<String> NameColors = new List<String>(); //List Colors
             NameColors.Add(Convert.ToString(MetroColorStyle.Default));      //0
@@ -206,85 +207,85 @@ namespace MoneyManagerDesktop
 
         private void MudarCores(object sender, EventArgs e)
         {
-            // SEND BUTTON ID
+            // SEND BUTTON id
             MetroFramework.Controls.MetroRadioButton rbt = sender as MetroFramework.Controls.MetroRadioButton;
             // USE BUTTON TAG
-            int rbtTag = (int.Parse(rbt.Tag.ToString()));
-            switch (rbtTag)
+            int rbtMyTagID = (int.Parse(rbt.Tag.ToString()));
+            switch (rbtMyTagID)
             {
                 case 0:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 1:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 2:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 3:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 4:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 5:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     }
                 case 6:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 7:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 8:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 9:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 10:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 11:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 12:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 13:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 case 14:
                     {
-                        this.Style = (MetroColorStyle)rbtTag;
+                        this.Style = (MetroColorStyle)rbtMyTagID;
                         break;
                     };
                 default:
@@ -292,8 +293,7 @@ namespace MoneyManagerDesktop
                         break;
                     };
             };
-            this.mps0.Tag = rbt.Tag;
-            this.mps0.Style = this.Style;
+            this.Tag = rbt.Tag;
             this.Refresh();
         }
 
@@ -309,7 +309,7 @@ namespace MoneyManagerDesktop
                 this.Theme = MetroThemeStyle.Dark;
                 this.mtl_Backgroud.Tag = ("2");
             }
-            mps0.Theme = this.Theme;
+
             metroPanelColor.Theme = this.Theme;
 
             //btn
@@ -331,6 +331,7 @@ namespace MoneyManagerDesktop
             rbt12.Theme = this.Theme;
             rbt13.Theme = this.Theme;
             rbt14.Theme = this.Theme;
+
             this.Refresh();
         }
 
@@ -344,17 +345,17 @@ namespace MoneyManagerDesktop
             String themeID = ("");
             themeID = ((String)this.mtl_Backgroud.Tag);
             themeID = MetroThemeStyle.Light == ((MetroThemeStyle)int.Parse(themeID)) ? MetroThemeStyle.Light.ToString() : MetroThemeStyle.Dark.ToString();
-           
+
             String colorID = ("");
-            colorID = ((String)this.mps0.Tag);
+            colorID = ((String)this.Tag);
             colorID = ((MetroColorStyle)int.Parse(colorID)).ToString();
 
             String msg_Text = string.Format("\r\tFundo:\t{0}" +
                                            "\r\tEstilo:\t{1}" +
-                                           "\r\r\t\tDeseja Salvar esta Cor Selecionada?", themeID, colorID);
-           
+                                           "\r\rDeseja Salvar esta Cor Selecionada?", themeID, colorID);
+
             String msg_Title = (this.Text);
-        
+
             MessageBoxButtons msg_Buttons = MessageBoxButtons.YesNo;
             MessageBoxIcon msg_Icon = MessageBoxIcon.None;
             MessageBoxDefaultButton msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
@@ -363,14 +364,13 @@ namespace MoneyManagerDesktop
             {
                 colorID = ("");
                 themeID = ("");
-                colorID = ((String)this.mps0.Tag);
+                colorID = ((String)this.Tag);
                 themeID = ((String)this.mtl_Backgroud.Tag);
                 AppConfigXML appConfigXML = new AppConfigXML();
                 appConfigXML.SetAppConfigFileConnectionsString("ThemeColorID", themeID);
                 appConfigXML.SetAppConfigFileConnectionsString("StyleColorID", colorID);
                 this.Close();
             };
-
         }
     }
 }

@@ -10,7 +10,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param Name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -101,9 +101,11 @@
             // 
             this.rtbDescription.Location = new System.Drawing.Point(129, 142);
             this.rtbDescription.Name = "rtbDescription";
+            this.rtbDescription.ReadOnly = true;
             this.rtbDescription.Size = new System.Drawing.Size(219, 67);
             this.rtbDescription.TabIndex = 3;
             this.rtbDescription.Text = "%rtbDescription%";
+            this.rtbDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbDescription_KeyPress);
             // 
             // pictureBox2
             // 
@@ -144,7 +146,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "%frmAbout%";
-            this.Load += new System.EventHandler(this.frmAbout_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

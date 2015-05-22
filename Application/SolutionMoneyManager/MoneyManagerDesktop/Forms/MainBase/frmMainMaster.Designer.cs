@@ -1,6 +1,6 @@
 ﻿namespace MoneyManagerDesktop
 {
-    partial class frmMainBase
+    partial class frmMainMaster
     {
         /// <summary>
         /// Required designer variable.
@@ -10,7 +10,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param Name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainBase));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMaster));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.mnuEntries = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsers = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsersInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsersUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsersDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -56,7 +60,6 @@
             this.btnHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.ptbMoney = new System.Windows.Forms.PictureBox();
-            this.mnuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMoney)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +95,37 @@
             this.mnuEntries.Name = "mnuEntries";
             this.mnuEntries.Size = new System.Drawing.Size(99, 20);
             this.mnuEntries.Text = "%mnuEntries%";
+            // 
+            // mnuUsers
+            // 
+            this.mnuUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuUsersInsert,
+            this.mnuUsersUpdate,
+            this.mnuUsersDelete});
+            this.mnuUsers.Name = "mnuUsers";
+            this.mnuUsers.Size = new System.Drawing.Size(152, 22);
+            this.mnuUsers.Text = "%mnuUsers%";
+            // 
+            // mnuUsersInsert
+            // 
+            this.mnuUsersInsert.Name = "mnuUsersInsert";
+            this.mnuUsersInsert.Size = new System.Drawing.Size(185, 22);
+            this.mnuUsersInsert.Text = "%mnuUsersInsert%";
+            this.mnuUsersInsert.Click += new System.EventHandler(this.mnuUsersInsert_Click);
+            // 
+            // mnuUsersUpdate
+            // 
+            this.mnuUsersUpdate.Name = "mnuUsersUpdate";
+            this.mnuUsersUpdate.Size = new System.Drawing.Size(185, 22);
+            this.mnuUsersUpdate.Text = "%mnuUsersUpdate%";
+            this.mnuUsersUpdate.Click += new System.EventHandler(this.mnuUsersUpdate_Click);
+            // 
+            // mnuUsersDelete
+            // 
+            this.mnuUsersDelete.Name = "mnuUsersDelete";
+            this.mnuUsersDelete.Size = new System.Drawing.Size(185, 22);
+            this.mnuUsersDelete.Text = "%mnuUsersDelete%";
+            this.mnuUsersDelete.Click += new System.EventHandler(this.mnuUsersDelete_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -285,24 +319,17 @@
             this.ptbMoney.TabIndex = 3;
             this.ptbMoney.TabStop = false;
             // 
-            // mnuUsers
-            // 
-            this.mnuUsers.Name = "mnuUsers";
-            this.mnuUsers.Size = new System.Drawing.Size(152, 22);
-            this.mnuUsers.Text = "%mnuUsers%";
-            this.mnuUsers.Click += new System.EventHandler(this.mnuUsers_Click);
-            // 
-            // frmMainBase
+            // frmMainMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 451);
             this.Controls.Add(this.ptbMoney);
             this.Controls.Add(this.menuStrip);
-            this.Name = "frmMainBase";
+            this.Name = "frmMainMaster";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
-            this.Text = "%frmMainBase%";
+            this.Text = "%frmMainMaster%";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainBase_FormClosing);
             this.menuStrip.ResumeLayout(false);
@@ -343,6 +370,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuColors;
         private System.Windows.Forms.ToolStripMenuItem mnuDataBase;
         private System.Windows.Forms.ToolStripMenuItem mnuUsers;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsersInsert;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsersUpdate;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsersDelete;
 
     }
 }

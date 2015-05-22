@@ -10,7 +10,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param Name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -63,6 +63,7 @@
             this.txtBoxSource.TabIndex = 0;
             this.txtBoxSource.Text = "%txtBoxSource%";
             this.txtBoxSource.UseSelectable = true;
+            this.txtBoxSource.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // txtBoxProvider
             // 
@@ -78,6 +79,7 @@
             this.txtBoxProvider.TabIndex = 1;
             this.txtBoxProvider.Text = "%txtBoxProvider%";
             this.txtBoxProvider.UseSelectable = true;
+            this.txtBoxProvider.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // txtBoxString
             // 
@@ -93,6 +95,7 @@
             this.txtBoxString.TabIndex = 2;
             this.txtBoxString.Text = "%txtBoxString%";
             this.txtBoxString.UseSelectable = true;
+            this.txtBoxString.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // btnNovo
             // 
@@ -130,7 +133,6 @@
             this.btnTest.TabIndex = 5;
             this.btnTest.Text = "%btnTest%";
             this.btnTest.UseSelectable = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // frmConnection
             // 
