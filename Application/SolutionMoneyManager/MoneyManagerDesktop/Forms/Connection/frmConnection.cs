@@ -42,13 +42,12 @@ namespace MoneyManagerDesktop
             this.btnNovo.Text = ("Novo");
             this.btnTest.Text = ("Testar");
             this.btnClose.Text = ("Sair");
-            this.pbxDataBaseLogo.Image = MoneyManagerDesktop.Forms.Connection.resConnection.db_add72;
+            this.pbxDataBaseLogo.Image = MoneyManagerDesktop.Forms.Connection.resConnection.db_add96;
         }
          private void btnClose_Click(object sender, EventArgs e)
          {
              this.Close();
          }
-
          private void btnNovo_Click(object sender, EventArgs e)
          {
              clsConnection c = new clsConnection();
@@ -64,7 +63,6 @@ namespace MoneyManagerDesktop
              txtBoxProvider.Text = c.GetSQLConnectionString((clsConnection.ChoiceGetSQLConnectionString)1);
              txtBoxString.Text = c.GetSQLConnectionString((clsConnection.ChoiceGetSQLConnectionString)2);
          }
- 
          private void txtBox_KeyDown(object sender, KeyEventArgs e)
          {
              e.Handled = e.SuppressKeyPress = true; //No Send KeyPress

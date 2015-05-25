@@ -63,9 +63,9 @@ namespace MoneyManagerDesktop.Forms.About {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bar_chart64 {
+        internal static System.Drawing.Bitmap help_about32 {
             get {
-                object obj = ResourceManager.GetObject("bar_chart64", resourceCulture);
+                object obj = ResourceManager.GetObject("help_about32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,19 +73,9 @@ namespace MoneyManagerDesktop.Forms.About {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap line_chart64 {
+        internal static System.Drawing.Bitmap help_about64 {
             get {
-                object obj = ResourceManager.GetObject("line_chart64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pie_chart64 {
-            get {
-                object obj = ResourceManager.GetObject("pie_chart64", resourceCulture);
+                object obj = ResourceManager.GetObject("help_about64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

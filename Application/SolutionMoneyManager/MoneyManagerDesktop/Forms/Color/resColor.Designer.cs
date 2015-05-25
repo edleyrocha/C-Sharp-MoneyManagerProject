@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MoneyManagerDesktop.Forms.Login {
+namespace MoneyManagerDesktop.Forms.Color {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MoneyManagerDesktop.Forms.Login {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class resLogin {
+    internal class resColor {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal resLogin() {
+        internal resColor() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MoneyManagerDesktop.Forms.Login {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Login.resLogin", typeof(resLogin).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Color.resColor", typeof(resColor).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace MoneyManagerDesktop.Forms.Login {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Login_User96 {
+        internal static System.Drawing.Bitmap colors32 {
             get {
-                object obj = ResourceManager.GetObject("Login_User96", resourceCulture);
+                object obj = ResourceManager.GetObject("colors32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

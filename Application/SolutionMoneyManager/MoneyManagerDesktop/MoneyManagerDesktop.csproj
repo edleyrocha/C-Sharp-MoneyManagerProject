@@ -80,6 +80,11 @@
       <DependentUpon>frmColor.cs</DependentUpon>
     </Compile>
     <Compile Include="AppConfigXML.cs" />
+    <Compile Include="Forms\Color\resColor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resColor.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Connection\clsConnection.cs" />
     <Compile Include="Forms\Connection\resConnection.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,9 +142,14 @@
     <EmbeddedResource Include="Forms\About\resAbout.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>resAbout.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Color\frmColor.resx">
       <DependentUpon>frmColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Color\resColor.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>resColor.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Connection\frmConnection.resx">
       <DependentUpon>frmConnection.cs</DependentUpon>
@@ -215,31 +225,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bar_chart64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key_error32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key_ok32.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Login_User96.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\coins48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\exit16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\line_chart64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pie_chart64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\db_add72.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConnectionUIDialog\Microsoft.Data.ConnectionUI.Dialog.csproj">
@@ -252,6 +241,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\User_exclamation16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help_about64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help_about32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\db_add96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\db_add32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userDelete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userDelete128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userNew32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userNew128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userUpdate32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userUpdate128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colors32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

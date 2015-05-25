@@ -114,19 +114,15 @@ namespace MoneyManagerDesktop
             this.lbl_Ringht.Text = AssemblyCopyright;
             this.lbl_Company.Text = AssemblyCompany;
             this.rtbDescription.Text = AssemblyDescription;
-            this.pictureBox1.Image = MoneyManagerDesktop.Forms.About.resAbout.line_chart64;
-            this.pictureBox2.Image = MoneyManagerDesktop.Forms.About.resAbout.pie_chart64;
-            this.pictureBox3.Image = MoneyManagerDesktop.Forms.About.resAbout.bar_chart64;
+            this.imgHelpAbout.Image = MoneyManagerDesktop.Forms.About.resAbout.help_about64;
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void rtbDescription_KeyPress(object sender, KeyPressEventArgs e)
+        private void rtbDescription_KeyDown(object sender, KeyEventArgs e)
         {
-            e.KeyChar = (char)Keys.None; //ReadOnly ComboBox
+            e.Handled = e.SuppressKeyPress = (true);
         }
     }
 }

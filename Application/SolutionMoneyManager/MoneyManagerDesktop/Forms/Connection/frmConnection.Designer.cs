@@ -41,7 +41,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(255, 235);
+            this.btnClose.Location = new System.Drawing.Point(255, 250);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 6;
@@ -99,9 +99,9 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(119, 177);
+            this.btnNovo.Location = new System.Drawing.Point(125, 192);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(211, 23);
+            this.btnNovo.Size = new System.Drawing.Size(205, 23);
             this.btnNovo.TabIndex = 3;
             this.btnNovo.Text = "%btnNovo%";
             this.btnNovo.UseSelectable = true;
@@ -109,9 +109,9 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(119, 206);
+            this.btnLoad.Location = new System.Drawing.Point(125, 221);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(211, 23);
+            this.btnLoad.Size = new System.Drawing.Size(205, 23);
             this.btnLoad.TabIndex = 4;
             this.btnLoad.Text = "%btnLoad%";
             this.btnLoad.UseSelectable = true;
@@ -121,15 +121,15 @@
             // 
             this.pbxDataBaseLogo.Location = new System.Drawing.Point(23, 177);
             this.pbxDataBaseLogo.Name = "pbxDataBaseLogo";
-            this.pbxDataBaseLogo.Size = new System.Drawing.Size(90, 81);
+            this.pbxDataBaseLogo.Size = new System.Drawing.Size(96, 96);
             this.pbxDataBaseLogo.TabIndex = 6;
             this.pbxDataBaseLogo.TabStop = false;
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(119, 235);
+            this.btnTest.Location = new System.Drawing.Point(125, 250);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(130, 23);
+            this.btnTest.Size = new System.Drawing.Size(124, 23);
             this.btnTest.TabIndex = 5;
             this.btnTest.Text = "%btnTest%";
             this.btnTest.UseSelectable = true;
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 281);
+            this.ClientSize = new System.Drawing.Size(355, 296);
             this.Controls.Add(this.pbxDataBaseLogo);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnTest);

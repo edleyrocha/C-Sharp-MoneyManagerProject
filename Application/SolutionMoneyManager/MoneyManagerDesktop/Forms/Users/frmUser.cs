@@ -35,42 +35,48 @@ namespace MoneyManagerDesktop
         public frmUsers(ChoseActionForm choseAction)
         {
             InitializeComponent();
-            SelectedAction = choseAction;
-            SetConfigStartUser();
+            this.SelectedAction = choseAction;
+            this.SetConfigStartUser();
         }
         public void SetConfigStartUser()
         {
+            this.Text = ("Cadastro");
             // Hide Tabs
-            mtcUsers.SuspendLayout();
-            mtcUsers.TabPages.Clear();
-
+            this.mtcUsers.SuspendLayout();
+            this.mtcUsers.TabPages.Clear();
             switch (SelectedAction)
             {
                 case ChoseActionForm.InsertUsers:
                     {
                         if (!mtcUsers.TabPages.Contains(mtpInsert))
                         {
-                            this.Text = ("Cadastro");
-                            this.mtpInsert.Text = String.Format("{0}{1}{1}{1}{1}{1}", "Usuario", "                  ");
+                            this.Size = new Size(423, 372);
+                            this.mtpInsert.Text = String.Format("{0}{1}{1}{1}{1}{1}", "Novo Usuario", "                  ");
                             this.mtcUsers.TabPages.Add(mtpInsert);
-                            this.btnCloseNew.Text = ("Sair");
-                            this.btnSaveNew.Text = ("Salvar");
+                            this.btnCloseInsert.Text = ("Sair");
+                            this.btnSaveInsert.Text = ("Salvar");
+                            this.metroTile_UserInsert.Text = ("");
+                            this.txtNameInsert.Text = ("");
+                            this.txtLoginInsert.Text = ("");
+                            this.txtPasswordInsert.Text = ("");
                         };
                         break;
                     };
                 case ChoseActionForm.UpdateUsers:
                     {
-                        if (!mtcUsers.TabPages.Contains(mtpUpdate))
+                        if (!this.mtcUsers.TabPages.Contains(mtpUpdate))
                         {
-                            mtcUsers.TabPages.Add(mtpUpdate);
+                            this.mtpUpdate.Text = String.Format("{0}{1}{1}{1}{1}{1}", "Alterar Usuario", "                  ");
+                            this.mtcUsers.TabPages.Add(mtpUpdate);
                         };
                         break;
                     };
                 case ChoseActionForm.DeleteUsers:
                     {
-                        if (!mtcUsers.TabPages.Contains(mtpDelete))
+                        if (!this.mtcUsers.TabPages.Contains(mtpDelete))
                         {
-                            mtcUsers.TabPages.Add(mtpDelete);
+                            this.mtpDelete.Text = String.Format("{0}{1}{1}{1}{1}{1}", "Deletar Usuario", "                  ");
+                            this.mtcUsers.TabPages.Add(mtpDelete);
                         };
                         break;
                     };
@@ -79,20 +85,16 @@ namespace MoneyManagerDesktop
                         break;
                     };
             };
-           mtcUsers.ResumeLayout();
+            this.mtcUsers.ResumeLayout();
         }
-
         private void InsertUser()
         {
             clsUsers u = new clsUsers();
-
-            u.nome = (txtName.Text);
-            u.login = (txtLogin.Text);
-            u.password = (txtPassword.Text);
+            u.nome = (txtNameInsert.Text);
+            u.login = (txtLoginInsert.Text);
+            u.password = (txtPasswordInsert.Text);
             u.status = (Convert.ToString(clsUsers.StatusUser.Enabled));
-
             string msgResult = u.InsertUsersCommand();
-
             if (Boolean.FalseString == msgResult)
             {
                 MessageBox.Show("Erro ao Cadastrar novo Usuario");
@@ -109,7 +111,7 @@ namespace MoneyManagerDesktop
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InsertUser();
+            this.InsertUser();
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

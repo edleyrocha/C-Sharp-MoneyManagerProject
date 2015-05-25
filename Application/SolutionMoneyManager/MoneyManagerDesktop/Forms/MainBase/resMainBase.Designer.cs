@@ -73,9 +73,9 @@ namespace MoneyManagerDesktop.Forms.MainBase {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap exit16 {
+        internal static System.Drawing.Bitmap exit32 {
             get {
-                object obj = ResourceManager.GetObject("exit16", resourceCulture);
+                object obj = ResourceManager.GetObject("exit32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

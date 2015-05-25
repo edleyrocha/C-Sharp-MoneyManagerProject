@@ -28,21 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsers));
             this.mtcUsers = new MetroFramework.Controls.MetroTabControl();
             this.mtpInsert = new MetroFramework.Controls.MetroTabPage();
-            this.metroTile_Foto = new MetroFramework.Controls.MetroTile();
-            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
-            this.txtLogin = new MetroFramework.Controls.MetroTextBox();
-            this.txtName = new MetroFramework.Controls.MetroTextBox();
-            this.btnCloseNew = new MetroFramework.Controls.MetroButton();
-            this.btnSaveNew = new MetroFramework.Controls.MetroButton();
+            this.imgStatusUserPasswordInsert = new System.Windows.Forms.PictureBox();
+            this.imgStatusUserLoginInsert = new System.Windows.Forms.PictureBox();
+            this.imgStatusUserNameInsert = new System.Windows.Forms.PictureBox();
+            this.metroTile_UserInsert = new MetroFramework.Controls.MetroTile();
+            this.txtPasswordInsert = new MetroFramework.Controls.MetroTextBox();
+            this.txtLoginInsert = new MetroFramework.Controls.MetroTextBox();
+            this.txtNameInsert = new MetroFramework.Controls.MetroTextBox();
+            this.btnCloseInsert = new MetroFramework.Controls.MetroButton();
+            this.btnSaveInsert = new MetroFramework.Controls.MetroButton();
             this.mtpUpdate = new MetroFramework.Controls.MetroTabPage();
             this.mtpDelete = new MetroFramework.Controls.MetroTabPage();
             this.mtpSelect = new MetroFramework.Controls.MetroTabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mtcUsers.SuspendLayout();
             this.mtpInsert.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusUserPasswordInsert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusUserLoginInsert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusUserNameInsert)).BeginInit();
             this.SuspendLayout();
             // 
             // mtcUsers
@@ -54,108 +59,139 @@
             this.mtcUsers.Location = new System.Drawing.Point(23, 63);
             this.mtcUsers.Name = "mtcUsers";
             this.mtcUsers.SelectedIndex = 0;
-            this.mtcUsers.Size = new System.Drawing.Size(376, 304);
+            this.mtcUsers.Size = new System.Drawing.Size(376, 182);
             this.mtcUsers.TabIndex = 0;
             this.mtcUsers.UseSelectable = true;
             // 
             // mtpInsert
             // 
-            this.mtpInsert.Controls.Add(this.pictureBox1);
-            this.mtpInsert.Controls.Add(this.metroTile_Foto);
-            this.mtpInsert.Controls.Add(this.txtPassword);
-            this.mtpInsert.Controls.Add(this.txtLogin);
-            this.mtpInsert.Controls.Add(this.txtName);
-            this.mtpInsert.Controls.Add(this.btnCloseNew);
-            this.mtpInsert.Controls.Add(this.btnSaveNew);
+            this.mtpInsert.Controls.Add(this.imgStatusUserPasswordInsert);
+            this.mtpInsert.Controls.Add(this.imgStatusUserLoginInsert);
+            this.mtpInsert.Controls.Add(this.imgStatusUserNameInsert);
+            this.mtpInsert.Controls.Add(this.metroTile_UserInsert);
+            this.mtpInsert.Controls.Add(this.txtPasswordInsert);
+            this.mtpInsert.Controls.Add(this.txtLoginInsert);
+            this.mtpInsert.Controls.Add(this.txtNameInsert);
+            this.mtpInsert.Controls.Add(this.btnCloseInsert);
+            this.mtpInsert.Controls.Add(this.btnSaveInsert);
             this.mtpInsert.HorizontalScrollbarBarColor = true;
             this.mtpInsert.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpInsert.HorizontalScrollbarSize = 10;
             this.mtpInsert.Location = new System.Drawing.Point(4, 38);
             this.mtpInsert.Name = "mtpInsert";
-            this.mtpInsert.Size = new System.Drawing.Size(368, 262);
+            this.mtpInsert.Size = new System.Drawing.Size(368, 140);
             this.mtpInsert.TabIndex = 0;
             this.mtpInsert.Text = "%mtpInsert%";
             this.mtpInsert.VerticalScrollbarBarColor = true;
             this.mtpInsert.VerticalScrollbarHighlightOnWheel = false;
             this.mtpInsert.VerticalScrollbarSize = 10;
             // 
-            // metroTile_Foto
+            // imgStatusUserPasswordInsert
             // 
-            this.metroTile_Foto.ActiveControl = null;
-            this.metroTile_Foto.Location = new System.Drawing.Point(3, 3);
-            this.metroTile_Foto.Name = "metroTile_Foto";
-            this.metroTile_Foto.Size = new System.Drawing.Size(135, 135);
-            this.metroTile_Foto.TabIndex = 7;
-            this.metroTile_Foto.Text = "        %Foto%";
-            this.metroTile_Foto.UseSelectable = true;
+            this.imgStatusUserPasswordInsert.BackColor = System.Drawing.Color.Transparent;
+            this.imgStatusUserPasswordInsert.Location = new System.Drawing.Point(335, 62);
+            this.imgStatusUserPasswordInsert.Name = "imgStatusUserPasswordInsert";
+            this.imgStatusUserPasswordInsert.Size = new System.Drawing.Size(16, 16);
+            this.imgStatusUserPasswordInsert.TabIndex = 8;
+            this.imgStatusUserPasswordInsert.TabStop = false;
             // 
-            // txtPassword
+            // imgStatusUserLoginInsert
             // 
-            this.txtPassword.Lines = new string[] {
-        "%txtPassword%"};
-            this.txtPassword.Location = new System.Drawing.Point(145, 62);
-            this.txtPassword.MaxLength = 32767;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
-            this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(184, 23);
-            this.txtPassword.TabIndex = 5;
-            this.txtPassword.Tag = "3";
-            this.txtPassword.Text = "%txtPassword%";
-            this.txtPassword.UseSelectable = true;
+            this.imgStatusUserLoginInsert.BackColor = System.Drawing.Color.Transparent;
+            this.imgStatusUserLoginInsert.Location = new System.Drawing.Point(335, 33);
+            this.imgStatusUserLoginInsert.Name = "imgStatusUserLoginInsert";
+            this.imgStatusUserLoginInsert.Size = new System.Drawing.Size(16, 16);
+            this.imgStatusUserLoginInsert.TabIndex = 8;
+            this.imgStatusUserLoginInsert.TabStop = false;
             // 
-            // txtLogin
+            // imgStatusUserNameInsert
             // 
-            this.txtLogin.Lines = new string[] {
-        "%txtLogin%"};
-            this.txtLogin.Location = new System.Drawing.Point(145, 33);
-            this.txtLogin.MaxLength = 32767;
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.PasswordChar = '\0';
-            this.txtLogin.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLogin.SelectedText = "";
-            this.txtLogin.Size = new System.Drawing.Size(184, 23);
-            this.txtLogin.TabIndex = 5;
-            this.txtLogin.Tag = "2";
-            this.txtLogin.Text = "%txtLogin%";
-            this.txtLogin.UseSelectable = true;
+            this.imgStatusUserNameInsert.BackColor = System.Drawing.Color.Transparent;
+            this.imgStatusUserNameInsert.Location = new System.Drawing.Point(335, 4);
+            this.imgStatusUserNameInsert.Name = "imgStatusUserNameInsert";
+            this.imgStatusUserNameInsert.Size = new System.Drawing.Size(16, 16);
+            this.imgStatusUserNameInsert.TabIndex = 8;
+            this.imgStatusUserNameInsert.TabStop = false;
             // 
-            // txtName
+            // metroTile_UserInsert
             // 
-            this.txtName.Lines = new string[] {
-        "%txtName%"};
-            this.txtName.Location = new System.Drawing.Point(144, 4);
-            this.txtName.MaxLength = 32767;
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(185, 23);
-            this.txtName.TabIndex = 5;
-            this.txtName.Tag = "1";
-            this.txtName.Text = "%txtName%";
-            this.txtName.UseSelectable = true;
+            this.metroTile_UserInsert.ActiveControl = null;
+            this.metroTile_UserInsert.Location = new System.Drawing.Point(3, 3);
+            this.metroTile_UserInsert.Name = "metroTile_UserInsert";
+            this.metroTile_UserInsert.Size = new System.Drawing.Size(130, 130);
+            this.metroTile_UserInsert.TabIndex = 7;
+            this.metroTile_UserInsert.Text = "        %Foto%";
+            this.metroTile_UserInsert.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile_UserInsert.TileImage")));
+            this.metroTile_UserInsert.UseSelectable = true;
+            this.metroTile_UserInsert.UseTileImage = true;
             // 
-            // btnCloseNew
+            // txtPasswordInsert
             // 
-            this.btnCloseNew.Location = new System.Drawing.Point(254, 116);
-            this.btnCloseNew.Name = "btnCloseNew";
-            this.btnCloseNew.Size = new System.Drawing.Size(75, 23);
-            this.btnCloseNew.TabIndex = 4;
-            this.btnCloseNew.Text = "%btnClose%";
-            this.btnCloseNew.UseSelectable = true;
-            this.btnCloseNew.Click += new System.EventHandler(this.btnClose_Click);
+            this.txtPasswordInsert.Lines = new string[] {
+        "%txtPasswordInsert%"};
+            this.txtPasswordInsert.Location = new System.Drawing.Point(145, 62);
+            this.txtPasswordInsert.MaxLength = 32767;
+            this.txtPasswordInsert.Name = "txtPasswordInsert";
+            this.txtPasswordInsert.PasswordChar = '\0';
+            this.txtPasswordInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPasswordInsert.SelectedText = "";
+            this.txtPasswordInsert.Size = new System.Drawing.Size(184, 23);
+            this.txtPasswordInsert.TabIndex = 5;
+            this.txtPasswordInsert.Tag = "3";
+            this.txtPasswordInsert.Text = "%txtPasswordInsert%";
+            this.txtPasswordInsert.UseSelectable = true;
             // 
-            // btnSaveNew
+            // txtLoginInsert
             // 
-            this.btnSaveNew.Location = new System.Drawing.Point(173, 116);
-            this.btnSaveNew.Name = "btnSaveNew";
-            this.btnSaveNew.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveNew.TabIndex = 2;
-            this.btnSaveNew.Text = "%btnSave%";
-            this.btnSaveNew.UseSelectable = true;
-            this.btnSaveNew.Click += new System.EventHandler(this.btnSave_Click);
+            this.txtLoginInsert.Lines = new string[] {
+        "%txtLoginInsert%"};
+            this.txtLoginInsert.Location = new System.Drawing.Point(145, 33);
+            this.txtLoginInsert.MaxLength = 32767;
+            this.txtLoginInsert.Name = "txtLoginInsert";
+            this.txtLoginInsert.PasswordChar = '\0';
+            this.txtLoginInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLoginInsert.SelectedText = "";
+            this.txtLoginInsert.Size = new System.Drawing.Size(184, 23);
+            this.txtLoginInsert.TabIndex = 5;
+            this.txtLoginInsert.Tag = "2";
+            this.txtLoginInsert.Text = "%txtLoginInsert%";
+            this.txtLoginInsert.UseSelectable = true;
+            // 
+            // txtNameInsert
+            // 
+            this.txtNameInsert.Lines = new string[] {
+        "%txtNameInsert%"};
+            this.txtNameInsert.Location = new System.Drawing.Point(144, 4);
+            this.txtNameInsert.MaxLength = 32767;
+            this.txtNameInsert.Name = "txtNameInsert";
+            this.txtNameInsert.PasswordChar = '\0';
+            this.txtNameInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNameInsert.SelectedText = "";
+            this.txtNameInsert.Size = new System.Drawing.Size(185, 23);
+            this.txtNameInsert.TabIndex = 5;
+            this.txtNameInsert.Tag = "1";
+            this.txtNameInsert.Text = "%txtNameInsert%";
+            this.txtNameInsert.UseSelectable = true;
+            // 
+            // btnCloseInsert
+            // 
+            this.btnCloseInsert.Location = new System.Drawing.Point(254, 110);
+            this.btnCloseInsert.Name = "btnCloseInsert";
+            this.btnCloseInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnCloseInsert.TabIndex = 4;
+            this.btnCloseInsert.Text = "%btnClose%";
+            this.btnCloseInsert.UseSelectable = true;
+            this.btnCloseInsert.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSaveInsert
+            // 
+            this.btnSaveInsert.Location = new System.Drawing.Point(173, 110);
+            this.btnSaveInsert.Name = "btnSaveInsert";
+            this.btnSaveInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveInsert.TabIndex = 2;
+            this.btnSaveInsert.Text = "%btnSave%";
+            this.btnSaveInsert.UseSelectable = true;
+            this.btnSaveInsert.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // mtpUpdate
             // 
@@ -164,7 +200,7 @@
             this.mtpUpdate.HorizontalScrollbarSize = 10;
             this.mtpUpdate.Location = new System.Drawing.Point(4, 38);
             this.mtpUpdate.Name = "mtpUpdate";
-            this.mtpUpdate.Size = new System.Drawing.Size(368, 262);
+            this.mtpUpdate.Size = new System.Drawing.Size(368, 140);
             this.mtpUpdate.TabIndex = 1;
             this.mtpUpdate.Text = "%mtpUpdate%";
             this.mtpUpdate.VerticalScrollbarBarColor = true;
@@ -178,7 +214,7 @@
             this.mtpDelete.HorizontalScrollbarSize = 10;
             this.mtpDelete.Location = new System.Drawing.Point(4, 38);
             this.mtpDelete.Name = "mtpDelete";
-            this.mtpDelete.Size = new System.Drawing.Size(368, 262);
+            this.mtpDelete.Size = new System.Drawing.Size(368, 140);
             this.mtpDelete.TabIndex = 2;
             this.mtpDelete.Text = "%mtpDelete%";
             this.mtpDelete.VerticalScrollbarBarColor = true;
@@ -192,20 +228,12 @@
             this.mtpSelect.HorizontalScrollbarSize = 10;
             this.mtpSelect.Location = new System.Drawing.Point(4, 38);
             this.mtpSelect.Name = "mtpSelect";
-            this.mtpSelect.Size = new System.Drawing.Size(368, 262);
+            this.mtpSelect.Size = new System.Drawing.Size(368, 140);
             this.mtpSelect.TabIndex = 3;
             this.mtpSelect.Text = "%mtpSelect%";
             this.mtpSelect.VerticalScrollbarBarColor = true;
             this.mtpSelect.VerticalScrollbarHighlightOnWheel = false;
             this.mtpSelect.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(335, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // frmUsers
             // 
@@ -224,7 +252,9 @@
             this.Text = "%frmUsers%";
             this.mtcUsers.ResumeLayout(false);
             this.mtpInsert.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusUserPasswordInsert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusUserLoginInsert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusUserNameInsert)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,13 +266,15 @@
         private MetroFramework.Controls.MetroTabPage mtpUpdate;
         private MetroFramework.Controls.MetroTabPage mtpDelete;
         private MetroFramework.Controls.MetroTabPage mtpSelect;
-        private MetroFramework.Controls.MetroButton btnSaveNew;
-        private MetroFramework.Controls.MetroButton btnCloseNew;
-        private MetroFramework.Controls.MetroTextBox txtPassword;
-        private MetroFramework.Controls.MetroTextBox txtLogin;
-        private MetroFramework.Controls.MetroTextBox txtName;
-        private MetroFramework.Controls.MetroTile metroTile_Foto;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroButton btnSaveInsert;
+        private MetroFramework.Controls.MetroButton btnCloseInsert;
+        private MetroFramework.Controls.MetroTextBox txtPasswordInsert;
+        private MetroFramework.Controls.MetroTextBox txtLoginInsert;
+        private MetroFramework.Controls.MetroTextBox txtNameInsert;
+        private MetroFramework.Controls.MetroTile metroTile_UserInsert;
+        private System.Windows.Forms.PictureBox imgStatusUserNameInsert;
+        private System.Windows.Forms.PictureBox imgStatusUserPasswordInsert;
+        private System.Windows.Forms.PictureBox imgStatusUserLoginInsert;
 
 
 

@@ -22,8 +22,6 @@ namespace MoneyManagerDesktop
     using System.Windows.Forms;
     using MetroFramework.Forms;
     using MetroFramework;
-    //using System.Resources;
-    //using System.Reflection;
     #endregion
     public partial class frmLogin : MetroForm
     {
@@ -31,15 +29,12 @@ namespace MoneyManagerDesktop
         {
             AllowedDenied = 1,
             AllowedAccess = 2
-
         }
-
-        public AcessLoginStatus myLoginStatus { get; set; }
-
+        public AcessLoginStatus myLoginStatusForLogin { get; set; }
         public frmLogin()
         {
             InitializeComponent();
-            SetConfigStartLogin();
+            this.SetConfigStartLogin();
         }
         public void SetConfigStartLogin()
         {
@@ -51,38 +46,13 @@ namespace MoneyManagerDesktop
             this.btnLogin.Text = ("Login");
             this.Refresh();
         }
-        private void metroToggle1_CheckedChanged(object sender, EventArgs e)
-        {
-            MetroFramework.Components.MetroStyleManager metroStyleManager = new MetroFramework.Components.MetroStyleManager();
-            metroStyleManager.Owner = (this);
-            metroStyleManager.Theme = metroStyleManager.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-            this.Theme = this.Theme == MetroFramework.MetroThemeStyle.Light ? MetroFramework.MetroThemeStyle.Dark : MetroFramework.MetroThemeStyle.Light;
-            metroTabControl.Theme = this.Theme;
-            mtpLogin.Theme = this.Theme;
-            txt_Login.Theme = this.Theme;
-            txt_Password.Theme = this.Theme;
-            btnLogin.Theme = this.Theme;
-            this.Refresh();
-        }
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            var m = new Random();
-            int next = m.Next(0, 13);
-            MetroFramework.Components.MetroStyleManager metroStyleManager = new MetroFramework.Components.MetroStyleManager();
-            metroStyleManager.Owner = (this);
-            metroStyleManager.Style = (MetroColorStyle)next;
-            this.Style = (MetroColorStyle)next;
-            this.Refresh();
-            txt_Login.Focus();
-        }
         private void txt_Login_Click(object sender, EventArgs e)
         {
-            txt_Login.Text = ("");
+            this.txt_Login.Text = ("");
         }
-
         private void txt_Password_Click(object sender, EventArgs e)
         {
-            txt_Password.Text = ("");
+            this.txt_Password.Text = ("");
         }
         private void txt_Login_KeyDown(object sender, KeyEventArgs e)
         {
@@ -96,49 +66,72 @@ namespace MoneyManagerDesktop
         {
             if (e.KeyCode == Keys.Enter)
             {
-
                 SendKeys.Send("{TAB}");
-                btnLogin.PerformClick();
+                this.btnLogin.PerformClick();
                 e.Handled = e.SuppressKeyPress = true;
             };
         }
         private void txt_Login_Leave(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txt_Login.Text) || ((txt_Login.Text == ("Usuario"))))
+            if (String.IsNullOrEmpty(txt_Login.Text) || ((this.txt_Login.Text == ("Usuario"))))
             {
-                txt_Login.Text = ("Usuario");
-                imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
+                this.txt_Login.Text = ("Usuario");
+                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
             }
             else
             {
-                imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
+                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
             };
         }
         private void txt_Password_Leave(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txt_Password.Text) || ((txt_Password.Text == ("Senha"))))
+            if (String.IsNullOrEmpty(this.txt_Password.Text) || ((this.txt_Password.Text == ("Senha"))))
             {
-                txt_Password.Text = ("Senha");
-                imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
+                this.txt_Password.UseSystemPasswordChar = (false);
+                this.txt_Password.Text = ("Senha");
+                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
             }
             else
             {
-                imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
+                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
             };
-
         }
         private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (txt_Password.UseSystemPasswordChar == (false))
+            if (this.txt_Password.UseSystemPasswordChar == (false))
             {
-                txt_Password.UseSystemPasswordChar = (true);
-            }
+                this.txt_Password.UseSystemPasswordChar = (true);
+            };
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            myLoginStatus = AcessLoginStatus.AllowedAccess;
+            this.myLoginStatusForLogin = AcessLoginStatus.AllowedAccess;
             this.Close();
-            
+            this.Dispose();
+        }
+        private void metroToggle1_CheckedChanged(object sender, EventArgs e)
+        {
+            MetroFramework.Components.MetroStyleManager metroStyleManager = new MetroFramework.Components.MetroStyleManager();
+            metroStyleManager.Owner = (this);
+            metroStyleManager.Theme = metroStyleManager.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+            this.Theme = this.Theme == MetroFramework.MetroThemeStyle.Light ? MetroFramework.MetroThemeStyle.Dark : MetroFramework.MetroThemeStyle.Light;
+            this.metroTabControl.Theme = this.Theme;
+            this.mtpLogin.Theme = this.Theme;
+            this.txt_Login.Theme = this.Theme;
+            this.txt_Password.Theme = this.Theme;
+            this.btnLogin.Theme = this.Theme;
+            this.Refresh();
+        }
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            var m = new Random();
+            int next = m.Next(0, 13);
+            MetroFramework.Components.MetroStyleManager metroStyleManager = new MetroFramework.Components.MetroStyleManager();
+            metroStyleManager.Owner = (this);
+            metroStyleManager.Style = (MetroColorStyle)next;
+            this.Style = (MetroColorStyle)next;
+            this.Refresh();
+            this.txt_Login.Focus();
         }
     }
 }

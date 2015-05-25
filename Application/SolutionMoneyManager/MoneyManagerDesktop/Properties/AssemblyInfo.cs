@@ -18,7 +18,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Money Manager Desktop")]
-[assembly: AssemblyDescription("Sistema para Gestao de Pagamentos\n-Contas\n-Relatorios\n edleyrocha@hotmail.com")]
+[assembly: AssemblyDescription("-Sistema para Gestao de Pagamentos\n-Contas\n-Relatorios\n-edleyrocha@hotmail.com")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EAH Apps")]
 [assembly: AssemblyProduct("Money Manager Desktop.")]
