@@ -35,7 +35,8 @@
             this.imgStatusUserLoginInsert = new System.Windows.Forms.PictureBox();
             this.imgStatusUserNameInsert = new System.Windows.Forms.PictureBox();
             this.metroTile_UserInsert = new MetroFramework.Controls.MetroTile();
-            this.txtPasswordInsert = new MetroFramework.Controls.MetroTextBox();
+            this.txtPasswordBInsert = new MetroFramework.Controls.MetroTextBox();
+            this.txtPasswordAInsert = new MetroFramework.Controls.MetroTextBox();
             this.txtLoginInsert = new MetroFramework.Controls.MetroTextBox();
             this.txtNameInsert = new MetroFramework.Controls.MetroTextBox();
             this.btnCloseInsert = new MetroFramework.Controls.MetroButton();
@@ -69,7 +70,8 @@
             this.mtpInsert.Controls.Add(this.imgStatusUserLoginInsert);
             this.mtpInsert.Controls.Add(this.imgStatusUserNameInsert);
             this.mtpInsert.Controls.Add(this.metroTile_UserInsert);
-            this.mtpInsert.Controls.Add(this.txtPasswordInsert);
+            this.mtpInsert.Controls.Add(this.txtPasswordBInsert);
+            this.mtpInsert.Controls.Add(this.txtPasswordAInsert);
             this.mtpInsert.Controls.Add(this.txtLoginInsert);
             this.mtpInsert.Controls.Add(this.txtNameInsert);
             this.mtpInsert.Controls.Add(this.btnCloseInsert);
@@ -120,42 +122,68 @@
             this.metroTile_UserInsert.Name = "metroTile_UserInsert";
             this.metroTile_UserInsert.Size = new System.Drawing.Size(130, 130);
             this.metroTile_UserInsert.TabIndex = 7;
+            this.metroTile_UserInsert.TabStop = false;
             this.metroTile_UserInsert.Text = "        %Foto%";
             this.metroTile_UserInsert.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile_UserInsert.TileImage")));
             this.metroTile_UserInsert.UseSelectable = true;
             this.metroTile_UserInsert.UseTileImage = true;
             // 
-            // txtPasswordInsert
+            // txtPasswordBInsert
             // 
-            this.txtPasswordInsert.Lines = new string[] {
+            this.txtPasswordBInsert.Lines = new string[] {
         "%txtPasswordInsert%"};
-            this.txtPasswordInsert.Location = new System.Drawing.Point(145, 62);
-            this.txtPasswordInsert.MaxLength = 32767;
-            this.txtPasswordInsert.Name = "txtPasswordInsert";
-            this.txtPasswordInsert.PasswordChar = '\0';
-            this.txtPasswordInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPasswordInsert.SelectedText = "";
-            this.txtPasswordInsert.Size = new System.Drawing.Size(184, 23);
-            this.txtPasswordInsert.TabIndex = 5;
-            this.txtPasswordInsert.Tag = "3";
-            this.txtPasswordInsert.Text = "%txtPasswordInsert%";
-            this.txtPasswordInsert.UseSelectable = true;
+            this.txtPasswordBInsert.Location = new System.Drawing.Point(239, 62);
+            this.txtPasswordBInsert.MaxLength = 32767;
+            this.txtPasswordBInsert.Name = "txtPasswordBInsert";
+            this.txtPasswordBInsert.PasswordChar = '\0';
+            this.txtPasswordBInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPasswordBInsert.SelectedText = "";
+            this.txtPasswordBInsert.Size = new System.Drawing.Size(90, 23);
+            this.txtPasswordBInsert.TabIndex = 3;
+            this.txtPasswordBInsert.Tag = "Repetir-Senha";
+            this.txtPasswordBInsert.Text = "%txtPasswordInsert%";
+            this.txtPasswordBInsert.UseSelectable = true;
+            this.txtPasswordBInsert.Enter += new System.EventHandler(this.txtPasswordBInsert_Enter);
+            this.txtPasswordBInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPasswordBInsert_KeyDown);
+            this.txtPasswordBInsert.Leave += new System.EventHandler(this.txtPasswordBInsert_Leave);
+            // 
+            // txtPasswordAInsert
+            // 
+            this.txtPasswordAInsert.Lines = new string[] {
+        "%txtPasswordInsert%"};
+            this.txtPasswordAInsert.Location = new System.Drawing.Point(145, 62);
+            this.txtPasswordAInsert.MaxLength = 32767;
+            this.txtPasswordAInsert.Name = "txtPasswordAInsert";
+            this.txtPasswordAInsert.PasswordChar = '\0';
+            this.txtPasswordAInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPasswordAInsert.SelectedText = "";
+            this.txtPasswordAInsert.Size = new System.Drawing.Size(90, 23);
+            this.txtPasswordAInsert.TabIndex = 2;
+            this.txtPasswordAInsert.Tag = "Senha";
+            this.txtPasswordAInsert.Text = "%txtPasswordInsert%";
+            this.txtPasswordAInsert.UseSelectable = true;
+            this.txtPasswordAInsert.Enter += new System.EventHandler(this.txtPasswordAInsert_Enter);
+            this.txtPasswordAInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPasswordAInsert_KeyDown);
+            this.txtPasswordAInsert.Leave += new System.EventHandler(this.txtPasswordAInsert_Leave);
             // 
             // txtLoginInsert
             // 
             this.txtLoginInsert.Lines = new string[] {
         "%txtLoginInsert%"};
-            this.txtLoginInsert.Location = new System.Drawing.Point(145, 33);
+            this.txtLoginInsert.Location = new System.Drawing.Point(144, 33);
             this.txtLoginInsert.MaxLength = 32767;
             this.txtLoginInsert.Name = "txtLoginInsert";
             this.txtLoginInsert.PasswordChar = '\0';
             this.txtLoginInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtLoginInsert.SelectedText = "";
-            this.txtLoginInsert.Size = new System.Drawing.Size(184, 23);
-            this.txtLoginInsert.TabIndex = 5;
-            this.txtLoginInsert.Tag = "2";
+            this.txtLoginInsert.Size = new System.Drawing.Size(185, 23);
+            this.txtLoginInsert.TabIndex = 1;
+            this.txtLoginInsert.Tag = "Nome do Login";
             this.txtLoginInsert.Text = "%txtLoginInsert%";
             this.txtLoginInsert.UseSelectable = true;
+            this.txtLoginInsert.Enter += new System.EventHandler(this.txtLoginInsert_Enter);
+            this.txtLoginInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoginInsert_KeyDown);
+            this.txtLoginInsert.Leave += new System.EventHandler(this.txtLoginInsert_Leave);
             // 
             // txtNameInsert
             // 
@@ -168,17 +196,21 @@
             this.txtNameInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNameInsert.SelectedText = "";
             this.txtNameInsert.Size = new System.Drawing.Size(185, 23);
-            this.txtNameInsert.TabIndex = 5;
-            this.txtNameInsert.Tag = "1";
+            this.txtNameInsert.TabIndex = 0;
+            this.txtNameInsert.Tag = "Nome do Usuario";
             this.txtNameInsert.Text = "%txtNameInsert%";
             this.txtNameInsert.UseSelectable = true;
+            this.txtNameInsert.Enter += new System.EventHandler(this.txtNameInsert_Enter);
+            this.txtNameInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNameInsert_KeyDown);
+            this.txtNameInsert.Leave += new System.EventHandler(this.txtNameInsert_Leave);
             // 
             // btnCloseInsert
             // 
             this.btnCloseInsert.Location = new System.Drawing.Point(254, 110);
             this.btnCloseInsert.Name = "btnCloseInsert";
             this.btnCloseInsert.Size = new System.Drawing.Size(75, 23);
-            this.btnCloseInsert.TabIndex = 4;
+            this.btnCloseInsert.TabIndex = 5;
+            this.btnCloseInsert.Tag = "Sair";
             this.btnCloseInsert.Text = "%btnClose%";
             this.btnCloseInsert.UseSelectable = true;
             this.btnCloseInsert.Click += new System.EventHandler(this.btnClose_Click);
@@ -188,7 +220,8 @@
             this.btnSaveInsert.Location = new System.Drawing.Point(173, 110);
             this.btnSaveInsert.Name = "btnSaveInsert";
             this.btnSaveInsert.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveInsert.TabIndex = 2;
+            this.btnSaveInsert.TabIndex = 4;
+            this.btnSaveInsert.Tag = "Salvar";
             this.btnSaveInsert.Text = "%btnSave%";
             this.btnSaveInsert.UseSelectable = true;
             this.btnSaveInsert.Click += new System.EventHandler(this.btnSave_Click);
@@ -268,13 +301,14 @@
         private MetroFramework.Controls.MetroTabPage mtpSelect;
         private MetroFramework.Controls.MetroButton btnSaveInsert;
         private MetroFramework.Controls.MetroButton btnCloseInsert;
-        private MetroFramework.Controls.MetroTextBox txtPasswordInsert;
+        private MetroFramework.Controls.MetroTextBox txtPasswordAInsert;
         private MetroFramework.Controls.MetroTextBox txtLoginInsert;
         private MetroFramework.Controls.MetroTextBox txtNameInsert;
         private MetroFramework.Controls.MetroTile metroTile_UserInsert;
         private System.Windows.Forms.PictureBox imgStatusUserNameInsert;
         private System.Windows.Forms.PictureBox imgStatusUserPasswordInsert;
         private System.Windows.Forms.PictureBox imgStatusUserLoginInsert;
+        private MetroFramework.Controls.MetroTextBox txtPasswordBInsert;
 
 
 

@@ -22,12 +22,14 @@ namespace MoneyManagerDesktop
     #endregion
     class clsUsers
     {
+
         //Strings Fields [dbo].[tblUsers]
         public int id { get; set; }
         public string nome { get; set; }
         public string login { get; set; }
         public string password { get; set; }
         public string status { get; set; }
+
         public enum StatusUser
         {
             Enabled = 0,
@@ -43,46 +45,33 @@ namespace MoneyManagerDesktop
         }
         public String InsertUsersCommand()
         {
-            String returnString = (String.Empty);
-
             AppConfigXML appConfigXML = new AppConfigXML();
-            String myStringSQLConnection = (String.Empty);
-            myStringSQLConnection = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            String myStringSQL = ("");
+            myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
 
-            //myCommandStringSQL
+            SqlConnection connSQL = new SqlConnection(myStringSQL);
+
             //INSERT INTO [tblUsers] VALUES (@Nome,@Login,@Password,@Status);
-            //SELECT (@@IDENTITY) AS [returnMyNewID];
             StringBuilder myCommandStringSQL = new StringBuilder();
-            myCommandStringSQL.Clear();
             myCommandStringSQL.Append("INSERT INTO [tblUsers] VALUES (");
-            myCommandStringSQL.Append("@Nome, ");
-            myCommandStringSQL.Append("@Login, ");
-            myCommandStringSQL.Append("@Password, ");
-            myCommandStringSQL.Append("@Status); ");
-            myCommandStringSQL.AppendLine("");
-            myCommandStringSQL.Append("SELECT (@@IDENTITY) AS [returnMyNewID];");
+            myCommandStringSQL.Append("@Nome,");
+            myCommandStringSQL.Append("@Login,");
+            myCommandStringSQL.Append("@Password,");
+            myCommandStringSQL.Append("@Status);");
 
-            SqlConnection connSQL = new SqlConnection();
-            connSQL.ConnectionString = (""); //FORCE CLEAR ConnectionString
-            connSQL.ConnectionString = myStringSQLConnection;
-
-            SqlCommand cmdSQL = new SqlCommand();
-            cmdSQL.Parameters.Clear(); //FORCE CLEAR Parameters
-
-            cmdSQL.Connection = (connSQL);
-
-            cmdSQL.CommandType = (CommandType.Text);
-            cmdSQL.CommandText = (Convert.ToString(myCommandStringSQL));
+            SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
             cmdSQL.Parameters.AddWithValue("@Nome", nome);
             cmdSQL.Parameters.AddWithValue("@Login", login);
             cmdSQL.Parameters.AddWithValue("@Password", password);
             cmdSQL.Parameters.AddWithValue("@Status", status);
 
+            String returnString = (Boolean.FalseString);
             try
             {
                 connSQL.Open();
-                returnString = (Convert.ToString(cmdSQL.ExecuteScalar())); // returnString @@IDENTITY  of InsertUsers
+                cmdSQL.ExecuteNonQuery();
+                returnString = Boolean.TrueString;
             }
             catch
             {
@@ -95,5 +84,106 @@ namespace MoneyManagerDesktop
             //returnString = myCommandStringSQL.ToString(); // Return String  myCommandStringSQL (for Debug)
             return (returnString);
         }
+
+        public String CheckUserNameInsertExist()
+        {
+            AppConfigXML appConfigXML = new AppConfigXML();
+            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            SqlConnection connSQL = new SqlConnection(myStringSQL);
+
+            //SELECT [Name] FROM [tblUsers] WHERE [Name] = @Nome;
+            StringBuilder myCommandStringSQL = new StringBuilder();
+            myCommandStringSQL.Append("SELECT [Name] FROM [tblUsers] ");
+            myCommandStringSQL.Append("WHERE ");
+            myCommandStringSQL.Append("[Name] ");
+            myCommandStringSQL.Append("= ");
+            myCommandStringSQL.Append("@Nome;");
+
+            SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
+
+            cmdSQL.Parameters.AddWithValue("@Nome", nome);
+            String returnString = (Boolean.FalseString);
+            try
+            {
+                connSQL.Open();
+                SqlDataReader drSQL = cmdSQL.ExecuteReader();
+                int countRowsLines = (0);
+
+                if (drSQL.HasRows == (true))
+                {
+                    countRowsLines++;
+                };
+
+                if ((countRowsLines) == (0))
+                {
+                    returnString = Boolean.TrueString;
+                }
+                else if ((countRowsLines) >= (1))
+                {
+                    returnString = Boolean.FalseString;
+                };
+            }
+            catch
+            {
+                returnString = Boolean.FalseString;
+            }
+            finally
+            {
+                connSQL.Close();
+            };
+            // returnString = myCommandStringSQL.ToString(); // Return String  myCommandStringSQL (for Debug)
+            return (returnString);
+        }
+
+        public String CheckUserLoginInsertExist()
+        {
+            AppConfigXML appConfigXML = new AppConfigXML();
+            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            SqlConnection connSQL = new SqlConnection(myStringSQL);
+
+            //SELECT [Name] FROM [tblUsers] WHERE [Login] = @Login;
+            StringBuilder myCommandStringSQL = new StringBuilder();
+            myCommandStringSQL.Append("SELECT [Login] FROM [tblUsers] ");
+            myCommandStringSQL.Append("WHERE ");
+            myCommandStringSQL.Append("[Login] ");
+            myCommandStringSQL.Append("= ");
+            myCommandStringSQL.Append("@Login;");
+
+            SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
+
+            cmdSQL.Parameters.AddWithValue("@Login", login);
+            String returnString = (Boolean.FalseString);
+            try
+            {
+                connSQL.Open();
+                SqlDataReader drSQL = cmdSQL.ExecuteReader();
+                int countRowsLines = (0);
+
+                if (drSQL.HasRows == (true))
+                {
+                    countRowsLines++;
+                };
+
+                if ((countRowsLines) == (0))
+                {
+                    returnString = Boolean.TrueString;
+                }
+                else if ((countRowsLines) >= (1))
+                {
+                    returnString = Boolean.FalseString;
+                };
+            }
+            catch
+            {
+                returnString = Boolean.FalseString;
+            }
+            finally
+            {
+                connSQL.Close();
+            };
+            //returnString = myCommandStringSQL.ToString(); // Return String  myCommandStringSQL (for Debug)
+            return (returnString);
+        }
+ 
     }
 }

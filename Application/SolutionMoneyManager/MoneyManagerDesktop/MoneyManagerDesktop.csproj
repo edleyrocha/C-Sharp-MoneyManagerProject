@@ -91,6 +91,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>resConnection.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Login\clsLogin.cs" />
     <Compile Include="Forms\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
