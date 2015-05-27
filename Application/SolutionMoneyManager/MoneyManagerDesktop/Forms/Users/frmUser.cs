@@ -29,7 +29,8 @@ namespace MoneyManagerDesktop
         {
             InsertUsers = 0,
             UpdateUsers = 1,
-            DeleteUsers = 2
+            DeleteUsers = 2,
+            SelectUsers = 3
         }
         ChoseActionForm SelectedAction;
         public frmUsers(ChoseActionForm choseAction)
@@ -38,17 +39,6 @@ namespace MoneyManagerDesktop
             this.SelectedAction = choseAction;
             this.SetConfigStartUser();
         }
-
-        #region ---> (Insert User)
-
-        MetroFramework.Components.MetroToolTip mttHintNameInsert = new MetroFramework.Components.MetroToolTip();
-        MetroFramework.Components.MetroToolTip mttHintLoginInsert = new MetroFramework.Components.MetroToolTip();
-        MetroFramework.Components.MetroToolTip mttHintPasswordInsert = new MetroFramework.Components.MetroToolTip();
-
-        Boolean insertNameStatus = (false);
-        Boolean insertLoginStatus = (false);
-        Boolean insertPasswordStatus = (false);
-
         public void SetConfigStartUser()
         {
             this.Text = ("Cadastro");
@@ -61,7 +51,8 @@ namespace MoneyManagerDesktop
                     {
                         if (!mtcUsers.TabPages.Contains(mtpInsert))
                         {
-                            this.Size = new Size(423, 372);
+                            this.Size = new Size(420, 370); // ( 45 , 190)
+                            this.mtcUsers.Size = new Size(375, 180);
                             this.mtpInsert.Text = String.Format("{0}{1}{1}{1}{1}{1}", "Novo Usuario", "                  ");
                             this.mtcUsers.TabPages.Add(mtpInsert);
                             this.metroTile_UserInsert.Text = ("");
@@ -78,8 +69,11 @@ namespace MoneyManagerDesktop
                     {
                         if (!this.mtcUsers.TabPages.Contains(mtpUpdate))
                         {
-                            this.mtpUpdate.Text = String.Format("{0}{1}{1}{1}{1}{1}", "Alterar Usuario", "                  ");
+                            // this.Size = new Size(615, 395);// ( 45 , 190)
+                            //  this.mtcUsers.Size = new Size(570, 205);
+                            this.mtpUpdate.Text = String.Format("{0}{1}{1}{1}{1}{1}{1}{1}", "Alterar Usuario", "                  ");
                             this.mtcUsers.TabPages.Add(mtpUpdate);
+                            // this.metroTile_UserSelect.Text = ("");
                         };
                         break;
                     };
@@ -92,6 +86,20 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
+                case ChoseActionForm.SelectUsers:
+                    {
+                        if (!this.mtcUsers.TabPages.Contains(mtpSelect))
+                        {
+                            this.Size = new Size(535, 395);// ( 45 , 190)
+                            this.mtcUsers.Size = new Size(490, 205); //
+                            this.mtpSelect.Text = String.Format("{0}{1}{1}{1}{1}{1}{1}{1}", "Lista de Usuarios", "                  ");
+                            this.mtcUsers.TabPages.Add(mtpSelect);
+                            this.metroTile_UserSelect.Text = ("");
+                            this.btnCloseSelect.Text = ("Sair");
+                            this.btnListSelect.Text = ("Mostar");
+                        };
+                        break;
+                    };
                 default:
                     {
                         break;
@@ -100,6 +108,49 @@ namespace MoneyManagerDesktop
             this.mtcUsers.ResumeLayout();
         }
 
+        #region ---> (Select User)
+
+        private void SelectUsers()
+        {
+            clsUsers u = new clsUsers();
+            DataTable dt = u.SelectAllUserCommand();
+
+            metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            metroGrid1.RowHeadersWidth = (10);
+            metroGrid1.ScrollBars = ScrollBars.None;
+            metroGrid1.DefaultCellStyle.SelectionBackColor = Color.LimeGreen;
+            metroGrid1.DefaultCellStyle.SelectionForeColor = Color.Black;
+            metroGrid1.DefaultCellStyle.BackColor = Color.White;
+            metroGrid1.DefaultCellStyle.ForeColor = Color.Black;
+
+            metroGrid1.DataSource = dt;
+
+            metroGrid1.ClearSelection();
+
+            metroGrid1.Refresh();
+        }
+        private void btnListSelect_Click(object sender, EventArgs e)
+        {
+            this.SelectUsers();
+        }
+
+        private void btnCloseSelect_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        #region ---> (Insert Users)
+
+        MetroFramework.Components.MetroToolTip mttHintNameInsert = new MetroFramework.Components.MetroToolTip();
+        MetroFramework.Components.MetroToolTip mttHintLoginInsert = new MetroFramework.Components.MetroToolTip();
+        MetroFramework.Components.MetroToolTip mttHintPasswordInsert = new MetroFramework.Components.MetroToolTip();
+
+        Boolean insertNameStatus = (false);
+        Boolean insertLoginStatus = (false);
+        Boolean insertPasswordStatus = (false);
+
         private void InsertUser()
         {
             clsUsers u = new clsUsers();
@@ -107,14 +158,16 @@ namespace MoneyManagerDesktop
             u.login = (txtLoginInsert.Text);
             u.password = (txtPasswordAInsert.Text);
             u.status = (Convert.ToString(clsUsers.StatusUser.Enabled));
+
             string msgResult = u.InsertUsersCommand();
-            if (Boolean.FalseString == msgResult)
+
+            if (msgResult == Boolean.FalseString)
             {
                 MessageBox.Show("Erro ao Cadastrar novo Usuario");
             }
-            else if (Boolean.TrueString == msgResult)
+            else if (msgResult == Boolean.TrueString)
             {
-                String msg_Title = String.Format("{0}{1}", "Usuario", "       :)");
+                String msg_Title = String.Format("{0}{1}", "Usuario", " :)");
                 String msg_Text = String.Format("{0}{1}", "\r\r", "Cadastrado com Sucesso");
                 MessageBoxButtons msg_Buttons = MessageBoxButtons.OK;
                 MessageBoxIcon msg_Icon = MessageBoxIcon.None;
@@ -123,7 +176,7 @@ namespace MoneyManagerDesktop
             };
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSaveInsert_Click(object sender, EventArgs e)
         {
             if ((insertNameStatus == (true)) && (insertLoginStatus == (true)) && (insertPasswordStatus == (true)))
             {
@@ -133,11 +186,11 @@ namespace MoneyManagerDesktop
                 insertPasswordStatus = (false);
             }
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnCloseInsert_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
 
         #region ---> (txtNameInsert)
 
@@ -187,7 +240,7 @@ namespace MoneyManagerDesktop
                 imgStatusUserNameInsert.Cursor = Cursors.Hand;
                 this.imgStatusUserNameInsert.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
             }
-            else
+            else if (msgResult == (Boolean.TrueString))
             {
                 insertNameStatus = (true);
                 mttHintNameInsert.RemoveAll();
@@ -354,6 +407,8 @@ namespace MoneyManagerDesktop
         }
 
         #endregion
+
+
 
         #endregion
 

@@ -102,26 +102,30 @@ namespace MoneyManagerDesktop
             SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
             cmdSQL.Parameters.AddWithValue("@Nome", nome);
+
             String returnString = (Boolean.FalseString);
+
             try
             {
                 connSQL.Open();
                 SqlDataReader drSQL = cmdSQL.ExecuteReader();
+
                 int countRowsLines = (0);
 
-                if (drSQL.HasRows == (true))
+                while (drSQL.Read())
                 {
                     countRowsLines++;
-                };
+                }
 
                 if ((countRowsLines) == (0))
                 {
-                    returnString = Boolean.TrueString;
+                    returnString = Boolean.TrueString; // NOT EXIST (Name)
                 }
                 else if ((countRowsLines) >= (1))
                 {
-                    returnString = Boolean.FalseString;
+                    returnString = Boolean.FalseString;// EXIST (Name)
                 };
+
             }
             catch
             {
@@ -152,17 +156,19 @@ namespace MoneyManagerDesktop
             SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
             cmdSQL.Parameters.AddWithValue("@Login", login);
+
             String returnString = (Boolean.FalseString);
+
             try
             {
                 connSQL.Open();
                 SqlDataReader drSQL = cmdSQL.ExecuteReader();
                 int countRowsLines = (0);
 
-                if (drSQL.HasRows == (true))
+                while (drSQL.Read())
                 {
                     countRowsLines++;
-                };
+                }
 
                 if ((countRowsLines) == (0))
                 {
@@ -184,6 +190,41 @@ namespace MoneyManagerDesktop
             //returnString = myCommandStringSQL.ToString(); // Return String  myCommandStringSQL (for Debug)
             return (returnString);
         }
- 
+
+        public DataTable SelectAllUserCommand()
+        {
+            DataTable returnDataTable = new DataTable();
+            AppConfigXML appConfigXML = new AppConfigXML();
+            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            using (SqlConnection connSQL = new SqlConnection(myStringSQL))
+            {
+                String Status = ((StatusUser.Enabled).ToString());
+                String myCommandStringSQL = String.Format("{0}{1}{2}",
+                                                         ("SELECT [Name] AS [Nome Completo], [Login] AS [Login de Acesso] FROM [tblUsers] WHERE [Status] = ('"),
+                                                         (Status), ("');"));
+
+                using (SqlCommand cmdSQL = new SqlCommand((myCommandStringSQL), connSQL))
+                {
+                    try
+                    {
+                        connSQL.Open();
+
+                        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmdSQL);
+
+                        sqlDataAdapter.Fill(returnDataTable);
+                    }
+                    catch
+                    {
+                        DataColumn dataColumn = returnDataTable.Columns.Add("Erro ao Listar", typeof(Int32));
+                    }
+                    finally
+                    {
+                        connSQL.Close();
+                    };
+                };
+            };
+            return (returnDataTable);
+        }
+
     }
 }

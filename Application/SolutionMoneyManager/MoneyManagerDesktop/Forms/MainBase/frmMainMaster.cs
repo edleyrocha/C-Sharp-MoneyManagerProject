@@ -48,7 +48,8 @@ namespace MoneyManagerDesktop
             this.mnuUsersUpdate.Image = MoneyManagerDesktop.Forms.Users.resUsers.userUpdate32;
             this.mnuUsersDelete.Text = ("Deletar");
             this.mnuUsersDelete.Image = MoneyManagerDesktop.Forms.Users.resUsers.userDelete32;
-
+            this.mnuUsersSelect.Text = ("Listar");
+            this.mnuUsersSelect.Image = MoneyManagerDesktop.Forms.Users.resUsers.users32;
 
             this.mnuClose.Text = ("&Sair");
             this.mnuClose.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.exit32;
@@ -64,11 +65,18 @@ namespace MoneyManagerDesktop
             this.mnuAbout.Text = ("&Sobre");
             this.mnuAbout.Image = MoneyManagerDesktop.Forms.About.resAbout.help_about32;
         }
+        private void mnuUsersSelect_Click(object sender, EventArgs e)
+        {
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(3)); //SelectUsers
+            fUser.ShowDialog();
+        }
+
         private void mnuUsersInsert_Click(object sender, EventArgs e)
         {
             frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(0)); //InsertUsers
             fUser.ShowDialog();
         }
+
         private void mnuUsersUpdate_Click(object sender, EventArgs e)
         {
             frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(1)); //UpdateUsers

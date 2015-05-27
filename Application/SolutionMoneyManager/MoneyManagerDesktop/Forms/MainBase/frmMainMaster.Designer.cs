@@ -60,6 +60,7 @@
             this.btnHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.ptbMoney = new System.Windows.Forms.PictureBox();
+            this.mnuUsersSelect = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMoney)).BeginInit();
             this.SuspendLayout();
@@ -100,6 +101,7 @@
             // mnuUsers
             // 
             this.mnuUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuUsersSelect,
             this.mnuUsersInsert,
             this.mnuUsersUpdate,
             this.mnuUsersDelete});
@@ -327,6 +329,14 @@
             this.ptbMoney.TabIndex = 3;
             this.ptbMoney.TabStop = false;
             // 
+            // mnuUsersSelect
+            // 
+            this.mnuUsersSelect.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuUsersSelect.Name = "mnuUsersSelect";
+            this.mnuUsersSelect.Size = new System.Drawing.Size(227, 26);
+            this.mnuUsersSelect.Text = "%mnuUsersSelect%";
+            this.mnuUsersSelect.Click += new System.EventHandler(this.mnuUsersSelect_Click);
+            // 
             // frmMainMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +391,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuUsersInsert;
         private System.Windows.Forms.ToolStripMenuItem mnuUsersUpdate;
         private System.Windows.Forms.ToolStripMenuItem mnuUsersDelete;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsersSelect;
 
     }
 }
