@@ -34,7 +34,7 @@ namespace MoneyManagerDesktop
             if( (fLogin.myLoginStatusForLogin) == (frmLogin.AcessLoginStatus.AllowedAccess))
             {
                 Application.Run(new frmMainMaster());
-            }
+            };
         }
     }
 }

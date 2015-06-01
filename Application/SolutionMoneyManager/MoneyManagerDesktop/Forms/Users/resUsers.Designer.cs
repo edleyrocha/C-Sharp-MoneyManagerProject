@@ -103,6 +103,26 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap userFind128 {
+            get {
+                object obj = ResourceManager.GetObject("userFind128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userFind32 {
+            get {
+                object obj = ResourceManager.GetObject("userFind32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap userNew128 {
             get {
                 object obj = ResourceManager.GetObject("userNew128", resourceCulture);
@@ -136,6 +156,26 @@ namespace MoneyManagerDesktop.Forms.Users {
         internal static System.Drawing.Bitmap users32 {
             get {
                 object obj = ResourceManager.GetObject("users32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usersRestore128 {
+            get {
+                object obj = ResourceManager.GetObject("usersRestore128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usersRestore32 {
+            get {
+                object obj = ResourceManager.GetObject("usersRestore32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -42,14 +42,17 @@ namespace MoneyManagerDesktop
 
             this.mnuUsers.Text = ("Usuario");
             this.mnuUsers.Image = MoneyManagerDesktop.Forms.Users.resUsers.users32;
+            this.mnuUsersSelect.Text = ("Listar");
+            this.mnuUsersSelect.Image = MoneyManagerDesktop.Forms.Users.resUsers.userFind32;
             this.mnuUsersInsert.Text = ("Novo");
             this.mnuUsersInsert.Image = MoneyManagerDesktop.Forms.Users.resUsers.userNew32;
             this.mnuUsersUpdate.Text = ("Atualizar");
             this.mnuUsersUpdate.Image = MoneyManagerDesktop.Forms.Users.resUsers.userUpdate32;
             this.mnuUsersDelete.Text = ("Deletar");
             this.mnuUsersDelete.Image = MoneyManagerDesktop.Forms.Users.resUsers.userDelete32;
-            this.mnuUsersSelect.Text = ("Listar");
-            this.mnuUsersSelect.Image = MoneyManagerDesktop.Forms.Users.resUsers.users32;
+            this.mnuUsersRetore.Text = ("Restaurar");
+            this.mnuUsersRetore.Image = MoneyManagerDesktop.Forms.Users.resUsers.usersRestore32;
+
 
             this.mnuClose.Text = ("&Sair");
             this.mnuClose.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.exit32;
@@ -67,24 +70,29 @@ namespace MoneyManagerDesktop
         }
         private void mnuUsersSelect_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(3)); //SelectUsers
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(0)); //List Users
             fUser.ShowDialog();
         }
 
         private void mnuUsersInsert_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(0)); //InsertUsers
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(1)); //Insert Users
             fUser.ShowDialog();
         }
-
         private void mnuUsersUpdate_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(1)); //UpdateUsers
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(2)); //Update Users
             fUser.ShowDialog();
         }
         private void mnuUsersDelete_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(2)); //DeleteUsers
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(3)); //Delete Users (Disabled)
+            fUser.ShowDialog();
+        }
+
+        private void mnuUsersRetore_Click(object sender, EventArgs e)
+        {
+            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(4));  //Restore Users (Enabled)
             fUser.ShowDialog();
         }
         private void mnuClose_Click(object sender, EventArgs e)
@@ -124,5 +132,14 @@ namespace MoneyManagerDesktop
             CancelClosing();
             e.Cancel = CancelClose;
         }
+
+        private void frmMainMaster_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            };
+        }
+
     }
 }

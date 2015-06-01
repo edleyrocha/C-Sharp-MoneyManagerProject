@@ -182,6 +182,7 @@
             this.metroTabControl.Size = new System.Drawing.Size(336, 141);
             this.metroTabControl.TabIndex = 9;
             this.metroTabControl.UseSelectable = true;
+            this.metroTabControl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTabControl_KeyDown);
             // 
             // frmLogin
             // 

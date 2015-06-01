@@ -18,32 +18,31 @@ namespace MoneyManagerDesktop
     using System.Text;
     using System.Data;
     using System.Data.SqlClient;
-
     #endregion
     class clsUsers
     {
 
         //Strings Fields [dbo].[tblUsers]
         public int id { get; set; }
-        public string nome { get; set; }
+        public string name { get; set; }
         public string login { get; set; }
         public string password { get; set; }
         public string status { get; set; }
 
+        /// <summary>
+        /// Users Status
+        /// </summary>
         public enum StatusUser
         {
             Enabled = 0,
-            Disabled = 1,
-            Deleted = 2
+            Disabled = 1
         }
 
-        public enum ChoseActionFormUsers
-        {
-            Insert = 0,
-            Update = 1,
-            Delete = 2
-        }
-        public String InsertUsersCommand()
+        /// <summary>
+        /// Insert New Users
+        /// </summary>
+        /// <returns></returns>
+        public String InsertNewUsersCommand()
         {
             AppConfigXML appConfigXML = new AppConfigXML();
             String myStringSQL = ("");
@@ -51,20 +50,20 @@ namespace MoneyManagerDesktop
 
             SqlConnection connSQL = new SqlConnection(myStringSQL);
 
-            //INSERT INTO [tblUsers] VALUES (@Nome,@Login,@Password,@Status);
+            //INSERT INTO [tblUsers] VALUES (@Nome,@Login,@Password,@StatusEnabled);
             StringBuilder myCommandStringSQL = new StringBuilder();
             myCommandStringSQL.Append("INSERT INTO [tblUsers] VALUES (");
             myCommandStringSQL.Append("@Nome,");
             myCommandStringSQL.Append("@Login,");
             myCommandStringSQL.Append("@Password,");
-            myCommandStringSQL.Append("@Status);");
+            myCommandStringSQL.Append("@StatusEnabled);");
 
             SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
-            cmdSQL.Parameters.AddWithValue("@Nome", nome);
+            cmdSQL.Parameters.AddWithValue("@Nome", name);
             cmdSQL.Parameters.AddWithValue("@Login", login);
             cmdSQL.Parameters.AddWithValue("@Password", password);
-            cmdSQL.Parameters.AddWithValue("@Status", status);
+            cmdSQL.Parameters.AddWithValue("@StatusEnabled", status);
 
             String returnString = (Boolean.FalseString);
             try
@@ -85,6 +84,112 @@ namespace MoneyManagerDesktop
             return (returnString);
         }
 
+        /// <summary>
+        /// Update Name, Login and Password for Name
+        /// </summary>
+        /// <returns></returns>
+        public String UpdateNameLoginPasswordForName(String myName)
+        {
+            String returnString = (Boolean.FalseString);
+            DataTable returnDataTable = new DataTable();
+            AppConfigXML appConfigXML = new AppConfigXML();
+            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+
+            using (SqlConnection connSQL = new SqlConnection(myStringSQL))
+            {
+                String myCommandStringSQL = String.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}",
+                                                         ("UPDATE [tblUsers] SET [Name] = ('"),
+                                                         (name),
+                                                         ("'), [Login] = ('"),
+                                                         (login),
+                                                         ("'), [Password] = ('"),
+                                                         (password),
+                                                         ("') WHERE [Name] = ('"),
+                                                         (myName),
+                                                         ("');"));
+
+                using (SqlCommand cmdSQL = new SqlCommand((myCommandStringSQL), connSQL))
+                {
+                    try
+                    {
+                        connSQL.Open();
+
+                        int AffectedLines = (0); ;
+
+                        AffectedLines = (cmdSQL.ExecuteNonQuery());
+
+                        if ((AffectedLines) == (1))
+                        {
+                            returnString = Boolean.TrueString;
+                        };
+                    }
+                    catch
+                    {
+                        returnString = (Boolean.FalseString);
+                    }
+                    finally
+                    {
+                        connSQL.Close();
+                    };
+                };
+            };
+            return (returnString);
+        }
+
+        /// <summary>
+        /// Update Status for Name
+        /// </summary>
+        /// <returns></returns>
+        public String UpdateStatusForName(String myName, StatusUser myNewStatus)
+        {
+            String returnString = (Boolean.FalseString);
+            DataTable returnDataTable = new DataTable();
+            AppConfigXML appConfigXML = new AppConfigXML();
+            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+
+            using (SqlConnection connSQL = new SqlConnection(myStringSQL))
+            {
+                String newStatus = ((myNewStatus).ToString());
+
+                String myCommandStringSQL = String.Format(("{0}{1}{2}{3}{4}"),
+                                                          ("UPDATE [tblUsers] SET [Status] = ('"),
+                                                          (newStatus),
+                                                          ("') WHERE [Name] = ('"),
+                                                          (myName),
+                                                          ("');"));
+
+                using (SqlCommand cmdSQL = new SqlCommand((myCommandStringSQL), connSQL))
+                {
+                    try
+                    {
+                        connSQL.Open();
+
+                        int AffectedLines = (0); ;
+
+                        AffectedLines = (cmdSQL.ExecuteNonQuery());
+
+                        if ((AffectedLines) == (1))
+                        {
+                            returnString = Boolean.TrueString;
+                        }
+                    }
+                    catch
+                    {
+                        returnString = (Boolean.FalseString);
+                    }
+                    finally
+                    {
+                        connSQL.Close();
+                    };
+                };
+            };
+            return returnString;
+        }
+
+        /// <summary>
+        /// Check if User Exist
+        /// </summary>
+        /// <returns></returns>
         public String CheckUserNameInsertExist()
         {
             AppConfigXML appConfigXML = new AppConfigXML();
@@ -101,7 +206,7 @@ namespace MoneyManagerDesktop
 
             SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
-            cmdSQL.Parameters.AddWithValue("@Nome", nome);
+            cmdSQL.Parameters.AddWithValue("@Nome", name);
 
             String returnString = (Boolean.FalseString);
 
@@ -115,7 +220,7 @@ namespace MoneyManagerDesktop
                 while (drSQL.Read())
                 {
                     countRowsLines++;
-                }
+                };
 
                 if ((countRowsLines) == (0))
                 {
@@ -125,7 +230,6 @@ namespace MoneyManagerDesktop
                 {
                     returnString = Boolean.FalseString;// EXIST (Name)
                 };
-
             }
             catch
             {
@@ -139,6 +243,10 @@ namespace MoneyManagerDesktop
             return (returnString);
         }
 
+        /// <summary>
+        /// Check if Login Exist
+        /// </summary>
+        /// <returns></returns>
         public String CheckUserLoginInsertExist()
         {
             AppConfigXML appConfigXML = new AppConfigXML();
@@ -168,15 +276,15 @@ namespace MoneyManagerDesktop
                 while (drSQL.Read())
                 {
                     countRowsLines++;
-                }
+                };
 
                 if ((countRowsLines) == (0))
                 {
-                    returnString = Boolean.TrueString;
+                    returnString = Boolean.TrueString;// NOT EXIST (Login)
                 }
                 else if ((countRowsLines) >= (1))
                 {
-                    returnString = Boolean.FalseString;
+                    returnString = Boolean.FalseString; // EXIST (Login)
                 };
             }
             catch
@@ -191,15 +299,61 @@ namespace MoneyManagerDesktop
             return (returnString);
         }
 
-        public DataTable SelectAllUserCommand()
+        /// <summary>
+        /// List Names for Status
+        /// </summary>
+        /// <returns></returns>
+        public DataTable SelectNameForStatus(StatusUser myStatus)
+        {
+            DataTable returnDataTable = new DataTable();
+            AppConfigXML appConfigXML = new AppConfigXML();
+            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+
+            using (SqlConnection connSQL = new SqlConnection(myStringSQL))
+            {
+                String Status = (myStatus.ToString());
+                String myCommandStringSQL = String.Format(("{0}{1}{2}"),
+                                                         ("SELECT [Name] AS [Nome Completo] FROM [tblUsers] WHERE [Status] = ('"),
+                                                         (Status),
+                                                         ("');"));
+
+                using (SqlCommand cmdSQL = new SqlCommand((myCommandStringSQL), connSQL))
+                {
+                    try
+                    {
+                        connSQL.Open();
+
+                        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmdSQL);
+
+                        sqlDataAdapter.Fill(returnDataTable);
+                    }
+                    catch
+                    {
+                        DataColumn dataColumn = returnDataTable.Columns.Add("Erro ao Listar", typeof(Int32));
+                    }
+                    finally
+                    {
+                        connSQL.Close();
+                    };
+                };
+            };
+            return (returnDataTable);
+        }
+
+        /// <summary>
+        /// List Names and Login for Status
+        /// </summary>
+        /// <returns></returns>
+        public DataTable SelectNameLoginForStatus(StatusUser myStatus)
         {
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
             String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {
-                String Status = ((StatusUser.Enabled).ToString());
-                String myCommandStringSQL = String.Format("{0}{1}{2}",
+                String Status = ((myStatus).ToString());
+
+                String myCommandStringSQL = String.Format(("{0}{1}{2}"),
                                                          ("SELECT [Name] AS [Nome Completo], [Login] AS [Login de Acesso] FROM [tblUsers] WHERE [Status] = ('"),
                                                          (Status), ("');"));
 
@@ -226,5 +380,47 @@ namespace MoneyManagerDesktop
             return (returnDataTable);
         }
 
+        /// <summary>
+        ///  List Name, Login And Password for Name and Status
+        /// </summary>
+        /// <returns></returns>
+        public DataTable SelectNameLoginPasswordForStatus(String myName, StatusUser myStatus)
+        {
+            DataTable returnDataTable = new DataTable();
+            AppConfigXML appConfigXML = new AppConfigXML();
+            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+
+            using (SqlConnection connSQL = new SqlConnection(myStringSQL))
+            {
+                String Status = (myStatus.ToString());
+                String myCommandStringSQL = String.Format(("{0}{1}{2}{3}{4}"),
+                                                         ("SELECT [Name], [Login], [Password], [Status] FROM [tblUsers] WHERE [Name] = ('"),
+                                                         (myName),
+                                                         ("') AND [Status] = ('"),
+                                                         (Status),
+                                                         ("');"));
+
+                using (SqlCommand cmdSQL = new SqlCommand((myCommandStringSQL), connSQL))
+                {
+                    try
+                    {
+                        connSQL.Open();
+
+                        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmdSQL);
+
+                        sqlDataAdapter.Fill(returnDataTable);
+                    }
+                    catch
+                    {
+                        DataColumn dataColumn = returnDataTable.Columns.Add("Erro ao Listar", typeof(Int32));
+                    }
+                    finally
+                    {
+                        connSQL.Close();
+                    };
+                };
+            };
+            return (returnDataTable);
+        }
     }
 }

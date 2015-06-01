@@ -25,17 +25,21 @@ namespace MoneyManagerDesktop
     #endregion
     public partial class frmLogin : MetroForm
     {
+
         public enum AcessLoginStatus
         {
             AllowedDenied = 1,
             AllowedAccess = 2
         }
+
         public AcessLoginStatus myLoginStatusForLogin { get; set; }
+
         public frmLogin()
         {
             InitializeComponent();
             this.SetConfigStartLogin();
         }
+
         public void SetConfigStartLogin()
         {
             this.Text = ("Money Manager");
@@ -46,14 +50,17 @@ namespace MoneyManagerDesktop
             this.btnLogin.Text = ("Login");
             this.Refresh();
         }
+
         private void txt_Login_Click(object sender, EventArgs e)
         {
             this.txt_Login.Text = ("");
         }
+
         private void txt_Password_Click(object sender, EventArgs e)
         {
             this.txt_Password.Text = ("");
         }
+
         private void txt_Login_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -62,6 +69,7 @@ namespace MoneyManagerDesktop
                 e.Handled = e.SuppressKeyPress = true;
             };
         }
+
         private void txt_Password_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -71,6 +79,7 @@ namespace MoneyManagerDesktop
                 e.Handled = e.SuppressKeyPress = true;
             };
         }
+
         private void txt_Login_Leave(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_Login.Text) || ((this.txt_Login.Text == ("Usuario"))))
@@ -83,6 +92,7 @@ namespace MoneyManagerDesktop
                 this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
             };
         }
+
         private void txt_Password_Leave(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(this.txt_Password.Text) || ((this.txt_Password.Text == ("Senha"))))
@@ -96,6 +106,7 @@ namespace MoneyManagerDesktop
                 this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
             };
         }
+
         private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (this.txt_Password.UseSystemPasswordChar == (false))
@@ -103,12 +114,14 @@ namespace MoneyManagerDesktop
                 this.txt_Password.UseSystemPasswordChar = (true);
             };
         }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.myLoginStatusForLogin = AcessLoginStatus.AllowedAccess;
             this.Close();
             this.Dispose();
         }
+
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
         {
             MetroFramework.Components.MetroStyleManager metroStyleManager = new MetroFramework.Components.MetroStyleManager();
@@ -122,6 +135,7 @@ namespace MoneyManagerDesktop
             this.btnLogin.Theme = this.Theme;
             this.Refresh();
         }
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
             var m = new Random();
@@ -132,6 +146,14 @@ namespace MoneyManagerDesktop
             this.Style = (MetroColorStyle)next;
             this.Refresh();
             this.txt_Login.Focus();
+        }
+
+        private void metroTabControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            };
         }
     }
 }
