@@ -25,43 +25,90 @@ namespace MoneyManagerDesktop
     #endregion
     class clsConnection
     {
-        public clsConnection()
-        {
+        #region ---> ( Get and Set StringSQLConnection)
 
-        }
-       #region ---> ( Get and Set StringSQLConnection)
-        DataSource sqlDataSource = new DataSource("MicrosoftSqlServer", "Microsoft SQL Server");
-        DataConnectionDialog dcd = new DataConnectionDialog();
-        AppConfigXML appConfigXML = new AppConfigXML();
-        public enum ChoiceGetSQLConnectionString
+        DataSource objDataSource = new DataSource("MicrosoftSqlServer", "Microsoft SQL Server");
+        DataConnectionDialog objDataConnectionDialog = new DataConnectionDialog();
+        AppConfigXML objAppConfigXML = new AppConfigXML();
+
+        public enum ChoiceSQLConnectionString
         {
             GetDataSource = 0,
             GetDataProvider = 1,
             GetConnectionString = 2
         }
-        public string GetSQLConnectionString(ChoiceGetSQLConnectionString choiceGetSQLConnectionString)
+        private bool SaveSQLConnectionString()
         {
-            sqlDataSource.Providers.Add(DataProvider.SqlDataProvider);
-            dcd.DataSources.Add(sqlDataSource);
-            dcd.ConnectionString = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            bool returnTrueOrFalse = (false); // Return False for DataConnectionDialog
+            if (DataConnectionDialog.Show(objDataConnectionDialog) == DialogResult.OK)
+            {
+                String msg_Title = String.Format("{0}", "Data Base Conexão");
+                String msg_Text = String.Format("{0}{1}", "\r\r\t\t", "Deseja Salvar esta Conexão?");
+                MessageBoxButtons msg_Buttons = MessageBoxButtons.YesNo;
+                MessageBoxIcon msg_Icon = MessageBoxIcon.None;
+                MessageBoxDefaultButton msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
+                DialogResult msgResult = MetroMessageBox.Show(Form.ActiveForm, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
+
+                if (msgResult == DialogResult.Yes)
+                {
+                    this.objAppConfigXML.SetAppConfigXML("SQLStringConnection", objDataConnectionDialog.ConnectionString);
+                    returnTrueOrFalse = (true); // DataConnectionDialog and SQLStringConnection Is OK
+                };
+            };
+            return returnTrueOrFalse;
+        }
+        public bool NewSQLConnectionString()
+        {
+            this.objDataSource.Providers.Add(DataProvider.SqlDataProvider);
+            this.objDataConnectionDialog.DataSources.Add(objDataSource);
+            this.objDataConnectionDialog.SelectedDataProvider = (DataProvider.SqlDataProvider);
+            this.objDataConnectionDialog.SelectedDataSource = (objDataSource);
+
+            bool returnTrueOrFalse = (false); // Default for DataConnectionDialog
+
+            returnTrueOrFalse = (this.SaveSQLConnectionString());
+
+            this.objDataConnectionDialog.Dispose();
+
+            return returnTrueOrFalse;
+        }
+        public bool LoadSQLConnectionString(string connectionString)
+        {
+            this.objDataSource.Providers.Add(DataProvider.SqlDataProvider);
+            this.objDataConnectionDialog.DataSources.Add(this.objDataSource);
+            this.objDataConnectionDialog.ConnectionString = connectionString;
+
+            bool returnTrueOrFalse = (false); // Return False for DataConnectionDialog
+
+            returnTrueOrFalse = (this.SaveSQLConnectionString());
+
+            this.objDataConnectionDialog.Dispose();
+
+            return returnTrueOrFalse;
+        }
+        public string GetSQLConnectionString(ChoiceSQLConnectionString choiceSQLConnectionString)
+        {
+            objDataSource.Providers.Add(DataProvider.SqlDataProvider);
+            objDataConnectionDialog.DataSources.Add(objDataSource);
+            objDataConnectionDialog.ConnectionString = objAppConfigXML.GetAppConfigXML("SQLStringConnection");
             //Return
             String returnStringSQLConnection = (String.Empty);
             //Choice
-            switch (choiceGetSQLConnectionString)
+            switch (choiceSQLConnectionString)
             {
-                case ChoiceGetSQLConnectionString.GetDataSource:
+                case ChoiceSQLConnectionString.GetDataSource:
                     {
-                        returnStringSQLConnection = dcd.SelectedDataSource.DisplayName;
+                        returnStringSQLConnection = objDataConnectionDialog.SelectedDataSource.DisplayName;
                         break;
                     };
-                case ChoiceGetSQLConnectionString.GetDataProvider:
+                case ChoiceSQLConnectionString.GetDataProvider:
                     {
-                        returnStringSQLConnection = dcd.SelectedDataProvider.DisplayName;
+                        returnStringSQLConnection = objDataConnectionDialog.SelectedDataProvider.DisplayName;
                         break;
                     };
-                case ChoiceGetSQLConnectionString.GetConnectionString:
+                case ChoiceSQLConnectionString.GetConnectionString:
                     {
-                        returnStringSQLConnection = dcd.ConnectionString;
+                        returnStringSQLConnection = objDataConnectionDialog.ConnectionString;
                         break;
                     };
                 default:
@@ -70,29 +117,6 @@ namespace MoneyManagerDesktop
                     };
             };
             return returnStringSQLConnection;
-        }
-        public string SetSQLConnectionString()
-        {
-            sqlDataSource.Providers.Add(DataProvider.SqlDataProvider);
-            dcd.DataSources.Add(sqlDataSource);
-            dcd.SelectedDataProvider = DataProvider.SqlDataProvider;
-            dcd.SelectedDataSource = sqlDataSource;
-            String returnStrigOfBool = Boolean.FalseString;
-            if (DataConnectionDialog.Show(dcd) == DialogResult.OK)
-            {
-                String msg_Title = String.Format("{0}", "Data Base Conexão");
-                String msg_Text = String.Format("{0}{1}", "\r\r\t\t", "Deseja Salvar esta Conexão?");
-                MessageBoxButtons msg_Buttons = MessageBoxButtons.YesNo;
-                MessageBoxIcon msg_Icon = MessageBoxIcon.None;
-                MessageBoxDefaultButton msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
-                DialogResult msgResult = MetroMessageBox.Show(Form.ActiveForm, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
-                if (msgResult == DialogResult.Yes)
-                {
-                   appConfigXML.SetAppConfigFileConnectionsString("SQLStringConnection", dcd.ConnectionString);
-                   returnStrigOfBool = Boolean.TrueString;
-                };
-            };
-            return returnStrigOfBool;
         }
         #endregion
     }

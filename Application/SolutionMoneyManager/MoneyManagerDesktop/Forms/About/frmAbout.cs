@@ -14,6 +14,7 @@ namespace MoneyManagerDesktop
     #region ---> (Using)
     using MetroFramework.Forms;
     using System;
+    using System.Drawing;
     using System.Reflection;
     using System.Windows.Forms;
     #endregion
@@ -114,7 +115,10 @@ namespace MoneyManagerDesktop
             this.lbl_Ringht.Text = AssemblyCopyright;
             this.lbl_Company.Text = AssemblyCompany;
             this.rtbDescription.Text = AssemblyDescription;
-            this.imgHelpAbout.Image = MoneyManagerDesktop.Forms.About.resAbout.help_about64;
+            this.imgHelpAbout.Text = ("");
+            this.imgHelpAbout.UseTileImage = (true);
+            this.imgHelpAbout.TileImageAlign = ContentAlignment.MiddleCenter;
+            this.imgHelpAbout.TileImage =  MoneyManagerDesktop.Forms.About.resAbout.help_about128;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

@@ -46,7 +46,7 @@ namespace MoneyManagerDesktop
         {
             AppConfigXML appConfigXML = new AppConfigXML();
             String myStringSQL = ("");
-            myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
 
             SqlConnection connSQL = new SqlConnection(myStringSQL);
 
@@ -93,7 +93,7 @@ namespace MoneyManagerDesktop
             String returnString = (Boolean.FalseString);
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
-            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
 
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {
@@ -145,7 +145,7 @@ namespace MoneyManagerDesktop
             String returnString = (Boolean.FalseString);
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
-            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
 
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {
@@ -193,7 +193,7 @@ namespace MoneyManagerDesktop
         public String CheckUserNameInsertExist()
         {
             AppConfigXML appConfigXML = new AppConfigXML();
-            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
             SqlConnection connSQL = new SqlConnection(myStringSQL);
 
             //SELECT [Name] FROM [tblUsers] WHERE [Name] = @Nome;
@@ -250,7 +250,7 @@ namespace MoneyManagerDesktop
         public String CheckUserLoginInsertExist()
         {
             AppConfigXML appConfigXML = new AppConfigXML();
-            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
             SqlConnection connSQL = new SqlConnection(myStringSQL);
 
             //SELECT [Name] FROM [tblUsers] WHERE [Login] = @Login;
@@ -307,7 +307,7 @@ namespace MoneyManagerDesktop
         {
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
-            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
 
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {
@@ -348,7 +348,7 @@ namespace MoneyManagerDesktop
         {
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
-            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {
                 String Status = ((myStatus).ToString());
@@ -388,7 +388,7 @@ namespace MoneyManagerDesktop
         {
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
-            String myStringSQL = appConfigXML.GetAppConfigFileConnectionsString("SQLStringConnection");
+            String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
 
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {

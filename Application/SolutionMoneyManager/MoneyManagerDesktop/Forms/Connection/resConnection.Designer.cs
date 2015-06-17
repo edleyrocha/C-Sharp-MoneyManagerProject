@@ -63,9 +63,9 @@ namespace MoneyManagerDesktop.Forms.Connection {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap db_add32 {
+        internal static System.Drawing.Bitmap db_add128 {
             get {
-                object obj = ResourceManager.GetObject("db_add32", resourceCulture);
+                object obj = ResourceManager.GetObject("db_add128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MoneyManagerDesktop.Forms.Connection {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap db_add96 {
+        internal static System.Drawing.Bitmap db_add32 {
             get {
-                object obj = ResourceManager.GetObject("db_add96", resourceCulture);
+                object obj = ResourceManager.GetObject("db_add32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

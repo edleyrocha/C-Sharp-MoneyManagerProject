@@ -27,45 +27,69 @@ namespace MoneyManagerDesktop
     #endregion
     public partial class frmConnection : MetroForm
     {
+
         public frmConnection()
         {
-            InitializeComponent();
-            SetConfigStartConnections();
+            this.InitializeComponent();
+            this.SetConfigStartConnections();
         }
-         public void SetConfigStartConnections()
+        private void SetConfigStartConnections()
         {
+            // FORM SIZE = 386; 330 Default
             this.Text = ("Data Base");
-            this.txtBoxSource.Text = "";
-            this.txtBoxProvider.Text = "";
-            this.txtBoxString.Text = "";
-            this.btnLoad.Text = ("Carregar");
-            this.btnNovo.Text = ("Novo");
-            this.btnTest.Text = ("Testar");
+            this.btnNew.Text = ("Novo");
             this.btnClose.Text = ("Sair");
-            this.pbxDataBaseLogo.Image = MoneyManagerDesktop.Forms.Connection.resConnection.db_add96;
+            this.btnLoad.Text = ("Carregar");
+            this.txtBoxSource.Text = ("");
+            this.txtBoxProvider.Text = ("");
+            this.txtBoxProvider.Multiline = (true);
+            this.txtBoxString.Text = ("");
+            this.txtBoxString.Multiline = (true);
+            this.img_LogoDB.Text = ("");
+            this.img_LogoDB.UseTileImage = (true);
+            this.img_LogoDB.TileImageAlign = ContentAlignment.MiddleCenter;
+            this.img_LogoDB.TileImage = MoneyManagerDesktop.Forms.Connection.resConnection.db_add128;
         }
-         private void btnClose_Click(object sender, EventArgs e)
-         {
-             this.Close();
-         }
-         private void btnNovo_Click(object sender, EventArgs e)
-         {
-             clsConnection c = new clsConnection();
-             if ((c.SetSQLConnectionString()) == (Boolean.TrueString))
-             {
-                 btnLoad.PerformClick();
-             };
-         }
-         private void btnLoad_Click(object sender, EventArgs e)
-         {
-             clsConnection c = new clsConnection();
-             txtBoxSource.Text = c.GetSQLConnectionString((clsConnection.ChoiceGetSQLConnectionString)0);
-             txtBoxProvider.Text = c.GetSQLConnectionString((clsConnection.ChoiceGetSQLConnectionString)1);
-             txtBoxString.Text = c.GetSQLConnectionString((clsConnection.ChoiceGetSQLConnectionString)2);
-         }
-         private void txtBox_KeyDown(object sender, KeyEventArgs e)
-         {
-             e.Handled = e.SuppressKeyPress = true; //No Send KeyPress
-         }
+        private void LoadSQLConnectionString()
+        {
+            clsConnection objC = new clsConnection();
+            if ((this.btnLoad.Text) == ("Carregar"))
+            {
+                this.txtBoxSource.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetDataSource));
+                this.txtBoxProvider.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetDataProvider));
+                this.txtBoxString.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetConnectionString));
+                this.btnLoad.Text = ("Testar");
+            }
+            else if ((this.btnLoad.Text) == ("Testar"))
+            {
+                string connectionString = (this.txtBoxString.Text);
+                objC.LoadSQLConnectionString(connectionString);
+                this.btnLoad.Text = ("Carregar");
+            };
+        }
+        private void NewSQLConnectionString()
+        {
+            clsConnection objC = new clsConnection();
+            if (objC.NewSQLConnectionString()) // IF NewSQLConnectionString (TRUE) Load Config
+            {
+                this.btnLoad.PerformClick();
+            };
+        }
+        private void txtBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = e.SuppressKeyPress = true; //No Send KeyPress
+        }
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            this.NewSQLConnectionString();
+        }
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            this.LoadSQLConnectionString();
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -63,9 +63,9 @@ namespace MoneyManagerDesktop.Forms.About {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap help_about32 {
+        internal static System.Drawing.Bitmap help_about128 {
             get {
-                object obj = ResourceManager.GetObject("help_about32", resourceCulture);
+                object obj = ResourceManager.GetObject("help_about128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MoneyManagerDesktop.Forms.About {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap help_about64 {
+        internal static System.Drawing.Bitmap help_about32 {
             get {
-                object obj = ResourceManager.GetObject("help_about64", resourceCulture);
+                object obj = ResourceManager.GetObject("help_about32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -367,8 +367,8 @@ namespace MoneyManagerDesktop
                 colorID = ((String)this.Tag);
                 themeID = ((String)this.mtl_Backgroud.Tag);
                 AppConfigXML appConfigXML = new AppConfigXML();
-                appConfigXML.SetAppConfigFileConnectionsString("ThemeColorID", themeID);
-                appConfigXML.SetAppConfigFileConnectionsString("StyleColorID", colorID);
+                appConfigXML.SetAppConfigXML("ThemeColorID", themeID);
+                appConfigXML.SetAppConfigXML("StyleColorID", colorID);
                 this.Close();
             };
         }

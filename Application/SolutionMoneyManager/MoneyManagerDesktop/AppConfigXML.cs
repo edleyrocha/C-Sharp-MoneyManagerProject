@@ -1,4 +1,15 @@
-﻿namespace MoneyManagerDesktop
+﻿//------------------------------------------------------------------------------
+//
+// <git hub="https://github.com/edleyrocha">
+//      GitHub Repositories
+// </git>
+//
+// <mail address ="edleyrocha@hotmail.com">
+//      Developer Email.
+// </mail>
+//
+//------------------------------------------------------------------------------
+namespace MoneyManagerDesktop
 {
     #region ---> ( Using )
     using MoneyManagerDesktop.Properties;
@@ -12,32 +23,27 @@
     using System.Windows.Forms;
     using System.Xml;
     #endregion
-
     class AppConfigXML
     {
-        public AppConfigXML()
-        {
-        }
-
         #region ---> ( Set AppConfig )
         /// <summary>
-        /// #Save String for stringSQLModel
+        /// # Edit AppConfigXML (string key, string value)
+        /// # Edit On "C:\Users\%UserName%\AppData\Local\"
         /// </summary>
-        public void SetAppConfigFileConnectionsString(string key, string value)
+        public void SetAppConfigXML(string key, string value)
         {
             Properties.Settings.Default[key] = value;
             Properties.Settings.Default.Save();
         }
         #endregion
-
         #region ---> ( Get AppConfig )
         /// <summary>
-        /// #Read  String for stringSQLModel
-        /// #Read On "C:\Users\%UserName%\AppData\Local\"
+        /// # Read String for stringSQLModel (string key)
+        /// # Read On "C:\Users\%UserName%\AppData\Local\"
         /// </summary>
-        public string GetAppConfigFileConnectionsString(string key)
+        public string GetAppConfigXML(string key)
         {
-            String returnResult = "";
+            string returnResult = ("");
             returnResult = (Properties.Settings.Default[key].ToString());
             return returnResult;
         }

@@ -244,13 +244,7 @@
     <None Include="Resources\User_exclamation16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\help_about64.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\help_about32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\db_add96.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\db_add32.png" />
@@ -296,6 +290,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\usersRestore128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\db_add128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help_about128.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
