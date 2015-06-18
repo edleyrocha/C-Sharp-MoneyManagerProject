@@ -1,14 +1,16 @@
-﻿//------------------------------------------------------------------------------
-//
-// <git hub="https://github.com/edleyrocha">
-//      GitHub Repositories
-// </git>
-//
-// <mail address ="edleyrocha@hotmail.com">
-//      Developer Email.
-// </mail>
-//
-//------------------------------------------------------------------------------
+﻿///////////////////////////////////////////////
+//-------------------------------------------//
+//                                           //
+// <git hub="https://github.com/edleyrocha"> //
+//      GitHub Repositories                  //
+// </git>                                    //
+//                                           //
+// <mail address="edleyrocha@hotmail.com">   //
+//       Developer Email                     //
+// </mail>                                   //
+//                                           //
+//---------------- --------------------------//
+///////////////////// /////////////////////////
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
@@ -49,18 +51,18 @@ namespace MoneyManagerDesktop
         {
             this.Text = ("Cadastro");
             // Hide Tabs
-            this.metroTile_Users.SuspendLayout();
-            this.metroTile_Users.TabPages.Clear();
+            this.mtc_Users.SuspendLayout();
+            this.mtc_Users.TabPages.Clear();
             switch (SelectedAction)
             {
                 case ChoseActionForm.SelectUsers:
                     {
-                        if (!this.metroTile_Users.TabPages.Contains(mtpSelect))
+                        if (!this.mtc_Users.TabPages.Contains(mtpSelect))
                         {
                             this.Size = new Size(535, 300);// ( 45 , 190)
-                            this.metroTile_Users.Size = new Size(490, 215);
+                            this.mtc_Users.Size = new Size(490, 215);
                             this.mtpSelect.Text = String.Format("{0}{1}{1}{1}{1}{1}{1}{1}", "Lista de Usuarios", "                  ");
-                            this.metroTile_Users.TabPages.Add(mtpSelect);
+                            this.mtc_Users.TabPages.Add(mtpSelect);
                             this.lblCoutSelect.Text = ("");
                             this.metroTile_Select.Text = ("");
                             this.btnCloseSelect.Text = ((String)btnCloseSelect.Tag);
@@ -70,12 +72,12 @@ namespace MoneyManagerDesktop
                     };
                 case ChoseActionForm.InsertUsers:
                     {
-                        if (!metroTile_Users.TabPages.Contains(mtpInsert))
+                        if (!mtc_Users.TabPages.Contains(mtpInsert))
                         {
                             this.Size = new Size(400, 300); // ( 45 , 190)
-                            this.metroTile_Users.Size = new Size(360, 215);
+                            this.mtc_Users.Size = new Size(360, 215);
                             this.mtpInsert.Text = String.Format("{0}{1}{1}{1}{1}{1}", "Novo Usuario", "                  ");
-                            this.metroTile_Users.TabPages.Add(mtpInsert);
+                            this.mtc_Users.TabPages.Add(mtpInsert);
                             this.metroTile_Insert.Text = ("");
                             // btn
                             this.btnSaveInsert.Text = ((String)btnSaveInsert.Tag);
@@ -98,12 +100,12 @@ namespace MoneyManagerDesktop
                     };
                 case ChoseActionForm.UpdateUsers:
                     {
-                        if (!this.metroTile_Users.TabPages.Contains(mtpUpdate))
+                        if (!this.mtc_Users.TabPages.Contains(mtpUpdate))
                         {
                             this.Size = new Size(400, 435);
-                            this.metroTile_Users.Size = new Size(360, 355);
+                            this.mtc_Users.Size = new Size(360, 355);
                             this.mtpUpdate.Text = String.Format("{0}{1}{1}{1}{1}{1}{1}{1}", "Atualizar Usuario", "                  ");
-                            this.metroTile_Users.TabPages.Add(mtpUpdate);
+                            this.mtc_Users.TabPages.Add(mtpUpdate);
                             this.metroTile_Update.Text = ("");
                             // lbls
                             this.lblCoutUpdate.Text = ("");
@@ -134,12 +136,12 @@ namespace MoneyManagerDesktop
                     };
                 case ChoseActionForm.DeleteUsers:
                     {
-                        if (!this.metroTile_Users.TabPages.Contains(mtpDelete))
+                        if (!this.mtc_Users.TabPages.Contains(mtpDelete))
                         {
                             this.Size = new Size(535, 300);// ( 45 , 190)
-                            this.metroTile_Users.Size = new Size(490, 215);
+                            this.mtc_Users.Size = new Size(490, 215);
                             this.mtpDelete.Text = String.Format("{0}{1}{1}{1}{1}{1}{1}{1}", "Deletar Usuario", "                  ");
-                            this.metroTile_Users.TabPages.Add(mtpDelete);
+                            this.mtc_Users.TabPages.Add(mtpDelete);
                             this.metroTile_Delete.Text = ("");
                             this.lblCoutDelete.Text = ("");
                             this.btnCloseDelete.Text = ((String)btnCloseDelete.Tag);
@@ -149,12 +151,12 @@ namespace MoneyManagerDesktop
                     };
                 case ChoseActionForm.RestoreUsers:
                     {
-                        if (!this.metroTile_Users.TabPages.Contains(mtpRestore))
+                        if (!this.mtc_Users.TabPages.Contains(mtpRestore))
                         {
                             this.Size = new Size(535, 300);// ( 45 , 190)
-                            this.metroTile_Users.Size = new Size(490, 215); //
+                            this.mtc_Users.Size = new Size(490, 215); //
                             this.mtpRestore.Text = String.Format("{0}{1}{1}{1}{1}{1}{1}{1}", "Restaurar Usuarios", "                  ");
-                            this.metroTile_Users.TabPages.Add(mtpRestore);
+                            this.mtc_Users.TabPages.Add(mtpRestore);
                             this.metroTile_Restore.Text = ("");
                             this.lblCoutRestore.Text = ("");
                             this.btnRestoreUsers.Text = ((String)btnRestoreUsers.Tag);
@@ -167,7 +169,7 @@ namespace MoneyManagerDesktop
                         break;
                     };
             };
-            this.metroTile_Users.ResumeLayout();
+            this.mtc_Users.ResumeLayout();
         }
 
         private void metroTile_Users_KeyDown(object sender, KeyEventArgs e)

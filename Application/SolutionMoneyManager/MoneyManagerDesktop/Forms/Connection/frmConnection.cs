@@ -1,14 +1,16 @@
-﻿//------------------------------------------------------------------------------
-//
-// <git hub="https://github.com/edleyrocha">
-//      GitHub Repositories
-// </git>
-//
-// <mail address ="edleyrocha@hotmail.com">
-//      Developer Email.
-// </mail>
-//
-//------------------------------------------------------------------------------
+﻿///////////////////////////////////////////////
+//-------------------------------------------//
+//                                           //
+// <git hub="https://github.com/edleyrocha"> //
+//      GitHub Repositories                  //
+// </git>                                    //
+//                                           //
+// <mail address="edleyrocha@hotmail.com">   //
+//       Developer Email                     //
+// </mail>                                   //
+//                                           //
+//---------------- --------------------------//
+///////////////////// /////////////////////////
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
@@ -37,7 +39,7 @@ namespace MoneyManagerDesktop
         {
             // FORM SIZE = 386; 330 Default
             this.Text = ("Data Base");
-            this.btnNew.Text = ("Novo");
+            this.btnNew.Text = ("Nova Conexão");
             this.btnClose.Text = ("Sair");
             this.btnLoad.Text = ("Carregar Conexão");
             this.txtBoxSource.Text = ("");
@@ -49,6 +51,15 @@ namespace MoneyManagerDesktop
             this.img_LogoDB.UseTileImage = (true);
             this.img_LogoDB.TileImageAlign = ContentAlignment.MiddleCenter;
             this.img_LogoDB.TileImage = MoneyManagerDesktop.Forms.Connection.resConnection.db_add128;
+        }
+        private void NewSQLConnectionString()
+        {
+            clsConnection objC = new clsConnection();
+            if (objC.NewSQLConnectionString()) // IF NewSQLConnectionString (TRUE) Load Config
+            {
+                this.btnLoad.PerformClick();
+            };
+            this.txtBoxString.Focus();
         }
         private void LoadSQLConnectionString()
         {
@@ -65,15 +76,6 @@ namespace MoneyManagerDesktop
                 string connectionString = (this.txtBoxString.Text);
                 objC.LoadSQLConnectionString(connectionString);
                 this.btnLoad.Text = ("Carregar Conexão");
-            };
-            this.txtBoxString.Focus();
-        }
-        private void NewSQLConnectionString()
-        {
-            clsConnection objC = new clsConnection();
-            if (objC.NewSQLConnectionString()) // IF NewSQLConnectionString (TRUE) Load Config
-            {
-                this.btnLoad.PerformClick();
             };
             this.txtBoxString.Focus();
         }

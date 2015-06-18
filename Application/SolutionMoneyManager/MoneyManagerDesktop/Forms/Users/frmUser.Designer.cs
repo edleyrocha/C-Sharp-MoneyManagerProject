@@ -41,7 +41,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroTile_Users = new MetroFramework.Controls.MetroTabControl();
+            this.mtc_Users = new MetroFramework.Controls.MetroTabControl();
             this.mtpSelect = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.lblCoutSelect = new MetroFramework.Controls.MetroLabel();
@@ -86,7 +86,7 @@
             this.metroGrid3 = new MetroFramework.Controls.MetroGrid();
             this.lblCoutRestore = new MetroFramework.Controls.MetroLabel();
             this.metroTile_Restore = new MetroFramework.Controls.MetroTile();
-            this.metroTile_Users.SuspendLayout();
+            this.mtc_Users.SuspendLayout();
             this.mtpSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.mtpUpdate.SuspendLayout();
@@ -105,20 +105,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid3)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroTile_Users
+            // mtc_Users
             // 
-            this.metroTile_Users.Controls.Add(this.mtpSelect);
-            this.metroTile_Users.Controls.Add(this.mtpInsert);
-            this.metroTile_Users.Controls.Add(this.mtpUpdate);
-            this.metroTile_Users.Controls.Add(this.mtpDelete);
-            this.metroTile_Users.Controls.Add(this.mtpRestore);
-            this.metroTile_Users.Location = new System.Drawing.Point(23, 63);
-            this.metroTile_Users.Name = "metroTile_Users";
-            this.metroTile_Users.SelectedIndex = 2;
-            this.metroTile_Users.Size = new System.Drawing.Size(490, 355);
-            this.metroTile_Users.TabIndex = 0;
-            this.metroTile_Users.UseSelectable = true;
-            this.metroTile_Users.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTile_Users_KeyDown);
+            this.mtc_Users.Controls.Add(this.mtpSelect);
+            this.mtc_Users.Controls.Add(this.mtpUpdate);
+            this.mtc_Users.Controls.Add(this.mtpInsert);
+            this.mtc_Users.Controls.Add(this.mtpDelete);
+            this.mtc_Users.Controls.Add(this.mtpRestore);
+            this.mtc_Users.Location = new System.Drawing.Point(23, 63);
+            this.mtc_Users.Name = "mtc_Users";
+            this.mtc_Users.SelectedIndex = 0;
+            this.mtc_Users.Size = new System.Drawing.Size(490, 355);
+            this.mtc_Users.TabIndex = 0;
+            this.mtc_Users.UseSelectable = true;
+            this.mtc_Users.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTile_Users_KeyDown);
             // 
             // mtpSelect
             // 
@@ -145,7 +145,6 @@
             this.metroGrid1.AllowUserToDeleteRows = false;
             this.metroGrid1.AllowUserToResizeRows = false;
             this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -852,7 +851,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 435);
-            this.Controls.Add(this.metroTile_Users);
+            this.Controls.Add(this.mtc_Users);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
@@ -862,7 +861,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "%frmUsers%";
-            this.metroTile_Users.ResumeLayout(false);
+            this.mtc_Users.ResumeLayout(false);
             this.mtpSelect.ResumeLayout(false);
             this.mtpSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
@@ -889,7 +888,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTabControl metroTile_Users;
+        private MetroFramework.Controls.MetroTabControl mtc_Users;
         private MetroFramework.Controls.MetroTabPage mtpInsert;
         private MetroFramework.Controls.MetroTabPage mtpUpdate;
         private MetroFramework.Controls.MetroTabPage mtpDelete;
