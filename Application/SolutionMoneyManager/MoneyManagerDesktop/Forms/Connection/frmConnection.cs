@@ -39,7 +39,7 @@ namespace MoneyManagerDesktop
             this.Text = ("Data Base");
             this.btnNew.Text = ("Novo");
             this.btnClose.Text = ("Sair");
-            this.btnLoad.Text = ("Carregar");
+            this.btnLoad.Text = ("Carregar Conexão");
             this.txtBoxSource.Text = ("");
             this.txtBoxProvider.Text = ("");
             this.txtBoxProvider.Multiline = (true);
@@ -53,19 +53,20 @@ namespace MoneyManagerDesktop
         private void LoadSQLConnectionString()
         {
             clsConnection objC = new clsConnection();
-            if ((this.btnLoad.Text) == ("Carregar"))
+            if ((this.btnLoad.Text) == ("Carregar Conexão"))
             {
                 this.txtBoxSource.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetDataSource));
                 this.txtBoxProvider.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetDataProvider));
                 this.txtBoxString.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetConnectionString));
-                this.btnLoad.Text = ("Testar");
+                this.btnLoad.Text = ("Testar Conexão");
             }
-            else if ((this.btnLoad.Text) == ("Testar"))
+            else if ((this.btnLoad.Text) == ("Testar Conexão"))
             {
                 string connectionString = (this.txtBoxString.Text);
                 objC.LoadSQLConnectionString(connectionString);
-                this.btnLoad.Text = ("Carregar");
+                this.btnLoad.Text = ("Carregar Conexão");
             };
+            this.txtBoxString.Focus();
         }
         private void NewSQLConnectionString()
         {
@@ -74,6 +75,7 @@ namespace MoneyManagerDesktop
             {
                 this.btnLoad.PerformClick();
             };
+            this.txtBoxString.Focus();
         }
         private void txtBox_KeyDown(object sender, KeyEventArgs e)
         {
