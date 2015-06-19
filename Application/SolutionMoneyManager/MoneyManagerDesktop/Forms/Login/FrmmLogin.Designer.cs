@@ -1,6 +1,6 @@
 ﻿namespace MoneyManagerDesktop
 {
-    partial class FrmLogin
+    partial class FrmmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmmLogin));
             this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.metroButton_Collor = new MetroFramework.Controls.MetroButton();
             this.mtpLogin = new MetroFramework.Controls.MetroTabPage();
@@ -182,7 +182,7 @@
             this.imgLogin.Text = "%imgLogin%";
             this.imgLogin.UseSelectable = true;
             // 
-            // FrmLogin
+            // FrmmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,7 +193,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
-            this.Name = "FrmLogin";
+            this.Name = "FrmmLogin";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Text = "%MoneyManager%";

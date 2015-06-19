@@ -29,11 +29,11 @@ namespace MoneyManagerDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // FrmLogin
-            FrmLogin fLogin = new FrmLogin();
-            fLogin.ShowDialog();
+            // FrmmLogin
+            FrmmLogin objFrmLogin = new FrmmLogin();
+            objFrmLogin.ShowDialog();
             // FrmMainBase
-            if( (fLogin.myLoginStatusForLogin) == (FrmLogin.AcessLoginStatus.AllowedAccess))
+            if( (objFrmLogin.myLoginStatusForLogin) == (FrmmLogin.AcessLoginStatus.AllowedAccess))
             {
                 Application.Run(new FrmMainBase());
             };

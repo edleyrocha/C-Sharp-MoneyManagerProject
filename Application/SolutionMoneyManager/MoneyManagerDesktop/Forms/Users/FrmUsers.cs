@@ -30,11 +30,13 @@ namespace MoneyManagerDesktop
         public FrmUsers(ChoseActionForm choseAction)
         {
             InitializeComponent();
-            this.SelectedAction = (choseAction);
+            // Options to open form - pass3
+            this.SelectedAction = (choseAction); 
             this.SetConfigStartUsers();
         }
         #region ---> (Form Users)
 
+        // Options to open form - Pass1
         public enum ChoseActionForm
         {
             SelectUsers = (0),
@@ -43,7 +45,7 @@ namespace MoneyManagerDesktop
             DeleteUsers = (3),
             RestoreUsers = (4)
         }
-
+        // Options to open form - pass2
         ChoseActionForm SelectedAction;
 
         public void SetConfigStartUsers()
@@ -53,6 +55,7 @@ namespace MoneyManagerDesktop
             // Hide Tabs
             this.mtcUsers.SuspendLayout();
             this.mtcUsers.TabPages.Clear();
+          
             switch (SelectedAction)
             {
                 case ChoseActionForm.SelectUsers:
@@ -72,7 +75,7 @@ namespace MoneyManagerDesktop
                             this.imgSelect.Text = ("");
                             this.imgSelect.UseTileImage = (true);
                             this.imgSelect.TileImageAlign = (ContentAlignment.MiddleCenter);
-                            this.imgSelect.TileImage = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersFind128);
+                            this.imgSelect.TileImage = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersFind128);
                             // btn
                             this.btnCloseSelect.Text = ((String)btnCloseSelect.Tag);
                             this.btnListSelect.Text = ((String)btnListSelect.Tag);
@@ -94,7 +97,7 @@ namespace MoneyManagerDesktop
                             this.imgInsert.Text = ("");
                             this.imgInsert.UseTileImage = (true);
                             this.imgInsert.TileImageAlign = (ContentAlignment.MiddleCenter);
-                            this.imgInsert.TileImage = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersNew128);
+                            this.imgInsert.TileImage = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersNew128);
                             // btn
                             this.btnSaveInsert.Text = ((String)btnSaveInsert.Tag);
                             this.btnCloseInsert.Text = ((String)btnCloseInsert.Tag);
@@ -129,7 +132,7 @@ namespace MoneyManagerDesktop
                             this.imgUpdate.Text = ("");
                             this.imgUpdate.UseTileImage = (true);
                             this.imgUpdate.TileImageAlign = (ContentAlignment.MiddleCenter);
-                            this.imgUpdate.TileImage = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersUpdate128);
+                            this.imgUpdate.TileImage = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersUpdate128);
                             // lbls
                             this.lblCoutUpdate.Text = ("");
                             this.lblGridUpdate.Text = ("");
@@ -172,7 +175,7 @@ namespace MoneyManagerDesktop
                             this.imgDelete.Text = ("");
                             this.imgDelete.UseTileImage = (true);
                             this.imgDelete.TileImageAlign = (ContentAlignment.MiddleCenter);
-                            this.imgDelete.TileImage = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersDelete128);
+                            this.imgDelete.TileImage = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersDelete128);
                             // lbl
                             this.lblCoutDelete.Text = ("");
                             // btn
@@ -196,7 +199,7 @@ namespace MoneyManagerDesktop
                             this.imgRestore.Text = ("");
                             this.imgRestore.UseTileImage = (true);
                             this.imgRestore.TileImageAlign = (ContentAlignment.MiddleCenter);
-                            this.imgRestore.TileImage = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersRecover128);
+                            this.imgRestore.TileImage = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersRecover128);
                             // lbl
                             this.lblCoutRestore.Text = ("");
                             // btn
@@ -253,7 +256,7 @@ namespace MoneyManagerDesktop
         {
             this.ShowDataGrid‎Select();
             String CountRows = (metroGrid1.RowCount.ToString());
-            if ((metroGrid1.RowCount) == (0))
+            if ((metroGrid1.RowCount) <= (0))
             {
                 this.lblCoutSelect.Text = String.Format(("{0}"), ("Nenhum Registro Encontrado"));
             }
@@ -402,7 +405,7 @@ namespace MoneyManagerDesktop
                 imgStatusNameInsert.Cursor = Cursors.Hand;
 
                 this.txtNameInsert.Text = ((String)txtNameInsert.Tag);
-                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else if (msgResult == (Boolean.FalseString))
             {
@@ -410,14 +413,14 @@ namespace MoneyManagerDesktop
                 mttHintNameInsert.Style = MetroColorStyle.Blue;
                 mttHintNameInsert.SetToolTip(this.imgStatusNameInsert, "Nome já existe");
                 imgStatusNameInsert.Cursor = Cursors.Hand;
-                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else if (msgResult == (Boolean.TrueString))
             {
                 insertNameStatus = (true);
                 mttHintNameInsert.RemoveAll();
                 imgStatusNameInsert.Cursor = Cursors.Default;
-                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
             };
         }
 
@@ -459,7 +462,7 @@ namespace MoneyManagerDesktop
                 imgStatusLoginInsert.Cursor = Cursors.Hand;
 
                 this.txtLoginInsert.Text = ((String)txtLoginInsert.Tag);
-                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else if (msgResult == (Boolean.FalseString))
             {
@@ -468,14 +471,14 @@ namespace MoneyManagerDesktop
                 mttHintLoginInsert.Show("Login já existe", this.imgStatusLoginInsert, 2000);
                 mttHintLoginInsert.SetToolTip(this.imgStatusLoginInsert, "Login já existe");
                 imgStatusLoginInsert.Cursor = Cursors.Hand;
-                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else
             {
                 insertLoginStatus = (true);
                 mttHintLoginInsert.RemoveAll();
                 imgStatusLoginInsert.Cursor = Cursors.Default;
-                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
             };
         }
 
@@ -492,7 +495,7 @@ namespace MoneyManagerDesktop
                 mttHintPasswordInsert.Show("Senha inválida", this.imgStatusPasswordInsert, 2000);
                 mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha inválida");
                 imgStatusPasswordInsert.Cursor = Cursors.Hand;
-                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else
             {
@@ -514,7 +517,7 @@ namespace MoneyManagerDesktop
                 mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha inválida");
                 imgStatusPasswordInsert.Cursor = Cursors.Hand;
 
-                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else if ((this.txtPasswordBInsert.Text) != (this.txtPasswordAInsert.Text))
             {
@@ -523,14 +526,14 @@ namespace MoneyManagerDesktop
                 mttHintPasswordInsert.Show("Senha não Combina", this.imgStatusPasswordInsert, 2000);
                 mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha não Combina");
                 imgStatusPasswordInsert.Cursor = Cursors.Hand;
-                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else
             {
                 insertPasswordStatus = (true);
                 mttHintPasswordInsert.RemoveAll();
                 imgStatusPasswordInsert.Cursor = Cursors.Default;
-                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
             };
         }
 
@@ -627,13 +630,13 @@ namespace MoneyManagerDesktop
 
                 if (flag)
                 {
-                    this.imgStatusGridUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                    this.imgStatusGridUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
                     this.lblGridUpdate.Text = ("Registro Selecionado");
                     this.btnUpdateSave.Enabled = (true);
                 }
                 else
                 {
-                    this.imgStatusGridUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                    this.imgStatusGridUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
                     this.lblGridUpdate.Text = ("Selecione um Registro");
                     this.btnUpdateSave.Enabled = (false);
                 };
@@ -726,7 +729,7 @@ namespace MoneyManagerDesktop
 
                     this.btnUpdateSave.Text = ("Salvar");
                     this.btnCloseUpdate.Text = ("Cancelar");
-                    this.imgStatusGridUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                    this.imgStatusGridUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
                     this.lblGridUpdate.Text = ("Editando registro. Aguarndo....");
                 }
                 else
@@ -839,7 +842,7 @@ namespace MoneyManagerDesktop
                 this.updateNameStatus = true;
                 this.mttHintNameUpdate.RemoveAll();
                 this.imgStatusNameUpdate.Cursor = Cursors.Default;
-                this.imgStatusNameUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                this.imgStatusNameUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
             }
             else
             {
@@ -854,7 +857,7 @@ namespace MoneyManagerDesktop
                     this.mttHintNameUpdate.SetToolTip(this.imgStatusNameUpdate, "Nome inválido");
 
                     this.imgStatusNameUpdate.Cursor = Cursors.Hand;
-                    this.imgStatusNameUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                    this.imgStatusNameUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
                 }
                 else if (msgResult == (Boolean.FalseString))
                 {
@@ -864,14 +867,14 @@ namespace MoneyManagerDesktop
                     this.mttHintNameUpdate.SetToolTip(this.imgStatusNameUpdate, "Nome já existe");
 
                     this.imgStatusNameUpdate.Cursor = Cursors.Hand;
-                    this.imgStatusNameUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                    this.imgStatusNameUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
                 }
                 else if (msgResult == (Boolean.TrueString))
                 {
                     this.updateNameStatus = true;
                     this.mttHintNameUpdate.RemoveAll();
                     this.imgStatusNameUpdate.Cursor = Cursors.Default;
-                    this.imgStatusNameUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                    this.imgStatusNameUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
                 };
             };
         }
@@ -911,7 +914,7 @@ namespace MoneyManagerDesktop
                 this.updateLoginStatus = true;
                 this.mttHintLoginUpdate.RemoveAll();
                 this.imgStatusLoginUpdate.Cursor = Cursors.Default;
-                this.imgStatusLoginUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                this.imgStatusLoginUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
             }
             else
             {
@@ -926,7 +929,7 @@ namespace MoneyManagerDesktop
                     this.mttHintLoginUpdate.SetToolTip(this.imgStatusLoginUpdate, "Login inválido");
 
                     this.imgStatusLoginUpdate.Cursor = Cursors.Hand;
-                    this.imgStatusLoginUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                    this.imgStatusLoginUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
                 }
                 else if (msgResult == (Boolean.FalseString))
                 {
@@ -936,14 +939,14 @@ namespace MoneyManagerDesktop
                     this.mttHintLoginUpdate.SetToolTip(this.imgStatusLoginUpdate, "Login já existe");
 
                     this.imgStatusLoginUpdate.Cursor = Cursors.Hand;
-                    this.imgStatusLoginUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                    this.imgStatusLoginUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
                 }
                 else if (msgResult == (Boolean.TrueString))
                 {
                     this.updateLoginStatus = true;
                     this.mttHintLoginUpdate.RemoveAll();
                     this.imgStatusLoginUpdate.Cursor = Cursors.Default;
-                    this.imgStatusLoginUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                    this.imgStatusLoginUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
                 };
             };
         }
@@ -974,7 +977,7 @@ namespace MoneyManagerDesktop
                 this.mttHintPasswordUpdate.Show("Senha inválida", this.imgStatusPasswordUpdate, 2000);
                 this.mttHintPasswordUpdate.SetToolTip(this.imgStatusPasswordUpdate, "Senha inválida");
                 this.imgStatusPasswordUpdate.Cursor = Cursors.Hand;
-                this.imgStatusPasswordUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusPasswordUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else
             {
@@ -994,7 +997,7 @@ namespace MoneyManagerDesktop
                 this.mttHintPasswordUpdate.Show("Senha inválida", this.imgStatusPasswordUpdate, 2000);
                 this.mttHintPasswordUpdate.SetToolTip(this.imgStatusPasswordUpdate, "Senha inválida");
                 this.imgStatusPasswordUpdate.Cursor = Cursors.Hand;
-                this.imgStatusPasswordUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusPasswordUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else if ((this.txtPasswordAUpdate.Text.Trim()) != (this.txtPasswordBUpdate.Text.Trim()))
             {
@@ -1003,14 +1006,14 @@ namespace MoneyManagerDesktop
                 this.mttHintPasswordUpdate.Show("Senha não Combina", this.imgStatusPasswordUpdate, 2000);
                 this.mttHintPasswordUpdate.SetToolTip(this.imgStatusPasswordUpdate, "Senha não Combina");
                 this.imgStatusPasswordUpdate.Cursor = Cursors.Hand;
-                this.imgStatusPasswordUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusPasswordUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else
             {
                 this.updatePasswordStatus = (true);
                 this.mttHintPasswordUpdate.RemoveAll();
                 this.imgStatusPasswordUpdate.Cursor = Cursors.Default;
-                this.imgStatusPasswordUpdate.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                this.imgStatusPasswordUpdate.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
             };
         }
 

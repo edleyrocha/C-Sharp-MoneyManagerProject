@@ -25,7 +25,7 @@ namespace MoneyManagerDesktop
     using MetroFramework.Forms;
     using MetroFramework;
     #endregion
-    public partial class FrmLogin : MetroForm
+    public partial class FrmmLogin : MetroForm
     {
 
         public enum AcessLoginStatus
@@ -36,7 +36,7 @@ namespace MoneyManagerDesktop
 
         public AcessLoginStatus myLoginStatusForLogin { get; set; }
 
-        public FrmLogin()
+        public FrmmLogin()
         {
             InitializeComponent();
             this.SetConfigStartLogin();
@@ -51,7 +51,7 @@ namespace MoneyManagerDesktop
             this.imgLogin.Text = ("");
             this.imgLogin.UseTileImage = (true);
             this.imgLogin.TileImageAlign = (ContentAlignment.MiddleCenter);
-            this.imgLogin.TileImage = (MoneyManagerDesktop.Forms.Login.ResLogin.LoginManager128);
+            this.imgLogin.TileImage = (MoneyManagerDesktop.Forms.Login.RessLogin.LoginManager128);
             this.Refresh();
         }
         private void txt_Login_Click(object sender, EventArgs e)
@@ -84,11 +84,11 @@ namespace MoneyManagerDesktop
             if (String.IsNullOrEmpty(txt_Login.Text) || ((this.txt_Login.Text == ("Usuario"))))
             {
                 this.txt_Login.Text = ("Usuario");
-                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else
             {
-                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
             };
         }
         private void txt_Password_Leave(object sender, EventArgs e)
@@ -97,11 +97,11 @@ namespace MoneyManagerDesktop
             {
                 this.txt_Password.UseSystemPasswordChar = (false);
                 this.txt_Password.Text = ("Senha");
-                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
+                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersExclamation16;
             }
             else
             {
-                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
+                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.RessUsers.UsersAccept16;
             };
         }
         private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)

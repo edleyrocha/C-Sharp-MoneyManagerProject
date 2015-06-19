@@ -1,6 +1,6 @@
 ﻿namespace MoneyManagerDesktop
 {
-    partial class FrmConnection
+    partial class FrmmConnection
     {
         /// <summary>
         /// Required designer variable.
@@ -125,7 +125,7 @@
             this.img_LogoDB.Text = "%img_LogoDB%";
             this.img_LogoDB.UseSelectable = true;
             // 
-            // FrmConnection
+            // FrmmConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,12 +140,12 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
-            this.Name = "FrmConnection";
+            this.Name = "FrmmConnection";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "%FrmConnection%";
+            this.Text = "%FrmmConnection%";
             this.ResumeLayout(false);
 
         }

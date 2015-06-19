@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MoneyManagerDesktop.Forms.Color {
+namespace MoneyManagerDesktop.Forms.About {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MoneyManagerDesktop.Forms.Color {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResColor {
+    internal class RessAbout {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResColor() {
+        internal RessAbout() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MoneyManagerDesktop.Forms.Color {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Color.ResColor", typeof(ResColor).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.About.RessAbout", typeof(RessAbout).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,19 @@ namespace MoneyManagerDesktop.Forms.Color {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ColorsSwatch32 {
+        internal static System.Drawing.Bitmap HelpAbout128 {
             get {
-                object obj = ResourceManager.GetObject("ColorsSwatch32", resourceCulture);
+                object obj = ResourceManager.GetObject("HelpAbout128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HelpAbout32 {
+            get {
+                object obj = ResourceManager.GetObject("HelpAbout32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

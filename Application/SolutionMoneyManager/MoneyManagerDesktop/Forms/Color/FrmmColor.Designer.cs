@@ -1,6 +1,6 @@
 ﻿namespace MoneyManagerDesktop
 {
-    partial class FrmColor
+    partial class FrmmColor
     {
         /// <summary>
         /// Required designer variable.
@@ -494,7 +494,7 @@
             this.mtl_Backgroud.UseSelectable = true;
             this.mtl_Backgroud.CheckedChanged += new System.EventHandler(this.metroToggle_Fundo_CheckedChanged);
             // 
-            // FrmColor
+            // FrmmColor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -504,13 +504,13 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
-            this.Name = "FrmColor";
+            this.Name = "FrmmColor";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Tag = "";
-            this.Text = "%FrmColor%";
+            this.Text = "%FrmmColor%";
             this.metroPanelColor.ResumeLayout(false);
             this.metroPanelColor.PerformLayout();
             this.ResumeLayout(false);
