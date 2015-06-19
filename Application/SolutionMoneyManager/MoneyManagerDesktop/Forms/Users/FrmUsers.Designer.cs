@@ -1,6 +1,6 @@
 ﻿namespace MoneyManagerDesktop
 {
-    partial class frmUsers
+    partial class FrmUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsers));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,13 +40,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.mtc_Users = new MetroFramework.Controls.MetroTabControl();
+            this.mtcUsers = new MetroFramework.Controls.MetroTabControl();
             this.mtpSelect = new MetroFramework.Controls.MetroTabPage();
+            this.imgSelect = new MetroFramework.Controls.MetroTile();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.lblCoutSelect = new MetroFramework.Controls.MetroLabel();
             this.btnListSelect = new System.Windows.Forms.Button();
             this.btnCloseSelect = new System.Windows.Forms.Button();
-            this.metroTile_Select = new MetroFramework.Controls.MetroTile();
             this.mtpUpdate = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid4 = new MetroFramework.Controls.MetroGrid();
             this.imgStatusGridUpdate = new System.Windows.Forms.PictureBox();
@@ -62,12 +61,10 @@
             this.btnCloseUpdate = new MetroFramework.Controls.MetroButton();
             this.lblGridUpdate = new MetroFramework.Controls.MetroLabel();
             this.lblCoutUpdate = new MetroFramework.Controls.MetroLabel();
-            this.metroTile_Update = new MetroFramework.Controls.MetroTile();
             this.mtpInsert = new MetroFramework.Controls.MetroTabPage();
             this.imgStatusPasswordInsert = new System.Windows.Forms.PictureBox();
             this.imgStatusLoginInsert = new System.Windows.Forms.PictureBox();
             this.imgStatusNameInsert = new System.Windows.Forms.PictureBox();
-            this.metroTile_Insert = new MetroFramework.Controls.MetroTile();
             this.txtPasswordBInsert = new MetroFramework.Controls.MetroTextBox();
             this.txtPasswordAInsert = new MetroFramework.Controls.MetroTextBox();
             this.txtLoginInsert = new MetroFramework.Controls.MetroTextBox();
@@ -79,14 +76,16 @@
             this.metroGrid2 = new MetroFramework.Controls.MetroGrid();
             this.btnDeleteUsers = new MetroFramework.Controls.MetroButton();
             this.btnCloseDelete = new MetroFramework.Controls.MetroButton();
-            this.metroTile_Delete = new MetroFramework.Controls.MetroTile();
             this.mtpRestore = new MetroFramework.Controls.MetroTabPage();
             this.btnRestoreUsers = new MetroFramework.Controls.MetroButton();
             this.btnCloseRestore = new MetroFramework.Controls.MetroButton();
             this.metroGrid3 = new MetroFramework.Controls.MetroGrid();
             this.lblCoutRestore = new MetroFramework.Controls.MetroLabel();
-            this.metroTile_Restore = new MetroFramework.Controls.MetroTile();
-            this.mtc_Users.SuspendLayout();
+            this.imgUpdate = new MetroFramework.Controls.MetroTile();
+            this.imgInsert = new MetroFramework.Controls.MetroTile();
+            this.imgDelete = new MetroFramework.Controls.MetroTile();
+            this.imgRestore = new MetroFramework.Controls.MetroTile();
+            this.mtcUsers.SuspendLayout();
             this.mtpSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.mtpUpdate.SuspendLayout();
@@ -105,28 +104,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid3)).BeginInit();
             this.SuspendLayout();
             // 
-            // mtc_Users
+            // mtcUsers
             // 
-            this.mtc_Users.Controls.Add(this.mtpSelect);
-            this.mtc_Users.Controls.Add(this.mtpUpdate);
-            this.mtc_Users.Controls.Add(this.mtpInsert);
-            this.mtc_Users.Controls.Add(this.mtpDelete);
-            this.mtc_Users.Controls.Add(this.mtpRestore);
-            this.mtc_Users.Location = new System.Drawing.Point(23, 63);
-            this.mtc_Users.Name = "mtc_Users";
-            this.mtc_Users.SelectedIndex = 0;
-            this.mtc_Users.Size = new System.Drawing.Size(490, 355);
-            this.mtc_Users.TabIndex = 0;
-            this.mtc_Users.UseSelectable = true;
-            this.mtc_Users.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTile_Users_KeyDown);
+            this.mtcUsers.Controls.Add(this.mtpSelect);
+            this.mtcUsers.Controls.Add(this.mtpInsert);
+            this.mtcUsers.Controls.Add(this.mtpUpdate);
+            this.mtcUsers.Controls.Add(this.mtpDelete);
+            this.mtcUsers.Controls.Add(this.mtpRestore);
+            this.mtcUsers.Location = new System.Drawing.Point(23, 63);
+            this.mtcUsers.Name = "mtcUsers";
+            this.mtcUsers.SelectedIndex = 4;
+            this.mtcUsers.Size = new System.Drawing.Size(490, 355);
+            this.mtcUsers.TabIndex = 0;
+            this.mtcUsers.UseSelectable = true;
+            this.mtcUsers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTile_Users_KeyDown);
             // 
             // mtpSelect
             // 
+            this.mtpSelect.Controls.Add(this.imgSelect);
             this.mtpSelect.Controls.Add(this.metroGrid1);
             this.mtpSelect.Controls.Add(this.lblCoutSelect);
             this.mtpSelect.Controls.Add(this.btnListSelect);
             this.mtpSelect.Controls.Add(this.btnCloseSelect);
-            this.mtpSelect.Controls.Add(this.metroTile_Select);
             this.mtpSelect.HorizontalScrollbarBarColor = true;
             this.mtpSelect.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpSelect.HorizontalScrollbarSize = 10;
@@ -139,12 +138,23 @@
             this.mtpSelect.VerticalScrollbarHighlightOnWheel = false;
             this.mtpSelect.VerticalScrollbarSize = 10;
             // 
+            // imgSelect
+            // 
+            this.imgSelect.ActiveControl = null;
+            this.imgSelect.Location = new System.Drawing.Point(2, 2);
+            this.imgSelect.Name = "imgSelect";
+            this.imgSelect.Size = new System.Drawing.Size(130, 130);
+            this.imgSelect.TabIndex = 13;
+            this.imgSelect.Text = "%imgSelect%";
+            this.imgSelect.UseSelectable = true;
+            // 
             // metroGrid1
             // 
             this.metroGrid1.AllowUserToAddRows = false;
             this.metroGrid1.AllowUserToDeleteRows = false;
             this.metroGrid1.AllowUserToResizeRows = false;
             this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -215,21 +225,9 @@
             this.btnCloseSelect.UseVisualStyleBackColor = true;
             this.btnCloseSelect.Click += new System.EventHandler(this.btnCloseSelect_Click);
             // 
-            // metroTile_Select
-            // 
-            this.metroTile_Select.ActiveControl = null;
-            this.metroTile_Select.Location = new System.Drawing.Point(2, 2);
-            this.metroTile_Select.Name = "metroTile_Select";
-            this.metroTile_Select.Size = new System.Drawing.Size(130, 130);
-            this.metroTile_Select.TabIndex = 0;
-            this.metroTile_Select.TabStop = false;
-            this.metroTile_Select.Text = "        %Foto%";
-            this.metroTile_Select.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile_Select.TileImage")));
-            this.metroTile_Select.UseSelectable = true;
-            this.metroTile_Select.UseTileImage = true;
-            // 
             // mtpUpdate
             // 
+            this.mtpUpdate.Controls.Add(this.imgUpdate);
             this.mtpUpdate.Controls.Add(this.metroGrid4);
             this.mtpUpdate.Controls.Add(this.imgStatusGridUpdate);
             this.mtpUpdate.Controls.Add(this.imgStatusPasswordUpdate);
@@ -243,7 +241,6 @@
             this.mtpUpdate.Controls.Add(this.btnCloseUpdate);
             this.mtpUpdate.Controls.Add(this.lblGridUpdate);
             this.mtpUpdate.Controls.Add(this.lblCoutUpdate);
-            this.mtpUpdate.Controls.Add(this.metroTile_Update);
             this.mtpUpdate.HorizontalScrollbarBarColor = true;
             this.mtpUpdate.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpUpdate.HorizontalScrollbarSize = 10;
@@ -455,25 +452,12 @@
             this.lblCoutUpdate.Tag = "";
             this.lblCoutUpdate.Text = "%lblCoutUpdate%";
             // 
-            // metroTile_Update
-            // 
-            this.metroTile_Update.ActiveControl = null;
-            this.metroTile_Update.Location = new System.Drawing.Point(2, 2);
-            this.metroTile_Update.Name = "metroTile_Update";
-            this.metroTile_Update.Size = new System.Drawing.Size(130, 130);
-            this.metroTile_Update.TabIndex = 0;
-            this.metroTile_Update.TabStop = false;
-            this.metroTile_Update.Text = "        %Foto%";
-            this.metroTile_Update.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile_Update.TileImage")));
-            this.metroTile_Update.UseSelectable = true;
-            this.metroTile_Update.UseTileImage = true;
-            // 
             // mtpInsert
             // 
+            this.mtpInsert.Controls.Add(this.imgInsert);
             this.mtpInsert.Controls.Add(this.imgStatusPasswordInsert);
             this.mtpInsert.Controls.Add(this.imgStatusLoginInsert);
             this.mtpInsert.Controls.Add(this.imgStatusNameInsert);
-            this.mtpInsert.Controls.Add(this.metroTile_Insert);
             this.mtpInsert.Controls.Add(this.txtPasswordBInsert);
             this.mtpInsert.Controls.Add(this.txtPasswordAInsert);
             this.mtpInsert.Controls.Add(this.txtLoginInsert);
@@ -518,19 +502,6 @@
             this.imgStatusNameInsert.Size = new System.Drawing.Size(16, 16);
             this.imgStatusNameInsert.TabIndex = 8;
             this.imgStatusNameInsert.TabStop = false;
-            // 
-            // metroTile_Insert
-            // 
-            this.metroTile_Insert.ActiveControl = null;
-            this.metroTile_Insert.Location = new System.Drawing.Point(2, 2);
-            this.metroTile_Insert.Name = "metroTile_Insert";
-            this.metroTile_Insert.Size = new System.Drawing.Size(130, 130);
-            this.metroTile_Insert.TabIndex = 7;
-            this.metroTile_Insert.TabStop = false;
-            this.metroTile_Insert.Text = "        %Foto%";
-            this.metroTile_Insert.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile_Insert.TileImage")));
-            this.metroTile_Insert.UseSelectable = true;
-            this.metroTile_Insert.UseTileImage = true;
             // 
             // txtPasswordBInsert
             // 
@@ -632,11 +603,11 @@
             // 
             // mtpDelete
             // 
+            this.mtpDelete.Controls.Add(this.imgDelete);
             this.mtpDelete.Controls.Add(this.lblCoutDelete);
             this.mtpDelete.Controls.Add(this.metroGrid2);
             this.mtpDelete.Controls.Add(this.btnDeleteUsers);
             this.mtpDelete.Controls.Add(this.btnCloseDelete);
-            this.mtpDelete.Controls.Add(this.metroTile_Delete);
             this.mtpDelete.HorizontalScrollbarBarColor = true;
             this.mtpDelete.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpDelete.HorizontalScrollbarSize = 10;
@@ -726,25 +697,13 @@
             this.btnCloseDelete.UseSelectable = true;
             this.btnCloseDelete.Click += new System.EventHandler(this.btnCloseDelete_Click);
             // 
-            // metroTile_Delete
-            // 
-            this.metroTile_Delete.ActiveControl = null;
-            this.metroTile_Delete.Location = new System.Drawing.Point(2, 2);
-            this.metroTile_Delete.Name = "metroTile_Delete";
-            this.metroTile_Delete.Size = new System.Drawing.Size(130, 130);
-            this.metroTile_Delete.TabIndex = 2;
-            this.metroTile_Delete.Text = "        %Foto%";
-            this.metroTile_Delete.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile_Delete.TileImage")));
-            this.metroTile_Delete.UseSelectable = true;
-            this.metroTile_Delete.UseTileImage = true;
-            // 
             // mtpRestore
             // 
+            this.mtpRestore.Controls.Add(this.imgRestore);
             this.mtpRestore.Controls.Add(this.btnRestoreUsers);
             this.mtpRestore.Controls.Add(this.btnCloseRestore);
             this.mtpRestore.Controls.Add(this.metroGrid3);
             this.mtpRestore.Controls.Add(this.lblCoutRestore);
-            this.mtpRestore.Controls.Add(this.metroTile_Restore);
             this.mtpRestore.HorizontalScrollbarBarColor = true;
             this.mtpRestore.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpRestore.HorizontalScrollbarSize = 10;
@@ -834,34 +793,62 @@
             this.lblCoutRestore.TabIndex = 3;
             this.lblCoutRestore.Text = "%lblCoutRestore%";
             // 
-            // metroTile_Restore
+            // imgUpdate
             // 
-            this.metroTile_Restore.ActiveControl = null;
-            this.metroTile_Restore.Location = new System.Drawing.Point(2, 2);
-            this.metroTile_Restore.Name = "metroTile_Restore";
-            this.metroTile_Restore.Size = new System.Drawing.Size(130, 130);
-            this.metroTile_Restore.TabIndex = 2;
-            this.metroTile_Restore.Text = "        %Foto%";
-            this.metroTile_Restore.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile_Restore.TileImage")));
-            this.metroTile_Restore.UseSelectable = true;
-            this.metroTile_Restore.UseTileImage = true;
+            this.imgUpdate.ActiveControl = null;
+            this.imgUpdate.Location = new System.Drawing.Point(2, 2);
+            this.imgUpdate.Name = "imgUpdate";
+            this.imgUpdate.Size = new System.Drawing.Size(130, 130);
+            this.imgUpdate.TabIndex = 9;
+            this.imgUpdate.Text = "%imgUpdate%";
+            this.imgUpdate.UseSelectable = true;
             // 
-            // frmUsers
+            // imgInsert
+            // 
+            this.imgInsert.ActiveControl = null;
+            this.imgInsert.Location = new System.Drawing.Point(2, 2);
+            this.imgInsert.Name = "imgInsert";
+            this.imgInsert.Size = new System.Drawing.Size(130, 130);
+            this.imgInsert.TabIndex = 9;
+            this.imgInsert.Text = "%imgInsert%";
+            this.imgInsert.UseSelectable = true;
+            // 
+            // imgDelete
+            // 
+            this.imgDelete.ActiveControl = null;
+            this.imgDelete.Location = new System.Drawing.Point(2, 2);
+            this.imgDelete.Name = "imgDelete";
+            this.imgDelete.Size = new System.Drawing.Size(130, 130);
+            this.imgDelete.TabIndex = 8;
+            this.imgDelete.Text = "%imgDelete%";
+            this.imgDelete.UseSelectable = true;
+            // 
+            // imgRestore
+            // 
+            this.imgRestore.ActiveControl = null;
+            this.imgRestore.Location = new System.Drawing.Point(2, 2);
+            this.imgRestore.Name = "imgRestore";
+            this.imgRestore.Size = new System.Drawing.Size(130, 130);
+            this.imgRestore.TabIndex = 7;
+            this.imgRestore.Text = "%imgRestore%";
+            this.imgRestore.UseSelectable = true;
+            // 
+            // FrmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 435);
-            this.Controls.Add(this.mtc_Users);
+            this.Controls.Add(this.mtcUsers);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
-            this.Name = "frmUsers";
+            this.Name = "FrmUsers";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "%frmUsers%";
-            this.mtc_Users.ResumeLayout(false);
+            this.Text = "%FrmUsers%";
+            this.mtcUsers.ResumeLayout(false);
             this.mtpSelect.ResumeLayout(false);
             this.mtpSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
@@ -888,7 +875,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTabControl mtc_Users;
+        private MetroFramework.Controls.MetroTabControl mtcUsers;
         private MetroFramework.Controls.MetroTabPage mtpInsert;
         private MetroFramework.Controls.MetroTabPage mtpUpdate;
         private MetroFramework.Controls.MetroTabPage mtpDelete;
@@ -898,15 +885,12 @@
         private MetroFramework.Controls.MetroTextBox txtPasswordAInsert;
         private MetroFramework.Controls.MetroTextBox txtLoginInsert;
         private MetroFramework.Controls.MetroTextBox txtNameInsert;
-        private MetroFramework.Controls.MetroTile metroTile_Insert;
         private System.Windows.Forms.PictureBox imgStatusNameInsert;
         private System.Windows.Forms.PictureBox imgStatusPasswordInsert;
         private System.Windows.Forms.PictureBox imgStatusLoginInsert;
         private MetroFramework.Controls.MetroTextBox txtPasswordBInsert;
         private System.Windows.Forms.Button btnCloseSelect;
-        private MetroFramework.Controls.MetroTile metroTile_Select;
         private System.Windows.Forms.Button btnListSelect;
-        private MetroFramework.Controls.MetroTile metroTile_Delete;
         private MetroFramework.Controls.MetroButton btnDeleteUsers;
         private MetroFramework.Controls.MetroButton btnCloseDelete;
         private MetroFramework.Controls.MetroLabel lblCoutSelect;
@@ -914,12 +898,10 @@
         private MetroFramework.Controls.MetroGrid metroGrid2;
         private MetroFramework.Controls.MetroLabel lblCoutDelete;
         private MetroFramework.Controls.MetroTabPage mtpRestore;
-        private MetroFramework.Controls.MetroTile metroTile_Restore;
         private MetroFramework.Controls.MetroGrid metroGrid3;
         private MetroFramework.Controls.MetroLabel lblCoutRestore;
         private MetroFramework.Controls.MetroButton btnRestoreUsers;
         private MetroFramework.Controls.MetroButton btnCloseRestore;
-        private MetroFramework.Controls.MetroTile metroTile_Update;
         private MetroFramework.Controls.MetroLabel lblCoutUpdate;
         private MetroFramework.Controls.MetroGrid metroGrid4;
         private MetroFramework.Controls.MetroButton btnCloseUpdate;
@@ -933,6 +915,11 @@
         private System.Windows.Forms.PictureBox imgStatusNameUpdate;
         private MetroFramework.Controls.MetroLabel lblGridUpdate;
         private System.Windows.Forms.PictureBox imgStatusGridUpdate;
+        private MetroFramework.Controls.MetroTile imgSelect;
+        private MetroFramework.Controls.MetroTile imgUpdate;
+        private MetroFramework.Controls.MetroTile imgInsert;
+        private MetroFramework.Controls.MetroTile imgDelete;
+        private MetroFramework.Controls.MetroTile imgRestore;
 
 
 

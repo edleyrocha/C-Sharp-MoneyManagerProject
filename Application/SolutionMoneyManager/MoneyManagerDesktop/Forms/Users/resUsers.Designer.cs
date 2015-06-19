@@ -22,14 +22,14 @@ namespace MoneyManagerDesktop.Forms.Users {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class resUsers {
+    internal class ResUsers {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal resUsers() {
+        internal ResUsers() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MoneyManagerDesktop.Forms.Users {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Users.resUsers", typeof(resUsers).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Users.ResUsers", typeof(ResUsers).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap User_accept16 {
+        internal static System.Drawing.Bitmap UsersAccept16 {
             get {
-                object obj = ResourceManager.GetObject("User_accept16", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersAccept16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap User_exclamation16 {
+        internal static System.Drawing.Bitmap UsersAll128 {
             get {
-                object obj = ResourceManager.GetObject("User_exclamation16", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersAll128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap userDelete128 {
+        internal static System.Drawing.Bitmap UsersAll32 {
             get {
-                object obj = ResourceManager.GetObject("userDelete128", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersAll32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap userDelete32 {
+        internal static System.Drawing.Bitmap UsersDelete128 {
             get {
-                object obj = ResourceManager.GetObject("userDelete32", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersDelete128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap userFind128 {
+        internal static System.Drawing.Bitmap UsersDelete32 {
             get {
-                object obj = ResourceManager.GetObject("userFind128", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersDelete32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap userFind32 {
+        internal static System.Drawing.Bitmap UsersExclamation16 {
             get {
-                object obj = ResourceManager.GetObject("userFind32", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersExclamation16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap userNew128 {
+        internal static System.Drawing.Bitmap UsersFind128 {
             get {
-                object obj = ResourceManager.GetObject("userNew128", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersFind128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap userNew32 {
+        internal static System.Drawing.Bitmap UsersFind32 {
             get {
-                object obj = ResourceManager.GetObject("userNew32", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersFind32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap users128 {
+        internal static System.Drawing.Bitmap UsersNew128 {
             get {
-                object obj = ResourceManager.GetObject("users128", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersNew128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap users32 {
+        internal static System.Drawing.Bitmap UsersNew32 {
             get {
-                object obj = ResourceManager.GetObject("users32", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersNew32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap usersRestore128 {
+        internal static System.Drawing.Bitmap UsersRecover128 {
             get {
-                object obj = ResourceManager.GetObject("usersRestore128", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersRecover128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap usersRestore32 {
+        internal static System.Drawing.Bitmap UsersRecover32 {
             get {
-                object obj = ResourceManager.GetObject("usersRestore32", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersRecover32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap userUpdate128 {
+        internal static System.Drawing.Bitmap UsersUpdate128 {
             get {
-                object obj = ResourceManager.GetObject("userUpdate128", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersUpdate128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace MoneyManagerDesktop.Forms.Users {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap userUpdate32 {
+        internal static System.Drawing.Bitmap UsersUpdate32 {
             get {
-                object obj = ResourceManager.GetObject("userUpdate32", resourceCulture);
+                object obj = ResourceManager.GetObject("UsersUpdate32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -22,14 +22,14 @@ namespace MoneyManagerDesktop.Forms.Connection {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class resConnection {
+    internal class ResConnection {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal resConnection() {
+        internal ResConnection() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MoneyManagerDesktop.Forms.Connection {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Connection.resConnection", typeof(resConnection).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Connection.ResConnection", typeof(ResConnection).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace MoneyManagerDesktop.Forms.Connection {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap db_add128 {
+        internal static System.Drawing.Bitmap DataBaseAdd128 {
             get {
-                object obj = ResourceManager.GetObject("db_add128", resourceCulture);
+                object obj = ResourceManager.GetObject("DataBaseAdd128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MoneyManagerDesktop.Forms.Connection {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap db_add32 {
+        internal static System.Drawing.Bitmap DataBaseAdd32 {
             get {
-                object obj = ResourceManager.GetObject("db_add32", resourceCulture);
+                object obj = ResourceManager.GetObject("DataBaseAdd32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

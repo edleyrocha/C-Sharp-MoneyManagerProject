@@ -21,7 +21,7 @@ namespace MoneyManagerDesktop
     using System.Data;
     using System.Data.SqlClient;
     #endregion
-    class clsUsers
+    class ClsUsers
     {
 
         //Strings Fields [dbo].[tblUsers]

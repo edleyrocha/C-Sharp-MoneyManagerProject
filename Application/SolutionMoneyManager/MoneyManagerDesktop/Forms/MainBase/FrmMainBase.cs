@@ -25,9 +25,9 @@ namespace MoneyManagerDesktop
     using MetroFramework.Forms;
     using MetroFramework;
     #endregion
-    public partial class frmMainMaster : MetroForm
+    public partial class FrmMainBase : MetroForm
     {
-        public frmMainMaster()
+        public FrmMainBase()
         {
             InitializeComponent();
             SetConfigStartMainBase();
@@ -37,65 +37,64 @@ namespace MoneyManagerDesktop
         {
             //frm
             this.Text = ("Money Manager");
-            this.WindowState = FormWindowState.Maximized;
-            this.ptbMoney.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.coins48;
+            this.WindowState = (FormWindowState.Maximized);
+            //frm img top
+            this.BackMaxSize = (50);
+            this.BackImagePadding = new Padding(210, 10, 0, 0);
+            this.BackImage = (MoneyManagerDesktop.Forms.MainBase.ResMainBase.CoinsMoney128);
             //mnu
             this.mnuEntries.Text = ("&Cadastros");
 
             this.mnuUsers.Text = ("Usuario");
-            this.mnuUsers.Image = MoneyManagerDesktop.Forms.Users.resUsers.users32;
+            this.mnuUsers.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAll32);
             this.mnuUsersSelect.Text = ("Listar");
-            this.mnuUsersSelect.Image = MoneyManagerDesktop.Forms.Users.resUsers.userFind32;
+            this.mnuUsersSelect.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersFind32);
             this.mnuUsersInsert.Text = ("Novo");
-            this.mnuUsersInsert.Image = MoneyManagerDesktop.Forms.Users.resUsers.userNew32;
+            this.mnuUsersInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersNew32);
             this.mnuUsersUpdate.Text = ("Atualizar");
-            this.mnuUsersUpdate.Image = MoneyManagerDesktop.Forms.Users.resUsers.userUpdate32;
+            this.mnuUsersUpdate.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersUpdate32);
             this.mnuUsersDelete.Text = ("Deletar");
-            this.mnuUsersDelete.Image = MoneyManagerDesktop.Forms.Users.resUsers.userDelete32;
+            this.mnuUsersDelete.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersDelete32);
             this.mnuUsersRetore.Text = ("Restaurar");
-            this.mnuUsersRetore.Image = MoneyManagerDesktop.Forms.Users.resUsers.usersRestore32;
-
+            this.mnuUsersRetore.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersRecover32);
 
             this.mnuClose.Text = ("&Sair");
-            this.mnuClose.Image = MoneyManagerDesktop.Forms.MainBase.resMainBase.exit32;
+            this.mnuClose.Image = (MoneyManagerDesktop.Forms.MainBase.ResMainBase.ExitClose32);
 
             this.mnuConfig.Text = ("&Configurações");
             this.mnuColors.Text = ("&Cores");
-            this.mnuColors.Image = MoneyManagerDesktop.Forms.Color.resColor.colors32;
-
+            this.mnuColors.Image = (MoneyManagerDesktop.Forms.Color.ResColor.ColorsSwatch32);
             this.mnuDataBase.Text = ("&Banco De Dados");
-            this.mnuDataBase.Image = MoneyManagerDesktop.Forms.Connection.resConnection.db_add32;
+            this.mnuDataBase.Image = (MoneyManagerDesktop.Forms.Connection.ResConnection.DataBaseAdd32);
 
             this.btnHelp.Text = ("&Ajuda");
             this.mnuAbout.Text = ("&Sobre");
-            this.mnuAbout.Image = MoneyManagerDesktop.Forms.About.resAbout.help_about32;
+            this.mnuAbout.Image = (MoneyManagerDesktop.Forms.About.ResAbout.HelpAbout32);
         }
         private void mnuUsersSelect_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(0)); //List Users
-            fUser.ShowDialog();
+            FrmUsers objFrmUsersSelect = (new FrmUsers((FrmUsers.ChoseActionForm)(0))); //Select Users
+            objFrmUsersSelect.ShowDialog();
         }
-
         private void mnuUsersInsert_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(1)); //Insert Users
-            fUser.ShowDialog();
+            FrmUsers objFrmUsersInsert = (new FrmUsers((FrmUsers.ChoseActionForm)(1))); //Insert Users
+            objFrmUsersInsert.ShowDialog();
         }
         private void mnuUsersUpdate_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(2)); //Update Users
-            fUser.ShowDialog();
+            FrmUsers objFrmUsersUpdate = (new FrmUsers((FrmUsers.ChoseActionForm)(2))); //Update Users
+            objFrmUsersUpdate.ShowDialog();
         }
         private void mnuUsersDelete_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(3)); //Delete Users (Disabled)
-            fUser.ShowDialog();
+            FrmUsers objFrmUsersDelete = (new FrmUsers((FrmUsers.ChoseActionForm)(3))); //Delete Users (Only Disabled)
+            objFrmUsersDelete.ShowDialog();
         }
-
         private void mnuUsersRetore_Click(object sender, EventArgs e)
         {
-            frmUsers fUser = new frmUsers((frmUsers.ChoseActionForm)(4));  //Restore Users (Enabled)
-            fUser.ShowDialog();
+            FrmUsers objFrmUsersRestore = (new FrmUsers((FrmUsers.ChoseActionForm)(4)));  //Restore Users (Only Enabled)
+            objFrmUsersRestore.ShowDialog();
         }
         private void mnuClose_Click(object sender, EventArgs e)
         {
@@ -103,28 +102,28 @@ namespace MoneyManagerDesktop
         }
         private void mnuColors_Click(object sender, EventArgs e)
         {
-            frmColor fcolor = new frmColor();
-            fcolor.ShowDialog();
+            FrmColor objfrmColor = (new FrmColor());
+            objfrmColor.ShowDialog();
         }
         private void mnuDataBase_Click(object sender, EventArgs e)
         {
-            frmConnection f = new frmConnection();
-            f.ShowDialog();
+            FrmConnection objfrmConnection = (new FrmConnection());
+            objfrmConnection.ShowDialog();
         }
         private void mnuAbout_Click(object sender, EventArgs e)
         {
-            frmAbout fabout = new frmAbout();
-            fabout.ShowDialog();
+            FrmAbout objFrmAbout = (new FrmAbout());
+            objFrmAbout.ShowDialog();
         }
         private void CancelClosing()
         {
             String msg_Title = (this.Text + "   :)");
             String msg_Text = ("\r\rDeseja Realmente (Sair)?");
-            MessageBoxButtons msg_Buttons = MessageBoxButtons.YesNo;
-            MessageBoxIcon msg_Icon = MessageBoxIcon.None;
-            MessageBoxDefaultButton msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
-            DialogResult diagResult = MetroMessageBox.Show(this, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
-            if (diagResult == DialogResult.Yes)
+            MessageBoxButtons msg_Buttons = (MessageBoxButtons.YesNo);
+            MessageBoxIcon msg_Icon = (MessageBoxIcon.None);
+            MessageBoxDefaultButton msg_ButtonsDefault = (MessageBoxDefaultButton.Button1);
+            DialogResult diagResult = (MetroMessageBox.Show((this), (msg_Text), (msg_Title), (msg_Buttons), (msg_Icon), (msg_ButtonsDefault)));
+            if ((diagResult) == (DialogResult.Yes))
             {
                 CancelClose = (false);
             };
@@ -132,16 +131,14 @@ namespace MoneyManagerDesktop
         private void frmMainBase_FormClosing(object sender, FormClosingEventArgs e)
         {
             CancelClosing();
-            e.Cancel = CancelClose;
+            e.Cancel = (CancelClose);
         }
-
         private void frmMainMaster_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
+            if ((e.KeyCode) == (Keys.Escape))
             {
                 this.Close();
             };
         }
-
     }
 }

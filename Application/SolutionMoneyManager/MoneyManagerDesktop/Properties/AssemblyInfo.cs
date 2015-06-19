@@ -21,8 +21,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("-Sistema para Gestao de Pagamentos\n-Contas\n-Relatorios\n-edleyrocha@hotmail.com")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EAH Apps")]
-[assembly: AssemblyProduct("Money Manager Desktop.")]
-[assembly: AssemblyCopyright("Copyright ©  2015.")]
+[assembly: AssemblyProduct("Money Manager Desktop")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -22,14 +22,14 @@ namespace MoneyManagerDesktop.Forms.About {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class resAbout {
+    internal class ResAbout {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal resAbout() {
+        internal ResAbout() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MoneyManagerDesktop.Forms.About {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.About.resAbout", typeof(resAbout).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.About.ResAbout", typeof(ResAbout).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace MoneyManagerDesktop.Forms.About {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap help_about128 {
+        internal static System.Drawing.Bitmap HelpAbout128 {
             get {
-                object obj = ResourceManager.GetObject("help_about128", resourceCulture);
+                object obj = ResourceManager.GetObject("HelpAbout128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MoneyManagerDesktop.Forms.About {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap help_about32 {
+        internal static System.Drawing.Bitmap HelpAbout32 {
             get {
-                object obj = ResourceManager.GetObject("help_about32", resourceCulture);
+                object obj = ResourceManager.GetObject("HelpAbout32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

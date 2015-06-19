@@ -20,14 +20,13 @@ namespace MoneyManagerDesktop
     using System.Reflection;
     using System.Windows.Forms;
     #endregion
-    public partial class frmAbout : MetroForm
+    public partial class FrmAbout : MetroForm
     {
-        public frmAbout()
+        public FrmAbout()
         {
             InitializeComponent();
             SetConfigStartAbout();
         }
-
         #region ---> (Assembly Attribute Accessors)
 
         public string AssemblyTitle
@@ -107,7 +106,6 @@ namespace MoneyManagerDesktop
             }
         }
         #endregion
-
         public void SetConfigStartAbout()
         {
             this.Text = ("Sobre");
@@ -120,7 +118,7 @@ namespace MoneyManagerDesktop
             this.imgHelpAbout.Text = ("");
             this.imgHelpAbout.UseTileImage = (true);
             this.imgHelpAbout.TileImageAlign = ContentAlignment.MiddleCenter;
-            this.imgHelpAbout.TileImage =  MoneyManagerDesktop.Forms.About.resAbout.help_about128;
+            this.imgHelpAbout.TileImage = MoneyManagerDesktop.Forms.About.ResAbout.HelpAbout128;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

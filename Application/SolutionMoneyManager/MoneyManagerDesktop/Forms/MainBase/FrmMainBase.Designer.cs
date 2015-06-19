@@ -1,6 +1,6 @@
 ﻿namespace MoneyManagerDesktop
 {
-    partial class frmMainMaster
+    partial class FrmMainBase
     {
         /// <summary>
         /// Required designer variable.
@@ -43,9 +43,7 @@
             this.mnuDataBase = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.ptbMoney = new System.Windows.Forms.PictureBox();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMoney)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -179,32 +177,21 @@
             this.mnuAbout.Text = "%mnuAbout%";
             this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
-            // ptbMoney
-            // 
-            this.ptbMoney.Location = new System.Drawing.Point(200, 7);
-            this.ptbMoney.Name = "ptbMoney";
-            this.ptbMoney.Size = new System.Drawing.Size(49, 50);
-            this.ptbMoney.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.ptbMoney.TabIndex = 3;
-            this.ptbMoney.TabStop = false;
-            // 
-            // frmMainMaster
+            // FrmMainBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 451);
-            this.Controls.Add(this.ptbMoney);
             this.Controls.Add(this.menuStrip);
-            this.Name = "frmMainMaster";
+            this.Name = "FrmMainBase";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
-            this.Text = "%frmMainMaster%";
+            this.Text = "%FrmMainBase%";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainBase_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMainMaster_KeyDown);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMoney)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,7 +206,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuConfig;
         private System.Windows.Forms.ToolStripMenuItem btnHelp;
         private System.Windows.Forms.ToolStripMenuItem mnuAbout;
-        private System.Windows.Forms.PictureBox ptbMoney;
         private System.Windows.Forms.ToolStripMenuItem mnuColors;
         private System.Windows.Forms.ToolStripMenuItem mnuDataBase;
         private System.Windows.Forms.ToolStripMenuItem mnuUsers;

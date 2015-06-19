@@ -68,120 +68,119 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\About\resAbout.Designer.cs">
+    <Compile Include="Forms\About\ResAbout.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>resAbout.resx</DependentUpon>
+      <DependentUpon>ResAbout.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Color\frmColor.cs">
+    <Compile Include="Forms\Color\FrmColor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Color\frmColor.Designer.cs">
-      <DependentUpon>frmColor.cs</DependentUpon>
+    <Compile Include="Forms\Color\FrmColor.Designer.cs">
+      <DependentUpon>FrmColor.cs</DependentUpon>
     </Compile>
     <Compile Include="AppConfigXML.cs" />
-    <Compile Include="Forms\Color\resColor.Designer.cs">
+    <Compile Include="Forms\Color\ResColor.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>resColor.resx</DependentUpon>
+      <DependentUpon>ResColor.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Connection\clsConnection.cs" />
-    <Compile Include="Forms\Connection\resConnection.Designer.cs">
+    <Compile Include="Forms\Connection\ClsConnection.cs" />
+    <Compile Include="Forms\Connection\ResConnection.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>resConnection.resx</DependentUpon>
+      <DependentUpon>ResConnection.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login\clsLogin.cs" />
-    <Compile Include="Forms\Login\frmLogin.cs">
+    <Compile Include="Forms\Login\ClsLogin.cs" />
+    <Compile Include="Forms\Login\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="Forms\Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login\resLogin.Designer.cs">
+    <Compile Include="Forms\Login\ResLogin.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>resLogin.resx</DependentUpon>
+      <DependentUpon>ResLogin.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainBase\resMainBase.Designer.cs">
+    <Compile Include="Forms\MainBase\ResMainBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>resMainBase.resx</DependentUpon>
+      <DependentUpon>ResMainBase.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\clsUser.cs" />
-    <Compile Include="Forms\Users\frmUser.cs">
+    <Compile Include="Forms\Users\ClsUsers.cs" />
+    <Compile Include="Forms\Users\FrmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Users\frmUser.Designer.cs">
-      <DependentUpon>frmUser.cs</DependentUpon>
+    <Compile Include="Forms\Users\FrmUsers.Designer.cs">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainBase\frmMainMaster.cs">
+    <Compile Include="Forms\MainBase\FrmMainBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainBase\frmMainMaster.Designer.cs">
-      <DependentUpon>frmMainMaster.cs</DependentUpon>
+    <Compile Include="Forms\MainBase\FrmMainBase.Designer.cs">
+      <DependentUpon>FrmMainBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\About\frmAbout.cs">
+    <Compile Include="Forms\About\FrmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\About\frmAbout.Designer.cs">
-      <DependentUpon>frmAbout.cs</DependentUpon>
+    <Compile Include="Forms\About\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Connection\frmConnection.cs">
+    <Compile Include="Forms\Connection\FrmConnection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Connection\frmConnection.Designer.cs">
-      <DependentUpon>frmConnection.cs</DependentUpon>
+    <Compile Include="Forms\Connection\FrmConnection.Designer.cs">
+      <DependentUpon>FrmConnection.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\resUsers.Designer.cs">
+    <Compile Include="Forms\Users\ResUsers.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>resUsers.resx</DependentUpon>
+      <DependentUpon>ResUsers.resx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\About\resAbout.resx">
+    <EmbeddedResource Include="Forms\About\ResAbout.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>resAbout.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+      <LastGenOutput>ResAbout.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Color\frmColor.resx">
-      <DependentUpon>frmColor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Color\FrmColor.resx">
+      <DependentUpon>FrmColor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Color\resColor.resx">
+    <EmbeddedResource Include="Forms\Color\ResColor.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>resColor.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResColor.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Connection\frmConnection.resx">
-      <DependentUpon>frmConnection.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Connection\FrmConnection.resx">
+      <DependentUpon>FrmConnection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Connection\resConnection.resx">
+    <EmbeddedResource Include="Forms\Connection\ResConnection.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>resConnection.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResConnection.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login\resLogin.resx">
+    <EmbeddedResource Include="Forms\Login\ResLogin.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>resLogin.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResLogin.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainBase\frmMainMaster.resx">
-      <DependentUpon>frmMainMaster.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainBase\FrmMainBase.resx">
+      <DependentUpon>FrmMainBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainBase\resMainBase.resx">
+    <EmbeddedResource Include="Forms\MainBase\ResMainBase.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>resMainBase.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResMainBase.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\frmUser.resx">
-      <DependentUpon>frmUser.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Users\FrmUsers.resx">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\About\frmAbout.resx">
-      <DependentUpon>frmAbout.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\About\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\resUsers.resx">
+    <EmbeddedResource Include="Forms\Users\ResUsers.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>resUsers.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResUsers.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,76 +225,76 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Login_User96.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\coins48.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ConnectionUIDialog\Microsoft.Data.ConnectionUI.Dialog.csproj">
       <Project>{05c97f8d-b7cf-4cab-b81c-0994a70d90ca}</Project>
       <Name>Microsoft.Data.ConnectionUI.Dialog</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\User_accept16.png" />
+    <None Include="Resources\HelpAbout32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\User_exclamation16.png" />
+    <None Include="Resources\HelpAbout128.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\help_about32.png" />
+    <None Include="Resources\ColorsSwatch32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\db_add32.png" />
+    <None Include="Resources\DataBaseAdd32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userDelete32.png" />
+    <None Include="Resources\DataBaseAdd128.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userDelete128.png" />
+    <None Include="Resources\LoginManager128.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userNew32.png" />
+    <None Include="Resources\ExitClose32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userNew128.png" />
+    <None Include="Resources\CoinsMoney128.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\users32.png" />
+    <None Include="Resources\UsersAccept16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\users128.png" />
+    <None Include="Resources\UsersAll32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userUpdate32.png" />
+    <None Include="Resources\UsersAll128.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userUpdate128.png" />
+    <None Include="Resources\UsersDelete32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exit32.png" />
+    <None Include="Resources\UsersDelete128.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\colors32.png" />
+    <None Include="Resources\UsersExclamation16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userFind32.png" />
+    <None Include="Resources\UsersFind32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userFind128.png" />
+    <None Include="Resources\UsersFind128.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\usersRestore32.png" />
+    <None Include="Resources\UsersNew32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\usersRestore128.png" />
+    <None Include="Resources\UsersNew128.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\db_add128.png" />
+    <None Include="Resources\UsersRecover32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\help_about128.png" />
+    <None Include="Resources\UsersRecover128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersUpdate32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersUpdate128.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -118,46 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="userDelete128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\userDelete128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersAccept16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersAccept16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userDelete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\userDelete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersAll128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersAll128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userNew128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\userNew128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersAll32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersAll32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userNew32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\userNew32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersDelete128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersDelete128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="users128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\users128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersDelete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersDelete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="users32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\users32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersExclamation16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersExclamation16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userUpdate128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\userUpdate128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersFind128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersFind128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userUpdate32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\userUpdate32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersFind32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersFind32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User_accept16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\User_accept16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersNew128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersNew128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User_exclamation16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\User_exclamation16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersNew32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersNew32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userFind128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\userFind128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersRecover128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersRecover128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userFind32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\userFind32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersRecover32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersRecover32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usersRestore128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\usersRestore128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersUpdate128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersUpdate128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usersRestore32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Resources\usersRestore32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersUpdate32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Resources\UsersUpdate32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

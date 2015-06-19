@@ -27,10 +27,10 @@ namespace MoneyManagerDesktop
     using Microsoft.Data.ConnectionUI;
     using System.Data.SqlClient;
     #endregion
-    public partial class frmConnection : MetroForm
+    public partial class FrmConnection : MetroForm
     {
 
-        public frmConnection()
+        public FrmConnection()
         {
             this.InitializeComponent();
             this.SetConfigStartConnections();
@@ -50,7 +50,7 @@ namespace MoneyManagerDesktop
             this.img_LogoDB.Text = ("");
             this.img_LogoDB.UseTileImage = (true);
             this.img_LogoDB.TileImageAlign = ContentAlignment.MiddleCenter;
-            this.img_LogoDB.TileImage = MoneyManagerDesktop.Forms.Connection.resConnection.db_add128;
+            this.img_LogoDB.TileImage = MoneyManagerDesktop.Forms.Connection.ResConnection.DataBaseAdd128;
         }
         private void NewSQLConnectionString()
         {

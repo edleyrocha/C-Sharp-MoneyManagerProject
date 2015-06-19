@@ -25,7 +25,7 @@ namespace MoneyManagerDesktop
     using MetroFramework.Forms;
     using MetroFramework;
     #endregion
-    public partial class frmLogin : MetroForm
+    public partial class FrmLogin : MetroForm
     {
 
         public enum AcessLoginStatus
@@ -36,33 +36,32 @@ namespace MoneyManagerDesktop
 
         public AcessLoginStatus myLoginStatusForLogin { get; set; }
 
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
             this.SetConfigStartLogin();
         }
-
         public void SetConfigStartLogin()
         {
             this.Text = ("Money Manager");
-            this.mtpLogin.Text = String.Format("{0}{1}{1}{1}{1}", "Login", "                  ");
+            this.mtpLogin.Text = String.Format("{0}{1}{1}{1}{1}{1}{1}", "Login", "                  ");
             this.txt_Login.Text = ("Usuario");
             this.txt_Password.Text = ("Senha");
-            this.metroTile_Foto.Text = ("");
             this.btnLogin.Text = ("Login");
+            this.imgLogin.Text = ("");
+            this.imgLogin.UseTileImage = (true);
+            this.imgLogin.TileImageAlign = (ContentAlignment.MiddleCenter);
+            this.imgLogin.TileImage = (MoneyManagerDesktop.Forms.Login.ResLogin.LoginManager128);
             this.Refresh();
         }
-
         private void txt_Login_Click(object sender, EventArgs e)
         {
             this.txt_Login.Text = ("");
         }
-
         private void txt_Password_Click(object sender, EventArgs e)
         {
             this.txt_Password.Text = ("");
         }
-
         private void txt_Login_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -71,7 +70,6 @@ namespace MoneyManagerDesktop
                 e.Handled = e.SuppressKeyPress = true;
             };
         }
-
         private void txt_Password_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -81,34 +79,31 @@ namespace MoneyManagerDesktop
                 e.Handled = e.SuppressKeyPress = true;
             };
         }
-
         private void txt_Login_Leave(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_Login.Text) || ((this.txt_Login.Text == ("Usuario"))))
             {
                 this.txt_Login.Text = ("Usuario");
-                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
+                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
             }
             else
             {
-                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
+                this.imgStatusLogin.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
             };
         }
-
         private void txt_Password_Leave(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(this.txt_Password.Text) || ((this.txt_Password.Text == ("Senha"))))
             {
                 this.txt_Password.UseSystemPasswordChar = (false);
                 this.txt_Password.Text = ("Senha");
-                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_exclamation16;
+                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
             }
             else
             {
-                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.resUsers.User_accept16;
+                this.imgStatusPassword.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
             };
         }
-
         private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (this.txt_Password.UseSystemPasswordChar == (false))
@@ -116,14 +111,12 @@ namespace MoneyManagerDesktop
                 this.txt_Password.UseSystemPasswordChar = (true);
             };
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.myLoginStatusForLogin = AcessLoginStatus.AllowedAccess;
             this.Close();
             this.Dispose();
         }
-
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
         {
             MetroFramework.Components.MetroStyleManager metroStyleManager = new MetroFramework.Components.MetroStyleManager();
@@ -137,7 +130,6 @@ namespace MoneyManagerDesktop
             this.btnLogin.Theme = this.Theme;
             this.Refresh();
         }
-
         private void metroButton1_Click(object sender, EventArgs e)
         {
             var m = new Random();
@@ -149,7 +141,6 @@ namespace MoneyManagerDesktop
             this.Refresh();
             this.txt_Login.Focus();
         }
-
         private void metroTabControl_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
