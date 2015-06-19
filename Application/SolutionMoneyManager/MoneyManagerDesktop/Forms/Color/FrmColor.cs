@@ -26,9 +26,9 @@ namespace MoneyManagerDesktop
     using MetroFramework.Forms;
     using System.Windows.Forms;
     #endregion
-    public partial class FrmmColor : MetroForm
+    public partial class FrmColor : MetroForm
     {
-        public FrmmColor()
+        public FrmColor()
         {
             InitializeComponent();
             SetConfigStartColors();

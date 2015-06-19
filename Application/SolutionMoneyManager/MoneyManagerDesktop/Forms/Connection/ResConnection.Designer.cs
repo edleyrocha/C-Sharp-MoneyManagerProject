@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MoneyManagerDesktop.Forms.Color {
+namespace MoneyManagerDesktop.Forms.Connection {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MoneyManagerDesktop.Forms.Color {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RessColor {
+    internal class ResConnection {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RessColor() {
+        internal ResConnection() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MoneyManagerDesktop.Forms.Color {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Color.RessColor", typeof(RessColor).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Connection.ResConnection", typeof(ResConnection).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,19 @@ namespace MoneyManagerDesktop.Forms.Color {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ColorsSwatch32 {
+        internal static System.Drawing.Bitmap DataBaseAdd128 {
             get {
-                object obj = ResourceManager.GetObject("ColorsSwatch32", resourceCulture);
+                object obj = ResourceManager.GetObject("DataBaseAdd128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DataBaseAdd32 {
+            get {
+                object obj = ResourceManager.GetObject("DataBaseAdd32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

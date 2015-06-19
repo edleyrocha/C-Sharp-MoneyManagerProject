@@ -22,7 +22,7 @@ namespace MoneyManagerDesktop
     using System.Data.SqlClient;
 
     #endregion
-    class ClssLogin
+    class ClsLogin
     {
     }
 }

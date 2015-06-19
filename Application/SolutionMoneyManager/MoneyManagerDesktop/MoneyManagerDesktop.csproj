@@ -68,45 +68,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\About\RessAbout.Designer.cs">
+    <Compile Include="Forms\About\ResAbout.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RessAbout.resx</DependentUpon>
+      <DependentUpon>ResAbout.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Color\FrmmColor.cs">
+    <Compile Include="Forms\Color\FrmColor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Color\FrmmColor.Designer.cs">
-      <DependentUpon>FrmmColor.cs</DependentUpon>
+    <Compile Include="Forms\Color\FrmColor.Designer.cs">
+      <DependentUpon>FrmColor.cs</DependentUpon>
     </Compile>
     <Compile Include="AppConfigXML.cs" />
-    <Compile Include="Forms\Color\RessColor.Designer.cs">
+    <Compile Include="Forms\Color\ResColor.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RessColor.resx</DependentUpon>
+      <DependentUpon>ResColor.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Connection\ClssConnection.cs" />
-    <Compile Include="Forms\Connection\RessConnection.Designer.cs">
+    <Compile Include="Forms\Connection\ClsConnection.cs" />
+    <Compile Include="Forms\Connection\ResConnection.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RessConnection.resx</DependentUpon>
+      <DependentUpon>ResConnection.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login\ClssLogin.cs" />
-    <Compile Include="Forms\Login\FrmmLogin.cs">
+    <Compile Include="Forms\Login\ClsLogin.cs" />
+    <Compile Include="Forms\Login\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login\FrmmLogin.Designer.cs">
-      <DependentUpon>FrmmLogin.cs</DependentUpon>
+    <Compile Include="Forms\Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login\RessLogin.Designer.cs">
+    <Compile Include="Forms\Login\ResLogin.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RessLogin.resx</DependentUpon>
+      <DependentUpon>ResLogin.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainBase\RessMainBase.Designer.cs">
+    <Compile Include="Forms\MainBase\ResMainBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RessMainBase.resx</DependentUpon>
+      <DependentUpon>ResMainBase.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Users\ClsUsers.cs" />
     <Compile Include="Forms\Users\FrmUsers.cs">
@@ -121,66 +121,66 @@
     <Compile Include="Forms\MainBase\FrmMainBase.Designer.cs">
       <DependentUpon>FrmMainBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\About\FrmmAbout.cs">
+    <Compile Include="Forms\About\FrmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\About\FrmmAbout.Designer.cs">
-      <DependentUpon>FrmmAbout.cs</DependentUpon>
+    <Compile Include="Forms\About\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Connection\FrmmConnection.cs">
+    <Compile Include="Forms\Connection\FrmConnection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Connection\FrmmConnection.Designer.cs">
-      <DependentUpon>FrmmConnection.cs</DependentUpon>
+    <Compile Include="Forms\Connection\FrmConnection.Designer.cs">
+      <DependentUpon>FrmConnection.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\RessUsers.Designer.cs">
+    <Compile Include="Forms\Users\ResUsers.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RessUsers.resx</DependentUpon>
+      <DependentUpon>ResUsers.resx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\About\RessAbout.resx">
+    <EmbeddedResource Include="Forms\About\ResAbout.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RessAbout.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResAbout.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Color\FrmmColor.resx">
-      <DependentUpon>FrmmColor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Color\FrmColor.resx">
+      <DependentUpon>FrmColor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Color\RessColor.resx">
+    <EmbeddedResource Include="Forms\Color\ResColor.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RessColor.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResColor.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Connection\FrmmConnection.resx">
-      <DependentUpon>FrmmConnection.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Connection\FrmConnection.resx">
+      <DependentUpon>FrmConnection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Connection\RessConnection.resx">
+    <EmbeddedResource Include="Forms\Connection\ResConnection.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RessConnection.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResConnection.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login\FrmmLogin.resx">
-      <DependentUpon>FrmmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login\RessLogin.resx">
+    <EmbeddedResource Include="Forms\Login\ResLogin.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RessLogin.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResLogin.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainBase\FrmMainBase.resx">
       <DependentUpon>FrmMainBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainBase\RessMainBase.resx">
+    <EmbeddedResource Include="Forms\MainBase\ResMainBase.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RessMainBase.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResMainBase.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\FrmUsers.resx">
       <DependentUpon>FrmUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\About\FrmmAbout.resx">
-      <DependentUpon>FrmmAbout.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\About\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\RessUsers.resx">
+    <EmbeddedResource Include="Forms\Users\ResUsers.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RessUsers.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResUsers.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

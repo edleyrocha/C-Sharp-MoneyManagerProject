@@ -27,10 +27,10 @@ namespace MoneyManagerDesktop
     using Microsoft.Data.ConnectionUI;
     using System.Data.SqlClient;
     #endregion
-    public partial class FrmmConnection : MetroForm
+    public partial class FrmConnection : MetroForm
     {
 
-        public FrmmConnection()
+        public FrmConnection()
         {
             this.InitializeComponent();
             this.SetConfigStartConnections();
@@ -50,11 +50,11 @@ namespace MoneyManagerDesktop
             this.img_LogoDB.Text = ("");
             this.img_LogoDB.UseTileImage = (true);
             this.img_LogoDB.TileImageAlign = ContentAlignment.MiddleCenter;
-            this.img_LogoDB.TileImage = MoneyManagerDesktop.Forms.Connection.RessConnection.DataBaseAdd128;
+            this.img_LogoDB.TileImage = MoneyManagerDesktop.Forms.Connection.ResConnection.DataBaseAdd128;
         }
         private void NewSQLConnectionString()
         {
-            clsConnection objC = new clsConnection();
+            ClsConnection objC = new ClsConnection();
             if (objC.NewSQLConnectionString()) // IF NewSQLConnectionString (TRUE) Load Config
             {
                 this.btnLoad.PerformClick();
@@ -63,12 +63,12 @@ namespace MoneyManagerDesktop
         }
         private void LoadSQLConnectionString()
         {
-            clsConnection objC = new clsConnection();
+            ClsConnection objC = new ClsConnection();
             if ((this.btnLoad.Text) == ("Carregar Conexão"))
             {
-                this.txtBoxSource.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetDataSource));
-                this.txtBoxProvider.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetDataProvider));
-                this.txtBoxString.Text = (objC.GetSQLConnectionString(clsConnection.ChoiceSQLConnectionString.GetConnectionString));
+                this.txtBoxSource.Text = (objC.GetSQLConnectionString(ClsConnection.ChoiceSQLConnectionString.GetDataSource));
+                this.txtBoxProvider.Text = (objC.GetSQLConnectionString(ClsConnection.ChoiceSQLConnectionString.GetDataProvider));
+                this.txtBoxString.Text = (objC.GetSQLConnectionString(ClsConnection.ChoiceSQLConnectionString.GetConnectionString));
                 this.btnLoad.Text = ("Testar Conexão");
             }
             else if ((this.btnLoad.Text) == ("Testar Conexão"))

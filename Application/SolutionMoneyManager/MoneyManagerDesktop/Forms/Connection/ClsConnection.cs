@@ -25,7 +25,7 @@ namespace MoneyManagerDesktop
     using System.Text;
     using System.Windows.Forms;
     #endregion
-    class clsConnection
+    class ClsConnection
     {
         #region ---> ( Get and Set StringSQLConnection)
 

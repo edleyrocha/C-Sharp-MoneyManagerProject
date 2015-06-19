@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MoneyManagerDesktop.Forms.Connection {
+namespace MoneyManagerDesktop.Forms.MainBase {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MoneyManagerDesktop.Forms.Connection {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RessConnection {
+    internal class ResMainBase {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RessConnection() {
+        internal ResMainBase() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MoneyManagerDesktop.Forms.Connection {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.Connection.RessConnection", typeof(RessConnection).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MoneyManagerDesktop.Forms.MainBase.ResMainBase", typeof(ResMainBase).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace MoneyManagerDesktop.Forms.Connection {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DataBaseAdd128 {
+        internal static System.Drawing.Bitmap CoinsMoney128 {
             get {
-                object obj = ResourceManager.GetObject("DataBaseAdd128", resourceCulture);
+                object obj = ResourceManager.GetObject("CoinsMoney128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MoneyManagerDesktop.Forms.Connection {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DataBaseAdd32 {
+        internal static System.Drawing.Bitmap ExitClose32 {
             get {
-                object obj = ResourceManager.GetObject("DataBaseAdd32", resourceCulture);
+                object obj = ResourceManager.GetObject("ExitClose32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

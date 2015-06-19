@@ -41,35 +41,35 @@ namespace MoneyManagerDesktop
             //frm img top
             this.BackMaxSize = (50);
             this.BackImagePadding = new Padding(210, 10, 0, 0);
-            this.BackImage = (MoneyManagerDesktop.Forms.MainBase.RessMainBase.CoinsMoney128);
+            this.BackImage = (MoneyManagerDesktop.Forms.MainBase.ResMainBase.CoinsMoney128);
             //mnu
             this.mnuEntries.Text = ("&Cadastros");
 
             this.mnuUsers.Text = ("Usuario");
-            this.mnuUsers.Image = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersAll32);
+            this.mnuUsers.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAll32);
             this.mnuUsersSelect.Text = ("Listar");
-            this.mnuUsersSelect.Image = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersFind32);
+            this.mnuUsersSelect.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersFind32);
             this.mnuUsersInsert.Text = ("Novo");
-            this.mnuUsersInsert.Image = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersNew32);
+            this.mnuUsersInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersNew32);
             this.mnuUsersUpdate.Text = ("Atualizar");
-            this.mnuUsersUpdate.Image = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersUpdate32);
+            this.mnuUsersUpdate.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersUpdate32);
             this.mnuUsersDelete.Text = ("Deletar");
-            this.mnuUsersDelete.Image = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersDelete32);
+            this.mnuUsersDelete.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersDelete32);
             this.mnuUsersRetore.Text = ("Restaurar");
-            this.mnuUsersRetore.Image = (MoneyManagerDesktop.Forms.Users.RessUsers.UsersRecover32);
+            this.mnuUsersRetore.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersRecover32);
 
             this.mnuClose.Text = ("&Sair");
-            this.mnuClose.Image = (MoneyManagerDesktop.Forms.MainBase.RessMainBase.ExitClose32);
+            this.mnuClose.Image = (MoneyManagerDesktop.Forms.MainBase.ResMainBase.ExitClose32);
 
             this.mnuConfig.Text = ("&Configurações");
             this.mnuColors.Text = ("&Cores");
-            this.mnuColors.Image = (MoneyManagerDesktop.Forms.Color.RessColor.ColorsSwatch32);
+            this.mnuColors.Image = (MoneyManagerDesktop.Forms.Color.ResColor.ColorsSwatch32);
             this.mnuDataBase.Text = ("&Banco De Dados");
-            this.mnuDataBase.Image = (MoneyManagerDesktop.Forms.Connection.RessConnection.DataBaseAdd32);
+            this.mnuDataBase.Image = (MoneyManagerDesktop.Forms.Connection.ResConnection.DataBaseAdd32);
 
             this.btnHelp.Text = ("&Ajuda");
             this.mnuAbout.Text = ("&Sobre");
-            this.mnuAbout.Image = (MoneyManagerDesktop.Forms.About.RessAbout.HelpAbout32);
+            this.mnuAbout.Image = (MoneyManagerDesktop.Forms.About.ResAbout.HelpAbout32);
         }
         private void mnuUsersSelect_Click(object sender, EventArgs e)
         {
@@ -102,17 +102,17 @@ namespace MoneyManagerDesktop
         }
         private void mnuColors_Click(object sender, EventArgs e)
         {
-            FrmmColor objfrmColor = (new FrmmColor());
+            FrmColor objfrmColor = (new FrmColor());
             objfrmColor.ShowDialog();
         }
         private void mnuDataBase_Click(object sender, EventArgs e)
         {
-            FrmmConnection objfrmConnection = (new FrmmConnection());
+            FrmConnection objfrmConnection = (new FrmConnection());
             objfrmConnection.ShowDialog();
         }
         private void mnuAbout_Click(object sender, EventArgs e)
         {
-            FrmmAbout objFrmAbout = (new FrmmAbout());
+            FrmAbout objFrmAbout = (new FrmAbout());
             objFrmAbout.ShowDialog();
         }
         private void CancelClosing()
