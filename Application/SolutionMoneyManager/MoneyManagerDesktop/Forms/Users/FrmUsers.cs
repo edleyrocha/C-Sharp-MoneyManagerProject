@@ -31,7 +31,7 @@ namespace MoneyManagerDesktop
         {
             InitializeComponent();
             // Options to open form - pass3
-            this.SelectedAction = (choseAction); 
+            this.SelectedAction = (choseAction);
             this.SetConfigStartUsers();
         }
         #region ---> (Form Users)
@@ -55,7 +55,7 @@ namespace MoneyManagerDesktop
             // Hide Tabs
             this.mtcUsers.SuspendLayout();
             this.mtcUsers.TabPages.Clear();
-          
+
             switch (SelectedAction)
             {
                 case ChoseActionForm.SelectUsers:
@@ -103,13 +103,20 @@ namespace MoneyManagerDesktop
                             this.btnCloseInsert.Text = ((String)btnCloseInsert.Tag);
                             // txt
                             this.txtNameInsert.Enabled = (false);
-                            this.txtLoginInsert.Enabled = (false);
-                            this.txtPasswordAInsert.Enabled = (false);
-                            this.txtPasswordBInsert.Enabled = (false);
                             this.txtNameInsert.Text = ((String)txtNameInsert.Tag);
+
+                            this.txtLoginInsert.Enabled = (false);
                             this.txtLoginInsert.Text = ((String)txtLoginInsert.Tag);
+
+                            this.txtPasswordAInsert.Enabled = (false);
+                            this.txtPasswordAInsert.UseSystemPasswordChar = (false);
+
+                            this.txtPasswordBInsert.Enabled = (false);
+                            this.txtPasswordBInsert.UseSystemPasswordChar = (false);
+
                             this.txtPasswordAInsert.Text = ((String)txtPasswordAInsert.Tag);
                             this.txtPasswordBInsert.Text = ((String)txtPasswordBInsert.Tag);
+
                             // img
                             this.imgStatusNameInsert.Image = (null);
                             this.imgStatusLoginInsert.Image = (null);
@@ -230,24 +237,24 @@ namespace MoneyManagerDesktop
 
         private void ShowDataGrid‎Select()
         {
-            metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            metroGrid1.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode.Fill);
             metroGrid1.RowHeadersWidth = (10);
-            metroGrid1.ScrollBars = ScrollBars.None;
+            metroGrid1.ScrollBars = (ScrollBars.None);
 
-            metroGrid1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            metroGrid1.ColumnHeadersDefaultCellStyle.Font = mtpInsert.Font;
+            metroGrid1.ColumnHeadersDefaultCellStyle.ForeColor = (Color.Black);
+            metroGrid1.ColumnHeadersDefaultCellStyle.Font = (mtpInsert.Font);
 
-            metroGrid1.DefaultCellStyle.SelectionBackColor = Color.LimeGreen;
-            metroGrid1.DefaultCellStyle.SelectionForeColor = Color.Black;
+            metroGrid1.DefaultCellStyle.SelectionBackColor = (Color.LimeGreen);
+            metroGrid1.DefaultCellStyle.SelectionForeColor = (Color.Black);
 
-            metroGrid1.DefaultCellStyle.BackColor = Color.White;
-            metroGrid1.DefaultCellStyle.ForeColor = Color.Black;
+            metroGrid1.DefaultCellStyle.BackColor = (Color.White);
+            metroGrid1.DefaultCellStyle.ForeColor = (Color.Black);
 
-            ClsUsers objClsUsersSelect = new ClsUsers();
+            ClsUsers objClsUsers = (new ClsUsers());
 
-            DataTable objDataTable = objClsUsersSelect.SelectNameLoginForStatus(ClsUsers.StatusUser.Enabled);
+            DataTable objDataTable = (objClsUsers.SelectNameLoginForStatus(ClsUsers.StatusUser.Enabled));
 
-            metroGrid1.DataSource = objDataTable;
+            metroGrid1.DataSource = (objDataTable);
             metroGrid1.ClearSelection();
             metroGrid1.Refresh();
         }
@@ -258,17 +265,18 @@ namespace MoneyManagerDesktop
             String CountRows = (metroGrid1.RowCount.ToString());
             if ((metroGrid1.RowCount) <= (0))
             {
-                this.lblCoutSelect.Text = String.Format(("{0}"), ("Nenhum Registro Encontrado"));
+                this.lblCoutSelect.Text = (String.Format(("{0}"), ("Nenhum Registro Encontrado")));
             }
             else if ((metroGrid1.RowCount) == (1))
             {
-                this.lblCoutSelect.Text = String.Format(("{0} {1}"), (CountRows), ("Registro Encontrado"));
+                this.lblCoutSelect.Text = (String.Format(("{0} {1}"), (CountRows), ("Registro Encontrado")));
             }
             else if ((metroGrid1.RowCount) >= (2))
             {
-                this.lblCoutSelect.Text = String.Format(("{0} {1}"), (CountRows), ("Registros Encontrados"));
+                this.lblCoutSelect.Text = (String.Format(("{0} {1}"), (CountRows), ("Registros Encontrados")));
             };
         }
+
         private void btnListSelect_Click(object sender, EventArgs e)
         {
             this.SelectUsers();
@@ -286,7 +294,7 @@ namespace MoneyManagerDesktop
         MetroFramework.Components.MetroToolTip mttHintNameInsert = (new MetroFramework.Components.MetroToolTip());
         MetroFramework.Components.MetroToolTip mttHintLoginInsert = (new MetroFramework.Components.MetroToolTip());
         MetroFramework.Components.MetroToolTip mttHintPasswordInsert = (new MetroFramework.Components.MetroToolTip());
-        
+
         Boolean insertNameStatus = (false);
         Boolean insertLoginStatus = (false);
         Boolean insertPasswordStatus = (false);
@@ -295,7 +303,6 @@ namespace MoneyManagerDesktop
         {
             if ((btnSaveInsert.Tag.ToString().Trim()) == (btnSaveInsert.Text.Trim()))
             {
-
                 this.btnSaveInsert.Text = ("Salvar");
                 this.btnCloseInsert.Text = ("Cancelar");
                 this.txtNameInsert.Text = ("");
@@ -303,6 +310,8 @@ namespace MoneyManagerDesktop
                 this.txtLoginInsert.Enabled = (true);
                 this.txtPasswordAInsert.Enabled = (true);
                 this.txtPasswordBInsert.Enabled = (true);
+                this.txtPasswordAInsert.UseSystemPasswordChar = (true);
+                this.txtPasswordBInsert.UseSystemPasswordChar = (true);
                 this.txtNameInsert.Focus();
             }
             else if ((btnSaveInsert.Text.Trim()) == ("Salvar"))
@@ -312,9 +321,9 @@ namespace MoneyManagerDesktop
                 this.txtPasswordAInsertLeave();
                 this.txtPasswordBInsertLeave();
 
-                if ((insertNameStatus == (true)) && (insertLoginStatus == (true)) && (insertPasswordStatus == (true)))
+                if ((insertNameStatus) && (insertLoginStatus) && (insertPasswordStatus))
                 {
-                    ClsUsers objClsUsers = new ClsUsers();
+                    ClsUsers objClsUsers = (new ClsUsers());
                     objClsUsers.name = ((txtNameInsert.Text).Trim());
                     objClsUsers.login = ((txtLoginInsert.Text).Trim());
                     objClsUsers.password = ((txtPasswordAInsert.Text).Trim());
@@ -334,16 +343,18 @@ namespace MoneyManagerDesktop
                         MessageBoxButtons msg_Buttons = (MessageBoxButtons.OK);
                         MessageBoxIcon msg_Icon = (MessageBoxIcon.None);
                         MessageBoxDefaultButton msg_ButtonsDefault = (MessageBoxDefaultButton.Button1);
-                        DialogResult diagResult = (MetroMessageBox.Show(this, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault));
+                        DialogResult diagResult = (MetroMessageBox.Show((Form.ActiveForm), (msg_Text), (msg_Title), (msg_Buttons), (msg_Icon), (msg_ButtonsDefault)));
                     };
                 };
             };
         }
+
         private void btnSaveInsert_Click(object sender, EventArgs e)
         {
             this.InsertUsers();
         }
-        private void btnCloseInsert_Click(object sender, EventArgs e)
+
+        private void btnCloseCancel()
         {
             if ((btnCloseInsert.Tag.ToString().Trim()) == (btnCloseInsert.Text.Trim()))
             {
@@ -356,24 +367,37 @@ namespace MoneyManagerDesktop
                 MessageBoxButtons msg_Buttons = (MessageBoxButtons.YesNo);
                 MessageBoxIcon msg_Icon = (MessageBoxIcon.None);
                 MessageBoxDefaultButton msg_ButtonsDefault = (MessageBoxDefaultButton.Button1);
-                DialogResult diagResult = (MetroMessageBox.Show(this, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault));
+                DialogResult diagResult = (MetroMessageBox.Show((Form.ActiveForm), (msg_Text), (msg_Title), (msg_Buttons), (msg_Icon), (msg_ButtonsDefault)));
 
                 if ((diagResult) == (DialogResult.Yes))
                 {
                     this.SetConfigStartUsers();
                 }
-                else if (diagResult == DialogResult.No)
+                else if ((diagResult) == (DialogResult.No))
                 {
                     this.txtNameInsert.Focus();
                 }
             };
         }
 
+        private void btnCloseInsert_Click(object sender, EventArgs e)
+        {
+            this.btnCloseCancel();
+        }
+
         #region ---> (txtNameInsert)
+
+        private void txtNameInsertEnter()
+        {
+            if ((this.txtNameInsert.Text) == ((String)this.txtNameInsert.Tag))
+            {
+                this.txtNameInsert.Clear();
+            };
+        }
 
         private void txtNameInsert_Enter(object sender, EventArgs e)
         {
-            this.txtNameInsert.Text = ("");
+            this.txtNameInsertEnter();
         }
 
         private void txtNameInsert_KeyDown(object sender, KeyEventArgs e)
@@ -381,7 +405,42 @@ namespace MoneyManagerDesktop
             if ((e.KeyCode) == (Keys.Enter))
             {
                 SendKeys.Send("{TAB}");
-                e.Handled = e.SuppressKeyPress = (true);
+                e.Handled = (e.SuppressKeyPress = (true)); // Handled and  SuppressKeyPress = true
+            };
+        }
+
+        private void txtNameInsertLeave()
+        {
+            this.insertNameStatus = (false);
+            ClsUsers objClsUsers = (new ClsUsers());
+            objClsUsers.name = (this.txtNameInsert.Text.Trim());
+            string msgResult = (objClsUsers.CheckUserNameInsertExist());
+
+            if ((String.IsNullOrEmpty(this.txtNameInsert.Text.Trim())) || 
+               ((this.txtNameInsert.Text.Trim()) == (((String)this.txtNameInsert.Tag).Trim())))
+            {
+                this.mttHintNameInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                this.mttHintNameInsert.Style = (this.Style);
+                this.mttHintNameInsert.SetToolTip(this.imgStatusNameInsert, "Nome inválido");
+                this.imgStatusNameInsert.Cursor = (Cursors.Hand);
+
+                this.txtNameInsert.Text = ((String)this.txtNameInsert.Tag);
+                this.imgStatusNameInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
+            }
+            else if (msgResult == (Boolean.FalseString))
+            {
+                this.mttHintNameInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                this.mttHintNameInsert.Style = (this.Style);
+                this.mttHintNameInsert.SetToolTip(this.imgStatusNameInsert, "Nome já existe");
+                this.imgStatusNameInsert.Cursor = (Cursors.Hand);
+                this.imgStatusNameInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
+            }
+            else if (msgResult == (Boolean.TrueString))
+            {
+                this.insertNameStatus = (true);
+                this.mttHintNameInsert.RemoveAll();
+                this.imgStatusNameInsert.Cursor = (Cursors.Default);
+                this.imgStatusNameInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16);
             };
         }
 
@@ -390,54 +449,64 @@ namespace MoneyManagerDesktop
             this.txtNameInsertLeave();
         }
 
-        private void txtNameInsertLeave()
-        {
-            insertNameStatus = (false);
-            ClsUsers u = new ClsUsers();
-            u.name = (txtNameInsert.Text.Trim());
-            string msgResult = u.CheckUserNameInsertExist();
-
-            if (String.IsNullOrEmpty(this.txtNameInsert.Text.Trim()) || (this.txtNameInsert.Text.Trim()) == (((String)txtNameInsert.Tag).Trim()))
-            {
-                mttHintNameInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-                mttHintNameInsert.Style = (this.Style);
-                mttHintNameInsert.SetToolTip(this.imgStatusNameInsert, "Nome inválido");
-                imgStatusNameInsert.Cursor = Cursors.Hand;
-
-                this.txtNameInsert.Text = ((String)txtNameInsert.Tag);
-                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
-            }
-            else if (msgResult == (Boolean.FalseString))
-            {
-                mttHintNameInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-                mttHintNameInsert.Style = MetroColorStyle.Blue;
-                mttHintNameInsert.SetToolTip(this.imgStatusNameInsert, "Nome já existe");
-                imgStatusNameInsert.Cursor = Cursors.Hand;
-                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
-            }
-            else if (msgResult == (Boolean.TrueString))
-            {
-                insertNameStatus = (true);
-                mttHintNameInsert.RemoveAll();
-                imgStatusNameInsert.Cursor = Cursors.Default;
-                this.imgStatusNameInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
-            };
-        }
-
         #endregion
 
         #region ---> (txtLoginInsert)
 
+        private void txtLoginInsertEnter()
+        {
+            if ((this.txtLoginInsert.Text) == ((String)this.txtLoginInsert.Tag))
+            {
+                this.txtLoginInsert.Clear();
+            };
+        }
+
         private void txtLoginInsert_Enter(object sender, EventArgs e)
         {
-            this.txtLoginInsert.Text = ("");
+            this.txtLoginInsertEnter();
         }
+
         private void txtLoginInsert_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if ((e.KeyCode) == (Keys.Enter))
             {
                 SendKeys.Send("{TAB}");
-                e.Handled = e.SuppressKeyPress = true;
+                e.Handled = (e.SuppressKeyPress = (true));
+            };
+        }
+
+        private void txtLoginInsertLeave()
+        {
+            this.insertLoginStatus = (false);
+            ClsUsers objClsUsers = (new ClsUsers());
+            objClsUsers.login = (this.txtLoginInsert.Text);
+            string msgResult = (objClsUsers.CheckUserLoginInsertExist());
+
+            if ((String.IsNullOrEmpty(this.txtLoginInsert.Text.Trim())) ||
+               ((this.txtLoginInsert.Text.Trim()) == (((String)this.txtLoginInsert.Tag).Trim())))
+            {
+                this.mttHintLoginInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                this.mttHintLoginInsert.Style = (this.Style);
+                this.mttHintLoginInsert.SetToolTip(this.imgStatusLoginInsert, "Login inválido");
+                this.imgStatusLoginInsert.Cursor = (Cursors.Hand);
+
+                this.txtLoginInsert.Text = ((String)this.txtLoginInsert.Tag);
+                this.imgStatusLoginInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
+            }
+            else if (msgResult == (Boolean.FalseString))
+            {
+                this.mttHintLoginInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                this.mttHintLoginInsert.Style = (this.Style);
+                this.mttHintLoginInsert.SetToolTip(this.imgStatusLoginInsert, "Login já existe");
+                this.imgStatusLoginInsert.Cursor = (Cursors.Hand);
+                this.imgStatusLoginInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
+            }
+            else
+            {
+                this.insertLoginStatus = (true);
+                this.mttHintLoginInsert.RemoveAll();
+                this.imgStatusLoginInsert.Cursor = (Cursors.Default);
+                this.imgStatusLoginInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16);
             };
         }
 
@@ -446,143 +515,117 @@ namespace MoneyManagerDesktop
             this.txtLoginInsertLeave();
         }
 
-        private void txtLoginInsertLeave()
-        {
-            insertLoginStatus = (false);
-            ClsUsers objClsUsers = new ClsUsers();
-            objClsUsers.login = (txtLoginInsert.Text);
-            string msgResult = (objClsUsers.CheckUserLoginInsertExist());
-
-            if (String.IsNullOrEmpty(this.txtLoginInsert.Text.Trim()) || (this.txtLoginInsert.Text.Trim()) == (((String)txtLoginInsert.Tag).Trim()))
-            {
-                mttHintLoginInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-                mttHintLoginInsert.Style = (this.Style);
-                mttHintLoginInsert.Show("Login inválido", this.imgStatusLoginInsert, 2000);
-                mttHintLoginInsert.SetToolTip(this.imgStatusLoginInsert, "Login inválido");
-                imgStatusLoginInsert.Cursor = Cursors.Hand;
-
-                this.txtLoginInsert.Text = ((String)txtLoginInsert.Tag);
-                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
-            }
-            else if (msgResult == (Boolean.FalseString))
-            {
-                mttHintLoginInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-                mttHintLoginInsert.Style = MetroColorStyle.Blue;
-                mttHintLoginInsert.Show("Login já existe", this.imgStatusLoginInsert, 2000);
-                mttHintLoginInsert.SetToolTip(this.imgStatusLoginInsert, "Login já existe");
-                imgStatusLoginInsert.Cursor = Cursors.Hand;
-                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
-            }
-            else
-            {
-                insertLoginStatus = (true);
-                mttHintLoginInsert.RemoveAll();
-                imgStatusLoginInsert.Cursor = Cursors.Default;
-                this.imgStatusLoginInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
-            };
-        }
-
         #endregion
 
-        #region ---> (txtPasswordInsert)
-
-        private void txtPasswordAInsertLeave()
+        #region ---> (txtPasswordAInsert)
+        private void txtPasswordAInsertEnter()
         {
-            if ((String.IsNullOrEmpty(this.txtPasswordAInsert.Text)) || ((this.txtPasswordAInsert.Text) == (String)txtPasswordAInsert.Tag))
+            if ((this.txtPasswordAInsert.Text) == ((String)this.txtPasswordAInsert.Tag))
             {
-                mttHintPasswordInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-                mttHintPasswordInsert.Style = (this.Style);
-                mttHintPasswordInsert.Show("Senha inválida", this.imgStatusPasswordInsert, 2000);
-                mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha inválida");
-                imgStatusPasswordInsert.Cursor = Cursors.Hand;
-                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
-            }
-            else
-            {
-                mttHintPasswordInsert.RemoveAll();
-                imgStatusPasswordInsert.Cursor = Cursors.Default;
-                this.imgStatusPasswordInsert.Image = null;
+                this.txtPasswordAInsert.Clear();
             };
         }
-
-        private void txtPasswordBInsertLeave()
-        {
-            insertPasswordStatus = (false);
-            if ((String.IsNullOrEmpty(this.txtPasswordBInsert.Text)) ||
-               ((this.txtPasswordBInsert.Text) == (String)txtPasswordBInsert.Tag))
-            {
-                mttHintPasswordInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-                mttHintPasswordInsert.Style = (this.Style);
-                mttHintPasswordInsert.Show("Senha inválida", this.imgStatusPasswordInsert, 2000);
-                mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha inválida");
-                imgStatusPasswordInsert.Cursor = Cursors.Hand;
-
-                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
-            }
-            else if ((this.txtPasswordBInsert.Text) != (this.txtPasswordAInsert.Text))
-            {
-                mttHintPasswordInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
-                mttHintPasswordInsert.Style = MetroColorStyle.Blue;
-                mttHintPasswordInsert.Show("Senha não Combina", this.imgStatusPasswordInsert, 2000);
-                mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha não Combina");
-                imgStatusPasswordInsert.Cursor = Cursors.Hand;
-                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16;
-            }
-            else
-            {
-                insertPasswordStatus = (true);
-                mttHintPasswordInsert.RemoveAll();
-                imgStatusPasswordInsert.Cursor = Cursors.Default;
-                this.imgStatusPasswordInsert.Image = MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16;
-            };
-        }
-
         private void txtPasswordAInsert_Enter(object sender, EventArgs e)
         {
-            this.txtPasswordAInsert.Text = ("");
-            if (txtPasswordAInsert.UseSystemPasswordChar == (false))
-            {
-                txtPasswordAInsert.UseSystemPasswordChar = (true);
-            };
+            this.txtPasswordAInsertEnter();
         }
-
         private void txtPasswordAInsert_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if ((e.KeyCode) == (Keys.Enter))
             {
                 SendKeys.Send("{TAB}");
-                e.Handled = e.SuppressKeyPress = true;
+                e.Handled = (e.SuppressKeyPress = (true));
             };
         }
-
+        private void txtPasswordAInsertLeave()
+        {
+            if ((String.IsNullOrEmpty(this.txtPasswordAInsert.Text)) ||
+               ((this.txtPasswordAInsert.Text) == (String)this.txtPasswordAInsert.Tag))
+            {
+                // txtPasswordAInsert
+                this.txtPasswordAInsert.Text = ((String)this.txtPasswordAInsert.Tag);
+                // mttHintPasswordInsert
+                this.mttHintPasswordInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                this.mttHintPasswordInsert.Style = (this.Style);
+                this.mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha inválida");
+                // imgStatusPasswordInsert
+                this.imgStatusPasswordInsert.Cursor = (Cursors.Hand);
+                this.imgStatusPasswordInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
+            }
+            else
+            {
+                this.mttHintPasswordInsert.RemoveAll();
+                this.imgStatusPasswordInsert.Cursor = (Cursors.Default);
+                this.imgStatusPasswordInsert.Image = (null);
+            };
+        }
         private void txtPasswordAInsert_Leave(object sender, EventArgs e)
         {
             this.txtPasswordAInsertLeave();
         }
+        #endregion
 
+        #region ---> (txtPasswordBInsert)
+        private void txtPasswordBInsertEnter()
+        {
+            if ((this.txtPasswordBInsert.Text) == ((String)this.txtPasswordBInsert.Tag))
+            {
+                this.txtPasswordBInsert.Clear();
+            };
+        }
         private void txtPasswordBInsert_Enter(object sender, EventArgs e)
         {
-            this.txtPasswordBInsert.Text = ("");
-            if (txtPasswordBInsert.UseSystemPasswordChar == (false))
-            {
-                txtPasswordBInsert.UseSystemPasswordChar = (true);
-            };
+            this.txtPasswordBInsertEnter();
         }
-
         private void txtPasswordBInsert_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if ((e.KeyCode) == (Keys.Enter))
             {
                 SendKeys.Send("{TAB}");
-                e.Handled = e.SuppressKeyPress = true;
+                e.Handled = (e.SuppressKeyPress = (true));
             };
         }
+        private void txtPasswordBInsertLeave()
+        {
+            insertPasswordStatus = (false);
 
+            if ((String.IsNullOrEmpty(this.txtPasswordBInsert.Text)) ||
+               ((this.txtPasswordBInsert.Text) == (String)this.txtPasswordBInsert.Tag))
+            {
+                // txtPasswordAInsert
+                this.txtPasswordBInsert.Text = ((String)this.txtPasswordBInsert.Tag);
+                // mttHintPasswordInsert
+                this.mttHintPasswordInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                this.mttHintPasswordInsert.Style = (this.Style);
+                this.mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha inválida");
+                // imgStatusPasswordInsert
+                this.imgStatusPasswordInsert.Cursor = (Cursors.Hand);
+                this.imgStatusPasswordInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
+            }
+            else if ((this.txtPasswordBInsert.Text) != (this.txtPasswordAInsert.Text))
+            {
+                // txtPasswordAInsert
+                this.txtPasswordBInsert.Text = ((String)this.txtPasswordBInsert.Tag);
+                // mttHintPasswordInsert
+                this.mttHintPasswordInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                this.mttHintPasswordInsert.Style = (this.Style);
+                this.mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha não Combina");
+                // imgStatusPasswordInsert
+                this.imgStatusPasswordInsert.Cursor = (Cursors.Hand);
+                this.imgStatusPasswordInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
+            }
+            else
+            {
+                this.insertPasswordStatus = (true);
+                this.mttHintPasswordInsert.RemoveAll();
+                this.imgStatusPasswordInsert.Cursor = (Cursors.Default);
+                this.imgStatusPasswordInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16);
+            };
+        }
         private void txtPasswordBInsert_Leave(object sender, EventArgs e)
         {
             this.txtPasswordBInsertLeave();
         }
-
         #endregion
 
         #endregion
@@ -612,12 +655,11 @@ namespace MoneyManagerDesktop
             metroGrid4.DefaultCellStyle.BackColor = Color.White;
             metroGrid4.DefaultCellStyle.ForeColor = Color.Black;
 
-            ClsUsers u = new ClsUsers();
+            ClsUsers objClsUsers = new ClsUsers();
 
-            ClsUsers.StatusUser StatusSelected = ClsUsers.StatusUser.Enabled;
-            DataTable dataTableListUsers = u.SelectNameForStatus(StatusSelected);
+            DataTable objDataTable = objClsUsers.SelectNameForStatus(ClsUsers.StatusUser.Enabled);
 
-            metroGrid4.DataSource = dataTableListUsers;
+            metroGrid4.DataSource = objDataTable;
             metroGrid4.ClearSelection();
             metroGrid4.Refresh();
         }
@@ -671,11 +713,11 @@ namespace MoneyManagerDesktop
 
         private void ShowDataOnTxTBox()
         {
-            ClsUsers u = new ClsUsers();
+            ClsUsers objClsUsers = new ClsUsers();
 
             ClsUsers.StatusUser StatusSelected = ClsUsers.StatusUser.Enabled;
             String NameSelected = this.GetNameSelectedOnDataGridUpdate();
-            DataTable dataTableListUsers = u.SelectNameLoginPasswordForStatus(NameSelected, StatusSelected);
+            DataTable dataTableListUsers = objClsUsers.SelectNameLoginPasswordForStatus(NameSelected, StatusSelected);
 
             this.txtPasswordAUpdate.UseSystemPasswordChar = (true);
             this.txtPasswordBUpdate.UseSystemPasswordChar = (true);

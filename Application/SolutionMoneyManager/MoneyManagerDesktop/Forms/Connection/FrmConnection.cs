@@ -29,7 +29,6 @@ namespace MoneyManagerDesktop
     #endregion
     public partial class FrmConnection : MetroForm
     {
-
         public FrmConnection()
         {
             this.InitializeComponent();

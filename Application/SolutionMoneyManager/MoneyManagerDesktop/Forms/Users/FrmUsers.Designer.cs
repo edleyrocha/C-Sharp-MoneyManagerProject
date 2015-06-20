@@ -42,12 +42,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mtcUsers = new MetroFramework.Controls.MetroTabControl();
             this.mtpSelect = new MetroFramework.Controls.MetroTabPage();
+            this.btnListSelect = new MetroFramework.Controls.MetroButton();
+            this.btnCloseSelect = new MetroFramework.Controls.MetroButton();
             this.imgSelect = new MetroFramework.Controls.MetroTile();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.lblCoutSelect = new MetroFramework.Controls.MetroLabel();
-            this.btnListSelect = new System.Windows.Forms.Button();
-            this.btnCloseSelect = new System.Windows.Forms.Button();
+            this.mtpInsert = new MetroFramework.Controls.MetroTabPage();
+            this.imgInsert = new MetroFramework.Controls.MetroTile();
+            this.imgStatusPasswordInsert = new System.Windows.Forms.PictureBox();
+            this.imgStatusLoginInsert = new System.Windows.Forms.PictureBox();
+            this.imgStatusNameInsert = new System.Windows.Forms.PictureBox();
+            this.txtPasswordBInsert = new MetroFramework.Controls.MetroTextBox();
+            this.txtPasswordAInsert = new MetroFramework.Controls.MetroTextBox();
+            this.txtLoginInsert = new MetroFramework.Controls.MetroTextBox();
+            this.txtNameInsert = new MetroFramework.Controls.MetroTextBox();
+            this.btnCloseInsert = new MetroFramework.Controls.MetroButton();
+            this.btnSaveInsert = new MetroFramework.Controls.MetroButton();
             this.mtpUpdate = new MetroFramework.Controls.MetroTabPage();
+            this.imgUpdate = new MetroFramework.Controls.MetroTile();
             this.metroGrid4 = new MetroFramework.Controls.MetroGrid();
             this.imgStatusGridUpdate = new System.Windows.Forms.PictureBox();
             this.imgStatusPasswordUpdate = new System.Windows.Forms.PictureBox();
@@ -61,43 +73,31 @@
             this.btnCloseUpdate = new MetroFramework.Controls.MetroButton();
             this.lblGridUpdate = new MetroFramework.Controls.MetroLabel();
             this.lblCoutUpdate = new MetroFramework.Controls.MetroLabel();
-            this.mtpInsert = new MetroFramework.Controls.MetroTabPage();
-            this.imgStatusPasswordInsert = new System.Windows.Forms.PictureBox();
-            this.imgStatusLoginInsert = new System.Windows.Forms.PictureBox();
-            this.imgStatusNameInsert = new System.Windows.Forms.PictureBox();
-            this.txtPasswordBInsert = new MetroFramework.Controls.MetroTextBox();
-            this.txtPasswordAInsert = new MetroFramework.Controls.MetroTextBox();
-            this.txtLoginInsert = new MetroFramework.Controls.MetroTextBox();
-            this.txtNameInsert = new MetroFramework.Controls.MetroTextBox();
-            this.btnCloseInsert = new MetroFramework.Controls.MetroButton();
-            this.btnSaveInsert = new MetroFramework.Controls.MetroButton();
             this.mtpDelete = new MetroFramework.Controls.MetroTabPage();
+            this.imgDelete = new MetroFramework.Controls.MetroTile();
             this.lblCoutDelete = new MetroFramework.Controls.MetroLabel();
             this.metroGrid2 = new MetroFramework.Controls.MetroGrid();
             this.btnDeleteUsers = new MetroFramework.Controls.MetroButton();
             this.btnCloseDelete = new MetroFramework.Controls.MetroButton();
             this.mtpRestore = new MetroFramework.Controls.MetroTabPage();
+            this.imgRestore = new MetroFramework.Controls.MetroTile();
             this.btnRestoreUsers = new MetroFramework.Controls.MetroButton();
             this.btnCloseRestore = new MetroFramework.Controls.MetroButton();
             this.metroGrid3 = new MetroFramework.Controls.MetroGrid();
             this.lblCoutRestore = new MetroFramework.Controls.MetroLabel();
-            this.imgUpdate = new MetroFramework.Controls.MetroTile();
-            this.imgInsert = new MetroFramework.Controls.MetroTile();
-            this.imgDelete = new MetroFramework.Controls.MetroTile();
-            this.imgRestore = new MetroFramework.Controls.MetroTile();
             this.mtcUsers.SuspendLayout();
             this.mtpSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            this.mtpInsert.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusPasswordInsert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusLoginInsert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusNameInsert)).BeginInit();
             this.mtpUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusGridUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusPasswordUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusLoginUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusNameUpdate)).BeginInit();
-            this.mtpInsert.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStatusPasswordInsert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStatusLoginInsert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStatusNameInsert)).BeginInit();
             this.mtpDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).BeginInit();
             this.mtpRestore.SuspendLayout();
@@ -113,7 +113,7 @@
             this.mtcUsers.Controls.Add(this.mtpRestore);
             this.mtcUsers.Location = new System.Drawing.Point(23, 63);
             this.mtcUsers.Name = "mtcUsers";
-            this.mtcUsers.SelectedIndex = 4;
+            this.mtcUsers.SelectedIndex = 1;
             this.mtcUsers.Size = new System.Drawing.Size(490, 355);
             this.mtcUsers.TabIndex = 0;
             this.mtcUsers.UseSelectable = true;
@@ -121,11 +121,11 @@
             // 
             // mtpSelect
             // 
+            this.mtpSelect.Controls.Add(this.btnListSelect);
+            this.mtpSelect.Controls.Add(this.btnCloseSelect);
             this.mtpSelect.Controls.Add(this.imgSelect);
             this.mtpSelect.Controls.Add(this.metroGrid1);
             this.mtpSelect.Controls.Add(this.lblCoutSelect);
-            this.mtpSelect.Controls.Add(this.btnListSelect);
-            this.mtpSelect.Controls.Add(this.btnCloseSelect);
             this.mtpSelect.HorizontalScrollbarBarColor = true;
             this.mtpSelect.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpSelect.HorizontalScrollbarSize = 10;
@@ -137,6 +137,28 @@
             this.mtpSelect.VerticalScrollbarBarColor = true;
             this.mtpSelect.VerticalScrollbarHighlightOnWheel = false;
             this.mtpSelect.VerticalScrollbarSize = 10;
+            // 
+            // btnListSelect
+            // 
+            this.btnListSelect.Location = new System.Drawing.Point(323, 138);
+            this.btnListSelect.Name = "btnListSelect";
+            this.btnListSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnListSelect.TabIndex = 15;
+            this.btnListSelect.Tag = "&Listar";
+            this.btnListSelect.Text = "%btnListSelect%";
+            this.btnListSelect.UseSelectable = true;
+            this.btnListSelect.Click += new System.EventHandler(this.btnListSelect_Click);
+            // 
+            // btnCloseSelect
+            // 
+            this.btnCloseSelect.Location = new System.Drawing.Point(404, 138);
+            this.btnCloseSelect.Name = "btnCloseSelect";
+            this.btnCloseSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnCloseSelect.TabIndex = 14;
+            this.btnCloseSelect.Tag = "&Sair";
+            this.btnCloseSelect.Text = "%btnCloseSelect%";
+            this.btnCloseSelect.UseSelectable = true;
+            this.btnCloseSelect.Click += new System.EventHandler(this.btnCloseSelect_Click);
             // 
             // imgSelect
             // 
@@ -203,27 +225,164 @@
             this.lblCoutSelect.TabIndex = 11;
             this.lblCoutSelect.Text = "%lblCoutSelect%";
             // 
-            // btnListSelect
+            // mtpInsert
             // 
-            this.btnListSelect.Location = new System.Drawing.Point(323, 138);
-            this.btnListSelect.Name = "btnListSelect";
-            this.btnListSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnListSelect.TabIndex = 9;
-            this.btnListSelect.Tag = "Mostar";
-            this.btnListSelect.Text = "%btnListSelect%";
-            this.btnListSelect.UseVisualStyleBackColor = true;
-            this.btnListSelect.Click += new System.EventHandler(this.btnListSelect_Click);
+            this.mtpInsert.Controls.Add(this.imgInsert);
+            this.mtpInsert.Controls.Add(this.imgStatusPasswordInsert);
+            this.mtpInsert.Controls.Add(this.imgStatusLoginInsert);
+            this.mtpInsert.Controls.Add(this.imgStatusNameInsert);
+            this.mtpInsert.Controls.Add(this.txtPasswordBInsert);
+            this.mtpInsert.Controls.Add(this.txtPasswordAInsert);
+            this.mtpInsert.Controls.Add(this.txtLoginInsert);
+            this.mtpInsert.Controls.Add(this.txtNameInsert);
+            this.mtpInsert.Controls.Add(this.btnCloseInsert);
+            this.mtpInsert.Controls.Add(this.btnSaveInsert);
+            this.mtpInsert.HorizontalScrollbarBarColor = true;
+            this.mtpInsert.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpInsert.HorizontalScrollbarSize = 10;
+            this.mtpInsert.Location = new System.Drawing.Point(4, 38);
+            this.mtpInsert.Name = "mtpInsert";
+            this.mtpInsert.Size = new System.Drawing.Size(482, 313);
+            this.mtpInsert.TabIndex = 0;
+            this.mtpInsert.Text = "%mtpInsert%";
+            this.mtpInsert.VerticalScrollbarBarColor = true;
+            this.mtpInsert.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpInsert.VerticalScrollbarSize = 10;
             // 
-            // btnCloseSelect
+            // imgInsert
             // 
-            this.btnCloseSelect.Location = new System.Drawing.Point(404, 138);
-            this.btnCloseSelect.Name = "btnCloseSelect";
-            this.btnCloseSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnCloseSelect.TabIndex = 7;
-            this.btnCloseSelect.Tag = "Sair";
-            this.btnCloseSelect.Text = "%btnCloseSelect%";
-            this.btnCloseSelect.UseVisualStyleBackColor = true;
-            this.btnCloseSelect.Click += new System.EventHandler(this.btnCloseSelect_Click);
+            this.imgInsert.ActiveControl = null;
+            this.imgInsert.Location = new System.Drawing.Point(2, 2);
+            this.imgInsert.Name = "imgInsert";
+            this.imgInsert.Size = new System.Drawing.Size(130, 130);
+            this.imgInsert.TabIndex = 9;
+            this.imgInsert.Text = "%imgInsert%";
+            this.imgInsert.UseSelectable = true;
+            // 
+            // imgStatusPasswordInsert
+            // 
+            this.imgStatusPasswordInsert.BackColor = System.Drawing.Color.Transparent;
+            this.imgStatusPasswordInsert.Location = new System.Drawing.Point(335, 62);
+            this.imgStatusPasswordInsert.Name = "imgStatusPasswordInsert";
+            this.imgStatusPasswordInsert.Size = new System.Drawing.Size(16, 16);
+            this.imgStatusPasswordInsert.TabIndex = 8;
+            this.imgStatusPasswordInsert.TabStop = false;
+            // 
+            // imgStatusLoginInsert
+            // 
+            this.imgStatusLoginInsert.BackColor = System.Drawing.Color.Transparent;
+            this.imgStatusLoginInsert.Location = new System.Drawing.Point(335, 33);
+            this.imgStatusLoginInsert.Name = "imgStatusLoginInsert";
+            this.imgStatusLoginInsert.Size = new System.Drawing.Size(16, 16);
+            this.imgStatusLoginInsert.TabIndex = 8;
+            this.imgStatusLoginInsert.TabStop = false;
+            // 
+            // imgStatusNameInsert
+            // 
+            this.imgStatusNameInsert.BackColor = System.Drawing.Color.Transparent;
+            this.imgStatusNameInsert.Location = new System.Drawing.Point(335, 4);
+            this.imgStatusNameInsert.Name = "imgStatusNameInsert";
+            this.imgStatusNameInsert.Size = new System.Drawing.Size(16, 16);
+            this.imgStatusNameInsert.TabIndex = 8;
+            this.imgStatusNameInsert.TabStop = false;
+            // 
+            // txtPasswordBInsert
+            // 
+            this.txtPasswordBInsert.Lines = new string[] {
+        "%txtPasswordBInsert%"};
+            this.txtPasswordBInsert.Location = new System.Drawing.Point(239, 62);
+            this.txtPasswordBInsert.MaxLength = 32767;
+            this.txtPasswordBInsert.Name = "txtPasswordBInsert";
+            this.txtPasswordBInsert.PasswordChar = '\0';
+            this.txtPasswordBInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPasswordBInsert.SelectedText = "";
+            this.txtPasswordBInsert.Size = new System.Drawing.Size(90, 23);
+            this.txtPasswordBInsert.TabIndex = 3;
+            this.txtPasswordBInsert.Tag = "Repetir-Senha";
+            this.txtPasswordBInsert.Text = "%txtPasswordBInsert%";
+            this.txtPasswordBInsert.UseSelectable = true;
+            this.txtPasswordBInsert.Enter += new System.EventHandler(this.txtPasswordBInsert_Enter);
+            this.txtPasswordBInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPasswordBInsert_KeyDown);
+            this.txtPasswordBInsert.Leave += new System.EventHandler(this.txtPasswordBInsert_Leave);
+            // 
+            // txtPasswordAInsert
+            // 
+            this.txtPasswordAInsert.Lines = new string[] {
+        "%txtPasswordAInsert%"};
+            this.txtPasswordAInsert.Location = new System.Drawing.Point(145, 62);
+            this.txtPasswordAInsert.MaxLength = 32767;
+            this.txtPasswordAInsert.Name = "txtPasswordAInsert";
+            this.txtPasswordAInsert.PasswordChar = '\0';
+            this.txtPasswordAInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPasswordAInsert.SelectedText = "";
+            this.txtPasswordAInsert.Size = new System.Drawing.Size(90, 23);
+            this.txtPasswordAInsert.TabIndex = 2;
+            this.txtPasswordAInsert.Tag = "Senha";
+            this.txtPasswordAInsert.Text = "%txtPasswordAInsert%";
+            this.txtPasswordAInsert.UseSelectable = true;
+            this.txtPasswordAInsert.Enter += new System.EventHandler(this.txtPasswordAInsert_Enter);
+            this.txtPasswordAInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPasswordAInsert_KeyDown);
+            this.txtPasswordAInsert.Leave += new System.EventHandler(this.txtPasswordAInsert_Leave);
+            // 
+            // txtLoginInsert
+            // 
+            this.txtLoginInsert.Lines = new string[] {
+        "%txtLoginInsert%"};
+            this.txtLoginInsert.Location = new System.Drawing.Point(144, 33);
+            this.txtLoginInsert.MaxLength = 32767;
+            this.txtLoginInsert.Name = "txtLoginInsert";
+            this.txtLoginInsert.PasswordChar = '\0';
+            this.txtLoginInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLoginInsert.SelectedText = "";
+            this.txtLoginInsert.Size = new System.Drawing.Size(185, 23);
+            this.txtLoginInsert.TabIndex = 1;
+            this.txtLoginInsert.Tag = "Nome do Login";
+            this.txtLoginInsert.Text = "%txtLoginInsert%";
+            this.txtLoginInsert.UseSelectable = true;
+            this.txtLoginInsert.Enter += new System.EventHandler(this.txtLoginInsert_Enter);
+            this.txtLoginInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoginInsert_KeyDown);
+            this.txtLoginInsert.Leave += new System.EventHandler(this.txtLoginInsert_Leave);
+            // 
+            // txtNameInsert
+            // 
+            this.txtNameInsert.Lines = new string[] {
+        "%txtNameInsert%"};
+            this.txtNameInsert.Location = new System.Drawing.Point(144, 4);
+            this.txtNameInsert.MaxLength = 32767;
+            this.txtNameInsert.Name = "txtNameInsert";
+            this.txtNameInsert.PasswordChar = '\0';
+            this.txtNameInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNameInsert.SelectedText = "";
+            this.txtNameInsert.Size = new System.Drawing.Size(185, 23);
+            this.txtNameInsert.TabIndex = 0;
+            this.txtNameInsert.Tag = "Nome do Usuario";
+            this.txtNameInsert.Text = "%txtNameInsert%";
+            this.txtNameInsert.UseSelectable = true;
+            this.txtNameInsert.Enter += new System.EventHandler(this.txtNameInsert_Enter);
+            this.txtNameInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNameInsert_KeyDown);
+            this.txtNameInsert.Leave += new System.EventHandler(this.txtNameInsert_Leave);
+            // 
+            // btnCloseInsert
+            // 
+            this.btnCloseInsert.Location = new System.Drawing.Point(254, 110);
+            this.btnCloseInsert.Name = "btnCloseInsert";
+            this.btnCloseInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnCloseInsert.TabIndex = 5;
+            this.btnCloseInsert.Tag = "Sair";
+            this.btnCloseInsert.Text = "%btnClose%";
+            this.btnCloseInsert.UseSelectable = true;
+            this.btnCloseInsert.Click += new System.EventHandler(this.btnCloseInsert_Click);
+            // 
+            // btnSaveInsert
+            // 
+            this.btnSaveInsert.Location = new System.Drawing.Point(173, 110);
+            this.btnSaveInsert.Name = "btnSaveInsert";
+            this.btnSaveInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveInsert.TabIndex = 4;
+            this.btnSaveInsert.Tag = "Novo";
+            this.btnSaveInsert.Text = "%btnSave%";
+            this.btnSaveInsert.UseSelectable = true;
+            this.btnSaveInsert.Click += new System.EventHandler(this.btnSaveInsert_Click);
             // 
             // mtpUpdate
             // 
@@ -252,6 +411,16 @@
             this.mtpUpdate.VerticalScrollbarBarColor = true;
             this.mtpUpdate.VerticalScrollbarHighlightOnWheel = false;
             this.mtpUpdate.VerticalScrollbarSize = 10;
+            // 
+            // imgUpdate
+            // 
+            this.imgUpdate.ActiveControl = null;
+            this.imgUpdate.Location = new System.Drawing.Point(2, 2);
+            this.imgUpdate.Name = "imgUpdate";
+            this.imgUpdate.Size = new System.Drawing.Size(130, 130);
+            this.imgUpdate.TabIndex = 9;
+            this.imgUpdate.Text = "%imgUpdate%";
+            this.imgUpdate.UseSelectable = true;
             // 
             // metroGrid4
             // 
@@ -452,155 +621,6 @@
             this.lblCoutUpdate.Tag = "";
             this.lblCoutUpdate.Text = "%lblCoutUpdate%";
             // 
-            // mtpInsert
-            // 
-            this.mtpInsert.Controls.Add(this.imgInsert);
-            this.mtpInsert.Controls.Add(this.imgStatusPasswordInsert);
-            this.mtpInsert.Controls.Add(this.imgStatusLoginInsert);
-            this.mtpInsert.Controls.Add(this.imgStatusNameInsert);
-            this.mtpInsert.Controls.Add(this.txtPasswordBInsert);
-            this.mtpInsert.Controls.Add(this.txtPasswordAInsert);
-            this.mtpInsert.Controls.Add(this.txtLoginInsert);
-            this.mtpInsert.Controls.Add(this.txtNameInsert);
-            this.mtpInsert.Controls.Add(this.btnCloseInsert);
-            this.mtpInsert.Controls.Add(this.btnSaveInsert);
-            this.mtpInsert.HorizontalScrollbarBarColor = true;
-            this.mtpInsert.HorizontalScrollbarHighlightOnWheel = false;
-            this.mtpInsert.HorizontalScrollbarSize = 10;
-            this.mtpInsert.Location = new System.Drawing.Point(4, 38);
-            this.mtpInsert.Name = "mtpInsert";
-            this.mtpInsert.Size = new System.Drawing.Size(482, 313);
-            this.mtpInsert.TabIndex = 0;
-            this.mtpInsert.Text = "%mtpInsert%";
-            this.mtpInsert.VerticalScrollbarBarColor = true;
-            this.mtpInsert.VerticalScrollbarHighlightOnWheel = false;
-            this.mtpInsert.VerticalScrollbarSize = 10;
-            // 
-            // imgStatusPasswordInsert
-            // 
-            this.imgStatusPasswordInsert.BackColor = System.Drawing.Color.Transparent;
-            this.imgStatusPasswordInsert.Location = new System.Drawing.Point(335, 62);
-            this.imgStatusPasswordInsert.Name = "imgStatusPasswordInsert";
-            this.imgStatusPasswordInsert.Size = new System.Drawing.Size(16, 16);
-            this.imgStatusPasswordInsert.TabIndex = 8;
-            this.imgStatusPasswordInsert.TabStop = false;
-            // 
-            // imgStatusLoginInsert
-            // 
-            this.imgStatusLoginInsert.BackColor = System.Drawing.Color.Transparent;
-            this.imgStatusLoginInsert.Location = new System.Drawing.Point(335, 33);
-            this.imgStatusLoginInsert.Name = "imgStatusLoginInsert";
-            this.imgStatusLoginInsert.Size = new System.Drawing.Size(16, 16);
-            this.imgStatusLoginInsert.TabIndex = 8;
-            this.imgStatusLoginInsert.TabStop = false;
-            // 
-            // imgStatusNameInsert
-            // 
-            this.imgStatusNameInsert.BackColor = System.Drawing.Color.Transparent;
-            this.imgStatusNameInsert.Location = new System.Drawing.Point(335, 4);
-            this.imgStatusNameInsert.Name = "imgStatusNameInsert";
-            this.imgStatusNameInsert.Size = new System.Drawing.Size(16, 16);
-            this.imgStatusNameInsert.TabIndex = 8;
-            this.imgStatusNameInsert.TabStop = false;
-            // 
-            // txtPasswordBInsert
-            // 
-            this.txtPasswordBInsert.Lines = new string[] {
-        "%txtPasswordBInsert%"};
-            this.txtPasswordBInsert.Location = new System.Drawing.Point(239, 62);
-            this.txtPasswordBInsert.MaxLength = 32767;
-            this.txtPasswordBInsert.Name = "txtPasswordBInsert";
-            this.txtPasswordBInsert.PasswordChar = '\0';
-            this.txtPasswordBInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPasswordBInsert.SelectedText = "";
-            this.txtPasswordBInsert.Size = new System.Drawing.Size(90, 23);
-            this.txtPasswordBInsert.TabIndex = 3;
-            this.txtPasswordBInsert.Tag = "Repetir-Senha";
-            this.txtPasswordBInsert.Text = "%txtPasswordBInsert%";
-            this.txtPasswordBInsert.UseSelectable = true;
-            this.txtPasswordBInsert.Enter += new System.EventHandler(this.txtPasswordBInsert_Enter);
-            this.txtPasswordBInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPasswordBInsert_KeyDown);
-            this.txtPasswordBInsert.Leave += new System.EventHandler(this.txtPasswordBInsert_Leave);
-            // 
-            // txtPasswordAInsert
-            // 
-            this.txtPasswordAInsert.Lines = new string[] {
-        "%txtPasswordAInsert%"};
-            this.txtPasswordAInsert.Location = new System.Drawing.Point(145, 62);
-            this.txtPasswordAInsert.MaxLength = 32767;
-            this.txtPasswordAInsert.Name = "txtPasswordAInsert";
-            this.txtPasswordAInsert.PasswordChar = '\0';
-            this.txtPasswordAInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPasswordAInsert.SelectedText = "";
-            this.txtPasswordAInsert.Size = new System.Drawing.Size(90, 23);
-            this.txtPasswordAInsert.TabIndex = 2;
-            this.txtPasswordAInsert.Tag = "Senha";
-            this.txtPasswordAInsert.Text = "%txtPasswordAInsert%";
-            this.txtPasswordAInsert.UseSelectable = true;
-            this.txtPasswordAInsert.Enter += new System.EventHandler(this.txtPasswordAInsert_Enter);
-            this.txtPasswordAInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPasswordAInsert_KeyDown);
-            this.txtPasswordAInsert.Leave += new System.EventHandler(this.txtPasswordAInsert_Leave);
-            // 
-            // txtLoginInsert
-            // 
-            this.txtLoginInsert.Lines = new string[] {
-        "%txtLoginInsert%"};
-            this.txtLoginInsert.Location = new System.Drawing.Point(144, 33);
-            this.txtLoginInsert.MaxLength = 32767;
-            this.txtLoginInsert.Name = "txtLoginInsert";
-            this.txtLoginInsert.PasswordChar = '\0';
-            this.txtLoginInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLoginInsert.SelectedText = "";
-            this.txtLoginInsert.Size = new System.Drawing.Size(185, 23);
-            this.txtLoginInsert.TabIndex = 1;
-            this.txtLoginInsert.Tag = "Nome do Login";
-            this.txtLoginInsert.Text = "%txtLoginInsert%";
-            this.txtLoginInsert.UseSelectable = true;
-            this.txtLoginInsert.Enter += new System.EventHandler(this.txtLoginInsert_Enter);
-            this.txtLoginInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoginInsert_KeyDown);
-            this.txtLoginInsert.Leave += new System.EventHandler(this.txtLoginInsert_Leave);
-            // 
-            // txtNameInsert
-            // 
-            this.txtNameInsert.Lines = new string[] {
-        "%txtNameInsert%"};
-            this.txtNameInsert.Location = new System.Drawing.Point(144, 4);
-            this.txtNameInsert.MaxLength = 32767;
-            this.txtNameInsert.Name = "txtNameInsert";
-            this.txtNameInsert.PasswordChar = '\0';
-            this.txtNameInsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNameInsert.SelectedText = "";
-            this.txtNameInsert.Size = new System.Drawing.Size(185, 23);
-            this.txtNameInsert.TabIndex = 0;
-            this.txtNameInsert.Tag = "Nome do Usuario";
-            this.txtNameInsert.Text = "%txtNameInsert%";
-            this.txtNameInsert.UseSelectable = true;
-            this.txtNameInsert.Enter += new System.EventHandler(this.txtNameInsert_Enter);
-            this.txtNameInsert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNameInsert_KeyDown);
-            this.txtNameInsert.Leave += new System.EventHandler(this.txtNameInsert_Leave);
-            // 
-            // btnCloseInsert
-            // 
-            this.btnCloseInsert.Location = new System.Drawing.Point(254, 110);
-            this.btnCloseInsert.Name = "btnCloseInsert";
-            this.btnCloseInsert.Size = new System.Drawing.Size(75, 23);
-            this.btnCloseInsert.TabIndex = 5;
-            this.btnCloseInsert.Tag = "Sair";
-            this.btnCloseInsert.Text = "%btnClose%";
-            this.btnCloseInsert.UseSelectable = true;
-            this.btnCloseInsert.Click += new System.EventHandler(this.btnCloseInsert_Click);
-            // 
-            // btnSaveInsert
-            // 
-            this.btnSaveInsert.Location = new System.Drawing.Point(173, 110);
-            this.btnSaveInsert.Name = "btnSaveInsert";
-            this.btnSaveInsert.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveInsert.TabIndex = 4;
-            this.btnSaveInsert.Tag = "Novo";
-            this.btnSaveInsert.Text = "%btnSave%";
-            this.btnSaveInsert.UseSelectable = true;
-            this.btnSaveInsert.Click += new System.EventHandler(this.btnSaveInsert_Click);
-            // 
             // mtpDelete
             // 
             this.mtpDelete.Controls.Add(this.imgDelete);
@@ -619,6 +639,16 @@
             this.mtpDelete.VerticalScrollbarBarColor = true;
             this.mtpDelete.VerticalScrollbarHighlightOnWheel = false;
             this.mtpDelete.VerticalScrollbarSize = 10;
+            // 
+            // imgDelete
+            // 
+            this.imgDelete.ActiveControl = null;
+            this.imgDelete.Location = new System.Drawing.Point(2, 2);
+            this.imgDelete.Name = "imgDelete";
+            this.imgDelete.Size = new System.Drawing.Size(130, 130);
+            this.imgDelete.TabIndex = 8;
+            this.imgDelete.Text = "%imgDelete%";
+            this.imgDelete.UseSelectable = true;
             // 
             // lblCoutDelete
             // 
@@ -716,6 +746,16 @@
             this.mtpRestore.VerticalScrollbarHighlightOnWheel = false;
             this.mtpRestore.VerticalScrollbarSize = 10;
             // 
+            // imgRestore
+            // 
+            this.imgRestore.ActiveControl = null;
+            this.imgRestore.Location = new System.Drawing.Point(2, 2);
+            this.imgRestore.Name = "imgRestore";
+            this.imgRestore.Size = new System.Drawing.Size(130, 130);
+            this.imgRestore.TabIndex = 7;
+            this.imgRestore.Text = "%imgRestore%";
+            this.imgRestore.UseSelectable = true;
+            // 
             // btnRestoreUsers
             // 
             this.btnRestoreUsers.Location = new System.Drawing.Point(323, 138);
@@ -793,46 +833,6 @@
             this.lblCoutRestore.TabIndex = 3;
             this.lblCoutRestore.Text = "%lblCoutRestore%";
             // 
-            // imgUpdate
-            // 
-            this.imgUpdate.ActiveControl = null;
-            this.imgUpdate.Location = new System.Drawing.Point(2, 2);
-            this.imgUpdate.Name = "imgUpdate";
-            this.imgUpdate.Size = new System.Drawing.Size(130, 130);
-            this.imgUpdate.TabIndex = 9;
-            this.imgUpdate.Text = "%imgUpdate%";
-            this.imgUpdate.UseSelectable = true;
-            // 
-            // imgInsert
-            // 
-            this.imgInsert.ActiveControl = null;
-            this.imgInsert.Location = new System.Drawing.Point(2, 2);
-            this.imgInsert.Name = "imgInsert";
-            this.imgInsert.Size = new System.Drawing.Size(130, 130);
-            this.imgInsert.TabIndex = 9;
-            this.imgInsert.Text = "%imgInsert%";
-            this.imgInsert.UseSelectable = true;
-            // 
-            // imgDelete
-            // 
-            this.imgDelete.ActiveControl = null;
-            this.imgDelete.Location = new System.Drawing.Point(2, 2);
-            this.imgDelete.Name = "imgDelete";
-            this.imgDelete.Size = new System.Drawing.Size(130, 130);
-            this.imgDelete.TabIndex = 8;
-            this.imgDelete.Text = "%imgDelete%";
-            this.imgDelete.UseSelectable = true;
-            // 
-            // imgRestore
-            // 
-            this.imgRestore.ActiveControl = null;
-            this.imgRestore.Location = new System.Drawing.Point(2, 2);
-            this.imgRestore.Name = "imgRestore";
-            this.imgRestore.Size = new System.Drawing.Size(130, 130);
-            this.imgRestore.TabIndex = 7;
-            this.imgRestore.Text = "%imgRestore%";
-            this.imgRestore.UseSelectable = true;
-            // 
             // FrmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,6 +852,10 @@
             this.mtpSelect.ResumeLayout(false);
             this.mtpSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            this.mtpInsert.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusPasswordInsert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusLoginInsert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatusNameInsert)).EndInit();
             this.mtpUpdate.ResumeLayout(false);
             this.mtpUpdate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid4)).EndInit();
@@ -859,10 +863,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusPasswordUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusLoginUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusNameUpdate)).EndInit();
-            this.mtpInsert.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgStatusPasswordInsert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStatusLoginInsert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStatusNameInsert)).EndInit();
             this.mtpDelete.ResumeLayout(false);
             this.mtpDelete.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).EndInit();
@@ -889,8 +889,6 @@
         private System.Windows.Forms.PictureBox imgStatusPasswordInsert;
         private System.Windows.Forms.PictureBox imgStatusLoginInsert;
         private MetroFramework.Controls.MetroTextBox txtPasswordBInsert;
-        private System.Windows.Forms.Button btnCloseSelect;
-        private System.Windows.Forms.Button btnListSelect;
         private MetroFramework.Controls.MetroButton btnDeleteUsers;
         private MetroFramework.Controls.MetroButton btnCloseDelete;
         private MetroFramework.Controls.MetroLabel lblCoutSelect;
@@ -920,6 +918,8 @@
         private MetroFramework.Controls.MetroTile imgInsert;
         private MetroFramework.Controls.MetroTile imgDelete;
         private MetroFramework.Controls.MetroTile imgRestore;
+        private MetroFramework.Controls.MetroButton btnCloseSelect;
+        private MetroFramework.Controls.MetroButton btnListSelect;
 
 
 

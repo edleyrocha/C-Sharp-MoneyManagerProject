@@ -192,6 +192,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.config" />
+    <None Include="Diagram\MoneyManagerDesktop.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -273,12 +274,6 @@
     <None Include="Resources\UsersExclamation16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\UsersFind32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UsersFind128.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\UsersNew32.png" />
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +290,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UsersUpdate128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersFind32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersFind128.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

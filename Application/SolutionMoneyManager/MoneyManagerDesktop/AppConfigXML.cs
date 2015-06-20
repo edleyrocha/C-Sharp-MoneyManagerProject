@@ -13,6 +13,7 @@
 ///////////////////// /////////////////////////
 namespace MoneyManagerDesktop
 {
+
     #region ---> ( Using )
     using MoneyManagerDesktop.Properties;
     using System;
@@ -25,8 +26,10 @@ namespace MoneyManagerDesktop
     using System.Windows.Forms;
     using System.Xml;
     #endregion
+
     class AppConfigXML
     {
+
         #region ---> ( Set AppConfig )
         /// <summary>
         /// # Edit AppConfigXML (string key, string value)
@@ -38,6 +41,7 @@ namespace MoneyManagerDesktop
             Properties.Settings.Default.Save();
         }
         #endregion
+
         #region ---> ( Get AppConfig )
         /// <summary>
         /// # Read String for stringSQLModel (string key)
@@ -50,5 +54,6 @@ namespace MoneyManagerDesktop
             return returnResult;
         }
         #endregion
+
     }
 }
