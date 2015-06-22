@@ -32,7 +32,7 @@ namespace MoneyManagerDesktop
         public string status { get; set; }
 
         /// <summary>
-        /// #Users Status
+        /// # Users Status
         /// </summary>
         public enum StatusUser
         {
@@ -41,7 +41,7 @@ namespace MoneyManagerDesktop
         }
 
         /// <summary>
-        /// #Insert New Users
+        /// # Insert New Users
         /// </summary>
         /// <returns></returns>
         public bool InsertNewUsersCommand(String myName, String myLogin, String myPassword, String myStatus)
@@ -86,7 +86,7 @@ namespace MoneyManagerDesktop
         }
 
         /// <summary>
-        /// #Update Name, Login and Password for Name
+        /// # Update Name, Login and Password for Name
         /// </summary>
         /// <returns></returns>
         public bool UpdateNameLoginPasswordForName(String updateMyName, String myName, String myLogin, String myPassword)
@@ -137,7 +137,7 @@ namespace MoneyManagerDesktop
         }
 
         /// <summary>
-        /// #Update Status for Name
+        /// # Update Status for Name
         /// </summary>
         /// <returns></returns>
         public String UpdateStatusForName(String myName, StatusUser myNewStatus)
@@ -187,7 +187,7 @@ namespace MoneyManagerDesktop
         }
 
         /// <summary>
-        /// #Check if User Exist
+        /// # Check if User Name Exist
         /// </summary>
         /// <returns></returns>
         public bool CheckUserNameExist(String myNameCheck)
@@ -244,16 +244,16 @@ namespace MoneyManagerDesktop
         }
 
         /// <summary>
-        /// #Check if Login Exist
+        /// # Check if User Login Exist
         /// </summary>
         /// <returns></returns>
-        public bool CheckUserLoginInsertExist()
+        public bool CheckUserLoginExist(String myLoginCheck)
         {
             AppConfigXML appConfigXML = new AppConfigXML();
             String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
             SqlConnection connSQL = new SqlConnection(myStringSQL);
 
-            //SELECT [Name] FROM [tblUsers] WHERE [Login] = @Login;
+            //SELECT [Login] FROM [tblUsers] WHERE [Login] = @Login;
             StringBuilder myCommandStringSQL = new StringBuilder();
             myCommandStringSQL.Append("SELECT [Login] FROM [tblUsers] ");
             myCommandStringSQL.Append("WHERE ");
@@ -263,7 +263,7 @@ namespace MoneyManagerDesktop
 
             SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
-            cmdSQL.Parameters.AddWithValue("@Login", login);
+            cmdSQL.Parameters.AddWithValue("@Login", myLoginCheck);
 
             Boolean returnBool = (false);
 
@@ -299,7 +299,7 @@ namespace MoneyManagerDesktop
         }
 
         /// <summary>
-        /// List Names for Status
+        /// # List Names for Status
         /// </summary>
         /// <returns></returns>
         public DataTable SelectNameForStatus(StatusUser myStatus)
@@ -339,7 +339,7 @@ namespace MoneyManagerDesktop
         }
 
         /// <summary>
-        /// #List Names and Login for Status
+        /// # List Names and Login for Status
         /// </summary>
         /// <returns></returns>
         public DataTable SelectNameLoginForStatus(StatusUser myStatus)
@@ -379,7 +379,7 @@ namespace MoneyManagerDesktop
         }
 
         /// <summary>
-        /// #List Name, Login And Password for Name and Status
+        /// # List Name, Login And Password for Name and Status
         /// </summary>
         /// <returns></returns>
         public DataTable SelectNameLoginPasswordForStatus(String myName, StatusUser myStatus)

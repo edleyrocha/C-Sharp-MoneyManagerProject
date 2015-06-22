@@ -113,7 +113,7 @@
             this.mtcUsers.Controls.Add(this.mtpRestore);
             this.mtcUsers.Location = new System.Drawing.Point(23, 63);
             this.mtcUsers.Name = "mtcUsers";
-            this.mtcUsers.SelectedIndex = 1;
+            this.mtcUsers.SelectedIndex = 0;
             this.mtcUsers.Size = new System.Drawing.Size(490, 355);
             this.mtcUsers.TabIndex = 0;
             this.mtcUsers.UseSelectable = true;
@@ -467,8 +467,9 @@
             this.metroGrid4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid4.Size = new System.Drawing.Size(390, 128);
             this.metroGrid4.TabIndex = 0;
+            this.metroGrid4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid4_CellClick);
+            this.metroGrid4.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.metroGrid4_ColumnHeaderMouseClick);
             this.metroGrid4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.metroGrid4_KeyUp);
-            this.metroGrid4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.metroGrid4_MouseClick);
             // 
             // imgStatusGridUpdate
             // 
