@@ -44,26 +44,26 @@ namespace MoneyManagerDesktop
         /// # Insert New Users
         /// </summary>
         /// <returns></returns>
-        public bool InsertNewUsersCommand(String myName, String myLogin, String myPassword, String myStatus)
+        public bool InsertNewUsersCommand(String myNewName, String myNewLogin, String myNewPassword, String myNewStatus)
         {
             AppConfigXML appConfigXML = (new AppConfigXML());
             String myStringSQL = (appConfigXML.GetAppConfigXML("SQLStringConnection"));
             SqlConnection connSQL = (new SqlConnection(myStringSQL));
 
-            //INSERT INTO [tblUsers] VALUES (@Nome,@Login,@Password,@StatusEnabled);
+            //INSERT INTO [tblUsers] VALUES (@Name,@Login,@Password,@StatusEnabled);
             StringBuilder myCommandStringSQL = new StringBuilder();
             myCommandStringSQL.Append("INSERT INTO [tblUsers] VALUES (");
-            myCommandStringSQL.Append("@Nome,");
+            myCommandStringSQL.Append("@Name,");
             myCommandStringSQL.Append("@Login,");
             myCommandStringSQL.Append("@Password,");
             myCommandStringSQL.Append("@StatusEnabled);");
 
             SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
-            cmdSQL.Parameters.AddWithValue("@Nome", myName);
-            cmdSQL.Parameters.AddWithValue("@Login", myLogin);
-            cmdSQL.Parameters.AddWithValue("@Password", myPassword);
-            cmdSQL.Parameters.AddWithValue("@StatusEnabled", myStatus);
+            cmdSQL.Parameters.AddWithValue("@Name", myNewName);
+            cmdSQL.Parameters.AddWithValue("@Login", myNewLogin);
+            cmdSQL.Parameters.AddWithValue("@Password", myNewPassword);
+            cmdSQL.Parameters.AddWithValue("@StatusEnabled", myNewStatus);
 
             Boolean returnBool = (false);
             try
@@ -89,7 +89,7 @@ namespace MoneyManagerDesktop
         /// # Update Name, Login and Password for Name
         /// </summary>
         /// <returns></returns>
-        public bool UpdateNameLoginPasswordForName(String updateMyName, String myName, String myLogin, String myPassword)
+        public bool UpdateNameLoginPasswordForName(String updateMyName, String myNewName, String myNewLogin, String myNewPassword)
         {
             Boolean returnBool = (false);
             AppConfigXML appConfigXML = new AppConfigXML();
@@ -99,11 +99,11 @@ namespace MoneyManagerDesktop
             {
                 String myCommandStringSQL = String.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}",
                                                          ("UPDATE [tblUsers] SET [Name] = ('"),
-                                                         (myName),
+                                                         (myNewName),
                                                          ("'), [Login] = ('"),
-                                                         (myLogin),
+                                                         (myNewLogin),
                                                          ("'), [Password] = ('"),
-                                                         (myPassword),
+                                                         (myNewPassword),
                                                          ("') WHERE [Name] = ('"),
                                                          (updateMyName),
                                                          ("');"));
@@ -140,9 +140,9 @@ namespace MoneyManagerDesktop
         /// # Update Status for Name
         /// </summary>
         /// <returns></returns>
-        public String UpdateStatusForName(String myName, StatusUser myNewStatus)
+        public bool UpdateStatusForName(String updateMyName, StatusUser myNewStatus)
         {
-            String returnString = (Boolean.FalseString);
+            Boolean returnBool = (false);
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
             String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
@@ -155,7 +155,7 @@ namespace MoneyManagerDesktop
                                                           ("UPDATE [tblUsers] SET [Status] = ('"),
                                                           (newStatus),
                                                           ("') WHERE [Name] = ('"),
-                                                          (myName),
+                                                          (updateMyName),
                                                           ("');"));
 
                 using (SqlCommand cmdSQL = new SqlCommand((myCommandStringSQL), connSQL))
@@ -164,18 +164,18 @@ namespace MoneyManagerDesktop
                     {
                         connSQL.Open();
 
-                        int AffectedLines = (0); ;
+                        int AffectedLines = (0);
 
                         AffectedLines = (cmdSQL.ExecuteNonQuery());
 
                         if ((AffectedLines) == (1))
                         {
-                            returnString = Boolean.TrueString;
+                            returnBool = (true);
                         }
                     }
                     catch
                     {
-                        returnString = (Boolean.FalseString);
+                        returnBool = (false);
                     }
                     finally
                     {
@@ -183,14 +183,14 @@ namespace MoneyManagerDesktop
                     };
                 };
             };
-            return returnString;
+            return returnBool;
         }
 
         /// <summary>
         /// # Check if User Name Exist
         /// </summary>
         /// <returns></returns>
-        public bool CheckUserNameExist(String myNameCheck)
+        public bool CheckUserNameExist(String checkMyName)
         {
             AppConfigXML appConfigXML = new AppConfigXML();
             String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
@@ -206,14 +206,14 @@ namespace MoneyManagerDesktop
 
             SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
-            cmdSQL.Parameters.AddWithValue("@Name", myNameCheck);
+            cmdSQL.Parameters.AddWithValue("@Name", checkMyName);
 
             Boolean returnBool = (false);
 
             try
             {
                 connSQL.Open();
-             
+
                 SqlDataReader drSQL = cmdSQL.ExecuteReader();
 
                 int countRowsLines = (0);
@@ -247,7 +247,7 @@ namespace MoneyManagerDesktop
         /// # Check if User Login Exist
         /// </summary>
         /// <returns></returns>
-        public bool CheckUserLoginExist(String myLoginCheck)
+        public bool CheckUserLoginExist(String checkMyLogin)
         {
             AppConfigXML appConfigXML = new AppConfigXML();
             String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
@@ -263,7 +263,7 @@ namespace MoneyManagerDesktop
 
             SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
 
-            cmdSQL.Parameters.AddWithValue("@Login", myLoginCheck);
+            cmdSQL.Parameters.AddWithValue("@Login", checkMyLogin);
 
             Boolean returnBool = (false);
 
@@ -289,7 +289,7 @@ namespace MoneyManagerDesktop
             }
             catch
             {
-               returnBool = (false); // Error
+                returnBool = (false); // Error
             }
             finally
             {
@@ -302,7 +302,7 @@ namespace MoneyManagerDesktop
         /// # List Names for Status
         /// </summary>
         /// <returns></returns>
-        public DataTable SelectNameForStatus(StatusUser myStatus)
+        public DataTable SelectNameForStatus(StatusUser listMyStatus)
         {
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
@@ -310,10 +310,10 @@ namespace MoneyManagerDesktop
 
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {
-                String Status = (myStatus.ToString());
+                String Status = (listMyStatus.ToString());
                 String myCommandStringSQL = String.Format(("{0}{1}{2}"),
                                                          ("SELECT [Name] AS [Nome Completo] FROM [tblUsers] WHERE [Status] = ('"),
-                                                         (Status),("');"));
+                                                         (Status), ("');"));
 
                 using (SqlCommand cmdSQL = new SqlCommand((myCommandStringSQL), (connSQL)))
                 {
@@ -327,7 +327,7 @@ namespace MoneyManagerDesktop
                     }
                     catch
                     {
-                        DataColumn dataColumn = returnDataTable.Columns.Add(("Erro ao Listar"), (typeof(Int32)));
+                        returnDataTable.Columns.Add(("Erro ao Listar"), (typeof(Int32)));
                     }
                     finally
                     {
@@ -342,14 +342,14 @@ namespace MoneyManagerDesktop
         /// # List Names and Login for Status
         /// </summary>
         /// <returns></returns>
-        public DataTable SelectNameLoginForStatus(StatusUser myStatus)
+        public DataTable SelectNameLoginForStatus(StatusUser listMyStatus)
         {
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
             String myStringSQL = appConfigXML.GetAppConfigXML("SQLStringConnection");
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {
-                String Status = ((myStatus).ToString());
+                String Status = ((listMyStatus).ToString());
 
                 String myCommandStringSQL = String.Format(("{0}{1}{2}"),
                                                          ("SELECT [Name] AS [Nome Completo], [Login] AS [Login de Acesso] FROM [tblUsers] WHERE [Status] = ('"),
@@ -367,7 +367,7 @@ namespace MoneyManagerDesktop
                     }
                     catch
                     {
-                        DataColumn dataColumn = returnDataTable.Columns.Add("Erro ao Listar", typeof(Int32));
+                        returnDataTable.Columns.Add("Erro ao Listar", typeof(Int32));
                     }
                     finally
                     {
@@ -382,7 +382,7 @@ namespace MoneyManagerDesktop
         /// # List Name, Login And Password for Name and Status
         /// </summary>
         /// <returns></returns>
-        public DataTable SelectNameLoginPasswordForStatus(String myName, StatusUser myStatus)
+        public DataTable SelectNameLoginPasswordForStatus(String listMyName, StatusUser listMyStatus)
         {
             DataTable returnDataTable = new DataTable();
             AppConfigXML appConfigXML = new AppConfigXML();
@@ -390,10 +390,10 @@ namespace MoneyManagerDesktop
 
             using (SqlConnection connSQL = new SqlConnection(myStringSQL))
             {
-                String Status = (myStatus.ToString());
+                String Status = (listMyStatus.ToString());
                 String myCommandStringSQL = String.Format(("{0}{1}{2}{3}{4}"),
                                                          ("SELECT [Name], [Login], [Password], [Status] FROM [tblUsers] WHERE [Name] = ('"),
-                                                         (myName),
+                                                         (listMyName),
                                                          ("') AND [Status] = ('"),
                                                          (Status),
                                                          ("');"));
@@ -410,7 +410,7 @@ namespace MoneyManagerDesktop
                     }
                     catch
                     {
-                        DataColumn dataColumn = returnDataTable.Columns.Add("Erro ao Listar", typeof(Int32));
+                        returnDataTable.Columns.Add("Erro ao Listar", typeof(Int32));
                     }
                     finally
                     {

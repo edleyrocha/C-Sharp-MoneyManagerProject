@@ -14,6 +14,8 @@
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
+    using MetroFramework;
+    using MetroFramework.Forms;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -22,8 +24,6 @@ namespace MoneyManagerDesktop
     using System.Linq;
     using System.Text;
     using System.Windows.Forms;
-    using MetroFramework.Forms;
-    using MetroFramework;
     #endregion
     public partial class FrmUsers : MetroForm
     {
@@ -57,9 +57,9 @@ namespace MoneyManagerDesktop
             this.mtcUsers.SuspendLayout();
             this.mtcUsers.TabPages.Clear();
 
-            switch (SelectedAction)
+            switch (this.SelectedAction)
             {
-                case ChoseActionForm.SelectUsers:
+                case (ChoseActionForm.SelectUsers):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpSelect))
                         {
@@ -78,12 +78,12 @@ namespace MoneyManagerDesktop
                             this.imgSelect.TileImageAlign = (ContentAlignment.MiddleCenter);
                             this.imgSelect.TileImage = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersFind128);
                             // btn
-                            this.btnCloseSelect.Text = ((String)btnCloseSelect.Tag);
-                            this.btnListSelect.Text = ((String)btnListSelect.Tag);
+                            this.btnCloseSelect.Text = ((String)this.btnCloseSelect.Tag);
+                            this.btnListSelect.Text = ((String)this.btnListSelect.Tag);
                         };
                         break;
                     };
-                case ChoseActionForm.InsertUsers:
+                case (ChoseActionForm.InsertUsers):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpInsert))
                         {
@@ -100,14 +100,14 @@ namespace MoneyManagerDesktop
                             this.imgInsert.TileImageAlign = (ContentAlignment.MiddleCenter);
                             this.imgInsert.TileImage = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersNew128);
                             // btn
-                            this.btnSaveInsert.Text = ((String)btnSaveInsert.Tag);
-                            this.btnCloseInsert.Text = ((String)btnCloseInsert.Tag);
+                            this.btnSaveInsert.Text = ((String)this.btnSaveInsert.Tag);
+                            this.btnCloseInsert.Text = ((String)this.btnCloseInsert.Tag);
                             // txt
                             this.txtNameInsert.Enabled = (false);
-                            this.txtNameInsert.Text = ((String)txtNameInsert.Tag);
+                            this.txtNameInsert.Text = ((String)this.txtNameInsert.Tag);
 
                             this.txtLoginInsert.Enabled = (false);
-                            this.txtLoginInsert.Text = ((String)txtLoginInsert.Tag);
+                            this.txtLoginInsert.Text = ((String)this.txtLoginInsert.Tag);
 
                             this.txtPasswordAInsert.Enabled = (false);
                             this.txtPasswordAInsert.UseSystemPasswordChar = (false);
@@ -115,8 +115,8 @@ namespace MoneyManagerDesktop
                             this.txtPasswordBInsert.Enabled = (false);
                             this.txtPasswordBInsert.UseSystemPasswordChar = (false);
 
-                            this.txtPasswordAInsert.Text = ((String)txtPasswordAInsert.Tag);
-                            this.txtPasswordBInsert.Text = ((String)txtPasswordBInsert.Tag);
+                            this.txtPasswordAInsert.Text = ((String)this.txtPasswordAInsert.Tag);
+                            this.txtPasswordBInsert.Text = ((String)this.txtPasswordBInsert.Tag);
 
                             // img
                             this.imgStatusNameInsert.Image = (null);
@@ -125,7 +125,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case ChoseActionForm.UpdateUsers:
+                case (ChoseActionForm.UpdateUsers):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpUpdate))
                         {
@@ -145,17 +145,17 @@ namespace MoneyManagerDesktop
                             this.lblCoutUpdate.Text = ("");
                             this.lblGridUpdate.Text = ("");
                             // Txts
-                            this.txtNameUpdate.Text = ((String)txtNameUpdate.Tag);
-                            this.txtLoginUpdate.Text = ((String)txtLoginUpdate.Tag);
-                            this.txtPasswordAUpdate.Text = ((String)txtPasswordAUpdate.Tag);
-                            this.txtPasswordBUpdate.Text = ((String)txtPasswordBUpdate.Tag);
+                            this.txtNameUpdate.Text = ((String)this.txtNameUpdate.Tag);
+                            this.txtLoginUpdate.Text = ((String)this.txtLoginUpdate.Tag);
+                            this.txtPasswordAUpdate.Text = ((String)this.txtPasswordAUpdate.Tag);
+                            this.txtPasswordBUpdate.Text = ((String)this.txtPasswordBUpdate.Tag);
                             this.txtNameUpdate.Enabled = (false);
                             this.txtLoginUpdate.Enabled = (false);
                             this.txtPasswordAUpdate.Enabled = (false);
                             this.txtPasswordBUpdate.Enabled = (false);
                             // btns
-                            this.btnCloseUpdate.Text = ((String)btnCloseUpdate.Tag);
-                            this.btnUpdateSave.Text = ((String)btnUpdateSave.Tag);
+                            this.btnCloseUpdate.Text = ((String)this.btnCloseUpdate.Tag);
+                            this.btnUpdateSave.Text = ((String)this.btnUpdateSave.Tag);
                             // GridView
                             this.metroGrid4.Enabled = (false);
                             this.metroGrid4.TabStop = (false);
@@ -168,14 +168,14 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case ChoseActionForm.DeleteUsers:
+                case (ChoseActionForm.DeleteUsers):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpDelete))
                         {
                             // this
                             this.Size = (new Size(535, 300));
                             // mtcUsers
-                            this.mtcUsers.Size = (new Size(490, 215));
+                            this.mtcUsers.Size = (new Size(490, 220));
                             this.mtcUsers.TabPages.Add(this.mtpDelete);
                             // mtpDelete
                             this.mtpDelete.Text = (String.Format(("{0}{1}{1}{1}{1}"), ("Deletar Usuario"), ("                                    ")));
@@ -186,23 +186,28 @@ namespace MoneyManagerDesktop
                             this.imgDelete.TileImage = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersDelete128);
                             // lbl
                             this.lblCoutDelete.Text = ("");
+                            this.lblGrudDelete.Text = ("");
                             // btn
-                            this.btnCloseDelete.Text = ((String)btnCloseDelete.Tag);
-                            this.btnDeleteUsers.Text = ((String)btnDeleteUsers.Tag);
+                            this.btnCloseDelete.Text = ((String)this.btnCloseDelete.Tag);
+                            this.btnDeleteUsers.Text = ((String)this.btnDeleteUsers.Tag);
+                            //  metroGrid2
+                            this.metroGrid2.Enabled = (false);
+                            // imgStatusGridDelete
+                            this.imgStatusGridDelete.Image = (null);
                         };
                         break;
                     };
-                case ChoseActionForm.RestoreUsers:
+                case (ChoseActionForm.RestoreUsers):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpRestore))
                         {
                             // this
-                            this.Size = new Size(535, 300);
+                            this.Size = (new Size(535, 300));
                             // mtcUsers
-                            this.mtcUsers.Size = new Size(490, 215);
+                            this.mtcUsers.Size = (new Size(490, 215));
                             this.mtcUsers.TabPages.Add(this.mtpRestore);
                             // mtpRestore
-                            this.mtpRestore.Text = String.Format(("{0}{1}{1}{1}{1}"), ("Restaurar Usuarios"), ("                                    "));
+                            this.mtpRestore.Text = (String.Format(("{0}{1}{1}{1}{1}"), ("Restaurar Usuarios"), ("                                    ")));
                             // imgRestore 
                             this.imgRestore.Text = ("");
                             this.imgRestore.UseTileImage = (true);
@@ -211,8 +216,8 @@ namespace MoneyManagerDesktop
                             // lbl
                             this.lblCoutRestore.Text = ("");
                             // btn
-                            this.btnRestoreUsers.Text = ((String)btnRestoreUsers.Tag);
-                            this.btnCloseRestore.Text = ((String)btnCloseRestore.Tag);
+                            this.btnRestoreUsers.Text = ((String)this.btnRestoreUsers.Tag);
+                            this.btnCloseRestore.Text = ((String)this.btnCloseRestore.Tag);
                         }
                         break;
                     };
@@ -243,7 +248,7 @@ namespace MoneyManagerDesktop
             this.metroGrid1.ScrollBars = (ScrollBars.None);
 
             this.metroGrid1.ColumnHeadersDefaultCellStyle.ForeColor = (Color.Black);
-            this.metroGrid1.ColumnHeadersDefaultCellStyle.Font = (mtpInsert.Font);
+            this.metroGrid1.ColumnHeadersDefaultCellStyle.Font = (this.mtpInsert.Font);
 
             this.metroGrid1.DefaultCellStyle.SelectionBackColor = (Color.LimeGreen);
             this.metroGrid1.DefaultCellStyle.SelectionForeColor = (Color.Black);
@@ -263,16 +268,16 @@ namespace MoneyManagerDesktop
         private void SelectUsers()
         {
             this.ShowDataGrid‎Select();
-            String rowsCount = (metroGrid1.RowCount.ToString());
-            if ((metroGrid1.RowCount) <= (0))
+            String rowsCount = (this.metroGrid1.RowCount.ToString());
+            if ((this.metroGrid1.RowCount) <= (0))
             {
                 this.lblCoutSelect.Text = (String.Format(("{0}"), ("Nenhum Registro Encontrado")));
             }
-            else if ((metroGrid1.RowCount) == (1))
+            else if ((this.metroGrid1.RowCount) == (1))
             {
                 this.lblCoutSelect.Text = (String.Format(("{0} {1}"), (rowsCount), ("Registro Encontrado")));
             }
-            else if ((metroGrid1.RowCount) >= (2))
+            else if ((this.metroGrid1.RowCount) >= (2))
             {
                 this.lblCoutSelect.Text = (String.Format(("{0} {1}"), (rowsCount), ("Registros Encontrados")));
             };
@@ -358,11 +363,11 @@ namespace MoneyManagerDesktop
 
         private void btnCloseCancel()
         {
-            if ((btnCloseInsert.Tag.ToString().Trim()) == (btnCloseInsert.Text.Trim()))
+            if ((this.btnCloseInsert.Tag.ToString().Trim()) == (this.btnCloseInsert.Text.Trim()))
             {
                 this.Close();
             }
-            else if ((btnCloseInsert.Text.ToString().Trim()) == (("Cancelar").Trim()))
+            else if ((this.btnCloseInsert.Text.ToString().Trim()) == (("Cancelar").Trim()))
             {
                 String msg_Title = (this.mtpInsert.Text);
                 String msg_Text = ("\r\rCancelar Cadastro?");
@@ -418,7 +423,7 @@ namespace MoneyManagerDesktop
             if ((String.IsNullOrEmpty(this.txtNameInsert.Text.Trim())) ||
                ((this.txtNameInsert.Text.Trim()) == (((String)this.txtNameInsert.Tag).Trim())))
             {
-                this.mttHintNameInsert.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                this.mttHintNameInsert.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                 this.mttHintNameInsert.Style = (this.Style);
                 this.mttHintNameInsert.SetToolTip((this.imgStatusNameInsert), ("Nome inválido"));
 
@@ -435,7 +440,7 @@ namespace MoneyManagerDesktop
 
                 if (msgResult == (false))
                 {
-                    this.mttHintNameInsert.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                    this.mttHintNameInsert.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                     this.mttHintNameInsert.Style = (this.Style);
                     this.mttHintNameInsert.SetToolTip((this.imgStatusNameInsert), ("Nome já existe"));
 
@@ -493,7 +498,7 @@ namespace MoneyManagerDesktop
             if ((String.IsNullOrEmpty(this.txtLoginInsert.Text.Trim())) ||
                ((this.txtLoginInsert.Text.Trim()) == (((String)this.txtLoginInsert.Tag).Trim())))
             {
-                this.mttHintLoginInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                this.mttHintLoginInsert.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                 this.mttHintLoginInsert.Style = (this.Style);
                 this.mttHintLoginInsert.SetToolTip(this.imgStatusLoginInsert, "Login inválido");
 
@@ -512,7 +517,7 @@ namespace MoneyManagerDesktop
 
                 if ((msgResult) == (false))
                 {
-                    this.mttHintLoginInsert.Theme = this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+                    this.mttHintLoginInsert.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                     this.mttHintLoginInsert.Style = (this.Style);
                     this.mttHintLoginInsert.SetToolTip(this.imgStatusLoginInsert, "Login já existe");
 
@@ -567,7 +572,7 @@ namespace MoneyManagerDesktop
                 // txtPasswordAInsert
                 this.txtPasswordAInsert.Text = ((String)this.txtPasswordAInsert.Tag);
                 // mttHintPasswordInsert
-                this.mttHintPasswordInsert.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                this.mttHintPasswordInsert.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                 this.mttHintPasswordInsert.Style = (this.Style);
                 this.mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha inválida");
                 // imgStatusPasswordInsert
@@ -617,7 +622,7 @@ namespace MoneyManagerDesktop
                 // txtPasswordAInsert
                 this.txtPasswordBInsert.Text = ((String)this.txtPasswordBInsert.Tag);
                 // mttHintPasswordInsert
-                this.mttHintPasswordInsert.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                this.mttHintPasswordInsert.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                 this.mttHintPasswordInsert.Style = (this.Style);
                 this.mttHintPasswordInsert.SetToolTip(this.imgStatusPasswordInsert, "Senha inválida");
                 // imgStatusPasswordInsert
@@ -707,20 +712,19 @@ namespace MoneyManagerDesktop
                     this.lblGridUpdate.Text = ("Selecione um Registro");
                     this.imgStatusGridUpdate.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
                 };
-            }
+            };
         }
 
         private string GetNameSelectedOnDataGridUpdate()
         {
             String returnString = ("");
 
-            if (metroGrid4.RowCount <= (0))
+            if (this.metroGrid4.RowCount <= (0))
             {
                 returnString = (String.Format(("{0}"), ("Nenhum Registro Encontrado")));
-                this.lblCoutUpdate.Text = (returnString);
                 this.btnUpdateSave.Enabled = (false);
             }
-            else if (metroGrid4.RowCount >= (1))
+            else if (this.metroGrid4.RowCount >= (1))
             {
                 bool flag = (this.metroGrid4.CurrentRow.Selected);
                 if (flag) //Selected TRUE
@@ -745,15 +749,15 @@ namespace MoneyManagerDesktop
             this.txtPasswordAUpdate.UseSystemPasswordChar = (true);
             this.txtPasswordBUpdate.UseSystemPasswordChar = (true);
 
-            this.txtNameUpdate.Text = (dataTableListUsers.Rows[0][0].ToString().Trim());
-            this.txtLoginUpdate.Text = (dataTableListUsers.Rows[0][1].ToString().Trim());
-            this.txtPasswordAUpdate.Text = (dataTableListUsers.Rows[0][2].ToString().Trim());
+            this.txtNameUpdate.Text = (dataTableListUsers.Rows[0][0].ToString().Trim());       // Name
+            this.txtLoginUpdate.Text = (dataTableListUsers.Rows[0][1].ToString().Trim());      // Login
+            this.txtPasswordAUpdate.Text = (dataTableListUsers.Rows[0][2].ToString().Trim());  // Password
             this.txtPasswordBUpdate.Text = (dataTableListUsers.Rows[0][2].ToString().Trim());
         }
 
         private void UpdateUsers()
         {
-            if ((btnUpdateSave.Tag.ToString().Trim()) == (btnUpdateSave.Text.Trim()))
+            if ((this.btnUpdateSave.Tag.ToString().Trim()) == (this.btnUpdateSave.Text.Trim()))
             {
 
                 this.ShowDataGrid‎Update();
@@ -767,26 +771,31 @@ namespace MoneyManagerDesktop
 
                 if ((this.metroGrid4.RowCount) <= (0))
                 {
-                    this.lblCoutUpdate.Text = String.Format(("{0}"), ("Nenhum Registro Encontrado"));
+                    this.lblCoutUpdate.Text = (String.Format(("{0}"), ("Nenhum Registro Encontrado")));
                     this.metroGrid4.Enabled = (false);
                     this.btnUpdateSave.Enabled = (false);
                 }
-                else if ((this.metroGrid4.RowCount) == (1))
+                else
                 {
-                    this.lblCoutUpdate.Text = String.Format(("{0} {1}"), (CountRows), ("Registro Encontrado"));
-                }
-                else if ((this.metroGrid4.RowCount) >= (2))
-                {
-                    this.lblCoutUpdate.Text = String.Format(("{0} {1}"), (CountRows), ("Registros Encontrados"));
+                    this.CheckSelectedDadaGrigUpdate();
+
+                    if ((this.metroGrid4.RowCount) == (1))
+                    {
+                        this.lblCoutUpdate.Text = (String.Format(("{0} {1}"), (CountRows), ("Registro Encontrado")));
+                    }
+                    else if ((this.metroGrid4.RowCount) >= (2))
+                    {
+                        this.lblCoutUpdate.Text = (String.Format(("{0} {1}"), (CountRows), ("Registros Encontrados")));
+                    };
                 };
+
             }
-            else if ((btnUpdateSave.Text.ToString().Trim()) == (("Editar").Trim()))
+            else if ((this.btnUpdateSave.Text.ToString().Trim()) == (("Editar").Trim()))
             {
-                bool flag = this.metroGrid4.CurrentRow.Selected; //SELECTED True  ---  NOT SELECTED False
+                bool flag = (this.metroGrid4.CurrentRow.Selected); //SELECTED True  ---  NOT SELECTED False
 
                 if (flag)
                 {
-
                     this.ShowDataOnTxTBox();
 
                     this.metroGrid4.Enabled = (false);
@@ -807,7 +816,7 @@ namespace MoneyManagerDesktop
                 };
 
             }
-            else if ((btnUpdateSave.Text.ToString().Trim()) == (("Salvar").Trim()))
+            else if ((this.btnUpdateSave.Text.ToString().Trim()) == (("Salvar").Trim()))
             {
 
                 this.txtNameUpdateLeave();
@@ -825,7 +834,7 @@ namespace MoneyManagerDesktop
 
                     ClsUsers objClsUsers = new ClsUsers();
 
-                    Boolean msgResult = objClsUsers.UpdateNameLoginPasswordForName((updateMyName), (myName), (myLogin), (myPassword));
+                    Boolean msgResult = (objClsUsers.UpdateNameLoginPasswordForName((updateMyName), (myName), (myLogin), (myPassword)));
 
                     if ((msgResult) == (false))
                     {
@@ -834,8 +843,8 @@ namespace MoneyManagerDesktop
                     else if ((msgResult) == (true))
                     {
                         this.SetConfigStartUsers();
-                        String msg_Title = String.Format(("{0}{1}"), (myName), (" :)"));
-                        String msg_Text = String.Format(("{0}{1}"), ("\r\r"), ("Editado com Sucesso"));
+                        String msg_Title = (String.Format(("{0}{1}"), (myName), (" :)")));
+                        String msg_Text = (String.Format(("{0}{1}"), ("\r\r"), ("Editado com Sucesso")));
                         MessageBoxButtons msg_Buttons = (MessageBoxButtons.OK);
                         MessageBoxIcon msg_Icon = (MessageBoxIcon.None);
                         MessageBoxDefaultButton msg_ButtonsDefault = (MessageBoxDefaultButton.Button1);
@@ -856,13 +865,13 @@ namespace MoneyManagerDesktop
 
         private void btnCloseUpdate_Click(object sender, EventArgs e)
         {
-            if ((btnCloseUpdate.Tag.ToString().Trim()) == (btnCloseUpdate.Text.Trim()))
+            if ((this.btnCloseUpdate.Tag.ToString().Trim()) == (this.btnCloseUpdate.Text.Trim()))
             {
                 this.Close();
             }
-            else if ((btnCloseUpdate.Text.ToString().Trim()) == (("Cancelar").Trim()))
+            else if ((this.btnCloseUpdate.Text.ToString().Trim()) == (("Cancelar").Trim()))
             {
-                String msg_Title = (GetNameSelectedOnDataGridUpdate());
+                String msg_Title = (this.GetNameSelectedOnDataGridUpdate());
                 String msg_Text = ("\r\rCancelar o Registro Selecionado?");
                 MessageBoxButtons msg_Buttons = (MessageBoxButtons.YesNo);
                 MessageBoxIcon msg_Icon = (MessageBoxIcon.None);
@@ -881,7 +890,6 @@ namespace MoneyManagerDesktop
             };
         }
 
-       
         private void metroGrid4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.CheckSelectedDadaGrigUpdate();
@@ -909,7 +917,7 @@ namespace MoneyManagerDesktop
 
             DataTable dataTableListUsers = (objClsUsers.SelectNameLoginPasswordForStatus(NameSelected, StatusSelected));
 
-            String myName = (dataTableListUsers.Rows[0]["Name"].ToString().Trim());
+            String myName = (dataTableListUsers.Rows[0][0].ToString().Trim()); // Name
             String myNewName = (this.txtNameUpdate.Text.Trim());
 
             if ((myName.ToUpper()) == (myNewName.ToUpper()))
@@ -925,23 +933,23 @@ namespace MoneyManagerDesktop
 
                 if (String.IsNullOrEmpty(this.txtNameUpdate.Text.Trim()))
                 {
-                    this.mttHintNameUpdate.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                    this.mttHintNameUpdate.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                     this.mttHintNameUpdate.Style = (this.Style);
                     this.mttHintNameUpdate.SetToolTip((this.imgStatusNameUpdate), ("Nome inválido"));
 
                     this.imgStatusNameUpdate.Cursor = (Cursors.Hand);
                     this.imgStatusNameUpdate.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
                 }
-                else if (msgResult == (false))
+                else if ((msgResult) == (false))
                 {
-                    this.mttHintNameUpdate.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                    this.mttHintNameUpdate.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                     this.mttHintNameUpdate.Style = (this.Style);
                     this.mttHintNameUpdate.SetToolTip((this.imgStatusNameUpdate), ("Nome já existe"));
 
                     this.imgStatusNameUpdate.Cursor = (Cursors.Hand);
                     this.imgStatusNameUpdate.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
                 }
-                else if (msgResult == (true))
+                else if ((msgResult) == (true))
                 {
                     this.updateNameStatus = (true);
                     this.mttHintNameUpdate.RemoveAll();
@@ -980,7 +988,7 @@ namespace MoneyManagerDesktop
             ClsUsers objClsUsers = (new ClsUsers());
             DataTable dataTableListUsers = (objClsUsers.SelectNameLoginPasswordForStatus(NameSelected, StatusSelected));
 
-            String myLogin = (dataTableListUsers.Rows[0]["Login"].ToString().Trim());
+            String myLogin = (dataTableListUsers.Rows[0][1].ToString().Trim()); // Login
             String myNewLogin = (this.txtLoginUpdate.Text.Trim());
 
             if ((myLogin.ToUpper()) == (myNewLogin.ToUpper()))
@@ -994,7 +1002,7 @@ namespace MoneyManagerDesktop
             {
                 if (String.IsNullOrEmpty(this.txtLoginUpdate.Text.Trim()))
                 {
-                    this.mttHintLoginUpdate.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                    this.mttHintLoginUpdate.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                     this.mttHintLoginUpdate.Style = (this.Style);
                     this.mttHintLoginUpdate.SetToolTip((this.imgStatusLoginUpdate), ("Login inválido"));
 
@@ -1007,7 +1015,7 @@ namespace MoneyManagerDesktop
 
                     if ((msgResult) == (false))
                     {
-                        this.mttHintLoginUpdate.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                        this.mttHintLoginUpdate.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                         this.mttHintLoginUpdate.Style = (this.Style);
                         this.mttHintLoginUpdate.SetToolTip((this.imgStatusLoginUpdate), ("Login já existe"));
 
@@ -1048,7 +1056,7 @@ namespace MoneyManagerDesktop
             if ((String.IsNullOrEmpty(this.txtPasswordAUpdate.Text.Trim())) ||
                 ((this.txtPasswordAUpdate.Text) == (String)this.txtPasswordAUpdate.Tag))
             {
-                this.mttHintPasswordUpdate.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                this.mttHintPasswordUpdate.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                 this.mttHintPasswordUpdate.Style = (this.Style);
                 this.mttHintPasswordUpdate.SetToolTip((this.imgStatusPasswordUpdate), ("Senha inválida"));
                 this.imgStatusPasswordUpdate.Cursor = (Cursors.Hand);
@@ -1069,10 +1077,10 @@ namespace MoneyManagerDesktop
 
         private void txtPasswordAUpdate_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if ((e.KeyCode) == (Keys.Enter))
             {
                 SendKeys.Send("{TAB}");
-                e.Handled = e.SuppressKeyPress = true;
+                e.Handled = (e.SuppressKeyPress = (true));
             };
         }
         #endregion
@@ -1088,7 +1096,7 @@ namespace MoneyManagerDesktop
                 // txtPasswordBUpdate
                 this.txtPasswordBUpdate.Text = ((String)this.txtPasswordBUpdate.Tag);
                 // mttHintPasswordUpdate
-                this.mttHintPasswordUpdate.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                this.mttHintPasswordUpdate.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                 this.mttHintPasswordUpdate.Style = (this.Style);
                 this.mttHintPasswordUpdate.SetToolTip((this.imgStatusPasswordUpdate), ("Senha inválida"));
                 // imgStatusPasswordUpdate
@@ -1097,10 +1105,9 @@ namespace MoneyManagerDesktop
             }
             else if ((this.txtPasswordAUpdate.Text.Trim()) != (this.txtPasswordBUpdate.Text.Trim()))
             {
-                this.mttHintPasswordUpdate.Theme = (this.Theme == MetroThemeStyle.Light ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+                this.mttHintPasswordUpdate.Theme = ((this.Theme) == (MetroThemeStyle.Light) ? (MetroThemeStyle.Dark) : (MetroThemeStyle.Light));
                 this.mttHintPasswordUpdate.Style = (this.Style);
                 this.mttHintPasswordUpdate.SetToolTip((this.imgStatusPasswordUpdate), ("Senha não Combina"));
-              
                 this.imgStatusPasswordUpdate.Cursor = (Cursors.Hand);
                 this.imgStatusPasswordUpdate.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
             }
@@ -1135,101 +1142,155 @@ namespace MoneyManagerDesktop
 
         private void ShowDataGrid‎Delete()
         {
-            metroGrid2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            metroGrid2.RowHeadersWidth = (10);
-            metroGrid2.ScrollBars = ScrollBars.None;
+            this.metroGrid2.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode.Fill);
+            this.metroGrid2.RowHeadersWidth = (10);
+            this.metroGrid2.ScrollBars = (ScrollBars.None);
 
-            metroGrid2.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            metroGrid2.ColumnHeadersDefaultCellStyle.Font = mtpInsert.Font;
+            this.metroGrid2.ColumnHeadersDefaultCellStyle.ForeColor = (Color.Black);
+            this.metroGrid2.ColumnHeadersDefaultCellStyle.Font = (this.mtpInsert.Font);
 
-            metroGrid2.DefaultCellStyle.SelectionBackColor = Color.LimeGreen;
-            metroGrid2.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.metroGrid2.DefaultCellStyle.SelectionBackColor = (Color.LimeGreen);
+            this.metroGrid2.DefaultCellStyle.SelectionForeColor = (Color.Black);
 
-            metroGrid2.DefaultCellStyle.BackColor = Color.White;
-            metroGrid2.DefaultCellStyle.ForeColor = Color.Black;
+            this.metroGrid2.DefaultCellStyle.BackColor = (Color.White);
+            this.metroGrid2.DefaultCellStyle.ForeColor = (Color.Black);
 
-            ClsUsers u = new ClsUsers();
+            ClsUsers objClsUsers = (new ClsUsers());
 
-            ClsUsers.StatusUser StatusSelected = ClsUsers.StatusUser.Enabled;
-            DataTable dataTableListUsers = u.SelectNameForStatus(StatusSelected);
+            DataTable objDataTable = (objClsUsers.SelectNameForStatus(ClsUsers.StatusUser.Enabled));
 
-            metroGrid2.DataSource = dataTableListUsers;
-            metroGrid2.ClearSelection();
-            metroGrid2.Refresh();
+            this.metroGrid2.DataSource = (objDataTable);
+            this.metroGrid2.ClearSelection();
+            this.metroGrid2.Refresh();
+        }
+
+        private void CheckSelectedDadaGrigDelete()
+        {
+            if ((this.metroGrid2.RowCount) >= (1))
+            {
+                bool flag = (this.metroGrid2.CurrentRow.Selected);
+
+                if (flag) //Selected TRUE
+                {
+                    this.lblCoutDelete.Text = (this.GetNameSelectedOnDataGridDelete());
+                    this.btnDeleteUsers.Enabled = (true);
+                    this.lblGrudDelete.Text = ("Registro Selecionado");
+                    this.imgStatusGridDelete.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAccept16);
+                }
+                else //Selected False
+                {
+                    this.btnDeleteUsers.Enabled = (false);
+                    this.lblGrudDelete.Text = ("Selecione um Registro");
+                    this.imgStatusGridDelete.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersExclamation16);
+                };
+            };
+        }
+
+        private string GetNameSelectedOnDataGridDelete()
+        {
+            String returnString = ("");
+
+            if (this.metroGrid2.RowCount <= (0))
+            {
+                this.btnDeleteUsers.Enabled = (false);
+                returnString = (String.Format(("{0}"), ("Nenhum Registro Encontrado")));
+            }
+            else if (this.metroGrid2.RowCount >= (1))
+            {
+                bool flag = (this.metroGrid2.CurrentRow.Selected);
+
+                if (flag) //Selected TRUE
+                {
+                    int rowIndexSelected = (this.metroGrid2.CurrentCell.RowIndex);
+                    int columIndexSelected = (this.metroGrid2.CurrentCell.ColumnIndex);
+                    String nameSelectedOnGrid = (String)(this.metroGrid2.Rows[(rowIndexSelected)].Cells[columIndexSelected].Value);
+                    returnString = (String.Format(("{0}"), (nameSelectedOnGrid)));
+                };
+            };
+            return returnString;
         }
 
         private void DeleteUsers()
         {
-            if ((btnDeleteUsers.Tag.ToString().Trim()) == (btnDeleteUsers.Text.Trim()))
+            if ((this.btnDeleteUsers.Tag.ToString().Trim()) == (this.btnDeleteUsers.Text.Trim()))
             {
-                //Listar
-                this.btnDeleteUsers.Text = ("Deletar");
+                //List
                 this.ShowDataGrid‎Delete();
 
-                String CountRows = (metroGrid2.RowCount.ToString());
+                this.btnDeleteUsers.Text = ("Deletar");
 
-                if (metroGrid2.RowCount == (0))
+                String RowsCount = (this.metroGrid2.RowCount.ToString());
+
+                if (this.metroGrid2.RowCount <= (0))
                 {
-                    this.lblCoutDelete.Text = String.Format(("{0}"), ("Nenhum Registro Encontrado"));
                     this.btnDeleteUsers.Enabled = (false);
+                    this.lblCoutDelete.Text = (String.Format(("{0}"), ("Nenhum Registro Encontrado")));
                 }
-                else if (metroGrid2.RowCount == (1))
+                else
                 {
-                    this.lblCoutDelete.Text = String.Format(("{0} {1}"), (CountRows), ("Registro Encontrado"));
-                }
-                else if (metroGrid2.RowCount >= (2))
-                {
-                    this.lblCoutDelete.Text = String.Format(("{0} {1}"), (CountRows), ("Registros Encontrados"));
+                    this.metroGrid2.Enabled = (true);
+
+                    this.CheckSelectedDadaGrigDelete();
+
+                    if (this.metroGrid2.RowCount == (1))
+                    {
+                        this.lblCoutDelete.Text = (String.Format(("{0} {1}"), (RowsCount), ("Registro Encontrado")));
+                    }
+                    else if (this.metroGrid2.RowCount >= (2))
+                    {
+                        this.lblCoutDelete.Text = (String.Format(("{0} {1}"), (RowsCount), ("Registros Encontrados")));
+                    };
                 };
+
             }
-            else
+            else if ((this.btnDeleteUsers.Text.Trim()) == ("Deletar"))
             {
                 //Delete]
-                bool flag = metroGrid2.CurrentRow.Selected;
+                bool flag = (this.metroGrid2.CurrentRow.Selected);
 
                 if (flag)
                 {
                     //Select User 
-                    int rowIndexSelected = metroGrid2.CurrentCell.RowIndex;
-                    int columIndexSelected = metroGrid2.CurrentCell.ColumnIndex;
-                    String nameSelectedOnGrid = (String)(metroGrid2.Rows[(rowIndexSelected)].Cells[columIndexSelected].Value);
+
+                    String nameSelectedOnGrid = (this.GetNameSelectedOnDataGridDelete());
 
                     //mbox
                     String msg_Title = (nameSelectedOnGrid);
                     String msg_Text = ("\r\rDeletar Registro Selecionado?");
-                    MessageBoxButtons msg_Buttons = MessageBoxButtons.YesNo;
-                    MessageBoxIcon msg_Icon = MessageBoxIcon.None;
-                    MessageBoxDefaultButton msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
-                    DialogResult diagResult = MetroMessageBox.Show(this, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
+                    MessageBoxButtons msg_Buttons = (MessageBoxButtons.YesNo);
+                    MessageBoxIcon msg_Icon = (MessageBoxIcon.None);
+                    MessageBoxDefaultButton msg_ButtonsDefault = (MessageBoxDefaultButton.Button1);
+                    DialogResult diagResult = (MetroMessageBox.Show((Form.ActiveForm), (msg_Text), (msg_Title), (msg_Buttons), (msg_Icon), (msg_ButtonsDefault)));
 
-                    if (diagResult == DialogResult.Yes)
+                    if ((diagResult) == (DialogResult.Yes))
                     {
-                        ClsUsers u = new ClsUsers();
+                        ClsUsers objClsUsers = (new ClsUsers());
 
-                        ClsUsers.StatusUser StatusSelected = ClsUsers.StatusUser.Disabled;
+                        ClsUsers.StatusUser StatusSelected = (ClsUsers.StatusUser.Disabled);
 
-                        string msgResult = u.UpdateStatusForName(nameSelectedOnGrid, StatusSelected);
+                        Boolean msgResult = (objClsUsers.UpdateStatusForName(nameSelectedOnGrid, StatusSelected));
 
-                        if (msgResult == Boolean.FalseString)
+                        if ((msgResult) == (false))
                         {
                             MessageBox.Show("Erro ao Deletar Usuario");
                         }
-                        else if (msgResult == Boolean.TrueString)
+                        else if ((msgResult) == (true))
                         {
-                            this.btnDeleteUsers.Text = ((String)btnDeleteUsers.Tag);
+                            this.SetConfigStartUsers();
+                            this.btnDeleteUsers.Text = ((String)this.btnDeleteUsers.Tag);
                             this.btnDeleteUsers.PerformClick();
-                            msg_Title = String.Format("{0}{1}", (nameSelectedOnGrid), " :(");
-                            msg_Text = String.Format("{0}{1}", "\r\r", "Deletado com Sucesso");
-                            msg_Buttons = MessageBoxButtons.OK;
-                            msg_Icon = MessageBoxIcon.None;
-                            msg_ButtonsDefault = MessageBoxDefaultButton.Button1;
-                            diagResult = MetroMessageBox.Show(this, msg_Text, msg_Title, msg_Buttons, msg_Icon, msg_ButtonsDefault);
+                            msg_Title = (String.Format("{0}{1}", (nameSelectedOnGrid), " :("));
+                            msg_Text = (String.Format("{0}{1}", "\r\r", "Deletado com Sucesso"));
+                            msg_Buttons = (MessageBoxButtons.OK);
+                            msg_Icon = (MessageBoxIcon.None);
+                            msg_ButtonsDefault = (MessageBoxDefaultButton.Button1);
+                            diagResult = (MetroMessageBox.Show((Form.ActiveForm), (msg_Text), (msg_Title), (msg_Buttons), (msg_Icon), (msg_ButtonsDefault)));
                         };
                     };
                 }
                 else
                 {
-                    MessageBox.Show("Selecione um Registo");
+                    this.CheckSelectedDadaGrigDelete();
                 };
             };
         }
@@ -1242,6 +1303,21 @@ namespace MoneyManagerDesktop
         private void btnCloseDelete_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void metroGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.CheckSelectedDadaGrigDelete();
+        }
+
+        private void metroGrid2_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.CheckSelectedDadaGrigDelete();
+        }
+
+        private void metroGrid2_KeyUp(object sender, KeyEventArgs e)
+        {
+            this.CheckSelectedDadaGrigDelete();
         }
 
         #endregion
@@ -1324,13 +1400,13 @@ namespace MoneyManagerDesktop
 
                         ClsUsers.StatusUser StatusSelected = ClsUsers.StatusUser.Enabled;
 
-                        string msgResult = u.UpdateStatusForName(nameSelectedOnGrid, StatusSelected);
+                        Boolean msgResult = u.UpdateStatusForName(nameSelectedOnGrid, StatusSelected);
 
-                        if (msgResult == Boolean.FalseString)
+                        if (msgResult == false)
                         {
                             MessageBox.Show("Erro ao Restaurar Usuario");
                         }
-                        else if (msgResult == Boolean.TrueString)
+                        else if (msgResult == true)
                         {
                             this.btnRestoreUsers.Text = ((String)btnDeleteUsers.Tag);
                             this.btnRestoreUsers.PerformClick();
