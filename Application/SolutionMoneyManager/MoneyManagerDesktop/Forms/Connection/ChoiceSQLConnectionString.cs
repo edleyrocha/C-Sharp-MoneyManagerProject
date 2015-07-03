@@ -13,16 +13,13 @@
 ///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
-    #region ---> (Using)
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Data;
-    using System.Data.SqlClient;
-
-    #endregion
-    class ClsLogin
+    /// <summary>
+    /// # Enum ChoiceSQLConnectionString ( GetDataSource = 0 , GetDataProvider = 1 , GetConnectionString = 2 )
+    /// </summary>
+    public enum ChoiceSQLConnectionString
     {
+        GetDataSource = (0),
+        GetDataProvider = (1),
+        GetConnectionString = (2)
     }
 }

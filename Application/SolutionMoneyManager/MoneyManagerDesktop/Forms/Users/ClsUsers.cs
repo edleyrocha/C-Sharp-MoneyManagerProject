@@ -9,8 +9,8 @@
 //       Developer Email                     //
 // </mail>                                   //
 //                                           //
-//---------------- --------------------------//
-///////////////////// /////////////////////////
+//-------------------------------------------//
+///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
@@ -21,17 +21,9 @@ namespace MoneyManagerDesktop
     using System.Data;
     using System.Data.SqlClient;
     #endregion
+
     class ClsUsers
     {
-        /// <summary>
-        /// # Users Status
-        /// </summary>
-        public enum StatusUser
-        {
-            Enabled = 0,
-            Disabled = 1
-        }
-
         /// <summary>
         /// # Insert New Users
         /// </summary>

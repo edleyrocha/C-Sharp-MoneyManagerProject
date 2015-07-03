@@ -88,6 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResColor.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Connection\ChoiceSQLConnectionString.cs" />
     <Compile Include="Forms\Connection\ClsConnection.cs" />
     <Compile Include="Forms\Connection\ResConnection.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -111,6 +112,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResMainBase.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Users\ChoseActionForm.cs" />
+    <Compile Include="Forms\Users\StatusUser.cs" />
     <Compile Include="Forms\Users\ClsUsers.cs" />
     <Compile Include="Forms\Users\FrmUsers.cs">
       <SubType>Form</SubType>

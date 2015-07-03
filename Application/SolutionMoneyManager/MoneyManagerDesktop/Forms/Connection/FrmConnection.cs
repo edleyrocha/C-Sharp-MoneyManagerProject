@@ -9,8 +9,8 @@
 //       Developer Email                     //
 // </mail>                                   //
 //                                           //
-//---------------- --------------------------//
-///////////////////// /////////////////////////
+//-------------------------------------------//
+///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
@@ -65,9 +65,9 @@ namespace MoneyManagerDesktop
             ClsConnection objC = new ClsConnection();
             if ((this.btnLoad.Text) == ("Carregar Conexão"))
             {
-                this.txtBoxSource.Text = (objC.GetSQLConnectionString(ClsConnection.ChoiceSQLConnectionString.GetDataSource));
-                this.txtBoxProvider.Text = (objC.GetSQLConnectionString(ClsConnection.ChoiceSQLConnectionString.GetDataProvider));
-                this.txtBoxString.Text = (objC.GetSQLConnectionString(ClsConnection.ChoiceSQLConnectionString.GetConnectionString));
+                this.txtBoxSource.Text = (objC.GetSQLConnectionString(ChoiceSQLConnectionString.GetDataSource));
+                this.txtBoxProvider.Text = (objC.GetSQLConnectionString(ChoiceSQLConnectionString.GetDataProvider));
+                this.txtBoxString.Text = (objC.GetSQLConnectionString(ChoiceSQLConnectionString.GetConnectionString));
                 this.btnLoad.Text = ("Testar Conexão");
             }
             else if ((this.btnLoad.Text) == ("Testar Conexão"))

@@ -19,7 +19,7 @@ CREATE TABLE [dbo].[tblCategories]
     [Id]         INT            CONSTRAINT [PK_tblCategoriesId] PRIMARY KEY IDENTITY (1, 1) NOT NULL,
     [Users]      INT            CONSTRAINT [FK_tblCategoriesUsers_tblUsersId] FOREIGN KEY REFERENCES [tblUsers]([Id]) NOT NULL,
 	[Categories] NVARCHAR (50)  NOT NULL,
-    [Type]       CHAR (1)       NOT NULL,
+    [Finances]   NVARCHAR (10)  NOT NULL,
     [Status]     NVARCHAR (10)  NOT NULL
 );
 GO

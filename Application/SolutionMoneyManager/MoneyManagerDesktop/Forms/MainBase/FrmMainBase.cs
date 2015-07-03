@@ -9,8 +9,8 @@
 //       Developer Email                     //
 // </mail>                                   //
 //                                           //
-//---------------- --------------------------//
-///////////////////// /////////////////////////
+//-------------------------------------------//
+///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
@@ -73,27 +73,27 @@ namespace MoneyManagerDesktop
         }
         private void mnuUsersSelect_Click(object sender, EventArgs e)
         {
-            FrmUsers objFrmUsersSelect = (new FrmUsers((FrmUsers.ChoseActionForm)(0))); //Select Users
+            FrmUsers objFrmUsersSelect = (new FrmUsers((ChoseActionForm)(0))); //Select Users
             objFrmUsersSelect.ShowDialog();
         }
         private void mnuUsersInsert_Click(object sender, EventArgs e)
         {
-            FrmUsers objFrmUsersInsert = (new FrmUsers((FrmUsers.ChoseActionForm)(1))); //Insert Users
+            FrmUsers objFrmUsersInsert = (new FrmUsers((ChoseActionForm)(1))); //Insert Users
             objFrmUsersInsert.ShowDialog();
         }
         private void mnuUsersUpdate_Click(object sender, EventArgs e)
         {
-            FrmUsers objFrmUsersUpdate = (new FrmUsers((FrmUsers.ChoseActionForm)(2))); //Update Users
+            FrmUsers objFrmUsersUpdate = (new FrmUsers((ChoseActionForm)(2))); //Update Users
             objFrmUsersUpdate.ShowDialog();
         }
         private void mnuUsersDelete_Click(object sender, EventArgs e)
         {
-            FrmUsers objFrmUsersDelete = (new FrmUsers((FrmUsers.ChoseActionForm)(3))); //Delete Users (Only Disabled)
+            FrmUsers objFrmUsersDelete = (new FrmUsers((ChoseActionForm)(3))); //Delete Users (Only Disabled)
             objFrmUsersDelete.ShowDialog();
         }
         private void mnuUsersRetore_Click(object sender, EventArgs e)
         {
-            FrmUsers objFrmUsersRestore = (new FrmUsers((FrmUsers.ChoseActionForm)(4)));  //Restore Users (Only Enabled)
+            FrmUsers objFrmUsersRestore = (new FrmUsers((ChoseActionForm)(4)));  //Restore Users (Only Enabled)
             objFrmUsersRestore.ShowDialog();
         }
         private void mnuClose_Click(object sender, EventArgs e)

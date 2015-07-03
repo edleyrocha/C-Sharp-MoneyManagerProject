@@ -9,8 +9,8 @@
 //       Developer Email                     //
 // </mail>                                   //
 //                                           //
-//---------------- --------------------------//
-///////////////////// /////////////////////////
+//-------------------------------------------//
+///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
@@ -33,13 +33,7 @@ namespace MoneyManagerDesktop
         AppConfigXML objAppConfigXML = (new AppConfigXML());
 
         #region ---> (Get StringSQLConnection)
-        // enum
-        public enum ChoiceSQLConnectionString
-        {
-            GetDataSource = (0),
-            GetDataProvider = (1),
-            GetConnectionString = (2)
-        }
+
         public string GetSQLConnectionString(ChoiceSQLConnectionString choiceSQLConnectionString)
         {
             objDataSource.Providers.Add(DataProvider.SqlDataProvider);

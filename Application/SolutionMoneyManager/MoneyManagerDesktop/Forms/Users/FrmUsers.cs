@@ -9,8 +9,8 @@
 //       Developer Email                     //
 // </mail>                                   //
 //                                           //
-//---------------- --------------------------//
-///////////////////// /////////////////////////
+//-------------------------------------------//
+///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
     #region ---> (Using)
@@ -25,6 +25,7 @@ namespace MoneyManagerDesktop
     using System.Text;
     using System.Windows.Forms;
     #endregion
+
     public partial class FrmUsers : MetroForm
     {
         public FrmUsers(ChoseActionForm choseAction)
@@ -37,16 +38,6 @@ namespace MoneyManagerDesktop
 
         #region ---> (Form Users)
 
-        // Options to open form - Pass1
-        public enum ChoseActionForm
-        {
-            SelectUsers = (0),
-            InsertUsers = (1),
-            UpdateUsers = (2),
-            DeleteUsers = (3),
-            RestoreUsers = (4)
-        }
-        // Options to open form - pass2
         ChoseActionForm SelectedAction;
 
         public void SetConfigStartUsers()
@@ -87,9 +78,9 @@ namespace MoneyManagerDesktop
                             this.imgStatusGridSelect.Image = (null);
                             // cbxSelect
                             this.cbxSelect.Items.Clear();
-                            this.cbxSelect.Items.Insert(((Int32)(ClsUsers.StatusUser.Enabled)), ("Usuario Ativado"));
-                            this.cbxSelect.Items.Insert(((Int32)(ClsUsers.StatusUser.Disabled)), ("Usuario Deletado"));
-                            this.cbxSelect.SelectedIndex = ((Int32)(ClsUsers.StatusUser.Enabled));
+                            this.cbxSelect.Items.Insert(((Int32)(StatusUser.Enabled)), ("Usuario Ativado"));
+                            this.cbxSelect.Items.Insert(((Int32)(StatusUser.Disabled)), ("Usuario Deletado"));
+                            this.cbxSelect.SelectedIndex = ((Int32)(StatusUser.Enabled));
                         };
                         break;
                     };
@@ -300,7 +291,7 @@ namespace MoneyManagerDesktop
 
             ClsUsers objClsUsers = (new ClsUsers());
 
-            DataTable objDataTable = (objClsUsers.SelectNameLoginForStatus(((ClsUsers.StatusUser)(this.cbxSelect.SelectedIndex))));
+            DataTable objDataTable = (objClsUsers.SelectNameLoginForStatus(((StatusUser)(this.cbxSelect.SelectedIndex))));
 
             this.metroGrid1.DataSource = (objDataTable);
             this.metroGrid1.ClearSelection();
@@ -441,7 +432,7 @@ namespace MoneyManagerDesktop
                     String myName = ((this.txtNameInsert.Text).Trim());
                     String myLogin = ((this.txtLoginInsert.Text).Trim());
                     String myPassword = ((this.txtPasswordBInsert.Text).Trim());
-                    String myStatus = (Convert.ToString(ClsUsers.StatusUser.Enabled));
+                    String myStatus = (Convert.ToString(StatusUser.Enabled));
 
                     ClsUsers objClsUsers = (new ClsUsers());
 
@@ -883,7 +874,7 @@ namespace MoneyManagerDesktop
         {
             ClsUsers objClsUsers = new ClsUsers();
 
-            ClsUsers.StatusUser StatusSelected = (ClsUsers.StatusUser.Enabled);
+            StatusUser StatusSelected = (StatusUser.Enabled);
             String NameSelected = (this.GetNameSelectedOnDataGridUpdate());
             DataTable dataTableListUsers = (objClsUsers.SelectNameLoginPasswordForStatus((NameSelected), (StatusSelected)));
 
@@ -913,7 +904,7 @@ namespace MoneyManagerDesktop
 
             ClsUsers objClsUsers = (new ClsUsers());
 
-            DataTable objDataTable = (objClsUsers.SelectNameForStatus(ClsUsers.StatusUser.Enabled));
+            DataTable objDataTable = (objClsUsers.SelectNameForStatus(StatusUser.Enabled));
 
             this.metroGrid2.DataSource = (objDataTable);
             this.metroGrid2.ClearSelection();
@@ -1021,7 +1012,7 @@ namespace MoneyManagerDesktop
 
             ClsUsers objClsUsers = (new ClsUsers());
 
-            ClsUsers.StatusUser StatusSelected = (ClsUsers.StatusUser.Enabled);
+            StatusUser StatusSelected = (StatusUser.Enabled);
 
             String NameSelected = (this.GetNameSelectedOnDataGridUpdate());
 
@@ -1093,7 +1084,7 @@ namespace MoneyManagerDesktop
 
             String NameSelected = (this.GetNameSelectedOnDataGridUpdate());
 
-            ClsUsers.StatusUser StatusSelected = (ClsUsers.StatusUser.Enabled);
+            StatusUser StatusSelected = (StatusUser.Enabled);
 
             ClsUsers objClsUsers = (new ClsUsers());
             DataTable dataTableListUsers = (objClsUsers.SelectNameLoginPasswordForStatus(NameSelected, StatusSelected));
@@ -1306,7 +1297,7 @@ namespace MoneyManagerDesktop
                     {
                         ClsUsers objClsUsers = (new ClsUsers());
 
-                        ClsUsers.StatusUser StatusSelected = (ClsUsers.StatusUser.Disabled);
+                        StatusUser StatusSelected = (StatusUser.Disabled);
 
                         Boolean msgResult = (objClsUsers.UpdateStatusForName((nameSelectedOnGrid), (StatusSelected)));
 
@@ -1352,7 +1343,7 @@ namespace MoneyManagerDesktop
 
             ClsUsers objClsUsers = (new ClsUsers());
 
-            DataTable objDataTable = (objClsUsers.SelectNameForStatus(ClsUsers.StatusUser.Enabled));
+            DataTable objDataTable = (objClsUsers.SelectNameForStatus(StatusUser.Enabled));
 
             this.metroGrid3.DataSource = (objDataTable);
             this.metroGrid3.ClearSelection();
@@ -1488,7 +1479,7 @@ namespace MoneyManagerDesktop
                     {
                         ClsUsers objClsUsers = (new ClsUsers());
 
-                        ClsUsers.StatusUser StatusSelected = (ClsUsers.StatusUser.Enabled);
+                        StatusUser StatusSelected = (StatusUser.Enabled);
 
                         Boolean msgResult = (objClsUsers.UpdateStatusForName((nameSelectedOnGrid), (StatusSelected)));
 
@@ -1534,7 +1525,7 @@ namespace MoneyManagerDesktop
 
             ClsUsers objClsUsers = (new ClsUsers());
 
-            DataTable objDataTable = (objClsUsers.SelectNameForStatus(ClsUsers.StatusUser.Disabled));
+            DataTable objDataTable = (objClsUsers.SelectNameForStatus(StatusUser.Disabled));
 
             this.metroGrid4.DataSource = (objDataTable);
             this.metroGrid4.ClearSelection();

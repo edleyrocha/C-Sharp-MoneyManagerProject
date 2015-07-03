@@ -13,16 +13,12 @@
 ///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
-    #region ---> (Using)
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Data;
-    using System.Data.SqlClient;
-
-    #endregion
-    class ClsLogin
+    // <summary>
+    // # Enum Status ( Enabled = 0 ,  Disabled = 1 )
+    // </summary>
+    enum StatusUser
     {
+        Enabled = 0,
+        Disabled = 1
     }
 }
