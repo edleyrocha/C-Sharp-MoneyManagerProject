@@ -13,16 +13,24 @@
 ///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
-    /// Options to open form - Pass1
-    /// <summary>
-    /// # Enum ChoseActionForm ( ActionSelect = 0 , ActionInsert = 1 , ActionUpdate = 2 , ActionDelete = 3 , ActionRestore = 4 )
-    /// </summary>
-    public enum ChoseActionForm
+    #region ---> (Using)
+    using MetroFramework;
+    using MetroFramework.Forms;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+    #endregion
+
+    public partial class FrmCategories : MetroForm
     {
-        ActionSelect = (0),
-        ActionInsert = (1),
-        ActionUpdate = (2),
-        ActionDelete = (3),
-        ActionRestore = (4)
+        public FrmCategories()
+        {
+            InitializeComponent();
+        }
     }
 }

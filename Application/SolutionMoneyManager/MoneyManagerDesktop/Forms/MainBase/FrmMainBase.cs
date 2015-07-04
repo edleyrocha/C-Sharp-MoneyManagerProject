@@ -42,21 +42,44 @@ namespace MoneyManagerDesktop
             this.BackMaxSize = (50);
             this.BackImagePadding = new Padding(210, 10, 0, 0);
             this.BackImage = (MoneyManagerDesktop.Forms.MainBase.ResMainBase.CoinsMoney128);
-            //mnu
+            // mnu
             this.mnuEntries.Text = ("&Cadastros");
 
-            this.mnuUsers.Text = ("Usuario");
+            this.mnuUsers.Text = (String.Format(("{0}"),("Usuarios")));
             this.mnuUsers.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAll32);
-            this.mnuUsersSelect.Text = ("Listar");
+
+            this.mnuUsersSelect.Text = (String.Format("{0} {1}", ("Listar"), (this.mnuUsers.Text)));
             this.mnuUsersSelect.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersFind32);
-            this.mnuUsersInsert.Text = ("Novo");
+
+            this.mnuUsersInsert.Text = (String.Format("{0} {1}", ("Adicionar"), (this.mnuUsers.Text)));
             this.mnuUsersInsert.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersNew32);
-            this.mnuUsersUpdate.Text = ("Atualizar");
+
+            this.mnuUsersUpdate.Text = (String.Format("{0} {1}", ("Atualizar"), (this.mnuUsers.Text)));
             this.mnuUsersUpdate.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersUpdate32);
-            this.mnuUsersDelete.Text = ("Deletar");
+
+            this.mnuUsersDelete.Text = (String.Format("{0} {1}", ("Deletar"), (this.mnuUsers.Text)));
             this.mnuUsersDelete.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersDelete32);
-            this.mnuUsersRetore.Text = ("Restaurar");
-            this.mnuUsersRetore.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersRecover32);
+
+            this.mnuUsersRestore.Text = (String.Format("{0} {1}", ("Restaurar"), (this.mnuUsers.Text)));
+            this.mnuUsersRestore.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersRecover32);
+
+            this.mnuCategories.Text = (String.Format(("{0}"), ("Ca&tegorias"))); 
+            this.mnuCategories.Image = (MoneyManagerDesktop.Forms.Categories.ResCategories.category32);
+
+            this.mnuCategoriesSelect.Text = (String.Format("{0} {1}", ("Listar"), (this.mnuCategories.Text)));
+            this.mnuCategoriesSelect.Image = (MoneyManagerDesktop.Forms.Categories.ResCategories.categoryFind32);
+
+            this.mnuCategoriesInsert.Text = (String.Format("{0} {1}", ("Adicionar"), (this.mnuCategories.Text)));
+            this.mnuCategoriesInsert.Image = (MoneyManagerDesktop.Forms.Categories.ResCategories.categoryAdd32);
+
+            this.mnuCategoriesUpdate.Text = (String.Format("{0} {1}", ("Atualizar"), (this.mnuCategories.Text)));
+            this.mnuCategoriesUpdate.Image = (MoneyManagerDesktop.Forms.Categories.ResCategories.categoryUpdate32);
+
+            this.mnuCategoriesDelete.Text = (String.Format("{0} {1}", ("Deletar"), (this.mnuCategories.Text)));
+            this.mnuCategoriesDelete.Image = (MoneyManagerDesktop.Forms.Categories.ResCategories.categoryDelete32);
+
+            this.mnuCategoriesRestore.Text = (String.Format("{0} {1}", ("Restaurar"), (this.mnuCategories.Text)));
+            this.mnuCategoriesRestore.Image = (MoneyManagerDesktop.Forms.Categories.ResCategories.categoryRestore32);
 
             this.mnuClose.Text = ("&Sair");
             this.mnuClose.Image = (MoneyManagerDesktop.Forms.MainBase.ResMainBase.ExitClose32);
@@ -64,6 +87,7 @@ namespace MoneyManagerDesktop
             this.mnuConfig.Text = ("&Configurações");
             this.mnuColors.Text = ("&Cores");
             this.mnuColors.Image = (MoneyManagerDesktop.Forms.Color.ResColor.ColorsSwatch32);
+
             this.mnuDataBase.Text = ("&Banco De Dados");
             this.mnuDataBase.Image = (MoneyManagerDesktop.Forms.Connection.ResConnection.DataBaseAdd32);
 

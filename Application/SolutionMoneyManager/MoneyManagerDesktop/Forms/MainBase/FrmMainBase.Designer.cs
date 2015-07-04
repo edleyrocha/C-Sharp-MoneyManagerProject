@@ -35,7 +35,8 @@
             this.mnuUsersInsert = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsersUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsersDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuUsersRetore = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsersRestore = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategories = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.mnuClose = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConfig = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +44,11 @@
             this.mnuDataBase = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesSelect = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesRestore = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +70,7 @@
             // 
             this.mnuEntries.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuUsers,
+            this.mnuCategories,
             this.toolStripSeparator,
             this.mnuClose});
             this.mnuEntries.Name = "mnuEntries";
@@ -77,17 +84,17 @@
             this.mnuUsersInsert,
             this.mnuUsersUpdate,
             this.mnuUsersDelete,
-            this.mnuUsersRetore});
+            this.mnuUsersRestore});
             this.mnuUsers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuUsers.Name = "mnuUsers";
-            this.mnuUsers.Size = new System.Drawing.Size(177, 26);
+            this.mnuUsers.Size = new System.Drawing.Size(212, 26);
             this.mnuUsers.Text = "%mnuUsers%";
             // 
             // mnuUsersSelect
             // 
             this.mnuUsersSelect.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuUsersSelect.Name = "mnuUsersSelect";
-            this.mnuUsersSelect.Size = new System.Drawing.Size(227, 26);
+            this.mnuUsersSelect.Size = new System.Drawing.Size(230, 26);
             this.mnuUsersSelect.Text = "%mnuUsersSelect%";
             this.mnuUsersSelect.Click += new System.EventHandler(this.mnuUsersSelect_Click);
             // 
@@ -95,7 +102,7 @@
             // 
             this.mnuUsersInsert.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuUsersInsert.Name = "mnuUsersInsert";
-            this.mnuUsersInsert.Size = new System.Drawing.Size(227, 26);
+            this.mnuUsersInsert.Size = new System.Drawing.Size(230, 26);
             this.mnuUsersInsert.Text = "%mnuUsersInsert%";
             this.mnuUsersInsert.Click += new System.EventHandler(this.mnuUsersInsert_Click);
             // 
@@ -103,7 +110,7 @@
             // 
             this.mnuUsersUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuUsersUpdate.Name = "mnuUsersUpdate";
-            this.mnuUsersUpdate.Size = new System.Drawing.Size(227, 26);
+            this.mnuUsersUpdate.Size = new System.Drawing.Size(230, 26);
             this.mnuUsersUpdate.Text = "%mnuUsersUpdate%";
             this.mnuUsersUpdate.Click += new System.EventHandler(this.mnuUsersUpdate_Click);
             // 
@@ -111,28 +118,41 @@
             // 
             this.mnuUsersDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuUsersDelete.Name = "mnuUsersDelete";
-            this.mnuUsersDelete.Size = new System.Drawing.Size(227, 26);
+            this.mnuUsersDelete.Size = new System.Drawing.Size(230, 26);
             this.mnuUsersDelete.Text = "%mnuUsersDelete%";
             this.mnuUsersDelete.Click += new System.EventHandler(this.mnuUsersDelete_Click);
             // 
-            // mnuUsersRetore
+            // mnuUsersRestore
             // 
-            this.mnuUsersRetore.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuUsersRetore.Name = "mnuUsersRetore";
-            this.mnuUsersRetore.Size = new System.Drawing.Size(227, 26);
-            this.mnuUsersRetore.Text = "%mnuUsersRetore%";
-            this.mnuUsersRetore.Click += new System.EventHandler(this.mnuUsersRetore_Click);
+            this.mnuUsersRestore.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuUsersRestore.Name = "mnuUsersRestore";
+            this.mnuUsersRestore.Size = new System.Drawing.Size(230, 26);
+            this.mnuUsersRestore.Text = "%mnuUsersRestore%";
+            this.mnuUsersRestore.Click += new System.EventHandler(this.mnuUsersRetore_Click);
+            // 
+            // mnuCategories
+            // 
+            this.mnuCategories.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCategoriesSelect,
+            this.mnuCategoriesInsert,
+            this.mnuCategoriesUpdate,
+            this.mnuCategoriesDelete,
+            this.mnuCategoriesRestore});
+            this.mnuCategories.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategories.Name = "mnuCategories";
+            this.mnuCategories.Size = new System.Drawing.Size(212, 26);
+            this.mnuCategories.Text = "%mnuCategories%";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(209, 6);
             // 
             // mnuClose
             // 
             this.mnuClose.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuClose.Name = "mnuClose";
-            this.mnuClose.Size = new System.Drawing.Size(177, 26);
+            this.mnuClose.Size = new System.Drawing.Size(212, 26);
             this.mnuClose.Text = "%mnuClose%";
             this.mnuClose.Click += new System.EventHandler(this.mnuClose_Click);
             // 
@@ -177,6 +197,41 @@
             this.mnuAbout.Text = "%mnuAbout%";
             this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
+            // mnuCategoriesSelect
+            // 
+            this.mnuCategoriesSelect.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesSelect.Name = "mnuCategoriesSelect";
+            this.mnuCategoriesSelect.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesSelect.Text = "%mnuCategoriesSelect%";
+            // 
+            // mnuCategoriesInsert
+            // 
+            this.mnuCategoriesInsert.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesInsert.Name = "mnuCategoriesInsert";
+            this.mnuCategoriesInsert.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesInsert.Text = "%mnuCategoriesInsert%";
+            // 
+            // mnuCategoriesUpdate
+            // 
+            this.mnuCategoriesUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesUpdate.Name = "mnuCategoriesUpdate";
+            this.mnuCategoriesUpdate.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesUpdate.Text = "%mnuCategoriesUpdate%";
+            // 
+            // mnuCategoriesRestore
+            // 
+            this.mnuCategoriesRestore.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesRestore.Name = "mnuCategoriesRestore";
+            this.mnuCategoriesRestore.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesRestore.Text = "%mnuCategoriesRestore%";
+            // 
+            // mnuCategoriesDelete
+            // 
+            this.mnuCategoriesDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesDelete.Name = "mnuCategoriesDelete";
+            this.mnuCategoriesDelete.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesDelete.Text = "%mnuCategoriesDelete%";
+            // 
             // FrmMainBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,7 +268,13 @@
         private System.Windows.Forms.ToolStripMenuItem mnuUsersUpdate;
         private System.Windows.Forms.ToolStripMenuItem mnuUsersDelete;
         private System.Windows.Forms.ToolStripMenuItem mnuUsersSelect;
-        private System.Windows.Forms.ToolStripMenuItem mnuUsersRetore;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsersRestore;
+        private System.Windows.Forms.ToolStripMenuItem mnuCategories;
+        private System.Windows.Forms.ToolStripMenuItem mnuCategoriesSelect;
+        private System.Windows.Forms.ToolStripMenuItem mnuCategoriesInsert;
+        private System.Windows.Forms.ToolStripMenuItem mnuCategoriesUpdate;
+        private System.Windows.Forms.ToolStripMenuItem mnuCategoriesRestore;
+        private System.Windows.Forms.ToolStripMenuItem mnuCategoriesDelete;
 
     }
 }

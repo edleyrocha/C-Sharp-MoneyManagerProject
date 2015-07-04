@@ -40,7 +40,7 @@ namespace MoneyManagerDesktop
 
         ChoseActionForm SelectedAction;
 
-        public void SetConfigStartUsers()
+        private void SetConfigStartUsers()
         {
             // this form
             this.Text = ("Cadastro");
@@ -50,7 +50,7 @@ namespace MoneyManagerDesktop
 
             switch (this.SelectedAction)
             {
-                case (ChoseActionForm.SelectUsers):
+                case (ChoseActionForm.ActionSelect):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpSelect))
                         {
@@ -84,7 +84,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case (ChoseActionForm.InsertUsers):
+                case (ChoseActionForm.ActionInsert):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpInsert))
                         {
@@ -126,7 +126,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case (ChoseActionForm.UpdateUsers):
+                case (ChoseActionForm.ActionUpdate):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpUpdate))
                         {
@@ -169,7 +169,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case (ChoseActionForm.DeleteUsers):
+                case (ChoseActionForm.ActionDelete):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpDelete))
                         {
@@ -198,7 +198,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case (ChoseActionForm.RestoreUsers):
+                case (ChoseActionForm.ActionRestore):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpRestore))
                         {

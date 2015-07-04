@@ -76,6 +76,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResAbout.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Categories\FrmCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Categories\FrmCategories.Designer.cs">
+      <DependentUpon>FrmCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Categories\ResCategories.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResCategories.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Color\FrmColor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +160,13 @@
     <EmbeddedResource Include="Forms\About\ResAbout.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResAbout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Categories\FrmCategories.resx">
+      <DependentUpon>FrmCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Categories\ResCategories.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResCategories.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Color\FrmColor.resx">
       <DependentUpon>FrmColor.cs</DependentUpon>
@@ -302,6 +320,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UsersFind128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryAdd32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryAdd128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryDelete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryDelete128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryFind32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryFind128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryRestore32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryRestore128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryUpdate32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoryUpdate128.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
