@@ -27,25 +27,39 @@ namespace MoneyManagerDesktop
     #endregion
     public partial class FrmMainBase : MetroForm
     {
-        public FrmMainBase()
+        String myIdForLabel = (String.Empty);
+        String myNameForLabel = (String.Empty);
+
+        public FrmMainBase(String myIdForLogin, String myNameForLogin)
         {
-            InitializeComponent();
-            SetConfigStartMainBase();
+            this.InitializeComponent();
+            this.myIdForLabel = (myIdForLogin);
+            this.myNameForLabel = (myNameForLogin);
+            this.SetConfigStartMainBase();
+
         }
-        Boolean CancelClose = true;
+        #region ---> (Form FrmMainBase)
         public void SetConfigStartMainBase()
         {
             //frm
             this.Text = ("Money Manager");
             this.WindowState = (FormWindowState.Maximized);
+
+            // Name Logged
+            this.txtNameLogged.Text = (this.myNameForLabel);
+            this.txtNameLogged.Tag = (this.myIdForLabel);
+            this.imgNameLogged.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAll128);
+
             //frm img top
             this.BackMaxSize = (50);
             this.BackImagePadding = new Padding(210, 10, 0, 0);
             this.BackImage = (MoneyManagerDesktop.Forms.MainBase.ResMainBase.CoinsMoney128);
+
             // mnu
             this.mnuEntries.Text = ("&Cadastros");
 
-            this.mnuUsers.Text = (String.Format(("{0}"),("Usuarios")));
+
+            this.mnuUsers.Text = (String.Format(("{0}"), ("&Usuarios")));
             this.mnuUsers.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersAll32);
 
             this.mnuUsersSelect.Text = (String.Format("{0} {1}", ("Listar"), (this.mnuUsers.Text)));
@@ -63,7 +77,8 @@ namespace MoneyManagerDesktop
             this.mnuUsersRestore.Text = (String.Format("{0} {1}", ("Restaurar"), (this.mnuUsers.Text)));
             this.mnuUsersRestore.Image = (MoneyManagerDesktop.Forms.Users.ResUsers.UsersRecover32);
 
-            this.mnuCategories.Text = (String.Format(("{0}"), ("Ca&tegorias"))); 
+
+            this.mnuCategories.Text = (String.Format(("{0}"), ("Cate&gorias")));
             this.mnuCategories.Image = (MoneyManagerDesktop.Forms.Categories.ResCategories.category32);
 
             this.mnuCategoriesSelect.Text = (String.Format("{0} {1}", ("Listar"), (this.mnuCategories.Text)));
@@ -95,50 +110,18 @@ namespace MoneyManagerDesktop
             this.mnuAbout.Text = ("&Sobre");
             this.mnuAbout.Image = (MoneyManagerDesktop.Forms.About.ResAbout.HelpAbout32);
         }
-        private void mnuUsersSelect_Click(object sender, EventArgs e)
+        #endregion
+
+        #region ---> (Form Closing)
+
+        private void frmMainBase_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FrmUsers objFrmUsersSelect = (new FrmUsers((ChoseActionForm)(0))); //Select Users
-            objFrmUsersSelect.ShowDialog();
+            CancelClosing();
+            e.Cancel = (cancelClose);
         }
-        private void mnuUsersInsert_Click(object sender, EventArgs e)
-        {
-            FrmUsers objFrmUsersInsert = (new FrmUsers((ChoseActionForm)(1))); //Insert Users
-            objFrmUsersInsert.ShowDialog();
-        }
-        private void mnuUsersUpdate_Click(object sender, EventArgs e)
-        {
-            FrmUsers objFrmUsersUpdate = (new FrmUsers((ChoseActionForm)(2))); //Update Users
-            objFrmUsersUpdate.ShowDialog();
-        }
-        private void mnuUsersDelete_Click(object sender, EventArgs e)
-        {
-            FrmUsers objFrmUsersDelete = (new FrmUsers((ChoseActionForm)(3))); //Delete Users (Only Disabled)
-            objFrmUsersDelete.ShowDialog();
-        }
-        private void mnuUsersRetore_Click(object sender, EventArgs e)
-        {
-            FrmUsers objFrmUsersRestore = (new FrmUsers((ChoseActionForm)(4)));  //Restore Users (Only Enabled)
-            objFrmUsersRestore.ShowDialog();
-        }
-        private void mnuClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void mnuColors_Click(object sender, EventArgs e)
-        {
-            FrmColor objfrmColor = (new FrmColor());
-            objfrmColor.ShowDialog();
-        }
-        private void mnuDataBase_Click(object sender, EventArgs e)
-        {
-            FrmConnection objfrmConnection = (new FrmConnection());
-            objfrmConnection.ShowDialog();
-        }
-        private void mnuAbout_Click(object sender, EventArgs e)
-        {
-            FrmAbout objFrmAbout = (new FrmAbout());
-            objFrmAbout.ShowDialog();
-        }
+
+        Boolean cancelClose = (true);
+
         private void CancelClosing()
         {
             String msg_Title = (this.Text + "   :)");
@@ -149,14 +132,93 @@ namespace MoneyManagerDesktop
             DialogResult diagResult = (MetroMessageBox.Show((this), (msg_Text), (msg_Title), (msg_Buttons), (msg_Icon), (msg_ButtonsDefault)));
             if ((diagResult) == (DialogResult.Yes))
             {
-                CancelClose = (false);
+                cancelClose = (false);
             };
         }
-        private void frmMainBase_FormClosing(object sender, FormClosingEventArgs e)
+
+        #endregion
+
+        #region ---> (Menu Users)
+        private void mnuUsersSelect_Click(object sender, EventArgs e)
         {
-            CancelClosing();
-            e.Cancel = (CancelClose);
+            FrmUsers objFrmUsersSelect = (new FrmUsers((Chose.ActionForm)(0))); // Select Users
+            objFrmUsersSelect.ShowDialog();
         }
+        private void mnuUsersInsert_Click(object sender, EventArgs e)
+        {
+            FrmUsers objFrmUsersInsert = (new FrmUsers((Chose.ActionForm)(1))); // Insert Users
+            objFrmUsersInsert.ShowDialog();
+        }
+        private void mnuUsersUpdate_Click(object sender, EventArgs e)
+        {
+            FrmUsers objFrmUsersUpdate = (new FrmUsers((Chose.ActionForm)(2))); // Update Users
+            objFrmUsersUpdate.ShowDialog();
+        }
+        private void mnuUsersDelete_Click(object sender, EventArgs e)
+        {
+            FrmUsers objFrmUsersDelete = (new FrmUsers((Chose.ActionForm)(3))); // Delete Users (Only Disabled)
+            objFrmUsersDelete.ShowDialog();
+        }
+        private void mnuUsersRetore_Click(object sender, EventArgs e)
+        {
+            FrmUsers objFrmUsersRestore = (new FrmUsers((Chose.ActionForm)(4)));  // Restore Users (Only Enabled)
+            objFrmUsersRestore.ShowDialog();
+        }
+        #endregion
+
+        #region ---> (Menu Categories)
+        private void mnuCategoriesSelect_Click(object sender, EventArgs e)
+        {
+            FrmCategories objFrmCategories = (new FrmCategories((Chose.ActionForm.ActionSelect)));
+            objFrmCategories.ShowDialog();
+        }
+        private void mnuCategoriesInsert_Click(object sender, EventArgs e)
+        {
+            FrmCategories objFrmCategories = (new FrmCategories((Chose.ActionForm.ActionInsert)));
+            objFrmCategories.ShowDialog();
+        }
+        private void mnuCategoriesUpdate_Click(object sender, EventArgs e)
+        {
+            FrmCategories objFrmCategories = (new FrmCategories((Chose.ActionForm.ActionUpdate)));
+            objFrmCategories.ShowDialog();
+        }
+        private void mnuCategoriesDelete_Click(object sender, EventArgs e)
+        {
+            FrmCategories objFrmCategories = (new FrmCategories((Chose.ActionForm.ActionDelete)));
+            objFrmCategories.ShowDialog();
+        }
+        private void mnuCategoriesRestore_Click(object sender, EventArgs e)
+        {
+            FrmCategories objFrmCategories = (new FrmCategories((Chose.ActionForm.ActionRestore)));
+            objFrmCategories.ShowDialog();
+        }
+        #endregion
+
+
+
+        private void mnuClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mnuColors_Click(object sender, EventArgs e)
+        {
+            FrmColor objfrmColor = (new FrmColor());
+            objfrmColor.ShowDialog();
+        }
+
+        private void mnuDataBase_Click(object sender, EventArgs e)
+        {
+            FrmConnection objfrmConnection = (new FrmConnection());
+            objfrmConnection.ShowDialog();
+        }
+
+        private void mnuAbout_Click(object sender, EventArgs e)
+        {
+            FrmAbout objFrmAbout = (new FrmAbout());
+            objFrmAbout.ShowDialog();
+        }
+
         private void frmMainMaster_KeyDown(object sender, KeyEventArgs e)
         {
             if ((e.KeyCode) == (Keys.Escape))
@@ -164,5 +226,6 @@ namespace MoneyManagerDesktop
                 this.Close();
             };
         }
+
     }
 }

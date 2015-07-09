@@ -1,17 +1,4 @@
-﻿///////////////////////////////////////////////
-//-------------------------------------------//
-//                                           //
-// <git hub="https://github.com/edleyrocha"> //
-//      GitHub Repositories                  //
-// </git>                                    //
-//                                           //
-// <mail address="edleyrocha@hotmail.com">   //
-//       Developer Email                     //
-// </mail>                                   //
-//                                           //
-//-------------------------------------------//
-///////////////////////////////////////////////
-namespace MoneyManagerDesktop
+﻿namespace MoneyManagerDesktop
 {
     #region ---> (Using)
     using System;
@@ -34,6 +21,8 @@ namespace MoneyManagerDesktop
             String myStringSQL = (appConfigXML.GetAppConfigXML("SQLStringConnection"));
             SqlConnection connSQL = (new SqlConnection(myStringSQL));
 
+            GetConnection objGetConnection = new GetConnection();
+
             //INSERT INTO [tblUsers] VALUES (@Name,@Login,@Password,@StatusEnabled);
             StringBuilder myCommandStringSQL = new StringBuilder();
             myCommandStringSQL.Append("INSERT INTO [tblUsers] VALUES (");
@@ -42,7 +31,7 @@ namespace MoneyManagerDesktop
             myCommandStringSQL.Append("@Password,");
             myCommandStringSQL.Append("@StatusEnabled);");
 
-            SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), connSQL);
+            SqlCommand cmdSQL = new SqlCommand((Convert.ToString(myCommandStringSQL)), (objGetConnection.FromMSSQLServer(true)));
 
             cmdSQL.Parameters.AddWithValue("@Name", myNewName);
             cmdSQL.Parameters.AddWithValue("@Login", myNewLogin);
@@ -52,7 +41,7 @@ namespace MoneyManagerDesktop
             Boolean returnBool = (false);
             try
             {
-                connSQL.Open();
+               // connSQL.Open();
 
                 cmdSQL.ExecuteNonQuery();
 
@@ -64,7 +53,8 @@ namespace MoneyManagerDesktop
             }
             finally
             {
-                connSQL.Close();
+                objGetConnection.FromMSSQLServer(false);
+                //connSQL.Close();
             };
             return (returnBool);
         }
@@ -98,7 +88,7 @@ namespace MoneyManagerDesktop
                     {
                         connSQL.Open();
 
-                        int AffectedLines = (0); ;
+                        int AffectedLines = (0);
 
                         AffectedLines = (cmdSQL.ExecuteNonQuery());
 

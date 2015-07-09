@@ -13,16 +13,16 @@
 ///////////////////////////////////////////////
 namespace MoneyManagerDesktop
 {
-    /// Options to open form - Pass1
-    /// <summary>
-    /// # Enum ChoseActionForm ( ActionSelect = 0 , ActionInsert = 1 , ActionUpdate = 2 , ActionDelete = 3 , ActionRestore = 4 )
-    /// </summary>
-    public enum ChoseActionForm
+    #region ---> (Using)
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Data;
+    using System.Data.SqlClient;
+    #endregion
+
+    class ClsCategories
     {
-        ActionSelect = (0),
-        ActionInsert = (1),
-        ActionUpdate = (2),
-        ActionDelete = (3),
-        ActionRestore = (4)
     }
 }

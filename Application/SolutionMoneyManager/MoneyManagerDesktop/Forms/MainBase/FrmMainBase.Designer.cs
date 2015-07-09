@@ -37,6 +37,11 @@
             this.mnuUsersDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsersRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCategories = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesSelect = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoriesRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.mnuClose = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConfig = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,12 +49,12 @@
             this.mnuDataBase = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCategoriesSelect = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCategoriesInsert = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCategoriesUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCategoriesRestore = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCategoriesDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtNameLogged = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.imgNameLogged = new System.Windows.Forms.PictureBox();
             this.menuStrip.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNameLogged)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -62,7 +67,7 @@
             this.btnHelp});
             this.menuStrip.Location = new System.Drawing.Point(20, 60);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(532, 29);
+            this.menuStrip.Size = new System.Drawing.Size(767, 29);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -143,6 +148,46 @@
             this.mnuCategories.Size = new System.Drawing.Size(212, 26);
             this.mnuCategories.Text = "%mnuCategories%";
             // 
+            // mnuCategoriesSelect
+            // 
+            this.mnuCategoriesSelect.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesSelect.Name = "mnuCategoriesSelect";
+            this.mnuCategoriesSelect.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesSelect.Text = "%mnuCategoriesSelect%";
+            this.mnuCategoriesSelect.Click += new System.EventHandler(this.mnuCategoriesSelect_Click);
+            // 
+            // mnuCategoriesInsert
+            // 
+            this.mnuCategoriesInsert.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesInsert.Name = "mnuCategoriesInsert";
+            this.mnuCategoriesInsert.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesInsert.Text = "%mnuCategoriesInsert%";
+            this.mnuCategoriesInsert.Click += new System.EventHandler(this.mnuCategoriesInsert_Click);
+            // 
+            // mnuCategoriesUpdate
+            // 
+            this.mnuCategoriesUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesUpdate.Name = "mnuCategoriesUpdate";
+            this.mnuCategoriesUpdate.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesUpdate.Text = "%mnuCategoriesUpdate%";
+            this.mnuCategoriesUpdate.Click += new System.EventHandler(this.mnuCategoriesUpdate_Click);
+            // 
+            // mnuCategoriesDelete
+            // 
+            this.mnuCategoriesDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesDelete.Name = "mnuCategoriesDelete";
+            this.mnuCategoriesDelete.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesDelete.Text = "%mnuCategoriesDelete%";
+            this.mnuCategoriesDelete.Click += new System.EventHandler(this.mnuCategoriesDelete_Click);
+            // 
+            // mnuCategoriesRestore
+            // 
+            this.mnuCategoriesRestore.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuCategoriesRestore.Name = "mnuCategoriesRestore";
+            this.mnuCategoriesRestore.Size = new System.Drawing.Size(265, 26);
+            this.mnuCategoriesRestore.Text = "%mnuCategoriesRestore%";
+            this.mnuCategoriesRestore.Click += new System.EventHandler(this.mnuCategoriesRestore_Click);
+            // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
@@ -197,56 +242,59 @@
             this.mnuAbout.Text = "%mnuAbout%";
             this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
-            // mnuCategoriesSelect
+            // txtNameLogged
             // 
-            this.mnuCategoriesSelect.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuCategoriesSelect.Name = "mnuCategoriesSelect";
-            this.mnuCategoriesSelect.Size = new System.Drawing.Size(265, 26);
-            this.mnuCategoriesSelect.Text = "%mnuCategoriesSelect%";
+            this.txtNameLogged.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.txtNameLogged.Location = new System.Drawing.Point(3, 8);
+            this.txtNameLogged.Name = "txtNameLogged";
+            this.txtNameLogged.Size = new System.Drawing.Size(402, 26);
+            this.txtNameLogged.TabIndex = 0;
+            this.txtNameLogged.Text = "%txtNameLogged%";
+            this.txtNameLogged.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // mnuCategoriesInsert
+            // metroPanel1
             // 
-            this.mnuCategoriesInsert.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuCategoriesInsert.Name = "mnuCategoriesInsert";
-            this.mnuCategoriesInsert.Size = new System.Drawing.Size(265, 26);
-            this.mnuCategoriesInsert.Text = "%mnuCategoriesInsert%";
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel1.Controls.Add(this.imgNameLogged);
+            this.metroPanel1.Controls.Add(this.txtNameLogged);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(376, 60);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(408, 167);
+            this.metroPanel1.TabIndex = 3;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // mnuCategoriesUpdate
+            // imgNameLogged
             // 
-            this.mnuCategoriesUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuCategoriesUpdate.Name = "mnuCategoriesUpdate";
-            this.mnuCategoriesUpdate.Size = new System.Drawing.Size(265, 26);
-            this.mnuCategoriesUpdate.Text = "%mnuCategoriesUpdate%";
-            // 
-            // mnuCategoriesRestore
-            // 
-            this.mnuCategoriesRestore.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuCategoriesRestore.Name = "mnuCategoriesRestore";
-            this.mnuCategoriesRestore.Size = new System.Drawing.Size(265, 26);
-            this.mnuCategoriesRestore.Text = "%mnuCategoriesRestore%";
-            // 
-            // mnuCategoriesDelete
-            // 
-            this.mnuCategoriesDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuCategoriesDelete.Name = "mnuCategoriesDelete";
-            this.mnuCategoriesDelete.Size = new System.Drawing.Size(265, 26);
-            this.mnuCategoriesDelete.Text = "%mnuCategoriesDelete%";
+            this.imgNameLogged.Location = new System.Drawing.Point(275, 32);
+            this.imgNameLogged.Name = "imgNameLogged";
+            this.imgNameLogged.Size = new System.Drawing.Size(130, 130);
+            this.imgNameLogged.TabIndex = 2;
+            this.imgNameLogged.TabStop = false;
+            this.imgNameLogged.Visible = false;
             // 
             // FrmMainBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 451);
+            this.ClientSize = new System.Drawing.Size(807, 451);
+            this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.menuStrip);
             this.Name = "FrmMainBase";
             this.Resizable = false;
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "%FrmMainBase%";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainBase_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMainMaster_KeyDown);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.metroPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgNameLogged)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,6 +323,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuCategoriesUpdate;
         private System.Windows.Forms.ToolStripMenuItem mnuCategoriesRestore;
         private System.Windows.Forms.ToolStripMenuItem mnuCategoriesDelete;
+        private MetroFramework.Controls.MetroLabel txtNameLogged;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.PictureBox imgNameLogged;
 
     }
 }

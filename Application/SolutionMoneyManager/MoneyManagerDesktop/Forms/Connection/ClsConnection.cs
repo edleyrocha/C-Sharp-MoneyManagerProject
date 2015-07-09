@@ -25,49 +25,14 @@ namespace MoneyManagerDesktop
     using System.Text;
     using System.Windows.Forms;
     #endregion
+
     class ClsConnection
     {
         // objs
         DataSource objDataSource = (new DataSource("MicrosoftSqlServer", "Microsoft SQL Server"));
         DataConnectionDialog objDataConnectionDialog = (new DataConnectionDialog());
         AppConfigXML objAppConfigXML = (new AppConfigXML());
-
-        #region ---> (Get StringSQLConnection)
-
-        public string GetSQLConnectionString(ChoiceSQLConnectionString choiceSQLConnectionString)
-        {
-            objDataSource.Providers.Add(DataProvider.SqlDataProvider);
-            objDataConnectionDialog.DataSources.Add(objDataSource);
-            objDataConnectionDialog.ConnectionString = (objAppConfigXML.GetAppConfigXML("SQLStringConnection"));
-            //Return
-            String returnStringSQLConnection = (String.Empty);
-            //Choice
-            switch (choiceSQLConnectionString)
-            {
-                case (ChoiceSQLConnectionString.GetDataSource):
-                    {
-                        returnStringSQLConnection = (objDataConnectionDialog.SelectedDataSource.DisplayName);
-                        break;
-                    };
-                case (ChoiceSQLConnectionString.GetDataProvider):
-                    {
-                        returnStringSQLConnection = (objDataConnectionDialog.SelectedDataProvider.DisplayName);
-                        break;
-                    };
-                case (ChoiceSQLConnectionString.GetConnectionString):
-                    {
-                        returnStringSQLConnection = (objDataConnectionDialog.ConnectionString);
-                        break;
-                    };
-                default:
-                    {
-                        break;
-                    };
-            };
-            return (returnStringSQLConnection);
-        }
-        #endregion
-
+     
         #region ---> (New StringSQLConnection)
         public bool NewSQLConnectionString()
         {

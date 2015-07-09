@@ -17,14 +17,6 @@ namespace MoneyManagerDesktop
     #region ---> ( Using )
     using MoneyManagerDesktop.Properties;
     using System;
-    using System.Collections.Generic;
-    using System.Configuration;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading;
-    using System.Windows.Forms;
-    using System.Xml;
     #endregion
 
     class AppConfigXML
@@ -37,8 +29,8 @@ namespace MoneyManagerDesktop
         /// </summary>
         public void SetAppConfigXML(string key, string value)
         {
-            Properties.Settings.Default[key] = value;
-            Properties.Settings.Default.Save();
+            Settings.Default[key] = value;
+            Settings.Default.Save();
         }
         #endregion
 
@@ -49,11 +41,10 @@ namespace MoneyManagerDesktop
         /// </summary>
         public string GetAppConfigXML(string key)
         {
-            string returnResult = ("");
+            string returnResult = (String.Empty);
             returnResult = (Properties.Settings.Default[key].ToString());
             return returnResult;
         }
         #endregion
-
     }
 }

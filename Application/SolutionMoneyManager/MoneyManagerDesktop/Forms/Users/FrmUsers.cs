@@ -28,17 +28,17 @@ namespace MoneyManagerDesktop
 
     public partial class FrmUsers : MetroForm
     {
-        public FrmUsers(ChoseActionForm choseAction)
+        public FrmUsers(Chose.ActionForm ChoseAction)
         {
             InitializeComponent();
             // Options to open form - pass3
-            this.SelectedAction = (choseAction);
+            this.SelectedAction = (ChoseAction);
             this.SetConfigStartUsers();
         }
 
         #region ---> (Form Users)
 
-        ChoseActionForm SelectedAction;
+        Chose.ActionForm SelectedAction;
 
         private void SetConfigStartUsers()
         {
@@ -50,7 +50,7 @@ namespace MoneyManagerDesktop
 
             switch (this.SelectedAction)
             {
-                case (ChoseActionForm.ActionSelect):
+                case (Chose.ActionForm.ActionSelect):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpSelect))
                         {
@@ -60,7 +60,7 @@ namespace MoneyManagerDesktop
                             this.mtcUsers.Size = (new Size(490, 250));
                             this.mtcUsers.TabPages.Add(this.mtpSelect);
                             // mtpSelect
-                            this.mtpSelect.Text = (String.Format(("{0}{1}{1}{1}{1}"), ("Lista de Usuarios"), ("                                    ")));
+                            this.mtpSelect.Text = (String.Format(("{0}{1}{1}{1}{1}"), ("Listar Usuarios"), ("                                    ")));
                             // lbl
                             this.lblCoutSelect.Text = ("");
                             this.lblGridSelect.Text = ("");
@@ -84,7 +84,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case (ChoseActionForm.ActionInsert):
+                case (Chose.ActionForm.ActionInsert):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpInsert))
                         {
@@ -94,7 +94,7 @@ namespace MoneyManagerDesktop
                             this.mtcUsers.Size = (new Size(360, 215));
                             this.mtcUsers.TabPages.Add(this.mtpInsert);
                             // mtpInsert
-                            this.mtpInsert.Text = (String.Format(("{0}{1}{1}{1}"), ("Novo Usuario"), ("                                    ")));
+                            this.mtpInsert.Text = (String.Format(("{0}{1}{1}{1}"), ("Adicionar Usuarios"), ("                                    ")));
                             // imgInsert
                             this.imgInsert.Text = ("");
                             this.imgInsert.UseTileImage = (true);
@@ -126,7 +126,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case (ChoseActionForm.ActionUpdate):
+                case (Chose.ActionForm.ActionUpdate):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpUpdate))
                         {
@@ -169,7 +169,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case (ChoseActionForm.ActionDelete):
+                case (Chose.ActionForm.ActionDelete):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpDelete))
                         {
@@ -179,7 +179,7 @@ namespace MoneyManagerDesktop
                             this.mtcUsers.Size = (new Size(490, 220));
                             this.mtcUsers.TabPages.Add(this.mtpDelete);
                             // mtpDelete
-                            this.mtpDelete.Text = (String.Format(("{0}{1}{1}{1}{1}"), ("Deletar Usuario"), ("                                    ")));
+                            this.mtpDelete.Text = (String.Format(("{0}{1}{1}{1}{1}"), ("Deletar Usuarios"), ("                                    ")));
                             // imgDelete 
                             this.imgDelete.Text = ("");
                             this.imgDelete.UseTileImage = (true);
@@ -198,7 +198,7 @@ namespace MoneyManagerDesktop
                         };
                         break;
                     };
-                case (ChoseActionForm.ActionRestore):
+                case (Chose.ActionForm.ActionRestore):
                     {
                         if (!this.mtcUsers.TabPages.Contains(this.mtpRestore))
                         {

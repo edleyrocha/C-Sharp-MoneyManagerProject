@@ -76,6 +76,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResAbout.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Categories\ClsCategories.cs" />
     <Compile Include="Forms\Categories\FrmCategories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,14 +94,14 @@
     <Compile Include="Forms\Color\FrmColor.Designer.cs">
       <DependentUpon>FrmColor.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppConfigXML.cs" />
+    <Compile Include="Forms\MainBase\AppConfigXML.cs" />
     <Compile Include="Forms\Color\ResColor.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResColor.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Connection\ChoiceSQLConnectionString.cs" />
     <Compile Include="Forms\Connection\ClsConnection.cs" />
+    <Compile Include="Forms\Connection\GetConnection.cs" />
     <Compile Include="Forms\Connection\ResConnection.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,7 +124,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResMainBase.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\ChoseActionForm.cs" />
+    <Compile Include="Forms\MainBase\Chose.cs" />
     <Compile Include="Forms\Users\StatusUser.cs" />
     <Compile Include="Forms\Users\ClsUsers.cs" />
     <Compile Include="Forms\Users\FrmUsers.cs">

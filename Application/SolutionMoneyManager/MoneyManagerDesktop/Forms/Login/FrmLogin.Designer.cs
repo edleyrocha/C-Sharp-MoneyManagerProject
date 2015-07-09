@@ -32,13 +32,13 @@
             this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.metroButton_Collor = new MetroFramework.Controls.MetroButton();
             this.mtpLogin = new MetroFramework.Controls.MetroTabPage();
+            this.imgLogin = new MetroFramework.Controls.MetroTile();
             this.imgStatusPassword = new System.Windows.Forms.PictureBox();
             this.imgStatusLogin = new System.Windows.Forms.PictureBox();
             this.txt_Login = new MetroFramework.Controls.MetroTextBox();
             this.txt_Password = new MetroFramework.Controls.MetroTextBox();
             this.btnLogin = new MetroFramework.Controls.MetroButton();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
-            this.imgLogin = new MetroFramework.Controls.MetroTile();
             this.mtpLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatusLogin)).BeginInit();
@@ -90,6 +90,16 @@
             this.mtpLogin.VerticalScrollbarBarColor = true;
             this.mtpLogin.VerticalScrollbarHighlightOnWheel = false;
             this.mtpLogin.VerticalScrollbarSize = 10;
+            // 
+            // imgLogin
+            // 
+            this.imgLogin.ActiveControl = null;
+            this.imgLogin.Location = new System.Drawing.Point(3, 3);
+            this.imgLogin.Name = "imgLogin";
+            this.imgLogin.Size = new System.Drawing.Size(130, 130);
+            this.imgLogin.TabIndex = 11;
+            this.imgLogin.Text = "%imgLogin%";
+            this.imgLogin.UseSelectable = true;
             // 
             // imgStatusPassword
             // 
@@ -172,16 +182,6 @@
             this.metroTabControl.UseSelectable = true;
             this.metroTabControl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTabControl_KeyDown);
             // 
-            // imgLogin
-            // 
-            this.imgLogin.ActiveControl = null;
-            this.imgLogin.Location = new System.Drawing.Point(3, 3);
-            this.imgLogin.Name = "imgLogin";
-            this.imgLogin.Size = new System.Drawing.Size(130, 130);
-            this.imgLogin.TabIndex = 11;
-            this.imgLogin.Text = "%imgLogin%";
-            this.imgLogin.UseSelectable = true;
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,12 +211,12 @@
         private MetroFramework.Controls.MetroToggle metroToggle1;
         private MetroFramework.Controls.MetroButton metroButton_Collor;
         private MetroFramework.Controls.MetroTabPage mtpLogin;
-        private MetroFramework.Controls.MetroTextBox txt_Login;
         private MetroFramework.Controls.MetroTextBox txt_Password;
         private MetroFramework.Controls.MetroButton btnLogin;
         private MetroFramework.Controls.MetroTabControl metroTabControl;
         private System.Windows.Forms.PictureBox imgStatusLogin;
         private System.Windows.Forms.PictureBox imgStatusPassword;
         private MetroFramework.Controls.MetroTile imgLogin;
+        private MetroFramework.Controls.MetroTextBox txt_Login;
     }
 }

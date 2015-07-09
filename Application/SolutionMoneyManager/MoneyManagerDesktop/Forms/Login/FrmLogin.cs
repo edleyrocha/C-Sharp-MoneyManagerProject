@@ -27,20 +27,28 @@ namespace MoneyManagerDesktop
     #endregion
     public partial class FrmLogin : MetroForm
     {
+        /// <summary>
+        /// # Set Status for Login em FrmMainBase
+        /// </summary>
+        public Chose.AcessLoginStatus myLoginStatusForLogin { get; set; }
 
-        public enum AcessLoginStatus
-        {
-            AllowedDenied = 1,
-            AllowedAccess = 2
-        }
+        /// <summary>
+        /// # Set Name for Label in FrmMainBase
+        /// </summary>
+        public String myNameFrmMainBase = (String.Empty);
 
-        public AcessLoginStatus myLoginStatusForLogin { get; set; }
+        /// <summary>
+        ///  # Set ID for Label TAG in FrmMainBase
+        /// </summary>
+        public String myIdFrmMainBase = (String.Empty);
+
 
         public FrmLogin()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.SetConfigStartLogin();
         }
+
         public void SetConfigStartLogin()
         {
             this.Text = ("Money Manager");
@@ -54,6 +62,8 @@ namespace MoneyManagerDesktop
             this.imgLogin.TileImage = (MoneyManagerDesktop.Forms.Login.ResLogin.LoginManager128);
             this.Refresh();
         }
+
+
         private void txt_Login_Click(object sender, EventArgs e)
         {
             this.txt_Login.Text = ("");
@@ -113,9 +123,34 @@ namespace MoneyManagerDesktop
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.myLoginStatusForLogin = AcessLoginStatus.AllowedAccess;
-            this.Close();
-            this.Dispose();
+            ClsLogin objClsLogin = new ClsLogin();
+           
+            String myLogin = (txt_Login.Text.Trim());
+            String myPassword = (txt_Password.Text.Trim());
+
+            switch (objClsLogin.CheckUserLogin((myLogin), (myPassword)))
+            {
+                case (Chose.AcessLoginStatus.AllowedAccess):
+                    {
+                        this.myLoginStatusForLogin = Chose.AcessLoginStatus.AllowedAccess;
+                        this.myIdFrmMainBase = (objClsLogin.CheckdUserID.ToString());
+                        this.myNameFrmMainBase = (objClsLogin.CheckdUserLogin);
+                        this.Close();
+                        this.Dispose();
+                        break;
+                    };
+                case (Chose.AcessLoginStatus.AllowedDenied):
+                    {
+                        this.myLoginStatusForLogin = Chose.AcessLoginStatus.AllowedDenied;
+                        break;
+                    };
+                default:
+                    {
+                        break;
+                    };
+            };
+
+
         }
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
         {
@@ -141,6 +176,7 @@ namespace MoneyManagerDesktop
             this.Refresh();
             this.txt_Login.Focus();
         }
+
         private void metroTabControl_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

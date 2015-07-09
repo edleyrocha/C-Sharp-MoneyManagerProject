@@ -30,12 +30,13 @@ namespace MoneyManagerDesktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // FrmLogin
-            FrmLogin objFrmLogin = new FrmLogin();
+            FrmLogin objFrmLogin = (new FrmLogin());
             objFrmLogin.ShowDialog();
             // FrmMainBase
-            if( (objFrmLogin.myLoginStatusForLogin) == (FrmLogin.AcessLoginStatus.AllowedAccess))
+            if ((objFrmLogin.myLoginStatusForLogin) == (Chose.AcessLoginStatus.AllowedAccess))
             {
-                Application.Run(new FrmMainBase());
+                Application.Run(new FrmMainBase(objFrmLogin.myIdFrmMainBase, objFrmLogin.myNameFrmMainBase));
+                objFrmLogin.Dispose();
             };
         }
     }
