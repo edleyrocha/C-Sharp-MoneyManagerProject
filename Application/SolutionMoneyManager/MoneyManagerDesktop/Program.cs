@@ -15,8 +15,6 @@ namespace MoneyManagerDesktop
 {
     #region ---> (Using)
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Windows.Forms;
     #endregion
     static class Program
@@ -33,9 +31,9 @@ namespace MoneyManagerDesktop
             FrmLogin objFrmLogin = (new FrmLogin());
             objFrmLogin.ShowDialog();
             // FrmMainBase
-            if ((objFrmLogin.myLoginStatusForLogin) == (Chose.AcessLoginStatus.AllowedAccess))
+            if ((objFrmLogin.myLoginStatus) == (Chose.AcessLoginStatus.AllowedAccess))
             {
-                Application.Run(new FrmMainBase(objFrmLogin.myIdFrmMainBase, objFrmLogin.myNameFrmMainBase));
+                Application.Run(new FrmMainBase(objFrmLogin.myLoginID, objFrmLogin.myLoginName));
                 objFrmLogin.Dispose();
             };
         }

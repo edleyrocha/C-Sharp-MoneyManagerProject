@@ -30,11 +30,11 @@ namespace MoneyManagerDesktop
         String myIdForLabel = (String.Empty);
         String myNameForLabel = (String.Empty);
 
-        public FrmMainBase(String myIdForLogin, String myNameForLogin)
+        public FrmMainBase(String myID, String myLogin)
         {
             this.InitializeComponent();
-            this.myIdForLabel = (myIdForLogin);
-            this.myNameForLabel = (myNameForLogin);
+            this.myIdForLabel = (myID);
+            this.myNameForLabel = (myLogin);
             this.SetConfigStartMainBase();
 
         }

@@ -24,24 +24,28 @@ namespace MoneyManagerDesktop
     #endregion
 
     /// <summary>
-    ///  #Class Login
+    ///  # Class Login
     /// </summary>
     class ClsLogin
     {
-        public int CheckdUserID;
-        public string CheckdUserLogin;
-        public Chose.AcessLoginStatus CheckUserLogin(String login, String password)
+        public String CheckdUserID = (String.Empty);
+        public String CheckdUserLogin = (String.Empty);
+        
+        /// <summary>
+        /// # Check User Login ( String myLogin , String myPassword )
+        /// </summary>
+        /// <returns></returns>
+        public Chose.AcessLoginStatus CheckUserLogin(String myLogin, String myPassword)
         {
             Chose.AcessLoginStatus returnAcessLoginStatus = (Chose.AcessLoginStatus.AllowedDenied);
 
             String myStatus = (StatusUser.Enabled.ToString());
-            String myLogin = (login.Trim());
-            String myPassword = (password.Trim());
 
             String myCommandStringSQL = String.Format(("{0} {1} {2}"),
                                                          ("SELECT [Id], [Name], [Login], [Password], [Status]"),
                                                          ("FROM [tblUsers]"),
                                                          ("WHERE [Status] = (@myStatus) AND [Login] = (@myLogin) AND [Password] = (@myPassword);"));
+            
             GetConnection objGetConnection = (new GetConnection());
             try
             {
@@ -69,7 +73,7 @@ namespace MoneyManagerDesktop
 
                         if ((checkStatus) && (checkLogin) && (checkPassword))
                         {
-                            CheckdUserID = ((int)(dataTable.Rows[0][0]));
+                            CheckdUserID = (dataTable.Rows[0][0].ToString());
                             CheckdUserLogin = (dataTable.Rows[0][1].ToString());
                             returnAcessLoginStatus = (Chose.AcessLoginStatus.AllowedAccess);
                         }
@@ -86,7 +90,6 @@ namespace MoneyManagerDesktop
             }
             return (returnAcessLoginStatus);
         }
-
 
     }
 }
